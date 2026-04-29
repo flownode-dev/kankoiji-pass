@@ -747,7 +747,7 @@ fab.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth'
 
 /* ===== Init ===== */
 async function init() {
-  const res = await fetch('/data/r06.json'); // ← 年度・分野に合わせて変える
+  const res = await fetch('/data/kucho.json'); // ← 年度・分野に合わせて変える
   QUESTIONS_DATA = await res.json();
   state.questions = [...QUESTIONS_DATA];
   renderAll();
