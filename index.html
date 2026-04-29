@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管工事PASS | 1級管工事施工管理技士 合格対策・過去問演習サイト【無料】</title>
+  <meta name="description" content="1級管工事施工管理技士の合格対策サイト。過去10年分の過去問を分野別・年度別に無料で演習できます。解説付き・スマホ対応。第一次検定・第二次検定の両方に対応。">
+  <meta name="keywords" content="1級管工事施工管理技士,過去問,合格対策,無料,第一次検定,第二次検定,管工事">
+  <meta property="og:title" content="管工事PASS | 1級管工事施工管理技士 合格対策サイト">
+  <meta property="og:description" content="過去10年分の過去問を無料で演習。解説付き・スマホ対応の合格対策サイト。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flownode-dev.github.io/kankoiji-pass/">
+  <meta property="og:image" content="https://flownode-dev.github.io/kankoiji-pass/assets/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://flownode-dev.github.io/kankoiji-pass/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/kankoiji-pass/css/style.css">
+
+  <!-- Google Analytics（後でG-XXXXXXXXXXに書き換え） -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
+  <!-- Google AdSense（審査通過後に差し替え） -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  -->
+
+  <style>
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: calc(var(--header-h) + 2rem) 2rem 4rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 65% 40%, rgba(26,86,219,0.2) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 15% 75%, rgba(6,182,212,0.1) 0%, transparent 55%),
+        linear-gradient(170deg, #0a1628 0%, #0c1e3a 60%, #0a1628 100%);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(6,182,212,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6,182,212,0.035) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+    }
+
+    /* 浮遊する装飾円 */
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.15;
+      animation: orbFloat 8s ease-in-out infinite;
+    }
+    .orb1 { width:400px; height:400px; background:var(--blue); top:-100px; right:5%; animation-delay:0s; }
+    .orb2 { width:250px; height:250px; background:var(--cyan); bottom:10%; left:5%; animation-delay:3s; }
+    .orb3 { width:180px; height:180px; background:var(--gold); top:40%; right:20%; animation-delay:5s; }
+
+    @keyframes orbFloat {
+      0%,100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-30px) scale(1.05); }
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(6,182,212,0.1);
+      border: 1px solid rgba(6,182,212,0.35);
+      border-radius: 100px;
+      padding: 0.38rem 1rem;
+      font-size: 0.72rem;
+      color: var(--cyan);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin-bottom: 1.8rem;
+      animation: fadeInDown 0.6s ease both;
+    }
+
+    .hero-eyebrow-dot {
+      width: 6px; height: 6px;
+      background: var(--cyan);
+      border-radius: 50%;
+      animation: pulse 1.8s infinite;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.22;
+      margin-bottom: 1.6rem;
+      animation: fadeInUp 0.7s 0.1s ease both;
+    }
+
+    .hero-title .hl-cyan { color: var(--cyan); }
+    .hero-title .hl-gold { color: var(--gold); }
+
+    .hero-lead {
+      font-size: 1rem;
+      color: var(--gray);
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+      animation: fadeInUp 0.7s 0.2s ease both;
+      max-width: 520px;
+    }
+
+    .hero-lead strong { color: var(--gray-light); font-weight: 700; }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.7s 0.3s ease both;
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-top: 1.8rem;
+      animation: fadeInUp 0.7s 0.4s ease both;
+    }
+
+    .hero-tag {
+      font-size: 0.7rem;
+      color: var(--gray);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 0.25rem 0.7rem;
+      border-radius: 100px;
+    }
+
+    /* ===== ヒーロー右カード ===== */
+    .hero-card {
+      background: rgba(17,34,64,0.85);
+      border: 1px solid rgba(6,182,212,0.2);
+      border-radius: 18px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      animation: fadeInRight 0.8s 0.2s ease both;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan), var(--gold));
+    }
+
+    .hcard-title {
+      font-size: 0.7rem;
+      color: var(--gray);
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hcard-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hstat {
+      background: rgba(255,255,255,0.04);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .hstat-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .hstat-label { font-size: 0.68rem; color: var(--gray); line-height: 1.4; }
+
+    .hcard-divider { height:1px; background: var(--border); margin: 1.2rem 0; }
+
+    .hcard-bar-wrap { margin-bottom: 0.8rem; }
+
+    .hcard-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--gray);
+      margin-bottom: 0.4rem;
+    }
+
+    .hcard-bar-track {
+      height: 6px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .hcard-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      transform-origin: left;
+      animation: barGrow 1.2s 0.8s ease both;
+    }
+
+    .bar-blue { background: linear-gradient(90deg, var(--blue), var(--cyan)); }
+    .bar-gold { background: linear-gradient(90deg, #d97706, var(--gold)); }
+
+    /* ===== AD SECTION ===== */
+    .ad-section {
+      background: rgba(0,0,0,0.2);
+      padding: 1.2rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ===== FEATURES ===== */
+    .features-section {
+      padding: 6rem 2rem;
+    }
+
+    .features-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .feat-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+
+    .feat-card:hover {
+      border-color: var(--border-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(6,182,212,0.08);
+    }
+
+    .feat-icon {
+      width: 46px; height: 46px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .fi-blue   { background: rgba(26,86,219,0.18); }
+    .fi-cyan   { background: rgba(6,182,212,0.15); }
+    .fi-gold   { background: rgba(245,158,11,0.15); }
+    .fi-green  { background: rgba(16,185,129,0.15); }
+    .fi-purple { background: rgba(139,92,246,0.15); }
+    .fi-red    { background: rgba(239,68,68,0.15); }
+
+    .feat-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .feat-desc  { font-size: 0.8rem; color: var(--gray); line-height: 1.75; }
+
+    /* ===== KAKOMON SECTION ===== */
+    .kakomon-section {
+      background: var(--navy-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 6rem 2rem;
+    }
+
+    .kakomon-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .year-list { display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .year-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+    }
+
+    .year-item:hover {
+      border-color: var(--border-cyan);
+      background: var(--cyan-dim);
+      transform: translateX(4px);
+    }
+
+    .year-label {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cyan);
+      min-width: 60px;
+    }
+
+    .year-info { flex: 1; }
+    .year-name { font-size: 0.85rem; font-weight: 600; }
+    .year-count { font-size: 0.72rem; color: var(--gray); margin-top: 0.1rem; }
+
+    .year-arrow { color: var(--gray); font-size: 0.9rem; }
+
+    .bunya-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+
+    .bunya-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.9rem 1rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      font-size: 0.82rem;
+      transition: all 0.2s;
+    }
+
+    .bunya-item:hover {
+      border-color: var(--border-cyan);
+      background: var(--cyan-dim);
+    }
+
+    .bunya-icon { font-size: 1.1rem; }
+
+    /* ===== ROADMAP ===== */
+    .roadmap-section { padding: 6rem 2rem; }
+
+    .roadmap-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .roadmap-timeline { position: relative; padding-left: 3rem; }
+
+    .roadmap-timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--cyan), rgba(6,182,212,0.1));
+    }
+
+    .rm-step {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .rm-step:last-child { margin-bottom: 0; }
+
+    .rm-dot {
+      position: absolute;
+      left: -3rem;
+      top: 0;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--navy-mid);
+      border: 2px solid var(--cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cyan);
+    }
+
+    .rm-dot.gold { border-color: var(--gold); color: var(--gold); }
+
+    .rm-content {
+      background: var(--navy-mid);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.3rem 1.5rem;
+      transition: border-color 0.2s;
+    }
+
+    .rm-content:hover { border-color: var(--border-cyan); }
+
+    .rm-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .rm-period { font-size: 0.7rem; color: var(--cyan); font-weight: 700; margin-bottom: 0.5rem; letter-spacing: 1px; }
+    .rm-desc { font-size: 0.8rem; color: var(--gray); line-height: 1.75; }
+
+    /* ===== COLUMN ===== */
+    .column-section {
+      background: var(--navy-mid);
+      border-top: 1px solid var(--border);
+      padding: 6rem 2rem;
+    }
+
+    .column-inner { max-width: var(--max-width); margin: 0 auto; }
+
+    .column-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .col-card {
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .col-card:hover {
+      border-color: var(--border-cyan);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(6,182,212,0.08);
+    }
+
+    .col-thumb {
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .col-body { padding: 1.2rem; flex: 1; display: flex; flex-direction: column; }
+
+    .col-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--cyan);
+      margin-bottom: 0.5rem;
+    }
+
+    .col-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.55;
+      margin-bottom: 0.5rem;
+      flex: 1;
+    }
+
+    .col-meta { font-size: 0.7rem; color: var(--gray); }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      padding: 7rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(26,86,219,0.18) 0%, transparent 70%);
+    }
+
+    .cta-inner { position: relative; max-width: 600px; margin: 0 auto; }
+
+    .cta-section .section-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-card { max-width: 480px; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .kakomon-inner { grid-template-columns: 1fr; }
+      .column-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .bunya-grid { grid-template-columns: 1fr; }
+      .column-grid { grid-template-columns: 1fr; }
+      .hcard-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <a href="/kankoiji-pass/" class="logo">
+    <span class="logo-main">管工事PASS</span>
+    <span class="logo-sub">1級管工事施工管理技士 合格対策</span>
+  </a>
+  <nav class="site-nav" id="siteNav">
+    <a href="/kankoiji-pass/kakomon/">過去問演習</a>
+    <a href="/kankoiji-pass/bunya/">分野別解説</a>
+    <a href="/kankoiji-pass/niji/">第二次検定</a>
+    <a href="/kankoiji-pass/column/">コラム</a>
+    <a href="/kankoiji-pass/kakomon/" class="btn btn-primary btn-sm">無料で始める</a>
+  </nav>
+  <button class="hamburger" id="hamburger" aria-label="メニュー" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+  <div class="hero-orb orb3"></div>
+
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        令和6年度 最新問題対応
+      </div>
+      <h1 class="hero-title">
+        <span class="hl-cyan">1級管工事</span><br>
+        施工管理技士<br>
+        <span class="hl-gold">一発合格</span>を<br>
+        目指す学習サイト
+      </h1>
+      <p class="hero-lead">
+        過去<strong>10年分・500問以上</strong>の過去問を分野別・年度別に完全収録。
+        全問に詳しい解説付き。第一次・第二次検定の両方に対応。
+        <strong>会員登録不要・完全無料</strong>で今すぐ始められる。
+      </p>
+      <div class="hero-actions">
+        <a href="/kankoiji-pass/kakomon/" class="btn btn-primary">▶ 過去問を解く（無料）</a>
+        <a href="/kankoiji-pass/roadmap/" class="btn btn-secondary">合格ロードマップ →</a>
+      </div>
+      <div class="hero-tags">
+        <span class="hero-tag">✓ 完全無料</span>
+        <span class="hero-tag">✓ 会員登録不要</span>
+        <span class="hero-tag">✓ スマホ対応</span>
+        <span class="hero-tag">✓ 解説付き</span>
+        <span class="hero-tag">✓ 進捗保存</span>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hcard-title">📊 試験データ（令和5年度）</div>
+      <div class="hcard-stats">
+        <div class="hstat">
+          <div class="hstat-num" style="color:var(--cyan)">52</div>
+          <div class="hstat-label">第一次検定<br>出題数</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num" style="color:var(--gold)">60<span style="font-size:1.1rem">%</span></div>
+          <div class="hstat-label">合格基準点<br>（24点以上）</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num" style="color:var(--green)">10</div>
+          <div class="hstat-label">収録年度<br>（過去問）</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num" style="color:var(--white)">500<span style="font-size:1rem">+</span></div>
+          <div class="hstat-label">収録問題数<br>（解説付き）</div>
+        </div>
+      </div>
+      <div class="hcard-divider"></div>
+      <div class="hcard-bar-wrap">
+        <div class="hcard-bar-label">
+          <span>令和5年 第一次検定 合格率</span>
+          <span style="color:var(--cyan); font-weight:700">51%</span>
+        </div>
+        <div class="hcard-bar-track">
+          <div class="hcard-bar-fill bar-blue" style="width:51%"></div>
+        </div>
+      </div>
+      <div class="hcard-bar-wrap">
+        <div class="hcard-bar-label">
+          <span>当サイト目標合格率</span>
+          <span style="color:var(--gold); font-weight:700">70%以上</span>
+        </div>
+        <div class="hcard-bar-track">
+          <div class="hcard-bar-fill bar-gold" style="width:70%"></div>
+        </div>
+      </div>
+      <div class="hcard-divider"></div>
+      <a href="/kankoiji-pass/kakomon/" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:0.3rem">
+        今すぐ演習を始める →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AD（ヒーロー直下） ===== -->
+<div class="ad-section">
+  <div class="ad-wrap ad-wrap-728">
+    <!-- AdSense審査通過後に差し替え -->
+    <div class="ad-placeholder" style="width:100%; max-width:728px; height:90px;">広告 728×90</div>
+  </div>
+</div>
+
+<!-- ===== FEATURES ===== -->
+<section class="features-section">
+  <div class="features-inner">
+    <div class="text-center" style="margin-bottom:3rem">
+      <span class="section-label">✦ Features</span>
+      <h2 class="section-title">このサイトでできること</h2>
+      <p class="section-desc" style="margin: 0 auto">
+        合格に必要な機能をすべて無料で提供。スキマ時間にスマホ一台で効率的に学習できる。
+      </p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon fi-blue">📝</div>
+        <div class="feat-title">過去問 年度別演習</div>
+        <div class="feat-desc">令和6〜平成26年度まで収録。本番と同じ形式で時間を計りながら模擬試験が可能。</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon fi-cyan">🎯</div>
+        <div class="feat-title">分野別 集中トレーニング</div>
+        <div class="feat-desc">「空調」「給排水」「法規」など苦手分野だけを集中して反復演習できる。</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon fi-gold">💡</div>
+        <div class="feat-title">丁寧な解説付き</div>
+        <div class="feat-desc">全問題に正解・不正解の理由を詳しく解説。なぜ間違えたかがすぐわかる。</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon fi-green">📈</div>
+        <div class="feat-title">学習進捗の管理</div>
+        <div class="feat-desc">正答率・解答履歴・苦手問題を自動でトラッキング。弱点を可視化して効率化。</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon fi-purple">✏️</div>
+        <div class="feat-title">第二次検定対策</div>
+        <div class="feat-desc">経験記述の書き方テンプレート・記述問題の解答例を掲載。記述式も万全に対策。</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon fi-red">📱</div>
+        <div class="feat-title">スマホ完全対応</div>
+        <div class="feat-desc">通勤・休憩中のスキマ時間に最適化。どのデバイスでも快適に学習できる。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AD（中間） ===== -->
+<div style="background:var(--navy); padding:1rem 0; text-align:center;">
+  <div class="ad-wrap ad-wrap-336" style="display:inline-block;">
+    <div class="ad-placeholder" style="width:336px; height:280px;">広告 336×280</div>
+  </div>
+</div>
+
+<!-- ===== 過去問・分野別 ===== -->
+<section class="kakomon-section">
+  <div class="kakomon-inner">
+    <!-- 年度別 -->
+    <div>
+      <span class="section-label">✦ Year</span>
+      <h2 class="section-title" style="font-size:1.6rem; margin-bottom:0.5rem">年度別 過去問演習</h2>
+      <p style="font-size:0.82rem; color:var(--gray); margin-bottom:1.5rem; line-height:1.7">
+        本番と同じ形式で年度ごとに通しで解ける。直近の出題傾向をつかむのに最適。
+      </p>
+      <div class="year-list">
+        <a href="/kankoiji-pass/kakomon/r06/" class="year-item">
+          <span class="year-label">R6</span>
+          <div class="year-info">
+            <div class="year-name">令和6年度 第一次検定</div>
+            <div class="year-count">52問収録・解説付き</div>
+          </div>
+          <span class="year-arrow">›</span>
+        </a>
+        <a href="/kankoiji-pass/kakomon/r05/" class="year-item">
+          <span class="year-label">R5</span>
+          <div class="year-info">
+            <div class="year-name">令和5年度 第一次検定</div>
+            <div class="year-count">52問収録・解説付き</div>
+          </div>
+          <span class="year-arrow">›</span>
+        </a>
+        <a href="/kankoiji-pass/kakomon/r04/" class="year-item">
+          <span class="year-label">R4</span>
+          <div class="year-info">
+            <div class="year-name">令和4年度 第一次検定</div>
+            <div class="year-count">52問収録・解説付き</div>
+          </div>
+          <span class="year-arrow">›</span>
+        </a>
+        <a href="/kankoiji-pass/kakomon/r03/" class="year-item">
+          <span class="year-label">R3</span>
+          <div class="year-info">
+            <div class="year-name">令和3年度 第一次検定</div>
+            <div class="year-count">52問収録・解説付き</div>
+          </div>
+          <span class="year-arrow">›</span>
+        </a>
+        <a href="/kankoiji-pass/kakomon/r02/" class="year-item">
+          <span class="year-label">R2</span>
+          <div class="year-info">
+            <div class="year-name">令和2年度 学科試験</div>
+            <div class="year-count">52問収録・解説付き</div>
+          </div>
+          <span class="year-arrow">›</span>
+        </a>
+        <a href="/kankoiji-pass/kakomon/" class="year-item" style="border-style:dashed; color:var(--gray)">
+          <span class="year-label" style="color:var(--gray)">他</span>
+          <div class="year-info">
+            <div class="year-name">平成31〜26年度も収録</div>
+            <div class="year-count">過去問一覧を見る</div>
+          </div>
+          <span class="year-arrow">›</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 分野別 -->
+    <div>
+      <span class="section-label">✦ Subject</span>
+      <h2 class="section-title" style="font-size:1.6rem; margin-bottom:0.5rem">分野別 解説コンテンツ</h2>
+      <p style="font-size:0.82rem; color:var(--gray); margin-bottom:1.5rem; line-height:1.7">
+        苦手な分野を集中的に対策。各分野の重要ポイントと頻出問題を徹底解説。
+      </p>
+      <div class="bunya-grid">
+        <a href="/kankoiji-pass/bunya/kiso/" class="bunya-item">
+          <span class="bunya-icon">🌡️</span>一般基礎
+        </a>
+        <a href="/kankoiji-pass/bunya/kucho/" class="bunya-item">
+          <span class="bunya-icon">❄️</span>空調設備
+        </a>
+        <a href="/kankoiji-pass/bunya/kyuhaisu/" class="bunya-item">
+          <span class="bunya-icon">🚰</span>給排水設備
+        </a>
+        <a href="/kankoiji-pass/bunya/shobo/" class="bunya-item">
+          <span class="bunya-icon">🔥</span>消防設備
+        </a>
+        <a href="/kankoiji-pass/bunya/kotei/" class="bunya-item">
+          <span class="bunya-icon">📅</span>工程管理
+        </a>
+        <a href="/kankoiji-pass/bunya/hinshitsu/" class="bunya-item">
+          <span class="bunya-icon">🔧</span>品質・安全管理
+        </a>
+        <a href="/kankoiji-pass/bunya/hoki/" class="bunya-item">
+          <span class="bunya-icon">⚖️</span>法規
+        </a>
+        <a href="/kankoiji-pass/niji/" class="bunya-item" style="border-color:rgba(245,158,11,0.3); color:var(--gold)">
+          <span class="bunya-icon">✍️</span>第二次検定
+        </a>
+      </div>
+
+      <!-- インコンテンツ広告 -->
+      <div style="margin-top:1.5rem;">
+        <div class="ad-placeholder" style="height:90px; width:100%; max-width:400px;">
+          広告 インコンテンツ
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ROADMAP ===== -->
+<section class="roadmap-section">
+  <div style="max-width:var(--max-width); margin:0 auto;">
+    <div class="text-center" style="margin-bottom:3rem">
+      <span class="section-label">✦ Roadmap</span>
+      <h2 class="section-title">合格までのロードマップ</h2>
+      <p class="section-desc" style="margin:0 auto">6ヶ月で確実に合格レベルへ。試験日から逆算した学習計画の目安。</p>
+    </div>
+    <div class="roadmap-inner">
+      <div class="roadmap-timeline">
+        <div class="rm-step">
+          <div class="rm-dot">1</div>
+          <div class="rm-content">
+            <div class="rm-period">〜1ヶ月目</div>
+            <div class="rm-title">試験全体の把握・学習計画の立案</div>
+            <div class="rm-desc">出題範囲・合格基準・受験資格を確認。分野別の出題割合を把握して学習優先順位を決める。</div>
+          </div>
+        </div>
+        <div class="rm-step">
+          <div class="rm-dot">2</div>
+          <div class="rm-content">
+            <div class="rm-period">2〜3ヶ月目</div>
+            <div class="rm-title">分野別テキスト学習（インプット）</div>
+            <div class="rm-desc">空調・給排水・法規など各分野の基礎知識をインプット。当サイトの分野別解説テキストを活用。</div>
+          </div>
+        </div>
+        <div class="rm-step">
+          <div class="rm-dot">3</div>
+          <div class="rm-content">
+            <div class="rm-period">4〜5ヶ月目</div>
+            <div class="rm-title">過去問 集中演習（アウトプット）</div>
+            <div class="rm-desc">過去5〜10年分を繰り返し解く。正答率80%を目標に苦手問題を徹底的に潰す。</div>
+          </div>
+        </div>
+        <div class="rm-step">
+          <div class="rm-dot">4</div>
+          <div class="rm-content">
+            <div class="rm-period">並行して実施</div>
+            <div class="rm-title">第二次検定 記述式対策</div>
+            <div class="rm-desc">経験記述のテーマを3パターン準備。品質・安全・工程管理の記述フレームワークを構築する。</div>
+          </div>
+        </div>
+        <div class="rm-step">
+          <div class="rm-dot gold">🏆</div>
+          <div class="rm-content" style="border-color:rgba(245,158,11,0.3)">
+            <div class="rm-period" style="color:var(--gold)">6月・10月</div>
+            <div class="rm-title" style="color:var(--gold)">第一次・第二次検定 受験・合格！</div>
+            <div class="rm-desc">第一次検定（6月）→ 第二次検定（10月）の順で受験。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COLUMN ===== -->
+<section class="column-section">
+  <div class="column-inner">
+    <div class="text-center" style="margin-bottom:3rem">
+      <span class="section-label">✦ Column</span>
+      <h2 class="section-title">合格対策コラム</h2>
+      <p class="section-desc" style="margin:0 auto">試験対策に役立つ情報をわかりやすく解説。</p>
+    </div>
+    <div class="column-grid">
+      <a href="/kankoiji-pass/column/what-is/" class="col-card">
+        <div class="col-thumb" style="background:linear-gradient(135deg, rgba(26,86,219,0.3), rgba(6,182,212,0.2))">🏗️</div>
+        <div class="col-body">
+          <div class="col-tag">GUIDE</div>
+          <div class="col-title">1級管工事施工管理技士とは？受験資格・難易度・合格率を徹底解説</div>
+          <div class="col-meta">基礎知識 · 5分で読める</div>
+        </div>
+      </a>
+      <a href="/kankoiji-pass/column/study-method/" class="col-card">
+        <div class="col-thumb" style="background:linear-gradient(135deg, rgba(245,158,11,0.25), rgba(251,191,36,0.15))">📚</div>
+        <div class="col-body">
+          <div class="col-tag">STUDY</div>
+          <div class="col-title">第一次検定の勉強方法｜おすすめ参考書と効率的な学習スケジュール</div>
+          <div class="col-meta">勉強法 · 8分で読める</div>
+        </div>
+      </a>
+      <a href="/kankoiji-pass/column/experience-writing/" class="col-card">
+        <div class="col-thumb" style="background:linear-gradient(135deg, rgba(16,185,129,0.25), rgba(52,211,153,0.15))">✍️</div>
+        <div class="col-body">
+          <div class="col-tag">NIJI</div>
+          <div class="col-title">第二次検定の経験記述の書き方【合格者の例文つき】</div>
+          <div class="col-meta">第二次検定 · 10分で読める</div>
+        </div>
+      </a>
+    </div>
+    <div class="text-center" style="margin-top:2.5rem">
+      <a href="/kankoiji-pass/column/" class="btn btn-secondary">コラム一覧を見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label text-center" style="display:block">✦ Start Now</span>
+    <h2 class="section-title">今すぐ無料で<br>学習を始めよう</h2>
+    <p class="section-desc" style="margin: 1rem auto 0">
+      会員登録不要・完全無料。過去問演習からすぐにスタートできる。
+    </p>
+    <div class="cta-actions">
+      <a href="/kankoiji-pass/kakomon/" class="btn btn-primary">▶ 過去問を解く（無料）</a>
+      <a href="/kankoiji-pass/roadmap/" class="btn btn-secondary">合格ロードマップ →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/kankoiji-pass/" class="logo">
+          <span class="logo-main">管工事PASS</span>
+        </a>
+        <p class="footer-brand-desc">
+          1級管工事施工管理技士の合格を目指す方のための<br>
+          無料 eラーニングサイト。過去問演習・分野別解説・<br>
+          第二次検定対策を完全無料で提供しています。
+        </p>
+      </div>
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <div class="footer-col-title">学習コンテンツ</div>
+          <a href="/kankoiji-pass/kakomon/">過去問演習（年度別）</a>
+          <a href="/kankoiji-pass/bunya/">分野別解説</a>
+          <a href="/kankoiji-pass/niji/">第二次検定対策</a>
+          <a href="/kankoiji-pass/yougo/">用語集</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">コラム</div>
+          <a href="/kankoiji-pass/column/">コラム一覧</a>
+          <a href="/kankoiji-pass/column/what-is/">1級管工事とは？</a>
+          <a href="/kankoiji-pass/column/study-method/">勉強方法まとめ</a>
+          <a href="/kankoiji-pass/column/experience-writing/">経験記述の書き方</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">サイト情報</div>
+          <a href="/kankoiji-pass/roadmap/">合格ロードマップ</a>
+          <a href="/kankoiji-pass/privacy/">プライバシーポリシー</a>
+          <a href="/kankoiji-pass/disclaimer/">免責事項</a>
+          <a href="/kankoiji-pass/contact/">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        © 2025 管工事PASS ｜ 本サイトの情報は試験対策を目的としたものです。最新の試験情報は国土交通省・試験機関の公式情報をご確認ください。
+      </p>
+      <div class="footer-legal">
+        <a href="/kankoiji-pass/privacy/">プライバシーポリシー</a>
+        <a href="/kankoiji-pass/disclaimer/">免責事項</a>
+        <a href="/kankoiji-pass/contact/">お問い合わせ</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleNav() {
+  const nav = document.getElementById('siteNav');
+  nav.classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('siteNav');
+  const btn = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !btn.contains(e.target)) {
+    nav.classList.remove('open');
+  }
+});
+</script>
+
+</body>
+</html>
