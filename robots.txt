@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-# 検索エンジンに不要なページを除外
-Disallow: /kankoiji-pass/contact/
-
-# サイトマップの場所を明示
 Sitemap: https://flownode-dev.github.io/kankoiji-pass/sitemap.xml
