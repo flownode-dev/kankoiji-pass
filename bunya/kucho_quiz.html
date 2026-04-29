@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>空調設備 演習問題 | 管工事PASS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  /* ===== CSS Variables ===== */
+  :root {
+    --bg:        #0f1117;
+    --surface:   #1a1d27;
+    --surface2:  #222636;
+    --border:    #2e3348;
+    --accent:    #4f8ef7;
+    --accent2:   #7c5cfc;
+    --correct:   #22c55e;
+    --wrong:     #ef4444;
+    --bookmark:  #f59e0b;
+    --text:      #e8eaf0;
+    --muted:     #7a8099;
+    --mono:      'DM Mono', monospace;
+    --sans:      'Noto Sans JP', sans-serif;
+    --radius:    12px;
+    --transition: 0.2s cubic-bezier(.4,0,.2,1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  /* ===== Header ===== */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo {
+    font-weight: 900;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: .02em;
+  }
+  .header-nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .btn-ghost {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: .8rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ===== Progress Bar ===== */
+  .progress-bar-wrap {
+    position: sticky;
+    top: 56px;
+    z-index: 99;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 24px 10px;
+  }
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .78rem;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .progress-info .score-live {
+    font-family: var(--mono);
+    font-size: .9rem;
+    color: var(--text);
+  }
+  .progress-track {
+    height: 5px;
+    background: var(--border);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 99px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  /* ===== Filter Bar ===== */
+  .filter-bar {
+    padding: 16px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .filter-label { font-size: .78rem; color: var(--muted); margin-right: 4px; }
+  .filter-chip {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: .78rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .filter-chip:hover, .filter-chip.active {
+    background: rgba(79,142,247,.15);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .filter-chip.bookmark-filter.active {
+    background: rgba(245,158,11,.12);
+    border-color: var(--bookmark);
+    color: var(--bookmark);
+  }
+  .spacer { flex: 1; }
+  .btn-reset {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: .78rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-reset:hover { color: var(--wrong); }
+
+  /* ===== Quiz Container ===== */
+  .quiz-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 24px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ===== Quiz Card ===== */
+  .quiz-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color var(--transition);
+    position: relative;
+  }
+  .quiz-card:hover { border-color: #3a3f58; }
+  .quiz-card.answered-correct { border-color: var(--correct); }
+  .quiz-card.answered-wrong   { border-color: var(--wrong); }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .q-num {
+    font-family: var(--mono);
+    font-size: .72rem;
+    color: var(--muted);
+    letter-spacing: .05em;
+    flex-shrink: 0;
+  }
+  .q-tags {
+    display: flex;
+    gap: 6px;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-size: .7rem;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: rgba(79,142,247,.12);
+    color: var(--accent);
+    border: 1px solid rgba(79,142,247,.25);
+  }
+  .btn-bookmark {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    line-height: 1;
+    padding: 4px;
+    border-radius: 6px;
+    color: var(--muted);
+  }
+  .btn-bookmark:hover { color: var(--bookmark); transform: scale(1.15); }
+  .btn-bookmark.bookmarked { color: var(--bookmark); }
+
+  .card-body { padding: 20px 18px 16px; }
+
+  .question-text {
+    font-size: .98rem;
+    font-weight: 500;
+    line-height: 1.75;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+
+  /* ===== Choices ===== */
+  .choices { display: flex; flex-direction: column; gap: 8px; }
+  .choice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--bg);
+    font-size: .9rem;
+    text-align: left;
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+  }
+  .choice:hover:not(:disabled) {
+    border-color: var(--accent);
+    background: rgba(79,142,247,.07);
+  }
+  .choice:disabled { cursor: not-allowed; }
+  .choice-label {
+    font-family: var(--mono);
+    font-size: .78rem;
+    color: var(--muted);
+    min-width: 20px;
+    padding-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .choice.selected        { border-color: var(--accent); background: rgba(79,142,247,.1); }
+  .choice.correct         { border-color: var(--correct); background: rgba(34,197,94,.1); }
+  .choice.correct .choice-label { color: var(--correct); }
+  .choice.wrong           { border-color: var(--wrong); background: rgba(239,68,68,.1); }
+  .choice.wrong .choice-label   { color: var(--wrong); }
+  .choice.highlight       { border-color: var(--correct); background: rgba(34,197,94,.08); }
+  .choice.highlight .choice-label { color: var(--correct); }
+
+  /* ===== Result Badge ===== */
+  .result-badge {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    font-size: .82rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 99px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  .result-badge.show { display: inline-flex; }
+  .result-badge.correct-badge { background: rgba(34,197,94,.15); color: var(--correct); }
+  .result-badge.wrong-badge   { background: rgba(239,68,68,.15); color: var(--wrong); }
+
+  /* ===== Explanation ===== */
+  .explanation {
+    display: none;
+    margin-top: 14px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .explanation.show { display: block; animation: slideDown .25s ease; }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .explanation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: .05em;
+  }
+  .btn-toggle-exp {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: .78rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-toggle-exp:hover { color: var(--text); }
+  .explanation-body {
+    padding: 14px 16px;
+    font-size: .88rem;
+    line-height: 1.8;
+    color: #c5cae0;
+  }
+  .explanation-body p + p { margin-top: 8px; }
+  .correct-answer-note {
+    font-size: .8rem;
+    color: var(--correct);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  /* ===== Score Summary ===== */
+  .score-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: center;
+    display: none;
+  }
+  .score-summary.show { display: block; animation: fadeIn .4s ease; }
+  @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+  .score-title { font-size: .82rem; color: var(--muted); margin-bottom: 8px; letter-spacing: .08em; }
+  .score-num {
+    font-family: var(--mono);
+    font-size: 3.2rem;
+    font-weight: 500;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .score-detail { font-size: .85rem; color: var(--muted); margin-bottom: 20px; }
+  .score-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border: none;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: .88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-primary:hover { opacity: .85; transform: translateY(-1px); }
+  .btn-outline {
+    background: none;
+    border: 1.5px solid var(--border);
+    color: var(--text);
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: .88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ===== Scroll to top ===== */
+  .fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius: 50%;
+    color: var(--muted);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .fab.show { opacity: 1; pointer-events: auto; }
+  .fab:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 600px) {
+    .filter-bar { padding: 12px 16px; }
+    .quiz-container { padding: 16px 12px 80px; }
+    .card-header { padding: 12px 14px; }
+    .card-body { padding: 16px 14px 14px; }
+    .score-num { font-size: 2.4rem; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header>
+  <div class="logo">管工事PASS</div>
+  <nav class="header-nav">
+    <button class="btn-ghost" onclick="location.href='../../index.html'">← トップ</button>
+    <button class="btn-ghost" id="btnShowBookmarks">⭐ ブックマーク</button>
+  </nav>
+</header>
+
+<!-- ===== Progress Bar ===== -->
+<div class="progress-bar-wrap">
+  <div class="progress-info">
+    <span id="progressText">0 / 0 問解答済み</span>
+    <span class="score-live" id="scoreLive">正答率 — %</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+</div>
+
+<!-- ===== Filter Bar ===== -->
+<div class="filter-bar">
+  <span class="filter-label">フィルター：</span>
+  <button class="filter-chip active" data-filter="all">すべて（32問）</button>
+  <button class="filter-chip bookmark-filter" data-filter="bookmark">⭐ ブックマークのみ</button>
+  <span class="spacer"></span>
+  <button class="btn-reset" id="btnResetAll">リセット</button>
+</div>
+
+<!-- ===== Quiz ===== -->
+<main class="quiz-container" id="quizContainer">
+  <!-- JS で動的生成 -->
+  <div class="score-summary" id="scoreSummary">
+    <div class="score-title">演習完了！</div>
+    <div class="score-num" id="finalScore">—</div>
+    <div class="score-detail" id="finalDetail"></div>
+    <div class="score-actions">
+      <button class="btn-primary" id="btnRetryWrong">❌ 不正解のみ再挑戦</button>
+      <button class="btn-outline" id="btnRetryAll">🔄 全問やり直し</button>
+    </div>
+  </div>
+</main>
+
+<button class="fab" id="fabTop" title="上に戻る">↑</button>
+
+<script>
+/* =============================================
+   問題データ（data/ フォルダの JSON から読み込む）
+   ページごとに fetch のパスだけ変える：
+     令和6年度 → '/data/r06.json'
+     令和5年度 → '/data/r05.json'
+     空調分野別 → '/data/kucho.json'
+   ============================================= */
+let QUESTIONS_DATA = [];
+
+/* =============================================
+   State
+   ============================================= */
+let state = {
+  questions: [...QUESTIONS_DATA],
+  answers: {},      // { id: choiceIndex }
+  bookmarks: new Set(JSON.parse(localStorage.getItem('kk_bookmarks') || '[]')),
+  filterCategory: 'all',
+  showBookmarkOnly: false
+};
+
+function saveBookmarks() {
+  localStorage.setItem('kk_bookmarks', JSON.stringify([...state.bookmarks]));
+}
+
+/* =============================================
+   Filter
+   ============================================= */
+function getFilteredQuestions() {
+  return state.questions.filter(q => {
+    const catOk = state.filterCategory === 'all' || q.category === state.filterCategory;
+    const bmOk  = !state.showBookmarkOnly || state.bookmarks.has(q.id);
+    return catOk && bmOk;
+  });
+}
+
+/* =============================================
+   Render
+   ============================================= */
+function renderAll() {
+  const container = document.getElementById('quizContainer');
+  const summary   = document.getElementById('scoreSummary');
+  const fqs = getFilteredQuestions();
+
+  // カードをすべて削除（scoreSummaryは残す）
+  [...container.children].forEach(el => {
+    if (el.id !== 'scoreSummary') el.remove();
+  });
+
+  if (fqs.length === 0) {
+    const empty = document.createElement('div');
+    empty.style.cssText = 'text-align:center;padding:60px;color:var(--muted);font-size:.9rem;';
+    empty.textContent = '該当する問題がありません。';
+    container.insertBefore(empty, summary);
+    updateProgress(fqs);
+    return;
+  }
+
+  fqs.forEach(q => {
+    const card = buildCard(q);
+    container.insertBefore(card, summary);
+  });
+
+  updateProgress(fqs);
+  checkAllAnswered(fqs);
+}
+
+function buildCard(q) {
+  const answered = state.answers.hasOwnProperty(q.id);
+  const userAns  = state.answers[q.id];
+  const isCorrect = answered && (userAns === q.answer);
+  const isBm = state.bookmarks.has(q.id);
+
+  const card = document.createElement('div');
+  card.className = 'quiz-card' + (answered ? (isCorrect ? ' answered-correct' : ' answered-wrong') : '');
+  card.dataset.id = q.id;
+
+  card.innerHTML = `
+    <div class="card-header">
+      <span class="q-num">Q${q.id.replace('q','').padStart(3,'0')}</span>
+      <div class="q-tags">
+        <span class="tag">${q.category}</span>
+        <span class="tag" style="background:rgba(124,92,252,.12);color:var(--accent2);border-color:rgba(124,92,252,.25);">${q.year}年</span>
+      </div>
+      ${answered ? `<span class="result-badge show ${isCorrect?'correct-badge':'wrong-badge'}">${isCorrect?'✓ 正解':'✗ 不正解'}</span>` : ''}
+      <button class="btn-bookmark ${isBm?'bookmarked':''}" data-id="${q.id}" title="ブックマーク">⭐</button>
+    </div>
+    <div class="card-body">
+      <p class="question-text">${q.question}</p>
+      <div class="choices">
+        ${q.choices.map((c, i) => {
+          let cls = '';
+          if (answered) {
+            if (i === q.answer)               cls = 'correct';
+            else if (i === userAns && !isCorrect) cls = 'wrong';
+          }
+          return `<button class="choice ${cls}" data-qid="${q.id}" data-idx="${i}" ${answered?'disabled':''}>
+            <span class="choice-label">${['①','②','③','④'][i]}</span>
+            <span>${c}</span>
+          </button>`;
+        }).join('')}
+      </div>
+      <div class="explanation ${answered?'show':''}">
+        <div class="explanation-header">
+          <span>📖 解説</span>
+          <button class="btn-toggle-exp" data-target="exp-${q.id}">▲ 閉じる</button>
+        </div>
+        <div class="explanation-body" id="exp-${q.id}">
+          <p class="correct-answer-note">正解：${['①','②','③','④'][q.answer]}　${q.choices[q.answer]}</p>
+          <p>${q.explanation}</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  return card;
+}
+
+/* =============================================
+   Progress
+   ============================================= */
+function updateProgress(fqs) {
+  const total    = fqs.length;
+  const answered = fqs.filter(q => state.answers.hasOwnProperty(q.id)).length;
+  const correct  = fqs.filter(q => state.answers[q.id] === q.answer).length;
+  const pct      = total ? Math.round(answered / total * 100) : 0;
+  const rate     = answered ? Math.round(correct / answered * 100) : null;
+
+  document.getElementById('progressText').textContent = `${answered} / ${total} 問解答済み`;
+  document.getElementById('scoreLive').textContent    = rate !== null ? `正答率 ${rate}%` : '正答率 — %';
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+function checkAllAnswered(fqs) {
+  const allDone = fqs.length > 0 && fqs.every(q => state.answers.hasOwnProperty(q.id));
+  const summary = document.getElementById('scoreSummary');
+  if (allDone) {
+    const correct = fqs.filter(q => state.answers[q.id] === q.answer).length;
+    const rate = Math.round(correct / fqs.length * 100);
+    document.getElementById('finalScore').textContent = rate + '%';
+    document.getElementById('finalDetail').textContent = `${fqs.length}問中 ${correct}問正解`;
+    summary.classList.add('show');
+  } else {
+    summary.classList.remove('show');
+  }
+}
+
+/* =============================================
+   Event Delegation
+   ============================================= */
+document.getElementById('quizContainer').addEventListener('click', e => {
+  // 選択肢クリック
+  const choiceBtn = e.target.closest('.choice');
+  if (choiceBtn && !choiceBtn.disabled) {
+    const qid = choiceBtn.dataset.qid;
+    const idx  = parseInt(choiceBtn.dataset.idx);
+    state.answers[qid] = idx;
+
+    // カードを再描画
+    const card = document.querySelector(`.quiz-card[data-id="${qid}"]`);
+    const q    = state.questions.find(q => q.id === qid);
+    if (card && q) {
+      const newCard = buildCard(q);
+      card.replaceWith(newCard);
+    }
+    updateProgress(getFilteredQuestions());
+    checkAllAnswered(getFilteredQuestions());
+
+    // スクロールアニメーション：解説へ
+    setTimeout(() => {
+      document.getElementById(`exp-${qid}`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+
+  // ブックマークボタン
+  const bmBtn = e.target.closest('.btn-bookmark');
+  if (bmBtn) {
+    const id = bmBtn.dataset.id;
+    if (state.bookmarks.has(id)) {
+      state.bookmarks.delete(id);
+      bmBtn.classList.remove('bookmarked');
+    } else {
+      state.bookmarks.add(id);
+      bmBtn.classList.add('bookmarked');
+    }
+    saveBookmarks();
+  }
+
+  // 解説トグル
+  const toggleBtn = e.target.closest('.btn-toggle-exp');
+  if (toggleBtn) {
+    const targetId = toggleBtn.dataset.target;
+    const body = document.getElementById(targetId);
+    if (body) {
+      const isHidden = body.style.display === 'none';
+      body.style.display = isHidden ? '' : 'none';
+      toggleBtn.textContent = isHidden ? '▲ 閉じる' : '▼ 開く';
+    }
+  }
+});
+
+/* =============================================
+   Filter Bar
+   ============================================= */
+document.querySelector('.filter-bar').addEventListener('click', e => {
+  const chip = e.target.closest('.filter-chip');
+  if (!chip) return;
+
+  const filter = chip.dataset.filter;
+
+  if (filter === 'bookmark') {
+    state.showBookmarkOnly = !state.showBookmarkOnly;
+    chip.classList.toggle('active', state.showBookmarkOnly);
+  } else {
+    state.filterCategory   = filter;
+    state.showBookmarkOnly = false;
+    document.querySelectorAll('.filter-chip').forEach(c => {
+      c.classList.toggle('active', c.dataset.filter === filter);
+    });
+    document.querySelector('.bookmark-filter').classList.remove('active');
+  }
+
+  renderAll();
+});
+
+/* ブックマークボタン（ヘッダー） */
+document.getElementById('btnShowBookmarks').addEventListener('click', () => {
+  state.showBookmarkOnly = !state.showBookmarkOnly;
+  document.querySelector('.bookmark-filter').classList.toggle('active', state.showBookmarkOnly);
+  renderAll();
+});
+
+/* リセット */
+document.getElementById('btnResetAll').addEventListener('click', () => {
+  if (!confirm('すべての解答をリセットしますか？')) return;
+  state.answers = {};
+  renderAll();
+});
+
+/* 不正解のみ再挑戦 */
+document.getElementById('btnRetryWrong').addEventListener('click', () => {
+  const wrongIds = new Set(
+    getFilteredQuestions()
+      .filter(q => state.answers.hasOwnProperty(q.id) && state.answers[q.id] !== q.answer)
+      .map(q => q.id)
+  );
+  state.answers = {};
+  state.questions = QUESTIONS_DATA.filter(q => wrongIds.has(q.id));
+  state.filterCategory = 'all';
+  state.showBookmarkOnly = false;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  document.querySelector('[data-filter="all"]').classList.add('active');
+  renderAll();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* 全問やり直し */
+document.getElementById('btnRetryAll').addEventListener('click', () => {
+  state.answers   = {};
+  state.questions = [...QUESTIONS_DATA];
+  renderAll();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ===== FAB ===== */
+const fab = document.getElementById('fabTop');
+window.addEventListener('scroll', () => {
+  fab.classList.toggle('show', window.scrollY > 300);
+});
+fab.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ===== Init ===== */
+function init() {
+  QUESTIONS_DATA = [
+  {
+    "id": "kucho-001",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "空気調和設備に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "FCU（ファンコイルユニット）方式は、各室ごとに温湿度を個別制御しやすい。",
+      "定風量単一ダクト方式は、室内負荷が変動しても送風量を一定に保つ。",
+      "外気冷房は、冬季や中間期に外気を積極的に取り入れて冷房する方式である。",
+      "全熱交換器は、排気の熱と湿気を回収するが、顕熱のみの回収である。"
+    ],
+    "answer": 3,
+    "explanation": "全熱交換器は排気の顕熱（温度）と潜熱（湿気）の両方を回収する装置です。「顕熱のみ」という記述が誤りです。顕熱のみを回収するのは顕熱交換器であり、全熱交換器と区別する必要があります。"
+  },
+  {
+    "id": "kucho-002",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "冷凍機に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "遠心冷凍機は、インペラ（羽根車）の回転により冷媒ガスを圧縮する。",
+      "吸収冷凍機は、圧縮機を使用せず、熱エネルギーを利用して冷凍サイクルを行う。",
+      "スクロール冷凍機は、渦巻き状のスクロールの噛み合いにより冷媒を圧縮する。",
+      "空冷ヒートポンプは、冬季暖房時に成績係数（COP）が必ず1を下回る。"
+    ],
+    "answer": 3,
+    "explanation": "ヒートポンプは大気熱を利用するため、暖房COPは通常1以上となります。電気エネルギー1に対して大気から熱を汲み上げることで、1以上の熱エネルギーを供給できるのがヒートポンプの原理です。「必ず1を下回る」という記述は誤りです。"
+  },
+  {
+    "id": "kucho-003",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "ダクトに関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "長方形ダクトのアスペクト比は、できるだけ小さい方が圧力損失を抑えられる。",
+      "スパイラルダクトは、円形断面のダクトで気密性が高く圧力損失が少ない。",
+      "フレキシブルダクトは、主ダクトと吹出口の接続部分などに使用される。",
+      "防火ダンパーは、火災時に煙を感知して自動的に閉鎖する装置である。"
+    ],
+    "answer": 3,
+    "explanation": "防火ダンパー（FD）は温度ヒューズが溶断することで閉鎖する装置です。煙を感知して閉鎖するのは防煙ダンパー（SD）または防火防煙ダンパー（SFD）です。防火ダンパーと防煙ダンパーを混同しないよう注意が必要です。"
+  },
+  {
+    "id": "kucho-004",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "湿り空気に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "乾球温度と湿球温度の差が大きいほど、相対湿度は低い。",
+      "露点温度とは、空気を冷却したときに結露が始まる温度である。",
+      "絶対湿度は、乾き空気1kgに含まれる水蒸気の質量（kg）で表す。",
+      "相対湿度100%の空気は、乾球温度と湿球温度が異なる。"
+    ],
+    "answer": 3,
+    "explanation": "相対湿度が100%の状態（飽和空気）では空気は水蒸気を最大限含んでおり、湿球温度計の水分蒸発が起こりません。そのため乾球温度と湿球温度は一致します。「異なる」という記述が誤りです。"
+  },
+  {
+    "id": "kucho-005",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "冷媒に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "HFC冷媒はオゾン層を破壊しないが、地球温暖化係数（GWP）が高いものが多い。",
+      "R410Aは、R22の代替冷媒として広く使用されてきた。",
+      "自然冷媒であるCO₂（R744）は、GWPが非常に高く環境負荷が大きい。",
+      "冷媒配管の接続には、ろう付けやフレア接続などの方法が用いられる。"
+    ],
+    "answer": 2,
+    "explanation": "CO₂（R744）はGWPが1と非常に低く、環境負荷が小さい自然冷媒として注目されています。「GWPが非常に高い」という記述は完全に誤りです。ただし臨界圧力が高いため、高圧に対応した専用機器が必要です。"
+  },
+  {
+    "id": "kucho-006",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "空調用ポンプに関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "遠心ポンプは、インペラの回転による遠心力で流体を送る。",
+      "ポンプの揚程は、吸込み側と吐出し側の圧力差に相当する。",
+      "キャビテーションは、液体の局部的な気化により発生し、ポンプを損傷させる。",
+      "並列運転では、流量が増加し揚程も比例して増加する。"
+    ],
+    "answer": 3,
+    "explanation": "ポンプの並列運転では流量は増加しますが、揚程はほぼ変わりません。揚程が増加するのは直列運転の特徴です。並列運転と直列運転の違いを正確に理解することが重要です。"
+  },
+  {
+    "id": "kucho-007",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "熱源システムに関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "地域冷暖房は、1つの熱源プラントで複数の建物に冷温水を供給するシステムである。",
+      "蓄熱システムは、夜間電力を利用して熱を蓄え、昼間のピーク電力を削減できる。",
+      "コージェネレーションシステムは、電力と熱を同時に供給しエネルギー利用効率を高める。",
+      "氷蓄熱方式は、水蓄熱方式に比べて同じ蓄熱量を得るために大きな蓄熱槽が必要である。"
+    ],
+    "answer": 3,
+    "explanation": "氷蓄熱方式は、水の融解潜熱（約335kJ/kg）を利用するため、同じ蓄熱量でも水蓄熱方式より大幅に小さい蓄熱槽で済みます。「大きな蓄熱槽が必要」という記述は誤りです。"
+  },
+  {
+    "id": "kucho-008",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "換気設備の種類に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "第1種換気は、給気・排気ともに機械換気を行う方式である。",
+      "第2種換気は、給気のみ機械換気を行い、室内を正圧に保つ。",
+      "第3種換気は、排気のみ機械換気を行い、室内を負圧に保つ。",
+      "第2種換気は、トイレや浴室など臭気の発生する室に最も適している。"
+    ],
+    "answer": 3,
+    "explanation": "第2種換気は室内を正圧に保つため外部への臭気漏れが起きやすく、トイレや浴室には不向きです。クリーンルームや手術室などに適しています。トイレ・浴室には室内を負圧に保つ第3種換気が適しています。"
+  },
+  {
+    "id": "kucho-009",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "エアフィルターに関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "HEPAフィルターは、0.3μmの粒子を99.97%以上捕集する高性能フィルターである。",
+      "自動巻取り型フィルターは、ろ材が目詰まりすると自動的に新しいろ材に切り替わる。",
+      "電気集塵器は、粒子を帯電させて電気的に捕集するフィルターである。",
+      "プレフィルターは、最終フィルターの後段に設置して粗じんを除去する。"
+    ],
+    "answer": 3,
+    "explanation": "プレフィルターは最終フィルターの前段（上流側）に設置して粗じんを取り除き、最終フィルターの目詰まりを防ぐ役割を果たします。「後段に設置」という記述が誤りです。"
+  },
+  {
+    "id": "kucho-010",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "空調配管に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "冷温水配管の膨張タンクは、水の熱膨張を吸収するために設置する。",
+      "二方弁は、流量を調整するために使用され、全閉にすることができる。",
+      "空調機の冷温水コイルへの配管は、一般にカウンターフロー（対向流）接続とする。",
+      "定流量方式は、負荷変動に応じて流量を変化させるため省エネルギー効果が高い。"
+    ],
+    "answer": 3,
+    "explanation": "定流量方式は流量を一定に保つ方式であり、負荷変動に関わらず常に一定流量を循環させます。負荷変動に応じて流量を変化させるのは変流量（VWV）方式であり、こちらが省エネルギー効果の高い方式です。"
+  },
+  {
+    "id": "kucho-011",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "冷却塔に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "開放型冷却塔は、冷却水が大気に直接触れることで冷却効果を得る。",
+      "密閉型冷却塔は、冷却水が外気に触れないため水質汚染のリスクが低い。",
+      "レジオネラ菌の繁殖を防ぐため、冷却水の定期的な水質管理が重要である。",
+      "冷却塔の冷却能力は、外気の乾球温度のみに依存する。"
+    ],
+    "answer": 3,
+    "explanation": "冷却塔の冷却能力は外気の湿球温度に大きく依存します。冷却塔は水の蒸発潜熱を利用して冷却するため、湿球温度が低いほど冷却効果が高くなります。「乾球温度のみに依存する」という記述は誤りです。"
+  },
+  {
+    "id": "kucho-012",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "VAV（変風量）ユニットに関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "VAVユニットは、室内の温度変化に応じて送風量を自動的に変化させる。",
+      "VAV方式は、CAV方式に比べて部分負荷時の搬送動力を削減できる。",
+      "VAVユニットの最小風量を設定することで、換気量を確保する。",
+      "VAV方式では、各ゾーンの温度を独立して制御することができない。"
+    ],
+    "answer": 3,
+    "explanation": "VAV方式は各ゾーンにVAVユニットを設置することで、それぞれのゾーンの温度に応じて個別に風量を制御できます。「温度を独立して制御することができない」という記述は誤りです。"
+  },
+  {
+    "id": "kucho-013",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "空調設備の自動制御に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "PID制御は、比例・積分・微分の3要素を組み合わせた制御方式である。",
+      "DDC（ダイレクトデジタルコントローラ）は、デジタル信号で制御を行う装置である。",
+      "エンタルピー制御は、外気と還気のエンタルピーを比較して外気取入量を制御する。",
+      "比例制御（P制御）は、オフセット（定常偏差）が生じないため精度が高い。"
+    ],
+    "answer": 3,
+    "explanation": "比例制御（P制御）は目標値と現在値の偏差に比例した操作量を出力しますが、定常状態でオフセット（残留偏差）が残るという欠点があります。オフセットをなくすためにはPI制御またはPID制御を使用します。"
+  },
+  {
+    "id": "kucho-014",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "ボイラーに関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "貫流ボイラーは、ドラムを持たず管内で水を加熱して蒸気を発生させる。",
+      "真空式温水ヒーターは、缶体内を大気圧以下に保つため、安全性が高い。",
+      "鋳鉄製ボイラーは、セクション構造のため現場での分割搬入・組立が可能である。",
+      "炉筒煙管ボイラーは、起動から蒸気発生まで時間がかかり、負荷変動への対応も難しい。"
+    ],
+    "answer": 3,
+    "explanation": "炉筒煙管ボイラーは水量が多いため起動に時間はかかりますが、その分だけ蒸気量の変動（負荷変動）に対して安定した応答ができます。「負荷変動への対応も難しい」という記述は誤りで、負荷変動への対応が得意な構造です。"
+  },
+  {
+    "id": "kucho-015",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "空調用熱交換器に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "プレート型熱交換器は、伝熱面積が大きく熱交換効率が高い。",
+      "シェルアンドチューブ型熱交換器は、大容量の熱交換に適している。",
+      "空気加熱コイルに蒸気を使用する場合、コイル内で凝縮水（ドレン）が発生する。",
+      "冷水コイルの列数を増やすと、除湿能力は向上するが顕熱処理能力は低下する。"
+    ],
+    "answer": 3,
+    "explanation": "冷水コイルの列数を増やすと空気とコイルの接触時間が長くなり、顕熱処理能力も除湿能力も両方向上します。「顕熱処理能力は低下する」という記述は誤りです。"
+  },
+  {
+    "id": "kucho-016",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "吹出口・吸込口に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "ノズル型吹出口は、到達距離が長く大空間への気流分布に適している。",
+      "ライン型（スロット型）吹出口は、建築化照明との組み合わせに多く使用される。",
+      "アネモスタット型吹出口は、天井取付けで放射状に気流を広げる特性がある。",
+      "吸込口の位置は、吹出口よりも室内気流分布に大きな影響を与える。"
+    ],
+    "answer": 3,
+    "explanation": "室内の気流分布は吹出口の位置・形状・風量に大きく左右されます。吸込口は吹出口に比べて気流分布への影響が小さく、比較的自由に配置できます。「吸込口の方が大きな影響を与える」という記述は誤りです。"
+  },
+  {
+    "id": "kucho-017",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "空調設備の省エネルギーに関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "インバーター制御により、ポンプやファンの回転数を負荷に応じて変化させることで省エネを図れる。",
+      "全熱交換器を導入することで、外気負荷を削減し空調エネルギーを低減できる。",
+      "外気冷房は、冷房期間中に外気温度が室内設定温度より低い場合に有効である。",
+      "冷水温度を低く設定するほど冷凍機のCOPが向上し、省エネルギーになる。"
+    ],
+    "answer": 3,
+    "explanation": "冷凍機は冷水温度（蒸発温度）が低いほど蒸発圧力が下がり、圧縮機の仕事量が増えてCOPが低下します。省エネルギーのためには冷水温度をできるだけ高く設定することが有効です。「低く設定するほどCOPが向上する」という記述は誤りです。"
+  },
+  {
+    "id": "kucho-018",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "空気線図（湿り空気線図）の読み取りに関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "空気線図上で加熱処理を行うと、絶対湿度は変化せず乾球温度が上昇する。",
+      "空気線図上で蒸気加湿を行うと、乾球温度はほぼ変化せず絶対湿度が上昇する。",
+      "空気線図上で冷却除湿を行うと、乾球温度と絶対湿度が共に低下する。",
+      "混合操作では、2点を結ぶ線分上の点で表され、重量比によらず必ず中点に混合点が決まる。"
+    ],
+    "answer": 3,
+    "explanation": "空気線図上の混合操作において、混合空気の状態点は2つの空気状態点を結ぶ線分上にありますが、その位置は両空気の重量比（質量比）によって決まります。重量比が等しい場合のみ中点になります。「重量比によらず必ず中点」という記述は誤りです。"
+  },
+  {
+    "id": "kucho-019",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "空調設備の騒音・振動対策に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "消音チャンバーは、ダクト内の騒音を低減するために使用される。",
+      "防振架台は、機器の振動が建物躯体に伝わるのを防ぐために設置する。",
+      "フレキシブルジョイントは、ダクトや配管の振動伝達を遮断するために使用される。",
+      "ファンの騒音は、回転数に反比例して増大する。"
+    ],
+    "answer": 3,
+    "explanation": "ファンの騒音は回転数が高くなるほど増大します。「回転数に反比例して増大する」は「回転数が下がるほど騒音が増す」という意味になり、正しくありません。騒音はおおむね回転数の増加に伴い上昇します。"
+  },
+  {
+    "id": "kucho-020",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "パッケージ型空調機に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "マルチ型パッケージは、1台の室外機に複数台の室内機を接続できる。",
+      "空冷パッケージ型空調機は、冷却水設備が不要なため維持管理が容易である。",
+      "ビル用マルチエアコンは、冷暖同時運転が可能な機種がある。",
+      "パッケージ型空調機は、セントラル空調方式に比べて個別制御が困難である。"
+    ],
+    "answer": 3,
+    "explanation": "パッケージ型空調機は各室内機ごとに運転・温度設定ができるため、個別制御が容易です。むしろセントラル空調方式の方が個別制御に工夫が必要です。「個別制御が困難」という記述は誤りです。"
+  },
+  {
+    "id": "kucho-021",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "クリーンルームに関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "クリーンルームの清浄度クラスは、単位体積中の浮遊粒子数によって分類される。",
+      "層流方式（ラミナーフロー）は、室内全体に均一な一方向気流を形成する方式である。",
+      "クリーンルームの正圧管理は、外部からの汚染空気の侵入を防ぐために行う。",
+      "HEPAフィルターは、クリーンルームの排気系統にのみ使用される。"
+    ],
+    "answer": 3,
+    "explanation": "HEPAフィルターはクリーンルームの清浄度を確保するために給気系統の最終段に設置されます。排気系統にのみ使用されるという記述は誤りです。給気側にHEPAフィルターを設置することで、室内に供給する空気の清浄度を高いレベルに保ちます。"
+  },
+  {
+    "id": "kucho-022",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "熱負荷計算に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "冷房負荷には、外壁・窓からの貫流熱、日射熱、人体発熱、照明発熱などが含まれる。",
+      "暖房負荷計算では、一般に日射熱取得を安全側として無視して計算する。",
+      "ガラス窓からの日射熱取得は、日射熱取得率（SHGC）を用いて算定する。",
+      "暖房負荷は内部発熱の影響が大きいため、冷房負荷より計算が複雑になる。"
+    ],
+    "answer": 3,
+    "explanation": "暖房負荷計算では内部発熱（人体・照明・機器）は暖房負荷を減少させる方向に働きます。安全側（最大負荷）の計算では内部発熱を無視することが多く、冷房負荷計算の方が内部発熱の扱いが複雑です。「暖房負荷の方が計算が複雑」という記述は誤りです。"
+  },
+  {
+    "id": "kucho-023",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "空調機（AHU）に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "空調機は一般に、フィルター、冷温水コイル、加湿器、送風機の順に構成される。",
+      "外気導入量は、在室者数やCO₂濃度管理により調整することがある。",
+      "コイルバイパス制御は、コイルを通る空気量と迂回する空気量の比率を変えて温度を制御する。",
+      "加湿方式のうち、気化式は加湿応答が速く精密な湿度制御に最も適している。"
+    ],
+    "answer": 3,
+    "explanation": "気化式加湿は水を蒸発させる方式で加湿量の立ち上がりが遅く、精密な湿度制御には不向きです。精密な湿度制御に適しているのは蒸気式加湿（電気式・ガス式）で、応答が速く制御精度が高いです。"
+  },
+  {
+    "id": "kucho-024",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "地中熱ヒートポンプシステムに関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "地中温度は年間を通じて比較的安定しており、冷暖房効率の向上に有利である。",
+      "クローズドループ方式は、地中に埋設したパイプ内を熱媒体が循環する方式である。",
+      "オープンループ方式は、地下水を直接汲み上げて熱源として利用する方式である。",
+      "地中熱ヒートポンプは外気温度の影響を受けず、初期コストも空冷式より安い。"
+    ],
+    "answer": 3,
+    "explanation": "地中熱ヒートポンプは確かに外気温度の影響を受けにくいですが、地中への埋設工事（ボーリングなど）が必要なため初期コストは空冷ヒートポンプより大幅に高くなります。「初期コストも安い」という記述は誤りです。"
+  },
+  {
+    "id": "kucho-025",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "空調設備の保温・断熱工事に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "冷水管の保温は、結露防止を主目的として施工する。",
+      "グラスウール保温材は、繊維系断熱材の一種で空調ダクトの保温に多く使用される。",
+      "蒸気管の保温は、熱損失防止と火傷防止を目的として施工する。",
+      "屋外露出配管の保温外装には、一般にアルミガラスクロスが使用される。"
+    ],
+    "answer": 3,
+    "explanation": "屋外露出配管の保温外装には、雨水・紫外線などへの耐候性が必要なため、アルミ板・カラー鋼板・ステンレス板などの金属板が使用されます。アルミガラスクロスは屋内配管の仕上げ材であり、屋外露出には耐久性が不足します。"
+  },
+  {
+    "id": "kucho-026",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "ヒートポンプの原理に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "ヒートポンプは、低温の熱源から熱を汲み上げて高温側に放熱するサイクルを利用する。",
+      "暖房時のCOPは、一般に1以上となり、電気ヒーターより効率的に熱を供給できる。",
+      "冷凍サイクルは、蒸発→圧縮→凝縮→膨張の順に冷媒が状態変化するプロセスである。",
+      "空冷ヒートポンプの暖房能力は、外気温度が高いほど低下する傾向がある。"
+    ],
+    "answer": 3,
+    "explanation": "空冷ヒートポンプは外気から熱を汲み上げるため、外気温度が高いほど熱源との温度差が小さくなり圧縮機の仕事が楽になるため、暖房能力は向上します。外気温度が低下するほど暖房能力が低下します。「外気温度が高いほど低下する」という記述は誤りです。"
+  },
+  {
+    "id": "kucho-027",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "空調設備における配管施工に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "冷温水配管は、空気抜きのために高所に自動エア抜き弁を設置する。",
+      "配管の熱膨張を吸収するために、エキスパンションループやベローズ型伸縮継手を使用する。",
+      "スラブ貫通部の配管には、スリーブを設けて配管の損傷を防止する。",
+      "冷温水の上向き流れ配管は、排水のために先下がり勾配とする。"
+    ],
+    "answer": 3,
+    "explanation": "冷温水の上向き流れ（アップフィード）配管では、管内に溜まった空気を高所の空気抜き弁へ集めるために先上がり勾配とするのが基本です。「排水のために先下がり勾配」という記述は誤りで、空気溜まりの原因となります。"
+  },
+  {
+    "id": "kucho-028",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "熱源機器の容量決定に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "熱源機器の容量は、最大負荷に配管・ダクトでの熱損失を加味して決定する。",
+      "複数台設置による分散化は、部分負荷時の効率向上と冗長性確保に有効である。",
+      "冷凍機の定格能力は、一般にJIS規定の標準条件（冷水出口7℃、冷却水入口32℃）で示される。",
+      "ターンダウン比（最小負荷率）が小さい機器ほど、低負荷時の運転が難しくなる。"
+    ],
+    "answer": 3,
+    "explanation": "ターンダウン比（最小負荷率）が小さいほど、より低い負荷まで安定運転できることを意味します。「小さいほど低負荷時の運転が難しくなる」という記述は逆で、ターンダウン比が大きい（最小負荷率が高い）機器の方が低負荷時に運転しにくくなります。"
+  },
+  {
+    "id": "kucho-029",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "厨房排気ダクトの施工に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "厨房排気ダクトには、耐熱性・耐食性に優れたステンレス鋼製ダクトが適している。",
+      "厨房排気ダクトには、グリースフィルターを設けて油脂分を除去する。",
+      "厨房排気ダクトは、火災のリスクを考慮して防火ダンパーを適切に設置する。",
+      "厨房排気ダクトには、一般的な亜鉛鉄板製ダクトが最も適している。"
+    ],
+    "answer": 3,
+    "explanation": "厨房排気ダクトは、油脂・高温・腐食性ガスにさらされるため、耐熱性・耐食性に優れたステンレス鋼製ダクトが適しています。亜鉛鉄板製ダクトは一般空調用であり、厨房排気の過酷な環境には不向きです。"
+  },
+  {
+    "id": "kucho-030",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "空調設備のコミッショニングに関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "コミッショニングとは、建物の設備システムが設計意図通りに機能することを検証するプロセスである。",
+      "ファンクショナルテストは、システムが実際の運用条件下で正しく動作することを確認するテストである。",
+      "コミッショニングは、竣工後の引渡し時のみに実施するものである。",
+      "レトロコミッショニングは、既存建物の設備システムを対象に実施するコミッショニングである。"
+    ],
+    "answer": 2,
+    "explanation": "コミッショニングは竣工後の引渡し時のみではなく、設計段階・施工段階・試運転段階・引渡し後の運用段階まで継続的に実施するプロセスです。「竣工後の引渡し時のみ」という記述は誤りで、建物のライフサイクル全体を通じて行われます。"
+  },
+  {
+    "id": "kucho-031",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "空調設備の試運転調整（TAB）に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "TABとは、Testing（試験）・Adjusting（調整）・Balancing（平衡）の略称である。",
+      "風量測定には、ピトー管、熱線風速計、フード型風量計などが使用される。",
+      "ウォーターバランシングは、各系統の冷温水流量を設計値に合わせる調整作業である。",
+      "TABは竣工時のみ実施すればよく、その後の定期的な実施は不要である。"
+    ],
+    "answer": 3,
+    "explanation": "TABは竣工時の初回調整だけでなく、建物用途変更・改修・設備経年劣化などに伴い定期的に実施することが望ましいとされています。「竣工時のみ実施すればよい」という記述は誤りで、維持管理の観点から継続的な確認・調整が重要です。"
+  },
+  {
+    "id": "kucho-032",
+    "year": 2024,
+    "category": "空調設備",
+    "question": "空調設備の維持管理に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "エアフィルターは、圧力損失が規定値を超えた場合に清掃または交換を行う。",
+      "冷温水コイルのフィンは、定期的に清掃して熱交換効率を維持する。",
+      "冷凍機の冷媒は、法令に基づき漏えい量を管理し、定期点検を実施する必要がある。",
+      "冷却塔の補給水は、蒸発損失分のみ補給すればよく、ブロー水の管理は不要である。"
+    ],
+    "answer": 3,
+    "explanation": "冷却塔では蒸発により冷却水中の不純物が濃縮されるため、ブロー（排水）により濃縮倍数を管理することが必要です。ブロー水の管理を怠るとスケール付着・腐食・レジオネラ菌繁殖などの問題が生じます。「ブロー水の管理は不要」という記述は誤りです。"
+  }
+];
+  state.questions = [...QUESTIONS_DATA];
+  renderAll();
+}
+init();
+</script>
+</body>
+</html>
