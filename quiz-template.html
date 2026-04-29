@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>過去問演習 | 管工事PASS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  /* ===== CSS Variables ===== */
+  :root {
+    --bg:        #0f1117;
+    --surface:   #1a1d27;
+    --surface2:  #222636;
+    --border:    #2e3348;
+    --accent:    #4f8ef7;
+    --accent2:   #7c5cfc;
+    --correct:   #22c55e;
+    --wrong:     #ef4444;
+    --bookmark:  #f59e0b;
+    --text:      #e8eaf0;
+    --muted:     #7a8099;
+    --mono:      'DM Mono', monospace;
+    --sans:      'Noto Sans JP', sans-serif;
+    --radius:    12px;
+    --transition: 0.2s cubic-bezier(.4,0,.2,1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  /* ===== Header ===== */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo {
+    font-weight: 900;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: .02em;
+  }
+  .header-nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .btn-ghost {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: .8rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ===== Progress Bar ===== */
+  .progress-bar-wrap {
+    position: sticky;
+    top: 56px;
+    z-index: 99;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 24px 10px;
+  }
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .78rem;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .progress-info .score-live {
+    font-family: var(--mono);
+    font-size: .9rem;
+    color: var(--text);
+  }
+  .progress-track {
+    height: 5px;
+    background: var(--border);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 99px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  /* ===== Filter Bar ===== */
+  .filter-bar {
+    padding: 16px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .filter-label { font-size: .78rem; color: var(--muted); margin-right: 4px; }
+  .filter-chip {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: .78rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .filter-chip:hover, .filter-chip.active {
+    background: rgba(79,142,247,.15);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .filter-chip.bookmark-filter.active {
+    background: rgba(245,158,11,.12);
+    border-color: var(--bookmark);
+    color: var(--bookmark);
+  }
+  .spacer { flex: 1; }
+  .btn-reset {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: .78rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-reset:hover { color: var(--wrong); }
+
+  /* ===== Quiz Container ===== */
+  .quiz-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 24px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ===== Quiz Card ===== */
+  .quiz-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color var(--transition);
+    position: relative;
+  }
+  .quiz-card:hover { border-color: #3a3f58; }
+  .quiz-card.answered-correct { border-color: var(--correct); }
+  .quiz-card.answered-wrong   { border-color: var(--wrong); }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .q-num {
+    font-family: var(--mono);
+    font-size: .72rem;
+    color: var(--muted);
+    letter-spacing: .05em;
+    flex-shrink: 0;
+  }
+  .q-tags {
+    display: flex;
+    gap: 6px;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-size: .7rem;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: rgba(79,142,247,.12);
+    color: var(--accent);
+    border: 1px solid rgba(79,142,247,.25);
+  }
+  .btn-bookmark {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    line-height: 1;
+    padding: 4px;
+    border-radius: 6px;
+    color: var(--muted);
+  }
+  .btn-bookmark:hover { color: var(--bookmark); transform: scale(1.15); }
+  .btn-bookmark.bookmarked { color: var(--bookmark); }
+
+  .card-body { padding: 20px 18px 16px; }
+
+  .question-text {
+    font-size: .98rem;
+    font-weight: 500;
+    line-height: 1.75;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+
+  /* ===== Choices ===== */
+  .choices { display: flex; flex-direction: column; gap: 8px; }
+  .choice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--bg);
+    font-size: .9rem;
+    text-align: left;
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+  }
+  .choice:hover:not(:disabled) {
+    border-color: var(--accent);
+    background: rgba(79,142,247,.07);
+  }
+  .choice:disabled { cursor: not-allowed; }
+  .choice-label {
+    font-family: var(--mono);
+    font-size: .78rem;
+    color: var(--muted);
+    min-width: 20px;
+    padding-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .choice.selected        { border-color: var(--accent); background: rgba(79,142,247,.1); }
+  .choice.correct         { border-color: var(--correct); background: rgba(34,197,94,.1); }
+  .choice.correct .choice-label { color: var(--correct); }
+  .choice.wrong           { border-color: var(--wrong); background: rgba(239,68,68,.1); }
+  .choice.wrong .choice-label   { color: var(--wrong); }
+  .choice.highlight       { border-color: var(--correct); background: rgba(34,197,94,.08); }
+  .choice.highlight .choice-label { color: var(--correct); }
+
+  /* ===== Result Badge ===== */
+  .result-badge {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    font-size: .82rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 99px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  .result-badge.show { display: inline-flex; }
+  .result-badge.correct-badge { background: rgba(34,197,94,.15); color: var(--correct); }
+  .result-badge.wrong-badge   { background: rgba(239,68,68,.15); color: var(--wrong); }
+
+  /* ===== Explanation ===== */
+  .explanation {
+    display: none;
+    margin-top: 14px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .explanation.show { display: block; animation: slideDown .25s ease; }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .explanation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: .05em;
+  }
+  .btn-toggle-exp {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: .78rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-toggle-exp:hover { color: var(--text); }
+  .explanation-body {
+    padding: 14px 16px;
+    font-size: .88rem;
+    line-height: 1.8;
+    color: #c5cae0;
+  }
+  .explanation-body p + p { margin-top: 8px; }
+  .correct-answer-note {
+    font-size: .8rem;
+    color: var(--correct);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  /* ===== Score Summary ===== */
+  .score-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: center;
+    display: none;
+  }
+  .score-summary.show { display: block; animation: fadeIn .4s ease; }
+  @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+  .score-title { font-size: .82rem; color: var(--muted); margin-bottom: 8px; letter-spacing: .08em; }
+  .score-num {
+    font-family: var(--mono);
+    font-size: 3.2rem;
+    font-weight: 500;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .score-detail { font-size: .85rem; color: var(--muted); margin-bottom: 20px; }
+  .score-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border: none;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: .88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-primary:hover { opacity: .85; transform: translateY(-1px); }
+  .btn-outline {
+    background: none;
+    border: 1.5px solid var(--border);
+    color: var(--text);
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: .88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ===== Scroll to top ===== */
+  .fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius: 50%;
+    color: var(--muted);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .fab.show { opacity: 1; pointer-events: auto; }
+  .fab:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 600px) {
+    .filter-bar { padding: 12px 16px; }
+    .quiz-container { padding: 16px 12px 80px; }
+    .card-header { padding: 12px 14px; }
+    .card-body { padding: 16px 14px 14px; }
+    .score-num { font-size: 2.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header>
+  <div class="logo">管工事PASS</div>
+  <nav class="header-nav">
+    <button class="btn-ghost" onclick="location.href='index.html'">← トップ</button>
+    <button class="btn-ghost" id="btnShowBookmarks">⭐ ブックマーク</button>
+  </nav>
+</header>
+
+<!-- ===== Progress Bar ===== -->
+<div class="progress-bar-wrap">
+  <div class="progress-info">
+    <span id="progressText">0 / 0 問解答済み</span>
+    <span class="score-live" id="scoreLive">正答率 — %</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+</div>
+
+<!-- ===== Filter Bar ===== -->
+<div class="filter-bar">
+  <span class="filter-label">フィルター：</span>
+  <button class="filter-chip active" data-filter="all">すべて</button>
+  <button class="filter-chip" data-filter="空調設備">空調設備</button>
+  <button class="filter-chip" data-filter="給排水衛生設備">給排水衛生設備</button>
+  <button class="filter-chip" data-filter="工程管理">工程管理</button>
+  <button class="filter-chip" data-filter="法規">法規</button>
+  <button class="filter-chip bookmark-filter" data-filter="bookmark">⭐ ブックマークのみ</button>
+  <span class="spacer"></span>
+  <button class="btn-reset" id="btnResetAll">リセット</button>
+</div>
+
+<!-- ===== Quiz ===== -->
+<main class="quiz-container" id="quizContainer">
+  <!-- JS で動的生成 -->
+  <div class="score-summary" id="scoreSummary">
+    <div class="score-title">演習完了！</div>
+    <div class="score-num" id="finalScore">—</div>
+    <div class="score-detail" id="finalDetail"></div>
+    <div class="score-actions">
+      <button class="btn-primary" id="btnRetryWrong">❌ 不正解のみ再挑戦</button>
+      <button class="btn-outline" id="btnRetryAll">🔄 全問やり直し</button>
+    </div>
+  </div>
+</main>
+
+<button class="fab" id="fabTop" title="上に戻る">↑</button>
+
+<script>
+/* =============================================
+   サンプルデータ（本番は questions.json から fetch）
+   ============================================= */
+const QUESTIONS_DATA = [
+  {
+    id: "q001",
+    year: 2023,
+    category: "空調設備",
+    question: "冷媒配管の施工に関する記述として、最も不適当なものはどれか。",
+    choices: [
+      "冷媒配管には、銅管または鋼管を使用する。",
+      "液管は，ガス管より管径を小さくする。",
+      "フレア接続は、接続箇所数を少なくするほど信頼性が高まる。",
+      "冷媒配管の勾配は、原則として圧縮機に向けて下がり勾配とする。"
+    ],
+    answer: 3,
+    explanation: "冷媒配管の勾配は、圧縮機へのオイル返油のために圧縮機に向けて下がり勾配（1/200以上）とするのが原則ですが、選択肢④は「ガス管」の話であり、液管については特に勾配規定はありません。なお、フレア接続の信頼性は接続箇所数ではなく、フレア加工の精度に依存します。正解は③で、勾配の方向が誤りです。"
+  },
+  {
+    id: "q002",
+    year: 2023,
+    category: "給排水衛生設備",
+    question: "排水トラップに関する記述として、最も不適当なものはどれか。",
+    choices: [
+      "トラップの封水深は、50mm以上100mm以下とする。",
+      "二重トラップは、排水の流れを妨げるため設けてはならない。",
+      "ドラムトラップは、流水部分が多く自浄作用に優れる。",
+      "Pトラップは、洗面器などに多く使用される。"
+    ],
+    answer: 2,
+    explanation: "ドラムトラップは封水容量が大きく封水切れが起きにくい反面、流水部分が少なく汚物が滞留しやすいため自浄作用に劣ります。「自浄作用に優れる」という記述が誤りです。封水深50〜100mmの規定（①）、二重トラップ禁止（②）、PトラップとS字形状の使用例（④）はいずれも正しい記述です。"
+  },
+  {
+    id: "q003",
+    year: 2022,
+    category: "工程管理",
+    question: "ネットワーク工程表に関する記述として、最も不適当なものはどれか。",
+    choices: [
+      "クリティカルパスとは、最も日数がかかる経路のことである。",
+      "フロートとは、作業の余裕時間のことである。",
+      "ダミーとは、作業の順序関係のみを示す仮の作業であり、時間を必要とする。",
+      "イベントとは、作業の開始点または終了点を示す○印のことである。"
+    ],
+    answer: 2,
+    explanation: "ダミーは作業間の順序・依存関係を表すために使用される仮の矢線（点線で表示）であり、時間・コスト・リソースを一切必要としません。「時間を必要とする」という記述が誤りです。クリティカルパス（①）、フロート（②）、イベント（④）の説明はすべて正しい内容です。"
+  },
+  {
+    id: "q004",
+    year: 2022,
+    category: "法規",
+    question: "建築基準法に規定する換気設備に関する記述として、最も不適当なものはどれか。",
+    choices: [
+      "火気使用室には、原則として機械換気設備の設置が義務付けられている。",
+      "有効換気量は、必要有効換気量以上としなければならない。",
+      "居室の必要換気量は、在室者1人あたり20m³/h以上とする。",
+      "シックハウス対策として、居室には0.5回/h以上の換気回数が必要である。"
+    ],
+    answer: 2,
+    explanation: "建築基準法令第20条の8に基づく居室の必要有効換気量の計算式では、在室者1人あたり20m³/hが基準ではなく、床面積あたりの換気量で算定します。正確には居室の必要有効換気量＝20×Af/N（Af：床面積、N：定員一人当たり占有面積）が正しい表現です。「在室者1人あたり20m³/h以上」という単純化した記述が誤りとなります。"
+  },
+  {
+    id: "q005",
+    year: 2023,
+    category: "空調設備",
+    question: "VAV（変風量）方式に関する記述として、最も適当なものはどれか。",
+    choices: [
+      "各室の温度制御が困難であるため、大空間専用のシステムである。",
+      "送風量を変化させることで、部分負荷時の省エネルギーが図れる。",
+      "CAV（定風量）方式に比べ、搬送動力の節減効果は小さい。",
+      "ペリメータゾーンよりインテリアゾーンへの適用が不向きである。"
+    ],
+    answer: 1,
+    explanation: "VAV方式の最大の特徴は、室内負荷の変動に応じて送風量を変化させる点です。部分負荷時に送風量を絞ることで搬送動力（ファン動力）を大幅に削減でき、省エネルギー効果が高いのが正解①の内容です。①は各ゾーンごとのVAVユニットで個別温度制御が可能（誤）、③はCAV比で省エネ効果が大きい（誤）、④はペリメータ・インテリア両方に適用可能（誤）です。"
+  }
+];
+
+/* =============================================
+   State
+   ============================================= */
+let state = {
+  questions: [...QUESTIONS_DATA],
+  answers: {},      // { id: choiceIndex }
+  bookmarks: new Set(JSON.parse(localStorage.getItem('kk_bookmarks') || '[]')),
+  filterCategory: 'all',
+  showBookmarkOnly: false
+};
+
+function saveBookmarks() {
+  localStorage.setItem('kk_bookmarks', JSON.stringify([...state.bookmarks]));
+}
+
+/* =============================================
+   Filter
+   ============================================= */
+function getFilteredQuestions() {
+  return state.questions.filter(q => {
+    const catOk = state.filterCategory === 'all' || q.category === state.filterCategory;
+    const bmOk  = !state.showBookmarkOnly || state.bookmarks.has(q.id);
+    return catOk && bmOk;
+  });
+}
+
+/* =============================================
+   Render
+   ============================================= */
+function renderAll() {
+  const container = document.getElementById('quizContainer');
+  const summary   = document.getElementById('scoreSummary');
+  const fqs = getFilteredQuestions();
+
+  // カードをすべて削除（scoreSummaryは残す）
+  [...container.children].forEach(el => {
+    if (el.id !== 'scoreSummary') el.remove();
+  });
+
+  if (fqs.length === 0) {
+    const empty = document.createElement('div');
+    empty.style.cssText = 'text-align:center;padding:60px;color:var(--muted);font-size:.9rem;';
+    empty.textContent = '該当する問題がありません。';
+    container.insertBefore(empty, summary);
+    updateProgress(fqs);
+    return;
+  }
+
+  fqs.forEach(q => {
+    const card = buildCard(q);
+    container.insertBefore(card, summary);
+  });
+
+  updateProgress(fqs);
+  checkAllAnswered(fqs);
+}
+
+function buildCard(q) {
+  const answered = state.answers.hasOwnProperty(q.id);
+  const userAns  = state.answers[q.id];
+  const isCorrect = answered && (userAns === q.answer);
+  const isBm = state.bookmarks.has(q.id);
+
+  const card = document.createElement('div');
+  card.className = 'quiz-card' + (answered ? (isCorrect ? ' answered-correct' : ' answered-wrong') : '');
+  card.dataset.id = q.id;
+
+  card.innerHTML = `
+    <div class="card-header">
+      <span class="q-num">Q${q.id.replace('q','').padStart(3,'0')}</span>
+      <div class="q-tags">
+        <span class="tag">${q.category}</span>
+        <span class="tag" style="background:rgba(124,92,252,.12);color:var(--accent2);border-color:rgba(124,92,252,.25);">${q.year}年</span>
+      </div>
+      ${answered ? `<span class="result-badge show ${isCorrect?'correct-badge':'wrong-badge'}">${isCorrect?'✓ 正解':'✗ 不正解'}</span>` : ''}
+      <button class="btn-bookmark ${isBm?'bookmarked':''}" data-id="${q.id}" title="ブックマーク">⭐</button>
+    </div>
+    <div class="card-body">
+      <p class="question-text">${q.question}</p>
+      <div class="choices">
+        ${q.choices.map((c, i) => {
+          let cls = '';
+          if (answered) {
+            if (i === q.answer)               cls = 'correct';
+            else if (i === userAns && !isCorrect) cls = 'wrong';
+          }
+          return `<button class="choice ${cls}" data-qid="${q.id}" data-idx="${i}" ${answered?'disabled':''}>
+            <span class="choice-label">${['①','②','③','④'][i]}</span>
+            <span>${c}</span>
+          </button>`;
+        }).join('')}
+      </div>
+      <div class="explanation ${answered?'show':''}">
+        <div class="explanation-header">
+          <span>📖 解説</span>
+          <button class="btn-toggle-exp" data-target="exp-${q.id}">▲ 閉じる</button>
+        </div>
+        <div class="explanation-body" id="exp-${q.id}">
+          <p class="correct-answer-note">正解：${['①','②','③','④'][q.answer]}　${q.choices[q.answer]}</p>
+          <p>${q.explanation}</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  return card;
+}
+
+/* =============================================
+   Progress
+   ============================================= */
+function updateProgress(fqs) {
+  const total    = fqs.length;
+  const answered = fqs.filter(q => state.answers.hasOwnProperty(q.id)).length;
+  const correct  = fqs.filter(q => state.answers[q.id] === q.answer).length;
+  const pct      = total ? Math.round(answered / total * 100) : 0;
+  const rate     = answered ? Math.round(correct / answered * 100) : null;
+
+  document.getElementById('progressText').textContent = `${answered} / ${total} 問解答済み`;
+  document.getElementById('scoreLive').textContent    = rate !== null ? `正答率 ${rate}%` : '正答率 — %';
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+function checkAllAnswered(fqs) {
+  const allDone = fqs.length > 0 && fqs.every(q => state.answers.hasOwnProperty(q.id));
+  const summary = document.getElementById('scoreSummary');
+  if (allDone) {
+    const correct = fqs.filter(q => state.answers[q.id] === q.answer).length;
+    const rate = Math.round(correct / fqs.length * 100);
+    document.getElementById('finalScore').textContent = rate + '%';
+    document.getElementById('finalDetail').textContent = `${fqs.length}問中 ${correct}問正解`;
+    summary.classList.add('show');
+  } else {
+    summary.classList.remove('show');
+  }
+}
+
+/* =============================================
+   Event Delegation
+   ============================================= */
+document.getElementById('quizContainer').addEventListener('click', e => {
+  // 選択肢クリック
+  const choiceBtn = e.target.closest('.choice');
+  if (choiceBtn && !choiceBtn.disabled) {
+    const qid = choiceBtn.dataset.qid;
+    const idx  = parseInt(choiceBtn.dataset.idx);
+    state.answers[qid] = idx;
+
+    // カードを再描画
+    const card = document.querySelector(`.quiz-card[data-id="${qid}"]`);
+    const q    = state.questions.find(q => q.id === qid);
+    if (card && q) {
+      const newCard = buildCard(q);
+      card.replaceWith(newCard);
+    }
+    updateProgress(getFilteredQuestions());
+    checkAllAnswered(getFilteredQuestions());
+
+    // スクロールアニメーション：解説へ
+    setTimeout(() => {
+      document.getElementById(`exp-${qid}`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+
+  // ブックマークボタン
+  const bmBtn = e.target.closest('.btn-bookmark');
+  if (bmBtn) {
+    const id = bmBtn.dataset.id;
+    if (state.bookmarks.has(id)) {
+      state.bookmarks.delete(id);
+      bmBtn.classList.remove('bookmarked');
+    } else {
+      state.bookmarks.add(id);
+      bmBtn.classList.add('bookmarked');
+    }
+    saveBookmarks();
+  }
+
+  // 解説トグル
+  const toggleBtn = e.target.closest('.btn-toggle-exp');
+  if (toggleBtn) {
+    const targetId = toggleBtn.dataset.target;
+    const body = document.getElementById(targetId);
+    if (body) {
+      const isHidden = body.style.display === 'none';
+      body.style.display = isHidden ? '' : 'none';
+      toggleBtn.textContent = isHidden ? '▲ 閉じる' : '▼ 開く';
+    }
+  }
+});
+
+/* =============================================
+   Filter Bar
+   ============================================= */
+document.querySelector('.filter-bar').addEventListener('click', e => {
+  const chip = e.target.closest('.filter-chip');
+  if (!chip) return;
+
+  const filter = chip.dataset.filter;
+
+  if (filter === 'bookmark') {
+    state.showBookmarkOnly = !state.showBookmarkOnly;
+    chip.classList.toggle('active', state.showBookmarkOnly);
+  } else {
+    state.filterCategory   = filter;
+    state.showBookmarkOnly = false;
+    document.querySelectorAll('.filter-chip').forEach(c => {
+      c.classList.toggle('active', c.dataset.filter === filter);
+    });
+    document.querySelector('.bookmark-filter').classList.remove('active');
+  }
+
+  renderAll();
+});
+
+/* ブックマークボタン（ヘッダー） */
+document.getElementById('btnShowBookmarks').addEventListener('click', () => {
+  state.showBookmarkOnly = !state.showBookmarkOnly;
+  document.querySelector('.bookmark-filter').classList.toggle('active', state.showBookmarkOnly);
+  renderAll();
+});
+
+/* リセット */
+document.getElementById('btnResetAll').addEventListener('click', () => {
+  if (!confirm('すべての解答をリセットしますか？')) return;
+  state.answers = {};
+  renderAll();
+});
+
+/* 不正解のみ再挑戦 */
+document.getElementById('btnRetryWrong').addEventListener('click', () => {
+  const wrongIds = new Set(
+    getFilteredQuestions()
+      .filter(q => state.answers.hasOwnProperty(q.id) && state.answers[q.id] !== q.answer)
+      .map(q => q.id)
+  );
+  state.answers = {};
+  state.questions = QUESTIONS_DATA.filter(q => wrongIds.has(q.id));
+  state.filterCategory = 'all';
+  state.showBookmarkOnly = false;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  document.querySelector('[data-filter="all"]').classList.add('active');
+  renderAll();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* 全問やり直し */
+document.getElementById('btnRetryAll').addEventListener('click', () => {
+  state.answers   = {};
+  state.questions = [...QUESTIONS_DATA];
+  renderAll();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ===== FAB ===== */
+const fab = document.getElementById('fabTop');
+window.addEventListener('scroll', () => {
+  fab.classList.toggle('show', window.scrollY > 300);
+});
+fab.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ===== Init ===== */
+renderAll();
+</script>
+</body>
+</html>
