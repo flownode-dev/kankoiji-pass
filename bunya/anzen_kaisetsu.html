@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>品質・安全管理 重要ポイント解説 | 管工事PASS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0f1117;--surface:#1a1d27;--surface2:#222636;--border:#2e3348;
+    --accent:#22c55e;--accent2:#16a34a;--correct:#22c55e;--warn:#f59e0b;--danger:#ef4444;
+    --text:#e8eaf0;--muted:#7a8099;--mono:'DM Mono',monospace;
+    --sans:'Noto Sans JP',sans-serif;--serif:'Noto Serif JP',serif;
+    --radius:12px;--transition:0.2s cubic-bezier(.4,0,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;line-height:1.8;}
+  header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+  .logo{font-weight:900;font-size:1.1rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .btn-ghost{background:none;border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:8px;font-size:.8rem;cursor:pointer;transition:var(--transition);font-family:var(--sans);text-decoration:none;display:inline-flex;align-items:center;}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+  .hero{background:linear-gradient(135deg,#0f1117 0%,#0f1f0f 50%,#0a1a0a 100%);border-bottom:1px solid var(--border);padding:48px 24px 40px;text-align:center;}
+  .hero-badge{display:inline-block;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);color:var(--accent);font-size:.75rem;padding:4px 14px;border-radius:99px;margin-bottom:16px;letter-spacing:.08em;}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.3;margin-bottom:12px;background:linear-gradient(135deg,var(--text) 0%,#a0c8a0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .hero p{color:var(--muted);font-size:.9rem;max-width:560px;margin:0 auto 24px;}
+  .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:#fff;padding:11px 24px;border-radius:8px;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:var(--transition);font-family:var(--sans);}
+  .btn-primary:hover{opacity:.85;transform:translateY(-1px);}
+  .toc-wrap{max-width:860px;margin:32px auto 0;padding:0 24px;}
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;}
+  .toc-title{font-size:.78rem;color:var(--muted);letter-spacing:.1em;margin-bottom:12px;font-weight:700;}
+  .toc-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px;list-style:none;}
+  .toc-list a{color:var(--accent);text-decoration:none;font-size:.85rem;display:flex;align-items:center;gap:6px;padding:4px 6px;border-radius:6px;transition:var(--transition);}
+  .toc-list a:hover{background:rgba(34,197,94,.1);}
+  .toc-list a::before{content:'→';font-size:.75rem;color:var(--muted);}
+  .content{max-width:860px;margin:0 auto;padding:40px 24px 80px;display:flex;flex-direction:column;gap:40px;}
+  .section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+  .section-header{background:var(--surface2);border-bottom:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  .section-icon{font-size:1.5rem;line-height:1;flex-shrink:0;}
+  .section-num{font-family:var(--mono);font-size:.7rem;color:var(--muted);letter-spacing:.1em;}
+  .section-title{font-family:var(--serif);font-size:1.15rem;color:var(--text);}
+  .section-body{padding:24px;}
+  .lead{font-size:.95rem;color:#b0b8d0;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+  .key-points{display:flex;flex-direction:column;gap:12px;}
+  .key-point{background:var(--bg);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;font-size:.9rem;}
+  .key-point.warn{border-left-color:var(--warn);}
+  .key-point.danger{border-left-color:var(--danger);}
+  .key-point strong{color:var(--accent);display:block;margin-bottom:4px;font-size:.85rem;}
+  .key-point.warn strong{color:var(--warn);}
+  .key-point.danger strong{color:var(--danger);}
+  .key-point p{color:#c0c8e0;line-height:1.7;}
+  .compare-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:.85rem;}
+  .compare-table th{background:var(--surface2);padding:10px 14px;text-align:left;font-weight:700;color:var(--accent);border-bottom:1px solid var(--border);border-right:1px solid var(--border);}
+  .compare-table th:last-child{border-right:none;}
+  .compare-table td{padding:10px 14px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);color:#c0c8e0;vertical-align:top;line-height:1.6;}
+  .compare-table td:last-child{border-right:none;}
+  .compare-table tr:last-child td{border-bottom:none;}
+  .compare-table tr:hover td{background:rgba(34,197,94,.04);}
+  .tag-cell{font-weight:700;color:var(--text);white-space:nowrap;}
+  .memo-box{margin-top:20px;background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.2);border-radius:10px;padding:16px 18px;font-size:.85rem;color:#e0c870;line-height:1.75;}
+  .memo-box::before{content:'⚠️ 試験でよく問われるポイント';display:block;font-weight:700;margin-bottom:8px;font-size:.8rem;letter-spacing:.05em;}
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:24px;text-align:center;font-size:.78rem;color:var(--muted);}
+  @media(max-width:600px){.hero{padding:32px 16px 28px;}.section-body{padding:16px;}.toc-list{grid-template-columns:1fr;}.content{padding:24px 12px 60px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">管工事PASS</div>
+  <nav style="display:flex;gap:8px;">
+    <a class="btn-ghost" href="../../bunya/index.html">← 分野一覧</a>
+    <a class="btn-ghost" href="index.html">📝 演習問題へ</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">SECTION 05</div>
+  <h1>品質・安全管理<br>重要ポイント解説</h1>
+  <p>1級管工事施工管理技士 一次検定対策。QC七つ道具・管理図・労働安全衛生法・高所作業・酸欠など頻出テーマを徹底解説。</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="index.html">📝 演習問題を解く（30問）</a>
+  </div>
+</div>
+
+<div class="toc-wrap">
+  <div class="toc">
+    <div class="toc-title">目次</div>
+    <ul class="toc-list">
+      <li><a href="#sec-qc7">QC七つ道具</a></li>
+      <li><a href="#sec-kanrizu">管理図の読み方</a></li>
+      <li><a href="#sec-iso">ISO 9001</a></li>
+      <li><a href="#sec-anzen-law">労働安全衛生法の体制</a></li>
+      <li><a href="#sec-kosho">高所作業・墜落防止</a></li>
+      <li><a href="#sec-sanso">酸素欠乏危険作業</a></li>
+      <li><a href="#sec-crane">クレーン・車両系建設機械</a></li>
+      <li><a href="#sec-kyoiku">安全教育・KY活動</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- 1. QC七つ道具 -->
+  <section class="section" id="sec-qc7">
+    <div class="section-header">
+      <div class="section-icon">📊</div>
+      <div class="section-title-wrap">
+        <div class="section-num">01</div>
+        <div class="section-title">QC七つ道具</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">各ツールの名称・形状・用途の組み合わせが頻出。特に特性要因図とパレート図の混同に注意。</p>
+      <table class="compare-table">
+        <thead><tr><th>ツール</th><th>形状・特徴</th><th>用途</th></tr></thead>
+        <tbody>
+          <tr><td class="tag-cell">特性要因図<br>（フィッシュボーン図）</td><td>魚の骨の形。原因を層別して整理</td><td>問題（特性）とその原因の関係を整理</td></tr>
+          <tr><td class="tag-cell">パレート図</td><td>棒グラフ（頻度順）＋累積折れ線グラフ</td><td>重点管理すべき不良項目の特定</td></tr>
+          <tr><td class="tag-cell">ヒストグラム</td><td>度数分布の棒グラフ</td><td>データのばらつき・分布の把握</td></tr>
+          <tr><td class="tag-cell">散布図</td><td>2変数を点でプロット</td><td>2つの変数間の相関関係の把握</td></tr>
+          <tr><td class="tag-cell">管理図</td><td>折れ線グラフ＋UCL・LCL</td><td>工程の安定性の監視・異常検出</td></tr>
+          <tr><td class="tag-cell">チェックシート</td><td>記録用のシート</td><td>データの収集・記録</td></tr>
+          <tr><td class="tag-cell">層別</td><td>データをグループに分ける</td><td>原因・要因ごとの分析</td></tr>
+        </tbody>
+      </table>
+      <div class="memo-box">
+        「パレート図は原因と結果を魚の骨で表す」→ 誤り。魚の骨は<strong>特性要因図</strong>。<br>
+        「散布図は不良項目を頻度順に並べる」→ 誤り。頻度順はパレート図。<br>
+        「ヒストグラムは2変数の相関を表す」→ 誤り。相関は散布図。
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 管理図 -->
+  <section class="section" id="sec-kanrizu">
+    <div class="section-header">
+      <div class="section-icon">📉</div>
+      <div class="section-title-wrap">
+        <div class="section-num">02</div>
+        <div class="section-title">管理図の読み方</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">管理限界線（UCL・LCL）の内外だけでなく、パターンによる異常判定が重要。</p>
+      <div class="key-points">
+        <div class="key-point warn">
+          <strong>「全部内側にあれば必ず安定」は誤り</strong>
+          <p>測定値がすべてUCL・LCL内にあっても、連続して片側に偏る・規則的なパターン（周期性・傾向）がある場合は工程に異常があると判断する。</p>
+        </div>
+        <div class="key-point danger">
+          <strong>異常と判断する主なルール</strong>
+          <p>・UCLまたはLCLの外に点が出る<br>
+          ・連続して同じ側に7点以上並ぶ<br>
+          ・連続して上昇または下降する傾向がある<br>
+          ・規則的な周期パターンが現れる</p>
+        </div>
+        <div class="key-point">
+          <strong>X̄-R管理図</strong>
+          <p>X̄（エックスバー）は平均値、Rは範囲（最大値−最小値）を管理する。工程の中心とばらつきを同時に監視できる。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ISO 9001 -->
+  <section class="section" id="sec-iso">
+    <div class="section-header">
+      <div class="section-icon">🏅</div>
+      <div class="section-title-wrap">
+        <div class="section-num">03</div>
+        <div class="section-title">ISO 9001（品質マネジメントシステム）</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">ISO 9001が何を認証するのかを正確に理解する。製品品質の保証ではない点が頻出。</p>
+      <div class="key-points">
+        <div class="key-point correct">
+          <strong>ISO 9001が認証するもの</strong>
+          <p>組織の<strong>品質マネジメントシステム（QMS）が規格の要求事項を満たしていること</strong>を第三者機関が認証するもの。製造業・建設業・サービス業など幅広い業種で適用される。</p>
+        </div>
+        <div class="key-point warn">
+          <strong>ISO 9001が保証しないもの</strong>
+          <p>「認証取得企業の製品はすべて欠陥がなく品質が保証される」→ 誤り。個々の製品・工事の品質を直接保証するものではない。あくまでシステム（仕組み）を認証するもの。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 労働安全衛生法の体制 -->
+  <section class="section" id="sec-anzen-law">
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <div class="section-title-wrap">
+        <div class="section-num">04</div>
+        <div class="section-title">労働安全衛生法の安全衛生管理体制</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">選任義務の規模（人数）と業種の組み合わせ、特定元方事業者の義務が頻出。</p>
+      <table class="compare-table">
+        <thead><tr><th>役職</th><th>選任義務の目安</th><th>ポイント</th></tr></thead>
+        <tbody>
+          <tr><td class="tag-cell">安全管理者</td><td>常時50人以上（一定業種）</td><td>「業種を問わずすべての事業場」は誤り</td></tr>
+          <tr><td class="tag-cell">衛生管理者</td><td>常時50人以上（すべての業種）</td><td>業種問わず義務</td></tr>
+          <tr><td class="tag-cell">産業医</td><td>常時50人以上</td><td>—</td></tr>
+          <tr><td class="tag-cell">安全衛生委員会</td><td>安全委員会＋衛生委員会の両方義務の場合</td><td>統合して安全衛生委員会とすることが<strong>認められる</strong>（「できない」は誤り）</td></tr>
+        </tbody>
+      </table>
+      <div class="key-points" style="margin-top:16px;">
+        <div class="key-point warn">
+          <strong>特定元方事業者の義務</strong>
+          <p>・関係請負人と合同で安全衛生協議会を設置・運営する<br>
+          ・定期的に巡視を行い、安全基準の確認をする<br>
+          ・関係請負人も自社の労働者に対する安全管理義務を負う（「関係請負人には義務なし」は誤り）</p>
+        </div>
+        <div class="key-point warn">
+          <strong>作業主任者を選任しても事業者の責任は残る</strong>
+          <p>作業主任者の選任は事業者の安全配慮義務を免除しない。「事業者は責任を免れる」は誤り。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 高所作業・墜落防止 -->
+  <section class="section" id="sec-kosho">
+    <div class="section-header">
+      <div class="section-icon">🪜</div>
+      <div class="section-title-wrap">
+        <div class="section-num">05</div>
+        <div class="section-title">高所作業・墜落防止</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">高さ2m・5mの数値基準と、安全帯の位置付けを正確に覚える。</p>
+      <div class="key-points">
+        <div class="key-point correct">
+          <strong>高さ2m以上の作業床</strong>
+          <p>端・開口部には手すり・囲い・覆いなどの墜落防止措置が必要。幅<strong>40cm以上</strong>の作業床を設ける。</p>
+        </div>
+        <div class="key-point correct">
+          <strong>高さ5m以上の足場</strong>
+          <p>組立・解体・変更の作業には<strong>足場の組立等作業主任者</strong>の選任が必要。「選任しなくてよい」は誤り。</p>
+        </div>
+        <div class="key-point warn">
+          <strong>安全帯（墜落制止用器具）の位置付け</strong>
+          <p>設備的な墜落防止措置（手すり・囲い）が優先。安全帯はそれが困難な場合の補完的措置。<br>
+          「作業床を設ければ安全帯は一切不要」→ 誤り。<br>
+          「安全帯を着用すれば他の措置はすべて不要」→ 誤り。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 酸素欠乏危険作業 -->
+  <section class="section" id="sec-sanso">
+    <div class="section-header">
+      <div class="section-icon">😮‍💨</div>
+      <div class="section-title-wrap">
+        <div class="section-num">06</div>
+        <div class="section-title">酸素欠乏危険作業</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">第1種・第2種の違いと、酸素欠乏の定義（18%未満）を必ず覚える。</p>
+      <table class="compare-table">
+        <thead><tr><th>区分</th><th>対象</th><th>危険度・資格</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="tag-cell">第1種</td>
+            <td>酸素欠乏の危険がある場所での作業</td>
+            <td>酸素欠乏危険作業主任者技能講習修了者</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">第2種</td>
+            <td>酸素欠乏＋<strong>硫化水素中毒</strong>の危険がある場所での作業</td>
+            <td>第1種より<strong>危険度が高い</strong>。酸素欠乏・硫化水素危険作業主任者技能講習修了者が必要</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="memo-box">
+        「第2種は第1種より危険度が低い」→ 誤り。第2種は硫化水素中毒の危険も伴うため危険度が高い。<br>
+        酸素欠乏の定義：空気中の酸素濃度が<strong>18%未満</strong>の状態。
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. クレーン・車両系建設機械 -->
+  <section class="section" id="sec-crane">
+    <div class="section-header">
+      <div class="section-icon">🏗️</div>
+      <div class="section-title-wrap">
+        <div class="section-num">07</div>
+        <div class="section-title">クレーン・車両系建設機械の安全管理</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">つり荷の下への立入禁止と、風速規制の数値を正確に覚える。</p>
+      <div class="key-points">
+        <div class="key-point danger">
+          <strong>つり荷の下への立入は絶対禁止</strong>
+          <p>クレーン作業中、つり荷の下には作業者を立ち入らせてはならない。「必要がある場合は継続してよい」→ 絶対に誤り。</p>
+        </div>
+        <div class="key-point">
+          <strong>強風時の作業中止</strong>
+          <p>10分間平均風速<strong>10m/s以上</strong>の場合はクレーン作業を中止する。</p>
+        </div>
+        <div class="key-point warn">
+          <strong>ガスボンベの保管</strong>
+          <p>酸素ボンベと可燃性ガス（アセチレン・プロパン）のボンベは<strong>同一場所への保管禁止</strong>。火災・爆発リスクが極めて高い。</p>
+        </div>
+        <div class="key-point">
+          <strong>低圧電気の危険性</strong>
+          <p>交流100V・200Vなどの低圧電気でも感電による死亡事故が発生する。「低圧では死亡リスクなし」は誤り。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. 安全教育・KY活動 -->
+  <section class="section" id="sec-kyoiku">
+    <div class="section-header">
+      <div class="section-icon">🙋</div>
+      <div class="section-title-wrap">
+        <div class="section-num">08</div>
+        <div class="section-title">安全教育・KY活動・ハインリッヒの法則</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">ハインリッヒの法則の数値と、新規入場者教育・5S活動の適用範囲を押さえる。</p>
+      <div class="key-points">
+        <div class="key-point correct">
+          <strong>ハインリッヒの法則（1：29：300の法則）</strong>
+          <p>1件の重大事故の背後には、29件の軽微な事故と<strong>300件のヒヤリハット</strong>がある。ヒヤリハットを放置すると重大事故につながる。「ヒヤリハットの報告・記録は不要」は誤り。</p>
+        </div>
+        <div class="key-point warn">
+          <strong>新規入場者教育は毎回実施</strong>
+          <p>新たに現場に入場するすべての作業員に対してその都度実施する。「最初の1回のみで追加は不要」は誤り。</p>
+        </div>
+        <div class="key-point">
+          <strong>5S活動は建設現場でも有効</strong>
+          <p>整理・整頓・清掃・清潔・しつけ（5S）は製造業だけでなく、建設工事現場でも安全・品質向上の基盤となる活動。「建設工事現場では意味をなさない」は誤り。</p>
+        </div>
+        <div class="key-point">
+          <strong>特別教育と技能講習は別制度</strong>
+          <p>「特別教育を受ければ技能講習が免除される」は誤り。それぞれ独立した制度であり、上位資格（技能講習）は別途受講が必要。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="text-align:center;padding:20px 0;">
+    <p style="color:var(--muted);font-size:.9rem;margin-bottom:16px;">解説を読んだら、演習問題で確認しよう！</p>
+    <a class="btn-primary" href="index.html">📝 品質・安全管理 演習問題を解く（30問）</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2024 管工事PASS — 1級管工事施工管理技士 合格対策サイト</p>
+  <p style="margin-top:6px;">
+    <a href="../../privacy/index.html" style="color:var(--muted);text-decoration:none;">プライバシーポリシー</a> ／
+    <a href="../../disclaimer/index.html" style="color:var(--muted);text-decoration:none;">免責事項</a>
+  </p>
+</footer>
+
+</body>
+</html>
