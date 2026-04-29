@@ -1,0 +1,213 @@
+<!--
+  ============================================
+  管工事PASS - 共通パーツスニペット集
+  _partials.html
+  
+  使い方：各ページに以下のパーツをコピペする。
+  ============================================
+-->
+
+
+<!-- ========================================
+  【1】HTMLページの共通 <head> テンプレート
+  （各ページのtitle/descriptionだけ書き換える）
+======================================== -->
+<!--
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  〔ページごとに書き換え〕
+  <title>ページタイトル | 管工事PASS</title>
+  <meta name="description" content="ページの説明文（120文字以内）">
+
+  〔OGP（SNSシェア用）〕
+  <meta property="og:title" content="ページタイトル | 管工事PASS">
+  <meta property="og:description" content="ページの説明文">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flownode-dev.github.io/kankoiji-pass/このページのパス">
+  <meta property="og:image" content="https://flownode-dev.github.io/kankoiji-pass/assets/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  〔正規URL〕
+  <link rel="canonical" href="https://flownode-dev.github.io/kankoiji-pass/このページのパス">
+
+  〔ファビコン〕
+  <link rel="icon" href="/kankoiji-pass/assets/favicon.ico">
+
+  〔フォント〕
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+
+  〔共通CSS〕
+  <link rel="stylesheet" href="/kankoiji-pass/css/style.css">
+
+  〔Google Analytics（後で追加）〕
+  <!-- Google tag (gtag.js) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+
+</head>
+-->
+
+
+<!-- ========================================
+  【2】共通ヘッダー
+  （全ページ共通・コピペそのままでOK）
+======================================== -->
+<header class="site-header">
+  <a href="/kankoiji-pass/" class="logo">
+    <span class="logo-main">管工事PASS</span>
+    <span class="logo-sub">1級管工事施工管理技士 合格対策</span>
+  </a>
+
+  <nav class="site-nav" id="siteNav">
+    <a href="/kankoiji-pass/kakomon/">過去問演習</a>
+    <a href="/kankoiji-pass/bunya/">分野別解説</a>
+    <a href="/kankoiji-pass/niji/">第二次検定</a>
+    <a href="/kankoiji-pass/column/">コラム</a>
+    <a href="/kankoiji-pass/kakomon/" class="btn btn-primary btn-sm">無料で始める</a>
+  </nav>
+
+  <button class="hamburger" id="hamburger" aria-label="メニュー" onclick="toggleNav()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<!-- ヘッダー分の余白（body直下に入れる） -->
+<div class="page-top-pad"></div>
+
+<!-- ハンバーガーメニューJS（</body>直前に入れる） -->
+<script>
+function toggleNav() {
+  const nav = document.getElementById('siteNav');
+  const btn = document.getElementById('hamburger');
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+// ナビ外クリックで閉じる
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('siteNav');
+  const btn = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !btn.contains(e.target)) {
+    nav.classList.remove('open');
+    btn.classList.remove('open');
+  }
+});
+</script>
+
+
+<!-- ========================================
+  【3】共通フッター
+  （全ページ共通・コピペそのままでOK）
+======================================== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-top">
+      <!-- ブランド情報 -->
+      <div class="footer-brand">
+        <a href="/kankoiji-pass/" class="logo">
+          <span class="logo-main">管工事PASS</span>
+        </a>
+        <p class="footer-brand-desc">
+          1級管工事施工管理技士の合格を目指す方のための<br>
+          無料 eラーニングサイト。過去問演習・分野別解説・<br>
+          第二次検定対策を完全無料で提供しています。
+        </p>
+      </div>
+
+      <!-- リンク集 -->
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <div class="footer-col-title">学習コンテンツ</div>
+          <a href="/kankoiji-pass/kakomon/">過去問演習（年度別）</a>
+          <a href="/kankoiji-pass/bunya/">分野別解説</a>
+          <a href="/kankoiji-pass/niji/">第二次検定対策</a>
+          <a href="/kankoiji-pass/yougo/">用語集</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">コラム</div>
+          <a href="/kankoiji-pass/column/">コラム一覧</a>
+          <a href="/kankoiji-pass/column/what-is/">1級管工事とは？</a>
+          <a href="/kankoiji-pass/column/study-method/">勉強方法まとめ</a>
+          <a href="/kankoiji-pass/column/experience-writing/">経験記述の書き方</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">サイト情報</div>
+          <a href="/kankoiji-pass/roadmap/">合格ロードマップ</a>
+          <a href="/kankoiji-pass/privacy/">プライバシーポリシー</a>
+          <a href="/kankoiji-pass/disclaimer/">免責事項</a>
+          <a href="/kankoiji-pass/contact/">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        © 2025 管工事PASS |
+        本サイトの情報は試験対策を目的としたものです。最新の試験情報は国土交通省・試験機関の公式情報をご確認ください。
+      </p>
+      <div class="footer-legal">
+        <a href="/kankoiji-pass/privacy/">プライバシーポリシー</a>
+        <a href="/kankoiji-pass/disclaimer/">免責事項</a>
+        <a href="/kankoiji-pass/contact/">お問い合わせ</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ========================================
+  【4】広告ユニット（インコンテンツ用）
+  AdSense審査通過後に実際のコードと差し替え
+======================================== -->
+
+<!-- バナー広告 728×90（PC用・記事上下などに設置） -->
+<div class="ad-wrap ad-wrap-728" style="margin: 2rem auto;">
+  <!-- AdSense審査通過後にここをAdSenseコードに差し替え -->
+  <div class="ad-placeholder" style="width:728px; height:90px;">
+    広告 728×90
+  </div>
+</div>
+
+<!-- レクタングル広告 336×280（記事内・サイドバー） -->
+<div class="ad-wrap ad-wrap-336" style="margin: 2rem auto;">
+  <div class="ad-placeholder" style="width:336px; height:280px;">
+    広告 336×280
+  </div>
+</div>
+
+<!-- スマホ用バナー 320×100 -->
+<div class="ad-wrap ad-wrap-320" style="margin: 1.5rem auto;">
+  <div class="ad-placeholder" style="width:320px; height:100px;">
+    広告 320×100
+  </div>
+</div>
+
+
+<!-- ========================================
+  【5】ページ内ナビゲーション（パンくず）
+  各ページのヘッダー直下に入れる
+======================================== -->
+<nav class="breadcrumb" aria-label="パンくずリスト" style="
+  padding: 0.8rem 2rem;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.78rem;
+  color: var(--gray);
+  max-width: 100%;
+">
+  <div style="max-width: var(--max-width); margin: 0 auto; display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;">
+    <a href="/kankoiji-pass/" style="color:var(--gray); transition:color 0.2s;" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--gray)'">ホーム</a>
+    <span style="color:var(--gray-dark)">›</span>
+    <a href="/kankoiji-pass/kakomon/" style="color:var(--gray); transition:color 0.2s;" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--gray)'">過去問演習</a>
+    <span style="color:var(--gray-dark)">›</span>
+    <span style="color:var(--gray-light)">現在のページ名</span>
+  </div>
+</nav>
