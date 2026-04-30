@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>空調設備をマンガで理解する｜管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士・空調設備の重要ポイントをスパナ軍曹とパイプ訓練生のマンガで解説。冷凍機・ダクト・換気・VAV・冷媒・省エネなど12テーマ。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/kucho/manga.html">
+<meta property="og:title" content="空調設備をマンガで理解する｜管工事PASS">
+<meta property="og:description" content="空調設備の重要ポイント12テーマをマンガで解説。解説ページの前にこれを読め！">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kankoiji-pass.com/bunya/kucho/manga.html">
+<meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+<style>
+:root {
+  --bg:      #0f1117;
+  --surface: #1a1d27;
+  --surface2:#222636;
+  --border:  #2e3348;
+  --accent:  #4f8ef7;
+  --accent2: #7c5cfc;
+  --correct: #22c55e;
+  --warn:    #f59e0b;
+  --text:    #e8eaf0;
+  --muted:   #7a8099;
+  --danger:  #ef4444;
+  --ink:     #08090d;
+  --kucho:   #4f8ef7; /* 空調カラー */
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans JP', sans-serif;
+  overflow-x: hidden;
+}
+
+a{ color:inherit; text-decoration:none; }
+
+/* ===== HEADER ===== */
+.site-header{
+  position: fixed;
+  top:0; left:0; right:0;
+  height: 56px;
+  background: rgba(15,17,23,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  z-index: 1000;
+}
+.logo-main{
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg,var(--kucho),#38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header-nav{ display:flex; gap:1rem; align-items:center; font-size:0.8rem; color:var(--muted); }
+.header-nav a:hover{ color:var(--text); }
+.btn-sm-header{
+  background: var(--kucho);
+  color:#fff;
+  padding:0.35rem 0.9rem;
+  border-radius:6px;
+  font-size:0.75rem;
+  font-weight:700;
+}
+
+/* ===== HERO ===== */
+.hero{
+  min-height: 52vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(56px + 2.5rem) 1.5rem 3rem;
+  position: relative;
+  overflow: hidden;
+  background: #08090e;
+}
+.hero::before{
+  content:'';
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 50%, rgba(79,142,247,0.12) 0%, transparent 65%),
+    repeating-linear-gradient(45deg, transparent, transparent 38px, rgba(79,142,247,0.03) 38px, rgba(79,142,247,0.03) 39px);
+}
+.hero-badge{
+  display:inline-block;
+  background: var(--kucho);
+  color:#fff;
+  font-family:'Oswald',sans-serif;
+  font-size:0.72rem;
+  letter-spacing:0.2em;
+  padding:0.25rem 1rem;
+  clip-path: polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%);
+  margin-bottom:1.2rem;
+  position:relative;
+}
+.hero-title{
+  font-family:'Black Han Sans',sans-serif;
+  font-size: clamp(2rem,7vw,4rem);
+  line-height:0.95;
+  color:#fff;
+  text-shadow: 3px 3px 0 var(--kucho), 6px 6px 0 rgba(79,142,247,0.25);
+  margin-bottom:0.8rem;
+  position:relative;
+}
+.hero-sub{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(0.85rem,2.5vw,1.1rem);
+  letter-spacing:0.12em;
+  color:var(--muted);
+  margin-bottom:1.5rem;
+  position:relative;
+}
+.hero-links{
+  display:flex;
+  gap:0.8rem;
+  flex-wrap:wrap;
+  justify-content:center;
+  position:relative;
+}
+.hero-link-kaisetsu{
+  background: var(--kucho);
+  color:#fff;
+  padding:0.6rem 1.4rem;
+  border-radius:7px;
+  font-size:0.85rem;
+  font-weight:700;
+  transition:opacity 0.2s;
+}
+.hero-link-kaisetsu:hover{ opacity:0.85; }
+.hero-link-quiz{
+  background: rgba(79,142,247,0.12);
+  color:var(--kucho);
+  border:1px solid rgba(79,142,247,0.35);
+  padding:0.6rem 1.4rem;
+  border-radius:7px;
+  font-size:0.85rem;
+  font-weight:700;
+  transition:background 0.2s;
+}
+.hero-link-quiz:hover{ background: rgba(79,142,247,0.22); }
+
+/* ===== TOC ===== */
+.toc-section{
+  max-width:860px;
+  margin:0 auto;
+  padding:2rem 1rem 1rem;
+}
+.toc-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  gap:0.5rem;
+}
+.toc-item{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:0.5rem 0.8rem;
+  font-size:0.78rem;
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+  cursor:pointer;
+  transition:border-color 0.2s;
+}
+.toc-item:hover{ border-color:var(--kucho); color:var(--kucho); }
+.toc-num{
+  font-family:'Oswald',sans-serif;
+  font-size:0.7rem;
+  color:var(--kucho);
+  min-width:22px;
+}
+
+/* ===== MANGA CONTAINER ===== */
+.manga-wrap{
+  max-width:860px;
+  margin:0 auto;
+  padding:1rem 1rem 5rem;
+}
+
+/* ===== CHAPTER HEADER ===== */
+.chapter-header{
+  display:flex;
+  align-items:center;
+  gap:0.8rem;
+  margin:3rem 0 1.2rem;
+  padding-bottom:0.8rem;
+  border-bottom:3px solid var(--kucho);
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity 0.5s ease, transform 0.5s ease;
+}
+.chapter-header.visible{ opacity:1; transform:translateY(0); }
+.ch-num{
+  font-family:'Oswald',sans-serif;
+  font-size:2.5rem;
+  font-weight:700;
+  color:var(--kucho);
+  line-height:1;
+  min-width:3rem;
+}
+.ch-body{}
+.ch-label{
+  font-size:0.65rem;
+  letter-spacing:0.15em;
+  color:var(--muted);
+  font-family:'Oswald',sans-serif;
+}
+.ch-title{
+  font-size:clamp(1.1rem,3vw,1.5rem);
+  font-weight:900;
+  line-height:1.2;
+}
+.ch-icon{ font-size:2rem; margin-left:auto; }
+
+/* ===== PANEL ===== */
+.panel{
+  background:var(--surface);
+  border:2.5px solid #fff;
+  border-radius:3px;
+  margin-bottom:1.6rem;
+  box-shadow:5px 5px 0 var(--ink);
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity 0.45s ease, transform 0.45s ease;
+}
+.panel.visible{ opacity:1; transform:translateY(0); }
+
+.scene-label{
+  background:var(--ink);
+  border-bottom:2px solid var(--border);
+  padding:0.25rem 0.8rem;
+  font-family:'Oswald',sans-serif;
+  font-size:0.65rem;
+  letter-spacing:0.15em;
+  color:var(--muted);
+}
+
+/* ===== SCENE LAYOUT ===== */
+.scene{
+  display:flex;
+  min-height:140px;
+}
+
+.char-col{
+  width:110px;
+  min-width:110px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
+  padding:0.8rem 0.3rem 0.4rem;
+  background:var(--surface2);
+  border-right:2px solid #fff;
+  position:relative;
+  overflow:hidden;
+}
+.char-col::before{
+  content:'';
+  position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,0.025) 16px,rgba(255,255,255,0.025) 17px);
+}
+.char-col.right{ border-right:none; border-left:2px solid #fff; }
+.char-col.angry .char-emoji{ animation:rage 0.25s infinite alternate; }
+@keyframes rage{
+  from{ transform:rotate(-2deg) scale(1); }
+  to{   transform:rotate(2deg)  scale(1.06); }
+}
+.char-col.angry::after{
+  content:'💢';
+  position:absolute;
+  top:6px; right:6px;
+  font-size:1.2rem;
+}
+.char-emoji{ font-size:3.8rem; line-height:1; position:relative; z-index:1; }
+.char-name{ font-size:0.58rem; font-weight:900; color:var(--muted); text-align:center; position:relative; z-index:1; letter-spacing:0.05em; }
+
+/* ===== SPEECH ===== */
+.speech-col{
+  flex:1;
+  padding:0.9rem 1.1rem;
+  display:flex;
+  flex-direction:column;
+  gap:0.7rem;
+  justify-content:center;
+}
+
+.bubble{
+  border:2px solid #fff;
+  border-radius:4px;
+  padding:0.6rem 0.9rem;
+  line-height:1.65;
+  font-size:clamp(0.8rem,2vw,0.88rem);
+  background:var(--surface2);
+  position:relative;
+}
+.bubble .spk{
+  display:block;
+  font-size:0.6rem;
+  font-weight:900;
+  letter-spacing:0.1em;
+  opacity:0.65;
+  margin-bottom:0.25rem;
+}
+.bubble.shout{
+  background:var(--danger);
+  color:#fff;
+  font-weight:900;
+  font-size:clamp(0.88rem,2.3vw,1rem);
+  transform:rotate(-0.4deg);
+  box-shadow:3px 3px 0 rgba(0,0,0,0.35);
+  border-color:#fff;
+}
+.bubble.shout::before{
+  content:'';
+  position:absolute;
+  left:-11px; top:50%;
+  transform:translateY(-50%);
+  border:6px solid transparent;
+  border-right-color:var(--danger);
+}
+.bubble.reply{
+  background:#14231a;
+  border-color:var(--correct);
+  color:#c8f0cc;
+}
+.bubble.reply::before{
+  content:'';
+  position:absolute;
+  right:-11px; top:50%;
+  transform:translateY(-50%);
+  border:6px solid transparent;
+  border-left-color:var(--correct);
+}
+.bubble.think{
+  background:#12192e;
+  border-color:var(--accent);
+  border-style:dashed;
+  color:#ccdeff;
+}
+.bubble.warn-bub{
+  background:#221700;
+  border-color:var(--warn);
+  color:#ffe0a0;
+}
+
+/* ===== NARRATION ===== */
+.narration{
+  background:var(--ink);
+  border-top:2px solid var(--border);
+  padding:0.5rem 1rem;
+  font-size:0.75rem;
+  color:var(--muted);
+  letter-spacing:0.04em;
+}
+
+/* ===== KNOWLEDGE CARD ===== */
+.knowledge{
+  background:var(--surface);
+  border:2.5px solid var(--kucho);
+  border-radius:4px;
+  margin-bottom:1.6rem;
+  box-shadow:5px 5px 0 rgba(79,142,247,0.18);
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity 0.45s ease, transform 0.45s ease;
+}
+.knowledge.visible{ opacity:1; transform:translateY(0); }
+.knowledge-header{
+  background:rgba(79,142,247,0.12);
+  border-bottom:2px solid var(--kucho);
+  padding:0.5rem 1rem;
+  font-family:'Oswald',sans-serif;
+  font-size:0.75rem;
+  letter-spacing:0.15em;
+  color:var(--kucho);
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+}
+.knowledge-body{
+  padding:1rem 1.2rem;
+}
+
+/* ===== TABLE ===== */
+.k-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:0.8rem;
+  margin-top:0.5rem;
+}
+.k-table th{
+  background:var(--surface2);
+  padding:0.5rem 0.7rem;
+  border:1.5px solid var(--border);
+  color:var(--muted);
+  font-weight:700;
+  text-align:left;
+}
+.k-table td{
+  padding:0.5rem 0.7rem;
+  border:1.5px solid var(--border);
+  line-height:1.55;
+}
+.k-table tr:nth-child(even) td{ background:rgba(255,255,255,0.02); }
+
+/* ===== POINT PILLS ===== */
+.point-list{
+  display:flex;
+  flex-direction:column;
+  gap:0.5rem;
+  margin-top:0.5rem;
+}
+.point-row{
+  display:flex;
+  gap:0.6rem;
+  align-items:flex-start;
+  font-size:0.82rem;
+  line-height:1.6;
+}
+.point-icon{ font-size:1rem; flex-shrink:0; margin-top:0.1rem; }
+
+/* ===== TRAP CARD ===== */
+.trap{
+  background:#180d0d;
+  border:2px solid var(--danger);
+  border-radius:4px;
+  padding:0.7rem 1rem;
+  font-size:0.8rem;
+  color:#fca5a5;
+  margin-top:0.6rem;
+  line-height:1.65;
+}
+.trap::before{ content:'⚠ 試験の引っかけ  '; font-weight:900; color:var(--danger); }
+
+/* ===== SFX ===== */
+.sfx{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(1.6rem,5vw,2.8rem);
+  color:var(--warn);
+  text-shadow:2px 2px 0 rgba(0,0,0,0.5);
+  text-align:center;
+  padding:0.3rem;
+  transform:rotate(-1.5deg);
+  display:block;
+  line-height:1;
+  margin:0.5rem 0 1.5rem;
+}
+
+/* ===== DIVIDER ===== */
+.divider{
+  text-align:center;
+  margin:0.5rem 0 0;
+  position:relative;
+}
+.divider::before,.divider::after{
+  content:'';
+  position:absolute;
+  top:50%;
+  width:38%;
+  height:1px;
+  background:var(--border);
+}
+.divider::before{ left:0; }
+.divider::after{ right:0; }
+.divider span{
+  font-family:'Oswald',sans-serif;
+  font-size:0.65rem;
+  letter-spacing:0.2em;
+  color:var(--muted);
+  background:var(--bg);
+  padding:0 0.8rem;
+}
+
+/* ===== EM ===== */
+.er{ color:var(--danger);  font-weight:900; }
+.eb{ color:var(--kucho);   font-weight:900; }
+.eg{ color:var(--correct); font-weight:900; }
+.ew{ color:var(--warn);    font-weight:900; }
+
+/* 赤背景(shout)の中では強調色を視認可能な色に上書き */
+.bubble.shout .er{ color:#fff !important; text-decoration:underline wavy #fff; }
+.er-shout{ color:#fff !important; font-weight:900; text-decoration:underline 2px #fff; }
+.bubble.shout .eb{ color:#ffe08a !important; }
+.bubble.shout .eg{ color:#a8ffb0 !important; }
+.bubble.shout .ew{ color:#ffe08a !important; }
+
+/* ===== CTA ===== */
+.cta-block{
+  background:linear-gradient(135deg,#0c1832,#121e12);
+  border:3px solid var(--kucho);
+  border-radius:6px;
+  padding:2rem;
+  text-align:center;
+  margin-top:3rem;
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity 0.5s ease,transform 0.5s ease;
+}
+.cta-block.visible{ opacity:1; transform:translateY(0); }
+.cta-title{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(1.4rem,4vw,2rem);
+  color:#fff;
+  text-shadow:2px 2px 0 var(--kucho);
+  margin-bottom:0.6rem;
+}
+.cta-sub{ font-size:0.88rem; color:var(--muted); margin-bottom:1.4rem; }
+.cta-btn-primary{
+  display:inline-block;
+  background:var(--kucho);
+  color:#fff;
+  font-family:'Oswald',sans-serif;
+  font-size:1rem;
+  letter-spacing:0.12em;
+  padding:0.75rem 2.2rem;
+  border-radius:7px;
+  margin:0.3rem;
+  transition:opacity 0.2s,transform 0.1s;
+}
+.cta-btn-primary:hover{ opacity:0.85; transform:translateY(-2px); }
+.cta-btn-secondary{
+  display:inline-block;
+  background:rgba(79,142,247,0.12);
+  color:var(--kucho);
+  border:1px solid rgba(79,142,247,0.35);
+  font-size:0.85rem;
+  padding:0.65rem 1.6rem;
+  border-radius:7px;
+  margin:0.3rem;
+  transition:background 0.2s;
+}
+.cta-btn-secondary:hover{ background:rgba(79,142,247,0.22); }
+
+/* ===== MOBILE ===== */
+@media(max-width:600px){
+  .char-col{ width:72px; min-width:72px; }
+  .char-emoji{ font-size:2.6rem; }
+  .scene{ min-height:120px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/kucho/">演習問題</a>
+    <a href="/bunya/kucho/kaisetsu.html">解説ページ</a>
+    <a href="/bunya/kucho/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🌡 KUCHO — MANGA GUIDE</div>
+  <h1 class="hero-title">空調設備<br>マンガで理解</h1>
+  <p class="hero-sub">解説を読む前にこれで7割つかめ — スパナ軍曹が全12テーマを叩き込む</p>
+  <div class="hero-links">
+    <a href="/bunya/kucho/kaisetsu.html" class="hero-link-kaisetsu">📖 詳細解説ページへ</a>
+    <a href="/bunya/kucho/" class="hero-link-quiz">📝 演習問題を解く</a>
+  </div>
+</section>
+
+<!-- TOC -->
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>空調方式の比較</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>冷凍機・ヒートポンプ</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>ダクト・ダンパー</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>湿り空気と空気線図</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>換気設備（第1〜3種）</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>冷却塔</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>VAV・CAV</div>
+    <div class="toc-item" onclick="document.getElementById('ch08').scrollIntoView({behavior:'smooth'})"><span class="toc-num">08</span>空調用ポンプ</div>
+    <div class="toc-item" onclick="document.getElementById('ch09').scrollIntoView({behavior:'smooth'})"><span class="toc-num">09</span>エアフィルター</div>
+    <div class="toc-item" onclick="document.getElementById('ch10').scrollIntoView({behavior:'smooth'})"><span class="toc-num">10</span>冷媒と環境性能</div>
+    <div class="toc-item" onclick="document.getElementById('ch11').scrollIntoView({behavior:'smooth'})"><span class="toc-num">11</span>省エネルギー</div>
+    <div class="toc-item" onclick="document.getElementById('ch12').scrollIntoView({behavior:'smooth'})"><span class="toc-num">12</span>試運転・維持管理</div>
+  </div>
+</div>
+
+<!-- MANGA -->
+<div class="manga-wrap">
+
+<!-- ============================================================ -->
+<!-- CH01 空調方式 -->
+<!-- ============================================================ -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 01</div>
+    <div class="ch-title">空調方式の比較</div>
+  </div>
+  <div class="ch-icon">🏢</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">BRIEFING ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>空調方式は「熱媒体」と「制御方法」で分類される！まず頭に叩き込め！！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>CAVとVAVって何が違うんですか……？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>CAVは<span class="eg">風量一定・温度で制御</span>！VAVは<span class="eb">風量を変えて制御</span>だ！混同するな！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📋 空調方式の比較表</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>方式</th><th>制御の仕方</th><th>特徴</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">CAV</span>（定風量単一ダクト）</td><td>送風量一定・温度で制御</td><td>シンプル・信頼性高い。負荷変動への細かい対応は苦手</td></tr>
+        <tr><td><span class="eb">VAV</span>（変風量）</td><td>送風量を変化させて制御</td><td>個別制御・省エネに優れる。ダクト設計が複雑</td></tr>
+        <tr><td><span class="eb">FCU</span>（ファンコイル）</td><td>各室のコイルで制御</td><td>個別制御が容易。各室への水配管が必要</td></tr>
+        <tr><td><span class="eb">PAC</span>（パッケージ型）</td><td>冷媒配管で各室に冷暖房</td><td>個別制御容易・セントラルより維持管理が簡単</td></tr>
+        <tr><td><span class="eg">外気冷房</span></td><td>外気が室内より低温の時に活用</td><td>冬季・中間期の省エネに有効</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「CAVは個別制御に優れる」→ 誤り。個別制御が得意なのはVAVやFCU・PACだ。CAVは全体一括制御。</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CH02 冷凍機 -->
+<!-- ============================================================ -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 02</div>
+    <div class="ch-title">冷凍機・ヒートポンプ</div>
+  </div>
+  <div class="ch-icon">❄️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">ENGINE ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>冷凍サイクルの順序を言え！！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>えっと…蒸発→圧縮→凝縮→膨張…ですか？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>正解だ！<span class="eg">「蒸圧凝膨」</span>と覚えろ！次にCOP（成績係数）だ！</div>
+      <div class="bubble warn-bub"><span class="spk">😰 パイプ訓練生</span>ヒートポンプのCOPって1未満になることもあるんですか？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！大気熱を汲み上げるから<span class="eg">暖房COPは必ず1以上</span>だ！「1を下回る」は試験の罠だぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">❄️ 冷凍機の種類と特徴</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🌀</span><span><span class="eb">遠心（ターボ）冷凍機</span> — インペラ回転で圧縮。大容量向き。部分負荷効率に注意。</span></div>
+      <div class="point-row"><span class="point-icon">🔥</span><span><span class="eb">吸収式冷凍機</span> — 圧縮機なし。熱エネルギー利用。電力消費少・廃熱利用に最適。</span></div>
+      <div class="point-row"><span class="point-icon">🌊</span><span><span class="eb">スクロール冷凍機</span> — 渦巻きスクロールで圧縮。小〜中容量・振動少・高効率。</span></div>
+      <div class="point-row"><span class="point-icon">⚙️</span><span><span class="eb">スクリュー冷凍機</span> — 雄雌ロータ回転で圧縮。中〜大容量・信頼性高い。</span></div>
+    </div>
+    <div class="trap">「冷水温度を低く設定するほどCOPが向上する」→ 誤り。<span class="er">高め</span>に設定するほどCOPが向上。低くすると蒸発圧力が下がり仕事量が増える。</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CH03 ダクト・ダンパー -->
+<!-- ============================================================ -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 03</div>
+    <div class="ch-title">ダクト・ダンパー</div>
+  </div>
+  <div class="ch-icon">🔧</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">DUCT FIELD</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>FDとSDを混同するな！これが頻出の落とし穴だ！！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>FDは防火ダンパー…SDは防煙ダンパー…でも何がトリガーになるのかが…</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span><span class="er-shout">FDは温度ヒューズ</span>が溶けて閉まる！<span class="er-shout">SDは煙感知器の信号</span>で閉まる！完全に別物だ！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔧 ダンパーの種類と作動条件</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>略称</th><th>作動トリガー</th><th>目的</th></tr></thead>
+      <tbody>
+        <tr><td>防火ダンパー</td><td><span class="er">FD</span></td><td><span class="er">温度ヒューズ溶断</span>（火災の熱）</td><td>延焼防止</td></tr>
+        <tr><td>防煙ダンパー</td><td><span class="eb">SD</span></td><td><span class="eb">煙感知器の信号</span></td><td>煙の拡散防止</td></tr>
+        <tr><td>防火防煙ダンパー</td><td><span class="eg">SFD</span></td><td>温度ヒューズ＋煙感知器</td><td>両方の機能</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">📐</span><span>長方形ダクトのアスペクト比（長辺÷短辺）は<span class="eg">小さいほど</span>圧力損失が少なく経済的。</span></div>
+      <div class="point-row"><span class="point-icon">🔄</span><span><span class="eb">スパイラルダクト</span> — 円形断面・気密性高い・圧力損失少。<span class="eb">フレキシブルダクト</span> — 吹出口との接続部などに使用。</span></div>
+    </div>
+    <div class="trap">「FDは煙感知器の信号で閉まる」→ 誤り。FDは温度ヒューズ。煙で閉まるのはSD。</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CH04 湿り空気 -->
+<!-- ============================================================ -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 04</div>
+    <div class="ch-title">湿り空気と空気線図</div>
+  </div>
+  <div class="ch-icon">💧</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PSYCHRO LAB</div>
+  <div class="scene">
+    <div class="char-col">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>空気を加熱したとき、絶対湿度はどう変わる？</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>上がります！温度が上がったら湿度も上がる気が…</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>不正解！加熱しても<span class="eg">絶対湿度は変わらない</span>！変わるのは相対湿度だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">💧 湿り空気の用語と空気線図</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>用語</th><th>定義</th><th>ポイント</th></tr></thead>
+      <tbody>
+        <tr><td>乾球温度</td><td>通常の温度計で測定した温度</td><td>—</td></tr>
+        <tr><td>湿球温度</td><td>湿ったガーゼで包んだ温度計の示す温度</td><td>乾球との差が大きいほど湿度が低い</td></tr>
+        <tr><td>露点温度</td><td>冷却したとき結露が始まる温度</td><td>—</td></tr>
+        <tr><td><span class="eb">絶対湿度</span></td><td>乾き空気1kgに含まれる水蒸気の質量（kg）</td><td><span class="eg">加熱しても変わらない</span></td></tr>
+        <tr><td>相対湿度100%</td><td>飽和状態。乾球＝湿球温度</td><td>「異なる」は誤り</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">🔺</span><span><span class="eb">加熱</span> → 絶対湿度変わらず・乾球温度↑・相対湿度↓</span></div>
+      <div class="point-row"><span class="point-icon">💦</span><span><span class="eb">蒸気加湿</span> → 乾球温度ほぼ変わらず・絶対湿度↑</span></div>
+      <div class="point-row"><span class="point-icon">🔻</span><span><span class="eb">冷却除湿</span> → 乾球温度↓・絶対湿度↓</span></div>
+      <div class="point-row"><span class="point-icon">🔀</span><span><span class="eb">混合</span> → 2点を結ぶ線分上に位置。重量比で決まる（必ず中点ではない）</span></div>
+    </div>
+    <div class="trap">「加熱すると絶対湿度が上がる」→ 誤り。加熱で変わるのは相対湿度（下がる）。絶対湿度は変わらない。</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CH05 換気設備 -->
+<!-- ============================================================ -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 05</div>
+    <div class="ch-title">換気設備（第1〜3種）</div>
+  </div>
+  <div class="ch-icon">🌬️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">VENTILATION HALL</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>トイレに第2種換気を使うやつが毎年何人か落ちる！なぜダメか言え！！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>第2種は……正圧になるから……臭いが外に漏れる？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>そうだ！トイレ・浴室は<span class="eg">第3種（負圧）</span>一択だ！臭気を閉じ込めるために負圧にするんだ！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🌬️ 第1〜3種換気の比較</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種別</th><th>給気</th><th>排気</th><th>室内圧力</th><th>適用例</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">第1種</span></td><td>機械</td><td>機械</td><td>コントロール可</td><td>大規模ビル全般</td></tr>
+        <tr><td><span class="er">第2種</span></td><td>機械</td><td>自然</td><td><span class="er">正圧（＋）</span></td><td>クリーンルーム・手術室</td></tr>
+        <tr><td><span class="eg">第3種</span></td><td>自然</td><td>機械</td><td><span class="eg">負圧（−）</span></td><td>トイレ・浴室・厨房</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「第2種換気はトイレに適する」→ 誤り。正圧のため臭気が漏れやすい。トイレには<span class="eg">第3種（負圧）</span>が正解。</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CH06 冷却塔 -->
+<!-- ============================================================ -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 06</div>
+    <div class="ch-title">冷却塔</div>
+  </div>
+  <div class="ch-icon">🗼</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">ROOFTOP</div>
+  <div class="scene">
+    <div class="char-col">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>冷却塔の冷却能力は何温度に依存する？乾球か湿球か！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>乾球温度……ですか？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！水の<span class="er-shout">蒸発潜熱</span>を使うから<span class="eg">湿球温度</span>だ！低いほど冷却効果が高い！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🗼 冷却塔のポイント</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">💨</span><span>冷却能力は外気の<span class="eb">湿球温度</span>に依存。湿球温度が低いほど冷却効果が高い。</span></div>
+      <div class="point-row"><span class="point-icon">🏭</span><span><span class="eb">開放型</span> — 冷却水が大気に直接触れる→冷却効率高いが水質汚染リスクあり。</span></div>
+      <div class="point-row"><span class="point-icon">🔒</span><span><span class="eb">密閉型</span> — 冷却水が外気に触れない→水質管理が容易。</span></div>
+      <div class="point-row"><span class="point-icon">🦠</span><span>レジオネラ菌対策のため<span class="er">定期的な水質管理が必須</span>。蒸発で不純物が濃縮するためブロー（排水）による濃縮倍数の管理も必要。</span></div>
+    </div>
+    <div class="trap">「冷却塔の冷却能力は乾球温度のみに依存する」→ 誤り。水の蒸発潜熱を利用するため<span class="eg">湿球温度</span>に依存する。</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CH07 VAV・CAV -->
+<!-- ============================================================ -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 07</div>
+    <div class="ch-title">VAV・CAV（変風量・定風量）</div>
+  </div>
+  <div class="ch-icon">🎛️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CONTROL ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>定流量（CWV）と変流量（VWV）、省エネに優れるのはどっちだ！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>定流量……一定に保てるから安定してそうで……省エネ？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>逆だ！<span class="eg">変流量（VWV）</span>が省エネに優れる！負荷に応じて流量を変えるから無駄がない！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🎛️ VAV・流量制御のポイント</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🌀</span><span><span class="eb">VAV</span> — 負荷変動に応じて送風量を変化させる。インバーター制御と組み合わせると大きな省エネ効果。個別室の温度制御が可能。</span></div>
+      <div class="point-row"><span class="point-icon">📉</span><span><span class="eb">変流量（VWV）</span> — 負荷に応じて流量を変化 → <span class="eg">省エネ効果が高い</span></span></div>
+      <div class="point-row"><span class="point-icon">➡️</span><span><span class="eb">定流量（CWV）</span> — 流量を常に一定に保つ → 省エネ効果は低い</span></div>
+    </div>
+    <div class="trap">「定流量方式は省エネ効果が高い」→ 誤り。省エネに優れるのは<span class="eg">変流量（VWV）</span>方式。</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CH08 ポンプ -->
+<!-- ============================================================ -->
+<div class="chapter-header" id="ch08">
+  <div class="ch-num">08</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 08</div>
+    <div class="ch-title">空調用ポンプ</div>
+  </div>
+  <div class="ch-icon">⚙️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PUMP ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ポンプを並列運転したとき、揚程はどうなる！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>2台並べたら揚程も2倍……になる気が……</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！並列は<span class="eg">流量が増える</span>！揚程はほぼ変わらん！揚程を上げたいなら<span class="eb">直列</span>だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⚙️ ポンプ運転・キャビテーション</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>運転方式</th><th>流量</th><th>揚程</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">並列運転</span></td><td><span class="eg">↑ 増加</span></td><td>ほぼ変わらない</td></tr>
+        <tr><td><span class="eb">直列運転</span></td><td>ほぼ変わらない</td><td><span class="eg">↑ 増加</span></td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">🫧</span><span><span class="er">キャビテーション</span> — 液体の局部的な気化により生じる現象。ポンプの損傷・振動・騒音の原因。</span></div>
+      <div class="point-row"><span class="point-icon">📐</span><span>流量Q ＝ 断面積A × 流速v。管径が大きいほど断面積大→流速は小（反比例）。</span></div>
+    </div>
+    <div class="trap">「並列運転で揚程も比例増加する」→ 誤り。並列で増えるのは<span class="eg">流量</span>。揚程を上げるには直列運転。</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CH09 エアフィルター -->
+<!-- ============================================================ -->
+<div class="chapter-header" id="ch09">
+  <div class="ch-num">09</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 09</div>
+    <div class="ch-title">エアフィルター</div>
+  </div>
+  <div class="ch-icon">🫧</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">FILTER STATION</div>
+  <div class="scene">
+    <div class="char-col">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>プレフィルターはどこに設置するか！後段か前段か！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>「プレ」って前って意味ですよね……前段？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>正解！<span class="eg">上流の前段</span>に設置して粗じんを取り除き、高性能フィルターを守るんだ！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🫧 フィルターの種類と設置位置</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>設置位置</th><th>特徴・適用</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">プレフィルター</span></td><td><span class="eg">上流・前段</span></td><td>粗じん除去。最終フィルター保護</td></tr>
+        <tr><td><span class="eb">HEPAフィルター</span></td><td><span class="eg">給気側の最終段</span></td><td>0.3μm粒子を99.97%以上捕集。クリーンルーム向け</td></tr>
+        <tr><td><span class="eb">自動巻取り型</span></td><td>—</td><td>目詰まりで自動的に新ろ材に切替。大型空調機向け</td></tr>
+        <tr><td><span class="eb">電気集塵器</span></td><td>—</td><td>粒子を帯電させて電気的に捕集。微細粒子・煙の除去</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「HEPAフィルターは排気系統のみに設置」→ 誤り。<span class="eg">給気側の最終段</span>に設置する。</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CH10 冷媒 -->
+<!-- ============================================================ -->
+<div class="chapter-header" id="ch10">
+  <div class="ch-num">10</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 10</div>
+    <div class="ch-title">冷媒の種類と環境性能</div>
+  </div>
+  <div class="ch-icon">🧪</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">LAB</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>CO₂冷媒のGWPはいくつだ！高いか低いか！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>CO₂って温暖化ガスですよね……だからGWPが高い……？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>引っかかったな！CO₂のGWPは<span class="eg">1</span>だ！自然冷媒で<span class="eg">環境負荷は非常に低い</span>！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🧪 冷媒の環境性能比較</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>冷媒</th><th>ODP</th><th>GWP</th><th>備考</th></tr></thead>
+      <tbody>
+        <tr><td>R22（HCFC）</td><td><span class="er">あり</span></td><td>中</td><td>フロン規制により段階廃止</td></tr>
+        <tr><td>R410A（HFC）</td><td>なし</td><td><span class="er">高</span></td><td>R22の代替として普及。次世代へ移行中</td></tr>
+        <tr><td><span class="eg">CO₂（R744）</span></td><td>なし</td><td><span class="eg">1（非常に低い）</span></td><td>自然冷媒。高圧対応設備が必要</td></tr>
+        <tr><td>HFO系（R32等）</td><td>なし</td><td>低〜中</td><td>次世代冷媒として普及拡大中</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「CO₂（R744）はGWPが非常に高い」→ 誤り。GWP=<span class="eg">1</span>で自然冷媒の中でも環境負荷が最も低い部類。</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CH11 省エネ -->
+<!-- ============================================================ -->
+<div class="chapter-header" id="ch11">
+  <div class="ch-num">11</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 11</div>
+    <div class="ch-title">空調設備の省エネルギー</div>
+  </div>
+  <div class="ch-icon">⚡</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">ENERGY ROOM</div>
+  <div class="scene">
+    <div class="char-col">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>全熱交換器は「顕熱のみ」回収するか？「全熱」回収するか？</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>「全熱」って名前だから…顕熱と潜熱の両方ですか？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>正解！<span class="eg">顕熱（温度）と潜熱（湿気）両方</span>を回収する！「顕熱のみ」は顕熱交換器だ！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⚡ 省エネ手法の整理</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🔁</span><span><span class="eb">インバーター制御</span> — ポンプ・ファンの回転数を負荷に応じて変化。動力は回転数の<span class="er">3乗</span>に比例するため、わずかな回転数低下で大幅省エネ。</span></div>
+      <div class="point-row"><span class="point-icon">♻️</span><span><span class="eb">全熱交換器</span> — 排気の<span class="eg">顕熱＋潜熱（両方）</span>を回収して外気処理負荷を削減。</span></div>
+      <div class="point-row"><span class="point-icon">🌙</span><span><span class="eb">氷蓄熱システム</span> — 夜間電力で氷を作り昼間のピーク電力を削減。水の融解潜熱（約335kJ/kg）を利用するため<span class="eg">水蓄熱より小さな槽</span>で同じ蓄熱量を確保できる。</span></div>
+    </div>
+    <div class="trap">「全熱交換器は顕熱のみを回収する」→ 誤り。それは顕熱交換器。全熱交換器は<span class="eg">顕熱＋潜熱の両方</span>を回収する。</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CH12 試運転・維持管理 -->
+<!-- ============================================================ -->
+<div class="chapter-header" id="ch12">
+  <div class="ch-num">12</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 12</div>
+    <div class="ch-title">試運転調整（TAB）・維持管理</div>
+  </div>
+  <div class="ch-icon">🔍</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">FINAL CHECK</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>TABは竣工時だけやればいいか？！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>竣工時に一回やれば終わりじゃ……ないんですか？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>甘い！改修・用途変更・経年劣化に伴い<span class="eg">定期的に実施</span>するものだ！コミッショニングも引渡し後まで続くぞ！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔍 TABとコミッショニングの違い</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🎚️</span><span><span class="eb">TAB</span>（Testing・Adjusting・Balancing） — 竣工時のみでなく、<span class="eg">改修・用途変更・経年劣化に伴い定期的に実施</span>が望ましい。</span></div>
+      <div class="point-row"><span class="point-icon">🔄</span><span><span class="eb">コミッショニング</span> — 設計〜施工〜試運転〜<span class="eg">引渡し後の運用段階まで継続的</span>に行うプロセス。既存建物への適用は「レトロコミッショニング」。</span></div>
+    </div>
+    <table class="k-table" style="margin-top:0.8rem;">
+      <thead><tr><th>維持管理項目</th><th>要点</th></tr></thead>
+      <tbody>
+        <tr><td>エアフィルター</td><td>圧力損失が規定値を超えたら清掃・交換</td></tr>
+        <tr><td>冷凍機冷媒</td><td>法令に基づき漏えい量管理・定期点検</td></tr>
+        <tr><td>冷却塔</td><td><span class="er">蒸発損失の補給＋ブロー水管理（両方必要）</span></td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「TABは竣工時のみ実施すればよい」→ 誤り。改修・用途変更・経年劣化に伴い<span class="eg">定期的な実施</span>が推奨される。</div>
+  </div>
+</div>
+
+<span class="sfx">🎖 全12テーマ制覇！！</span>
+
+<!-- CTA -->
+<div class="cta-block">
+  <div class="cta-title">理解できたら次のステップへ！</div>
+  <p class="cta-sub">解説ページで細部を固めて、演習問題で実力を確かめろ。</p>
+  <a href="/bunya/kucho/kaisetsu.html" class="cta-btn-primary">📖 詳細解説ページへ</a>
+  <a href="/bunya/kucho/" class="cta-btn-secondary">📝 演習問題を解く（32問）</a>
+</div>
+
+</div><!-- /manga-wrap -->
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.panel, .knowledge, .chapter-header, .cta-block')
+  .forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
