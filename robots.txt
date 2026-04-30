@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://flownode-dev.github.io/kankoiji-pass/sitemap.xml
