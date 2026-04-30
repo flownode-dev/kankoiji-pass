@@ -391,6 +391,162 @@
       color: var(--gray);
     }
 
+    /* ===== INTRO BANNER（ヒーロー内） ===== */
+    .intro-banner {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+      padding: 0.75rem 1.1rem;
+      background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(245,158,11,0.06));
+      border: 1px solid rgba(245,158,11,0.45);
+      border-radius: 10px;
+      text-decoration: none;
+      color: inherit;
+      max-width: 500px;
+      transition: all 0.2s;
+      animation: fadeInUp 0.7s 0.5s ease both;
+    }
+    .intro-banner:hover {
+      background: linear-gradient(135deg, rgba(245,158,11,0.22), rgba(245,158,11,0.12));
+      border-color: rgba(245,158,11,0.7);
+      transform: translateY(-2px);
+    }
+    .intro-banner-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .intro-banner-body { display: flex; flex-direction: column; gap: 0.1rem; flex: 1; }
+    .intro-banner-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+    }
+    .intro-banner-text {
+      font-size: 0.83rem;
+      color: var(--gray-light);
+      font-weight: 500;
+    }
+    .intro-banner-arrow {
+      font-size: 1.1rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .intro-banner:hover .intro-banner-arrow { transform: translateX(4px); }
+
+    /* ===== INTRO ENTRY SECTION ===== */
+    .intro-entry-section {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #0b1120, #0f1a10);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid rgba(245,158,11,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .intro-entry-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(245,158,11,0.06) 0%, transparent 60%);
+    }
+    .intro-entry-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+    }
+    .intro-entry-badge {
+      display: inline-block;
+      background: rgba(245,158,11,0.15);
+      border: 1px solid rgba(245,158,11,0.4);
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      padding: 0.3rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+    .intro-entry-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+    .intro-entry-desc {
+      font-size: 0.9rem;
+      color: var(--gray-light);
+      line-height: 1.9;
+      margin-bottom: 1.8rem;
+      max-width: 460px;
+    }
+    .intro-entry-desc strong { color: var(--gold); }
+    .intro-entry-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 2rem;
+      background: linear-gradient(135deg, #d97706, var(--gold));
+      color: #0a0800;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(245,158,11,0.3);
+    }
+    .intro-entry-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(245,158,11,0.45);
+    }
+    .intro-entry-card {
+      background: rgba(13,24,41,0.8);
+      border: 1px solid rgba(245,158,11,0.25);
+      border-radius: 16px;
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .iec-row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--gray-light);
+    }
+    .iec-row:last-of-type { border-bottom: none; }
+    .iec-icon { font-size: 1.1rem; flex-shrink: 0; }
+    .iec-cta {
+      margin-top: 1.2rem;
+    }
+    .iec-cta a {
+      display: block;
+      text-align: center;
+      padding: 0.7rem;
+      background: rgba(245,158,11,0.12);
+      border: 1px solid rgba(245,158,11,0.35);
+      border-radius: 8px;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .iec-cta a:hover { background: rgba(245,158,11,0.22); }
+
+    @media (max-width: 960px) {
+      .intro-entry-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .intro-entry-card  { max-width: 480px; }
+      .intro-banner      { max-width: 100%; }
+    }
+
     /* ===== FEATURES ===== */
     .features-section { padding: 6rem 2rem; }
     .features-inner { max-width: var(--max-width); margin: 0 auto; }
@@ -749,6 +905,17 @@
         <a href="/bunya/" class="btn btn-primary">▶ 分野別演習を始める（無料）</a>
         <a href="/roadmap/" class="btn btn-secondary">合格ロードマップ →</a>
       </div>
+
+      <!-- イントロバナー -->
+      <a href="/intro/" class="intro-banner">
+        <span class="intro-banner-icon">🔧</span>
+        <span class="intro-banner-body">
+          <span class="intro-banner-label">初めての方へ</span>
+          <span class="intro-banner-text">管工事施工管理技士って何？試験の全貌をマンガで解説</span>
+        </span>
+        <span class="intro-banner-arrow">→</span>
+      </a>
+
       <div class="hero-tags">
         <span class="hero-tag">✓ 完全無料</span>
         <span class="hero-tag">✓ 会員登録不要</span>
@@ -802,7 +969,28 @@
   <div class="ad-placeholder" style="width:100%; max-width:728px; height:90px;">広告 728×90（AdSense審査通過後に差し替え）</div>
 </div>
 
-<!-- ===== FEATURES ===== -->
+<!-- ===== INTRO ENTRY SECTION ===== -->
+<section class="intro-entry-section">
+  <div class="intro-entry-inner">
+    <div class="intro-entry-left">
+      <div class="intro-entry-badge">📖 まず読む</div>
+      <h2 class="intro-entry-title">初めての方は<br>ここからスタート</h2>
+      <p class="intro-entry-desc">「管工事施工管理技士って何？」「どんな試験？」「合格率は？」——スパナ軍曹が<strong>マンガで全部説明</strong>してくれる。演習を始める前にまずこれを読め！</p>
+      <a href="/intro/" class="intro-entry-btn">マンガで全貌を確認する →</a>
+    </div>
+    <div class="intro-entry-right">
+      <div class="intro-entry-card">
+        <div class="iec-row"><span class="iec-icon">🎖️</span><span class="iec-text">資格の概要・難易度がわかる</span></div>
+        <div class="iec-row"><span class="iec-icon">📊</span><span class="iec-text">一次・二次の試験構成がわかる</span></div>
+        <div class="iec-row"><span class="iec-icon">📈</span><span class="iec-text">合格率のリアルな数字がわかる</span></div>
+        <div class="iec-row"><span class="iec-icon">🗺️</span><span class="iec-text">何時間・どう勉強すればいいかわかる</span></div>
+        <div class="iec-cta">
+          <a href="/intro/">読んでみる（無料）</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="features-section">
   <div class="features-inner">
     <div class="text-center" style="margin-bottom:3rem">
