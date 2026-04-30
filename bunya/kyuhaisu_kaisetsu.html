@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>給排水衛生設備 重要ポイント解説 | 管工事PASS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0f1117;
+    --surface:   #1a1d27;
+    --surface2:  #222636;
+    --border:    #2e3348;
+    --accent:    #14b8a6;
+    --accent2:   #0d9488;
+    --correct:   #22c55e;
+    --warn:      #f59e0b;
+    --text:      #e8eaf0;
+    --muted:     #7a8099;
+    --mono:      'DM Mono', monospace;
+    --sans:      'Noto Sans JP', sans-serif;
+    --serif:     'Noto Serif JP', serif;
+    --radius:    12px;
+    --transition: 0.2s cubic-bezier(.4,0,.2,1);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); min-height: 100vh; line-height: 1.8; }
+
+  header {
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    padding: 0 24px; height: 56px; display: flex; align-items: center;
+    justify-content: space-between; position: sticky; top: 0; z-index: 100;
+  }
+  .logo {
+    font-weight: 900; font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .btn-ghost {
+    background: none; border: 1px solid var(--border); color: var(--muted);
+    padding: 6px 14px; border-radius: 8px; font-size: .8rem; cursor: pointer;
+    transition: var(--transition); font-family: var(--sans); text-decoration: none;
+    display: inline-flex; align-items: center;
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero {
+    background: linear-gradient(135deg, #0f1117 0%, #0d1f1e 50%, #0a1a1a 100%);
+    border-bottom: 1px solid var(--border); padding: 48px 24px 40px; text-align: center;
+  }
+  .hero-badge {
+    display: inline-block; background: rgba(20,184,166,.15); border: 1px solid rgba(20,184,166,.3);
+    color: var(--accent); font-size: .75rem; padding: 4px 14px; border-radius: 99px;
+    margin-bottom: 16px; letter-spacing: .08em;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 2.4rem); line-height: 1.3;
+    margin-bottom: 12px; background: linear-gradient(135deg, var(--text) 0%, #a0c8c4 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero p { color: var(--muted); font-size: .9rem; max-width: 560px; margin: 0 auto 24px; }
+  .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent2)); border: none; color: #fff;
+    padding: 11px 24px; border-radius: 8px; font-size: .9rem; font-weight: 700; cursor: pointer;
+    text-decoration: none; display: inline-block; transition: var(--transition); font-family: var(--sans);
+  }
+  .btn-primary:hover { opacity: .85; transform: translateY(-1px); }
+
+  .toc-wrap { max-width: 860px; margin: 32px auto 0; padding: 0 24px; }
+  .toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; }
+  .toc-title { font-size: .78rem; color: var(--muted); letter-spacing: .1em; margin-bottom: 12px; font-weight: 700; }
+  .toc-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 6px; list-style: none; }
+  .toc-list a {
+    color: var(--accent); text-decoration: none; font-size: .85rem; display: flex;
+    align-items: center; gap: 6px; padding: 4px 6px; border-radius: 6px; transition: var(--transition);
+  }
+  .toc-list a:hover { background: rgba(20,184,166,.1); }
+  .toc-list a::before { content: '→'; font-size: .75rem; color: var(--muted); }
+
+  .content { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; display: flex; flex-direction: column; gap: 40px; }
+
+  .section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .section-header {
+    background: var(--surface2); border-bottom: 1px solid var(--border);
+    padding: 18px 24px; display: flex; align-items: center; gap: 14px;
+  }
+  .section-icon { font-size: 1.5rem; line-height: 1; flex-shrink: 0; }
+  .section-num { font-family: var(--mono); font-size: .7rem; color: var(--muted); letter-spacing: .1em; }
+  .section-title { font-family: var(--serif); font-size: 1.15rem; color: var(--text); }
+  .section-body { padding: 24px; }
+  .lead { font-size: .95rem; color: #b0b8d0; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+
+  .key-points { display: flex; flex-direction: column; gap: 12px; }
+  .key-point { background: var(--bg); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; padding: 14px 16px; font-size: .9rem; }
+  .key-point.warn { border-left-color: var(--warn); }
+  .key-point.correct { border-left-color: var(--correct); }
+  .key-point strong { color: var(--accent); display: block; margin-bottom: 4px; font-size: .85rem; }
+  .key-point.warn strong { color: var(--warn); }
+  .key-point.correct strong { color: var(--correct); }
+  .key-point p { color: #c0c8e0; line-height: 1.7; }
+
+  .compare-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: .85rem; }
+  .compare-table th { background: var(--surface2); padding: 10px 14px; text-align: left; font-weight: 700; color: var(--accent); border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); }
+  .compare-table th:last-child { border-right: none; }
+  .compare-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); color: #c0c8e0; vertical-align: top; line-height: 1.6; }
+  .compare-table td:last-child { border-right: none; }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:hover td { background: rgba(20,184,166,.04); }
+  .tag-cell { font-weight: 700; color: var(--text); white-space: nowrap; }
+
+  .memo-box {
+    margin-top: 20px; background: rgba(245,158,11,.07); border: 1px solid rgba(245,158,11,.2);
+    border-radius: 10px; padding: 16px 18px; font-size: .85rem; color: #e0c870; line-height: 1.75;
+  }
+  .memo-box::before { content: '⚠️ 試験でよく問われるポイント'; display: block; font-weight: 700; margin-bottom: 8px; font-size: .8rem; letter-spacing: .05em; }
+
+  .formula-box {
+    background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+    padding: 16px 18px; margin-top: 12px; font-family: var(--mono); font-size: .9rem;
+    color: var(--correct); text-align: center; line-height: 2;
+  }
+
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 24px; text-align: center; font-size: .78rem; color: var(--muted); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 32px 16px 28px; }
+    .section-body { padding: 16px; }
+    .toc-list { grid-template-columns: 1fr; }
+    .content { padding: 24px 12px 60px; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="管工事PASS">
+  <meta property="og:title" content="給排水衛生設備 重要ポイント解説 | 管工事PASS">
+  <meta property="og:description" content="給水方式・トラップ・通気管・給湯・ガス設備など給排水衛生設備を演習問題と解説で徹底対策。">
+  <meta property="og:url" content="https://kankoiji-pass.com/bunya/kyuhaisu/kaisetsu.html">
+  <meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ja_JP">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="給排水衛生設備 重要ポイント解説 | 管工事PASS">
+  <meta name="twitter:description" content="給水方式・トラップ・通気管・給湯・ガス設備など給排水衛生設備を演習問題と解説で徹底対策。">
+  <meta name="twitter:image" content="https://kankoiji-pass.com/images/ogp.png">
+</head>
+<body>
+
+<header>
+  <div class="logo">管工事PASS</div>
+  <nav style="display:flex;gap:8px;">
+    <a class="btn-ghost" href="../../bunya/index.html">← 分野一覧</a>
+    <a class="btn-ghost" href="index.html">📝 演習問題へ</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">SECTION 02</div>
+  <h1>給排水衛生設備<br>重要ポイント解説</h1>
+  <p>1級管工事施工管理技士 一次検定対策。給水・排水・通気・給湯・ガス設備など、頻出テーマを徹底解説。</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="index.html">📝 演習問題を解く（40問）</a>
+  </div>
+</div>
+
+<div class="toc-wrap">
+  <div class="toc">
+    <div class="toc-title">目次</div>
+    <ul class="toc-list">
+      <li><a href="#sec-water-supply">給水設備・給水方式</a></li>
+      <li><a href="#sec-tank">受水槽・高置水槽</a></li>
+      <li><a href="#sec-pressure">給水圧力・ウォーターハンマー</a></li>
+      <li><a href="#sec-drain">排水管・勾配・材料</a></li>
+      <li><a href="#sec-trap">トラップと封水破壊</a></li>
+      <li><a href="#sec-vent">通気設備</a></li>
+      <li><a href="#sec-hotwater">給湯設備・レジオネラ対策</a></li>
+      <li><a href="#sec-fixture">衛生器具・節水</a></li>
+      <li><a href="#sec-gas">ガス設備（都市ガス・LPG）</a></li>
+      <li><a href="#sec-reuse">雑用水・排水再利用</a></li>
+      <li><a href="#sec-law">法規・維持管理</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- 1. 給水設備・給水方式 -->
+  <section class="section" id="sec-water-supply">
+    <div class="section-header">
+      <div class="section-icon">🚰</div>
+      <div class="section-title-wrap">
+        <div class="section-num">01</div>
+        <div class="section-title">給水設備・給水方式</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">給水方式ごとの特徴・メリット・デメリットと、停電時の対応を正確に把握する。</p>
+      <table class="compare-table">
+        <thead><tr><th>方式</th><th>概要</th><th>特徴・注意点</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="tag-cell">高置水槽方式</td>
+            <td>屋上タンクから重力給水</td>
+            <td>停電時でも一定時間給水可能。水質管理が必要</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">直結直圧方式</td>
+            <td>水道本管の圧力をそのまま利用</td>
+            <td>受水槽不要で水質汚染リスク低。低層建物向き</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">直結増圧方式</td>
+            <td>増圧ポンプで中高層へ直結給水</td>
+            <td>受水槽不要。停電時はポンプ停止→断水が発生する</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">加圧給水ポンプ方式</td>
+            <td>受水槽＋加圧ポンプで給水</td>
+            <td>インバーター制御で省エネ対応可能</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="memo-box">
+        「直結増圧方式は停電時でも断水しない」→ 誤り。増圧ポンプが停止するため断水が発生する。
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 受水槽・高置水槽 -->
+  <section class="section" id="sec-tank">
+    <div class="section-header">
+      <div class="section-icon">🗄️</div>
+      <div class="section-title-wrap">
+        <div class="section-num">02</div>
+        <div class="section-title">受水槽・高置水槽</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">受水槽の容量・構造・管理基準は頻出。6面点検・清掃義務・上部への設備設置禁止を必ず押さえる。</p>
+      <div class="key-points">
+        <div class="key-point correct">
+          <strong>有効容量の目安</strong>
+          <p>受水槽の有効容量は、一般に1日使用水量の<strong>1/2程度</strong>が標準。「2倍程度」は誤り。大きすぎると水が滞留して水質が悪化する。</p>
+        </div>
+        <div class="key-point">
+          <strong>6面点検・構造基準</strong>
+          <p>受水槽は建物躯体から独立させ、底面・側面4面・天井面の6面が点検できる構造が必要。底部を基礎スラブと兼用することは禁止。</p>
+        </div>
+        <div class="key-point warn">
+          <strong>上部への設備設置禁止</strong>
+          <p>受水槽の上部には電気設備・機械設備・配管・ダクトの設置を避ける。水質汚染・落下物リスクがあるため。「推奨されている」は誤り。</p>
+        </div>
+        <div class="key-point">
+          <strong>清掃義務（水道法）</strong>
+          <p>簡易専用水道（有効容量10m³超）の受水槽清掃は年1回以上が法的義務。「年2回以上」は誤り。</p>
+        </div>
+        <div class="key-point">
+          <strong>オーバーフロー管・間接排水</strong>
+          <p>受水槽のオーバーフロー管は間接排水とし、排水口空間を確保する。直接排水管に接続してはならない。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 給水圧力・ウォーターハンマー -->
+  <section class="section" id="sec-pressure">
+    <div class="section-header">
+      <div class="section-icon">💨</div>
+      <div class="section-title-wrap">
+        <div class="section-num">03</div>
+        <div class="section-title">給水圧力・ウォーターハンマー・逆流防止</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">圧力の高低どちらも問題あり。逆流防止の方法と限界も正確に理解する。</p>
+      <div class="key-points">
+        <div class="key-point warn">
+          <strong>給水圧力の適正管理</strong>
+          <p>高すぎる：騒音・振動・ウォーターハンマー・配管漏水リスク増大<br>
+          低すぎる：上層階への給水不足・器具が正常動作しない<br>
+          「高ければ高いほど良い」は誤り。適正範囲（0.05〜0.74MPa程度）で管理する。</p>
+        </div>
+        <div class="key-point">
+          <strong>ウォーターハンマー（水撃）対策</strong>
+          <p>原因：弁の急閉止による管内圧力の急激な変動<br>
+          対策：流速を下げる（管径を大きくする）／弁をゆっくり閉める／ウォーターハンマー吸収器の設置<br>
+          「流速を上げることが有効」は誤り。</p>
+        </div>
+        <div class="key-point correct">
+          <strong>クロスコネクション・逆流防止</strong>
+          <p>クロスコネクション＝飲料水系統と他系統の直接接続。水道法・建築基準法で禁止。<br>
+          逆止弁を設置してもクロスコネクション禁止は免除されない。<br>
+          吐水口空間の確保もクロスコネクション防止の基本手法の一つ（「無関係」は誤り）。</p>
+        </div>
+        <div class="key-point">
+          <strong>バキュームブレーカー</strong>
+          <p>配管内が負圧になったとき空気を導入して逆サイホン（逆流）を防止する装置。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 排水管・勾配・材料 -->
+  <section class="section" id="sec-drain">
+    <div class="section-header">
+      <div class="section-icon">🔩</div>
+      <div class="section-title-wrap">
+        <div class="section-num">04</div>
+        <div class="section-title">排水管・勾配・材料</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">排水管の勾配と管径の関係、配管材料の特性と使用制限を整理する。</p>
+      <div class="key-points">
+        <div class="key-point warn">
+          <strong>排水横枝管の勾配と管径の関係</strong>
+          <p>管径が大きいほど<strong>緩勾配</strong>でよい（反比例）。<br>
+          管径50mm → 1/50 ／ 75mm → 1/100 ／ 100mm → 1/100〜1/200<br>
+          「管径が大きいほど急勾配が必要」は誤り。</p>
+        </div>
+        <div class="key-point">
+          <strong>汚水・雨水の分離</strong>
+          <p>汚水排水管と雨水排水管は屋内での合流禁止。分流式下水道では外部でも分けて接続する。</p>
+        </div>
+      </div>
+      <table class="compare-table" style="margin-top:16px;">
+        <thead><tr><th>材料</th><th>特徴</th><th>注意点</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="tag-cell">硬質塩化ビニル管（VP）</td>
+            <td>軽量・耐食性◎・屋内排水に広く使用</td>
+            <td>高温排水（60℃以上）に弱い。給湯排水には耐熱VP（HTVP）を使用</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">鋳鉄管</td>
+            <td>強度・耐久性◎</td>
+            <td>排水立て管・埋設排水管に使用</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">耐火二層管</td>
+            <td>合成樹脂管の外側に繊維モルタル被覆</td>
+            <td>防火区画の貫通部に使用可能</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="memo-box">
+        「硬質塩化ビニル管は高温排水への耐熱性が高い」→ 誤り。60℃以上で変形しやすいため高温排水には不適。
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. トラップと封水破壊 -->
+  <section class="section" id="sec-trap">
+    <div class="section-header">
+      <div class="section-icon">🌀</div>
+      <div class="section-title-wrap">
+        <div class="section-num">05</div>
+        <div class="section-title">トラップと封水破壊</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">封水破壊の4種類のメカニズムと、二重トラップ禁止の理由を理解する。</p>
+      <div class="key-points">
+        <div class="key-point">
+          <strong>トラップの役割と封水深</strong>
+          <p>排水管内の臭気・害虫の室内侵入を防ぐ。有効封水深は<strong>50〜100mm</strong>が標準。</p>
+        </div>
+        <div class="key-point warn">
+          <strong>二重トラップ禁止</strong>
+          <p>同一排水系統に2つのトラップを設けると排水の流れが妨げられ封水破壊の原因になるため禁止。</p>
+        </div>
+      </div>
+      <table class="compare-table" style="margin-top:16px;">
+        <thead><tr><th>種類</th><th>原因</th><th>補足</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="tag-cell">自己サイホン作用</td>
+            <td>器具排水時にトラップ自身がサイホン管となり封水を引き込む</td>
+            <td>Sトラップ・Pトラップで起きやすい。「起きにくい」は誤り</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">誘導サイホン作用</td>
+            <td>他の器具の排水で排水管内が負圧になり封水が引き込まれる</td>
+            <td>通気管を設けることで防止</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">跳ね出し作用</td>
+            <td>排水立て管内の正圧で封水が器具側に押し出される</td>
+            <td>封水量が<strong>減少</strong>する（「増加」は誤り）</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">蒸発</td>
+            <td>長期間器具を使用しないと封水が蒸発して失われる</td>
+            <td>定期的に水を流して補充する</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 6. 通気設備 -->
+  <section class="section" id="sec-vent">
+    <div class="section-header">
+      <div class="section-icon">🌬️</div>
+      <div class="section-title-wrap">
+        <div class="section-num">06</div>
+        <div class="section-title">通気設備</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">通気管の種類と設置基準を正確に覚える。伸頂通気管の構造は特に頻出。</p>
+      <table class="compare-table">
+        <thead><tr><th>種類</th><th>概要</th><th>ポイント</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="tag-cell">伸頂通気管</td>
+            <td>排水立て管の頂部をそのまま延長して大気開放</td>
+            <td>排水立て管と一体。「別の独立した立て管」は誤り</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">各個通気管</td>
+            <td>各衛生器具のトラップごとに設ける</td>
+            <td>最も確実な封水保護方法</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">ループ通気管</td>
+            <td>最上流器具の排水管に接続し通気立て管まで配管</td>
+            <td>複数器具をまとめて保護</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">逃がし通気管</td>
+            <td>排水横枝管の圧力変動を逃がす</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="key-points" style="margin-top:16px;">
+        <div class="key-point warn">
+          <strong>通気管末端の設置基準</strong>
+          <p>屋上に突き出す場合：屋根面から<strong>200mm以上</strong>立ち上げる（「100mm以上」は誤り）<br>
+          窓・換気口・出入口などの開口部から<strong>600mm以上</strong>離す<br>
+          排水槽の通気管は居室への開口禁止。屋外大気へ開放または脱臭装置を通す。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 給湯設備・レジオネラ対策 -->
+  <section class="section" id="sec-hotwater">
+    <div class="section-header">
+      <div class="section-icon">🔥</div>
+      <div class="section-title-wrap">
+        <div class="section-num">07</div>
+        <div class="section-title">給湯設備・レジオネラ菌対策</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">レジオネラ菌の繁殖温度範囲と対策、膨張タンクの種類と特徴を整理する。</p>
+      <div class="key-points">
+        <div class="key-point warn">
+          <strong>レジオネラ菌の繁殖温度</strong>
+          <p>20〜50℃（特に37℃付近）で最も繁殖しやすい。<strong>60℃以上では死滅</strong>する。<br>
+          「60℃以上で急激に増殖する」は完全に誤り。<br>
+          対策：貯湯槽を60℃以上に維持 ／ 末端給湯温度55℃以上 ／ 死水域を作らない循環配管設計</p>
+        </div>
+        <div class="key-point correct">
+          <strong>膨張タンクの比較</strong>
+          <p>開放式：最高位置への設置が必要。大気に触れるため水質管理が必要。<br>
+          密閉式：設置位置の制約が少なく自由度が高い。外気と遮断されるため水質汚染リスクが低い。<br>
+          「密閉式は設置位置の制約が大きい」は誤り。「密閉式は水質汚染リスクが高い」も誤り。</p>
+        </div>
+        <div class="key-point">
+          <strong>安全装置</strong>
+          <p>安全弁・逃し弁：規定圧力超過で自動開放して圧力を下げる<br>
+          膨張管：密閉式給湯回路で水の熱膨張を吸収<br>
+          循環ポンプ：末端まで温水を循環させ即湯性を確保</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. 衛生器具・節水 -->
+  <section class="section" id="sec-fixture">
+    <div class="section-header">
+      <div class="section-icon">🚽</div>
+      <div class="section-title-wrap">
+        <div class="section-num">08</div>
+        <div class="section-title">衛生器具・節水</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">フラッシュバルブ方式とロータンク方式の違い、節水型器具の洗浄水量を押さえる。</p>
+      <table class="compare-table">
+        <thead><tr><th>項目</th><th>フラッシュバルブ方式</th><th>ロータンク方式</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="tag-cell">連続使用</td>
+            <td>すぐ連続使用できる◎</td>
+            <td>タンクに貯水する時間が必要</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">給水管径</td>
+            <td>大きい管径が必要</td>
+            <td>細い管径でも対応可能</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">給水圧力</td>
+            <td>一定以上の圧力が必要</td>
+            <td>低圧でも使用可</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">適用</td>
+            <td>学校・商業施設など</td>
+            <td>一般住宅など</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="memo-box">
+        「フラッシュバルブ方式は給水管径を細くできる」→ 誤り。大量の水を瞬時に流すため太い管径が必要。<br>
+        節水型大便器の洗浄水量：現在の最新機種は3〜4L程度。「最低10L以上必要」は誤り。
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. ガス設備 -->
+  <section class="section" id="sec-gas">
+    <div class="section-header">
+      <div class="section-icon">🔥</div>
+      <div class="section-title-wrap">
+        <div class="section-num">09</div>
+        <div class="section-title">ガス設備（都市ガス・LPG）</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">都市ガスとLPGの比重の違いによる警報器の設置位置の差が最頻出。発熱量の大小も必ず覚える。</p>
+      <table class="compare-table">
+        <thead><tr><th>項目</th><th>都市ガス（13A）</th><th>LPG（プロパン）</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="tag-cell">主成分</td>
+            <td>メタン（CH₄）</td>
+            <td>プロパン（C₃H₈）・ブタン（C₄H₁₀）</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">空気との比重</td>
+            <td>空気より<strong>軽い</strong></td>
+            <td>空気より<strong>重い</strong></td>
+          </tr>
+          <tr>
+            <td class="tag-cell">漏れたガスの滞留位置</td>
+            <td>天井付近</td>
+            <td>床付近</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">警報器の設置位置</td>
+            <td>天井面から<strong>30cm以内</strong></td>
+            <td>床面から<strong>30cm以内</strong></td>
+          </tr>
+          <tr>
+            <td class="tag-cell">発熱量（単位体積あたり）</td>
+            <td>約45MJ/m³</td>
+            <td>約93MJ/m³（都市ガスの約2倍）</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="memo-box">
+        「LPGは都市ガスより発熱量が低い」→ 誤り。LPGの方が単位体積あたりの発熱量が約2倍高い。
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. 雑用水・排水再利用 -->
+  <section class="section" id="sec-reuse">
+    <div class="section-header">
+      <div class="section-icon">♻️</div>
+      <div class="section-title-wrap">
+        <div class="section-num">10</div>
+        <div class="section-title">雑用水（中水道）・排水再利用</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">雑用水の用途制限と水質基準、飲料水との配管識別の義務を整理する。</p>
+      <div class="key-points">
+        <div class="key-point correct">
+          <strong>雑用水の用途</strong>
+          <p>トイレ洗浄水・散水・清掃用水などの飲料以外の用途に使用可。<br>
+          飲料・炊事・入浴・洗濯には使用不可。</p>
+        </div>
+        <div class="key-point warn">
+          <strong>水質基準</strong>
+          <p>雑用水の水質基準は飲料水と同じではない（用途に応じた基準が適用される）。<br>
+          「飲料水と同じ基準が必要」は誤り。<br>
+          例：トイレ洗浄用は大腸菌不検出・濁度2度以下・臭気なし・外観ほぼ無色透明など。</p>
+        </div>
+        <div class="key-point">
+          <strong>配管の識別</strong>
+          <p>雑用水配管と上水配管は色や表示で明確に区別する義務がある。混同によるクロスコネクションを防ぐため。</p>
+        </div>
+        <div class="key-point warn">
+          <strong>雑排水再利用システム</strong>
+          <p>洗面・シャワー・風呂の排水を処理してトイレ洗浄水などに再利用する→上水使用量を<strong>削減</strong>できる。<br>
+          「上水使用量を増加させる」は完全に誤り。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. 法規・維持管理 -->
+  <section class="section" id="sec-law">
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <div class="section-title-wrap">
+        <div class="section-num">11</div>
+        <div class="section-title">法規・維持管理</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">水道法・建築基準法の規定内容と維持管理の頻度を正確に覚える。</p>
+      <div class="key-points">
+        <div class="key-point correct">
+          <strong>残留塩素（水道法）</strong>
+          <p>給水栓における遊離残留塩素は<strong>0.1mg/L以上</strong>を保持しなければならない。<br>
+          消毒効果を持続させるため給水栓まで維持が必要。</p>
+        </div>
+        <div class="key-point">
+          <strong>簡易専用水道</strong>
+          <p>水道事業者からの供給水のみを水源とし、有効容量<strong>10m³超</strong>の受水槽を使用する給水施設。<br>
+          定期検査：年1回（登録検査機関による）<br>
+          清掃：年1回以上（「年2回以上」は誤り）</p>
+        </div>
+        <div class="key-point warn">
+          <strong>建築基準法の適用範囲</strong>
+          <p>配管設備規定は新築のみでなく、改修・増築・用途変更にも適用される。<br>
+          「新築のみ適用」は誤り。</p>
+        </div>
+        <div class="key-point">
+          <strong>グリース阻集器の清掃</strong>
+          <p>蓄積した油脂・残渣は自然分解されない。定期的な清掃（通常週1回程度）が必須。<br>
+          「自然分解されるため清掃不要」は誤り。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div style="text-align:center;padding:20px 0;">
+    <p style="color:var(--muted);font-size:.9rem;margin-bottom:16px;">解説を読んだら、演習問題で確認しよう！</p>
+    <a class="btn-primary" href="index.html">📝 給排水衛生設備 演習問題を解く（40問）</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2024 管工事PASS — 1級管工事施工管理技士 合格対策サイト</p>
+  <p style="margin-top:6px;">
+    <a href="../../privacy/index.html" style="color:var(--muted);text-decoration:none;">プライバシーポリシー</a> ／
+    <a href="../../disclaimer/index.html" style="color:var(--muted);text-decoration:none;">免責事項</a>
+  </p>
+</footer>
+
+</body>
+</html>
