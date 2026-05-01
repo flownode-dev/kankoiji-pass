@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>消防設備をマンガで理解する｜管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士・消防設備の重要ポイントをスパナ軍曹とパイプ訓練生のマンガで解説。スプリンクラー・消火栓・感知器・避難設備など7テーマ。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/shobo/manga.html">
+<meta property="og:title" content="消防設備をマンガで理解する｜管工事PASS">
+<meta property="og:description" content="消防設備の重要ポイント7テーマをマンガで解説。解説ページの前にこれを読め！">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kankoiji-pass.com/bunya/shobo/manga.html">
+<meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+<style>
+:root {
+  --bg:      #0f1117;
+  --surface: #1a1d27;
+  --surface2:#222636;
+  --border:  #2e3348;
+  --accent:  #f97316;
+  --correct: #22c55e;
+  --warn:    #f59e0b;
+  --text:    #e8eaf0;
+  --muted:   #7a8099;
+  --danger:  #ef4444;
+  --ink:     #08090d;
+  --shobo:   #f97316;
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{ background:var(--bg); color:var(--text); font-family:'Noto Sans JP',sans-serif; overflow-x:hidden; }
+a{ color:inherit; text-decoration:none; }
+
+/* HEADER */
+.site-header{ position:fixed; top:0; left:0; right:0; height:56px; background:rgba(15,17,23,0.92); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:0 1.5rem; z-index:1000; }
+.logo-main{ font-family:'Noto Sans JP',sans-serif; font-weight:900; font-size:1.1rem; background:linear-gradient(135deg,var(--shobo),#fb923c); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.header-nav{ display:flex; gap:1rem; align-items:center; font-size:0.8rem; color:var(--muted); }
+.header-nav a:hover{ color:var(--text); }
+.btn-sm-header{ background:var(--shobo); color:#fff; padding:0.35rem 0.9rem; border-radius:6px; font-size:0.75rem; font-weight:700; }
+
+/* HERO */
+.hero{ min-height:50vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:calc(56px + 2.5rem) 1.5rem 3rem; position:relative; overflow:hidden; background:#08090e; }
+.hero::before{ content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 70% at 50% 50%, rgba(249,115,22,0.12) 0%, transparent 65%), repeating-linear-gradient(45deg, transparent, transparent 38px, rgba(249,115,22,0.03) 38px, rgba(249,115,22,0.03) 39px); }
+.hero-badge{ display:inline-block; background:var(--shobo); color:#fff; font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.2em; padding:0.25rem 1rem; clip-path:polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%); margin-bottom:1.2rem; position:relative; }
+.hero-title{ font-family:'Black Han Sans',sans-serif; font-size:clamp(2rem,7vw,4rem); line-height:0.95; color:#fff; text-shadow:3px 3px 0 var(--shobo), 6px 6px 0 rgba(249,115,22,0.25); margin-bottom:0.8rem; position:relative; }
+.hero-sub{ font-family:'Oswald',sans-serif; font-size:clamp(0.85rem,2.5vw,1.1rem); letter-spacing:0.12em; color:var(--muted); margin-bottom:1.5rem; position:relative; }
+.hero-links{ display:flex; gap:0.8rem; flex-wrap:wrap; justify-content:center; position:relative; }
+.hero-link-kaisetsu{ background:var(--shobo); color:#fff; padding:0.6rem 1.4rem; border-radius:7px; font-size:0.85rem; font-weight:700; transition:opacity 0.2s; }
+.hero-link-kaisetsu:hover{ opacity:0.85; }
+.hero-link-quiz{ background:rgba(249,115,22,0.12); color:var(--shobo); border:1px solid rgba(249,115,22,0.35); padding:0.6rem 1.4rem; border-radius:7px; font-size:0.85rem; font-weight:700; transition:background 0.2s; }
+.hero-link-quiz:hover{ background:rgba(249,115,22,0.22); }
+
+/* TOC */
+.toc-section{ max-width:860px; margin:0 auto; padding:2rem 1rem 1rem; }
+.toc-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:0.5rem; }
+.toc-item{ background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:0.5rem 0.8rem; font-size:0.78rem; display:flex; align-items:center; gap:0.5rem; cursor:pointer; transition:border-color 0.2s; }
+.toc-item:hover{ border-color:var(--shobo); color:var(--shobo); }
+.toc-num{ font-family:'Oswald',sans-serif; font-size:0.7rem; color:var(--shobo); min-width:22px; }
+
+/* MANGA WRAP */
+.manga-wrap{ max-width:860px; margin:0 auto; padding:1rem 1rem 5rem; }
+
+/* CHAPTER HEADER */
+.chapter-header{ display:flex; align-items:center; gap:0.8rem; margin:3rem 0 1.2rem; padding-bottom:0.8rem; border-bottom:3px solid var(--shobo); opacity:0; transform:translateY(20px); transition:opacity 0.5s ease,transform 0.5s ease; }
+.chapter-header.visible{ opacity:1; transform:translateY(0); }
+.ch-num{ font-family:'Oswald',sans-serif; font-size:2.5rem; font-weight:700; color:var(--shobo); line-height:1; min-width:3rem; }
+.ch-label{ font-size:0.65rem; letter-spacing:0.15em; color:var(--muted); font-family:'Oswald',sans-serif; }
+.ch-title{ font-size:clamp(1.1rem,3vw,1.5rem); font-weight:900; line-height:1.2; }
+.ch-icon{ font-size:2rem; margin-left:auto; }
+
+/* PANEL */
+.panel{ background:var(--surface); border:2.5px solid #fff; border-radius:3px; margin-bottom:1.6rem; box-shadow:5px 5px 0 var(--ink); overflow:hidden; opacity:0; transform:translateY(24px); transition:opacity 0.45s ease,transform 0.45s ease; }
+.panel.visible{ opacity:1; transform:translateY(0); }
+.scene-label{ background:var(--ink); border-bottom:2px solid var(--border); padding:0.25rem 0.8rem; font-family:'Oswald',sans-serif; font-size:0.65rem; letter-spacing:0.15em; color:var(--muted); }
+
+/* SCENE */
+.scene{ display:flex; min-height:140px; }
+.char-col{ width:110px; min-width:110px; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding:0.8rem 0.3rem 0.4rem; background:var(--surface2); border-right:2px solid #fff; position:relative; overflow:hidden; }
+.char-col::before{ content:''; position:absolute; inset:0; background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,0.025) 16px,rgba(255,255,255,0.025) 17px); }
+.char-col.right{ border-right:none; border-left:2px solid #fff; }
+.char-col.angry .char-emoji{ animation:rage 0.25s infinite alternate; }
+@keyframes rage{ from{ transform:rotate(-2deg) scale(1); } to{ transform:rotate(2deg) scale(1.06); } }
+.char-col.angry::after{ content:'💢'; position:absolute; top:6px; right:6px; font-size:1.2rem; }
+.char-emoji{ font-size:3.8rem; line-height:1; position:relative; z-index:1; }
+.char-name{ font-size:0.58rem; font-weight:900; color:var(--muted); text-align:center; position:relative; z-index:1; letter-spacing:0.05em; }
+
+/* SPEECH */
+.speech-col{ flex:1; padding:0.9rem 1.1rem; display:flex; flex-direction:column; gap:0.7rem; justify-content:center; }
+.bubble{ border:2px solid #fff; border-radius:4px; padding:0.6rem 0.9rem; line-height:1.65; font-size:clamp(0.8rem,2vw,0.88rem); background:var(--surface2); position:relative; }
+.bubble .spk{ display:block; font-size:0.6rem; font-weight:900; letter-spacing:0.1em; opacity:0.65; margin-bottom:0.25rem; }
+.bubble.shout{ background:var(--danger); color:#fff; font-weight:900; font-size:clamp(0.88rem,2.3vw,1rem); transform:rotate(-0.4deg); box-shadow:3px 3px 0 rgba(0,0,0,0.35); border-color:#fff; }
+.bubble.shout::before{ content:''; position:absolute; left:-11px; top:50%; transform:translateY(-50%); border:6px solid transparent; border-right-color:var(--danger); }
+.bubble.shout .er{ color:#fff !important; font-weight:900; text-decoration:underline 2px #fff; }
+.bubble.shout .eb{ color:#fed7aa !important; font-weight:900; }
+.bubble.shout .eg{ color:#a8ffb0 !important; font-weight:900; }
+.bubble.shout .ew{ color:#ffe08a !important; font-weight:900; }
+.bubble.reply{ background:#14231a; border-color:var(--correct); color:#c8f0cc; }
+.bubble.reply::before{ content:''; position:absolute; right:-11px; top:50%; transform:translateY(-50%); border:6px solid transparent; border-left-color:var(--correct); }
+.bubble.think{ background:#12192e; border-color:var(--shobo); border-style:dashed; color:#fed7aa; }
+.bubble.warn-bub{ background:#221700; border-color:var(--warn); color:#ffe0a0; }
+
+/* NARRATION */
+.narration{ background:var(--ink); border-top:2px solid var(--border); padding:0.5rem 1rem; font-size:0.75rem; color:var(--muted); letter-spacing:0.04em; }
+
+/* KNOWLEDGE */
+.knowledge{ background:var(--surface); border:2.5px solid var(--shobo); border-radius:4px; margin-bottom:1.6rem; box-shadow:5px 5px 0 rgba(249,115,22,0.18); opacity:0; transform:translateY(24px); transition:opacity 0.45s ease,transform 0.45s ease; }
+.knowledge.visible{ opacity:1; transform:translateY(0); }
+.knowledge-header{ background:rgba(249,115,22,0.1); border-bottom:2px solid var(--shobo); padding:0.5rem 1rem; font-family:'Oswald',sans-serif; font-size:0.75rem; letter-spacing:0.15em; color:var(--shobo); display:flex; align-items:center; gap:0.5rem; }
+.knowledge-body{ padding:1rem 1.2rem; }
+
+/* TABLE */
+.k-table{ width:100%; border-collapse:collapse; font-size:0.8rem; margin-top:0.5rem; }
+.k-table th{ background:var(--surface2); padding:0.5rem 0.7rem; border:1.5px solid var(--border); color:var(--muted); font-weight:700; text-align:left; }
+.k-table td{ padding:0.5rem 0.7rem; border:1.5px solid var(--border); line-height:1.55; }
+.k-table tr:nth-child(even) td{ background:rgba(255,255,255,0.02); }
+
+/* POINT LIST */
+.point-list{ display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem; }
+.point-row{ display:flex; gap:0.6rem; align-items:flex-start; font-size:0.82rem; line-height:1.6; }
+.point-icon{ font-size:1rem; flex-shrink:0; margin-top:0.1rem; }
+
+/* TRAP */
+.trap{ background:#180d0d; border:2px solid var(--danger); border-radius:4px; padding:0.7rem 1rem; font-size:0.8rem; color:#fca5a5; margin-top:0.6rem; line-height:1.65; }
+.trap::before{ content:'⚠ 試験の引っかけ  '; font-weight:900; color:var(--danger); }
+
+/* EM */
+.er{ color:var(--danger);  font-weight:900; }
+.eb{ color:var(--shobo);   font-weight:900; }
+.eg{ color:var(--correct); font-weight:900; }
+.ew{ color:var(--warn);    font-weight:900; }
+
+/* SFX */
+.sfx{ font-family:'Black Han Sans',sans-serif; font-size:clamp(1.6rem,5vw,2.8rem); color:var(--warn); text-shadow:2px 2px 0 rgba(0,0,0,0.5); text-align:center; padding:0.3rem; transform:rotate(-1.5deg); display:block; line-height:1; margin:0.5rem 0 1.5rem; }
+
+/* CTA */
+.cta-block{ background:linear-gradient(135deg,#1a0e00,#1a1200); border:3px solid var(--shobo); border-radius:6px; padding:2rem; text-align:center; margin-top:3rem; opacity:0; transform:translateY(24px); transition:opacity 0.5s ease,transform 0.5s ease; }
+.cta-block.visible{ opacity:1; transform:translateY(0); }
+.cta-title{ font-family:'Black Han Sans',sans-serif; font-size:clamp(1.4rem,4vw,2rem); color:#fff; text-shadow:2px 2px 0 var(--shobo); margin-bottom:0.6rem; }
+.cta-sub{ font-size:0.88rem; color:var(--muted); margin-bottom:1.4rem; }
+.cta-btn-primary{ display:inline-block; background:var(--shobo); color:#fff; font-family:'Oswald',sans-serif; font-size:1rem; letter-spacing:0.12em; padding:0.75rem 2.2rem; border-radius:7px; margin:0.3rem; transition:opacity 0.2s,transform 0.1s; }
+.cta-btn-primary:hover{ opacity:0.85; transform:translateY(-2px); }
+.cta-btn-secondary{ display:inline-block; background:rgba(249,115,22,0.12); color:var(--shobo); border:1px solid rgba(249,115,22,0.35); font-size:0.85rem; padding:0.65rem 1.6rem; border-radius:7px; margin:0.3rem; transition:background 0.2s; }
+.cta-btn-secondary:hover{ background:rgba(249,115,22,0.22); }
+
+@media(max-width:600px){
+  .char-col{ width:72px; min-width:72px; }
+  .char-emoji{ font-size:2.6rem; }
+  .scene{ min-height:120px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/shobo/">演習問題</a>
+    <a href="/bunya/shobo/kaisetsu.html">解説ページ</a>
+    <a href="/bunya/shobo/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🔥 SHOBO — MANGA GUIDE</div>
+  <h1 class="hero-title">消防設備<br>マンガで理解</h1>
+  <p class="hero-sub">解説を読む前にこれで7割つかめ — スパナ軍曹が全7テーマを叩き込む</p>
+  <div class="hero-links">
+    <a href="/bunya/shobo/kaisetsu.html" class="hero-link-kaisetsu">📖 詳細解説ページへ</a>
+    <a href="/bunya/shobo/" class="hero-link-quiz">📝 演習問題を解く</a>
+  </div>
+</section>
+
+<!-- TOC -->
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>スプリンクラー設備</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>消火栓・連結送水管</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>泡・ガス・粉末消火</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>自動火災報知・感知器</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>避難設備・非常警報</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>消火配管・ポンプ・水源</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>消防法・点検・資格</div>
+  </div>
+</div>
+
+<!-- MANGA -->
+<div class="manga-wrap">
+
+<!-- CH01 スプリンクラー -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 01</div>
+    <div class="ch-title">スプリンクラー設備</div>
+  </div>
+  <div class="ch-icon">💧</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">FIRE CONTROL ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>乾式スプリンクラーは凍結の恐れがある場所に使えるか？使えないか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>乾式……配管内が乾いてるから……凍結しそうで使えない？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>逆だ！配管内に<span class="eg">水がないから凍結しない</span>！寒冷地・冷凍倉庫こそ乾式の出番だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">💧 スプリンクラー方式の比較</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>方式</th><th>配管内</th><th>適用場所</th><th>作動条件</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eg">湿式</span></td><td>常時加圧水</td><td>一般建物（凍結なし）</td><td>ヘッド感熱のみで即放水</td></tr>
+        <tr><td><span class="eb">乾式</span></td><td>加圧空気・窒素</td><td><span class="eg">寒冷地・冷凍倉庫</span></td><td>ヘッド感熱→空気排出→放水</td></tr>
+        <tr><td><span class="eb">予作動式</span></td><td>加圧空気・窒素</td><td>電算機室・美術館・精密機器室</td><td><span class="er">感知器作動かつヘッド感熱の両方</span></td></tr>
+        <tr><td><span class="eb">開放式</span></td><td>なし</td><td>舞台・危険物施設</td><td>一斉開放弁の作動で全ヘッド放水</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">🌡️</span><span>ヘッドの<span class="eb">標示温度</span>は設置環境の<span class="eg">最高周囲温度より高い</span>ものを選定する。同じ温度では通常時に誤作動するリスクがある。</span></div>
+      <div class="point-row"><span class="point-icon">🪞</span><span><span class="eb">フラッシュ型ヘッド</span>：天井面に面一に収まる美観重視タイプ。「天井から突出する」は誤り。</span></div>
+    </div>
+    <div class="trap">「予作動式はヘッドの感熱のみで放水する」→ 誤り。<span class="eg">感知器作動＋ヘッド感熱の両方</span>が揃って初めて放水。水損防止が目的。</div>
+  </div>
+</div>
+
+<!-- CH02 消火栓 -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 02</div>
+    <div class="ch-title">消火栓設備・連結送水管</div>
+  </div>
+  <div class="ch-icon">🚒</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">HOSE STATION</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>屋内消火栓ポンプは手動でのみ起動か？自動起動か？！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>消防設備だから……安全のために手動？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！起動ボタンで<span class="eg">自動起動</span>が基本だ！「手動のみ」は誤りだぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🚒 消火栓の種別と放水量</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種別</th><th>放水量</th><th>操作</th><th>ポイント</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">屋内消火栓 1号</span></td><td><span class="eg">130L/min以上</span></td><td>2人</td><td>高い消火能力</td></tr>
+        <tr><td><span class="eb">屋内消火栓 2号</span></td><td><span class="eg">60L/min以上</span></td><td>1人</td><td>1人操作が可能な小型</td></tr>
+        <tr><td><span class="eb">屋外消火栓</span></td><td><span class="eg">350L/min以上</span></td><td>—</td><td>建物外部から消火。<span class="er">40m以内</span>をカバー</td></tr>
+        <tr><td><span class="eb">連結送水管</span></td><td>消防隊専用</td><td>消防隊のみ</td><td>消防車→送水口→放水口。在館者は使用不可</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「屋外消火栓の水源は消火栓数によらず一定」→ 誤り。<span class="eg">2基同時使用</span>を想定して算定する。</div>
+  </div>
+</div>
+
+<!-- CH03 泡・ガス・粉末 -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 03</div>
+    <div class="ch-title">泡・不活性ガス・粉末消火設備</div>
+  </div>
+  <div class="ch-icon">🧯</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">AGENT LAB</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>泡消火設備は電気設備の火災に最も効果的か？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>泡でしっかり覆えるから……効果的？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ダメだ！泡は<span class="er">水が主成分</span>だから電気設備に使ったら<span class="er">感電リスク</span>がある！電気火災には<span class="eg">CO₂か粉末</span>だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🧯 消火剤の種類と適用火災</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>設備</th><th>消火原理</th><th>適用火災</th><th>注意点</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">泡消火設備</span></td><td>窒息＋冷却＋乳化</td><td><span class="ew">B火災（油）</span></td><td><span class="er">水が主成分→電気火災に不可</span></td></tr>
+        <tr><td><span class="eb">CO₂消火設備</span></td><td>窒息＋冷却</td><td>電気・油火災</td><td>放出時は<span class="er">人員退避が必須</span>。残留物なし</td></tr>
+        <tr><td><span class="eb">窒素ガス消火設備</span></td><td>窒息</td><td>電気・精密機器</td><td><span class="eg">残留物なし</span>→精密機器に最適</td></tr>
+        <tr><td><span class="eb">粉末消火設備（ABC）</span></td><td>負触媒効果</td><td>A・B・C火災</td><td>水・泡は不使用。<span class="eg">水損なし</span></td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「粉末消火設備は水や泡を使用する」→ 誤り。粉末消火剤（リン酸塩等）を使用。<span class="eg">水損なし</span>が特徴。</div>
+  </div>
+</div>
+
+<!-- CH04 感知器 -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 04</div>
+    <div class="ch-title">自動火災報知設備・感知器の種類</div>
+  </div>
+  <div class="ch-icon">🔔</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">DETECTION LAB</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>燻焼火災に最も適した感知器はどれだ！差動式か光電式か！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>火災なら温度が上がるから……差動式が適してる？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>引っかかったな！燻焼は<span class="er">温度変化が緩やか</span>だ！差動式は急上昇を検知するから不向き！<span class="eg">光電式煙感知器</span>が正解だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔔 感知器の種類と適用</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>検出対象</th><th>得意な火災・場所</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">差動式スポット型</span></td><td>温度の急上昇</td><td>一般室。<span class="er">燻焼火災には不向き</span></td></tr>
+        <tr><td><span class="eb">定温式スポット型</span></td><td>一定温度以上</td><td><span class="eg">厨房・ボイラー室など高温場所</span></td></tr>
+        <tr><td><span class="eg">光電式煙感知器</span></td><td>煙（可視粒子）の光散乱</td><td><span class="eg">燻焼火災の検出に最適</span></td></tr>
+        <tr><td><span class="eb">イオン化式煙感知器</span></td><td>煙（微粒子）のイオン電流変化</td><td>燃焼初期の微粒子検出。燻焼は光電式が優位</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">🪜</span><span>階段・エレベーター昇降路（竪穴区画）には<span class="eg">煙感知器</span>を設置。熱感知器では煙の充満を早期検知できない。</span></div>
+    </div>
+    <div class="trap">「燻焼火災に差動式感知器が最も適している」→ 誤り。差動式は温度急上昇を検知するため燻焼には不向き。<span class="eg">光電式煙感知器</span>が正解。</div>
+  </div>
+</div>
+
+<!-- CH05 避難設備 -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 05</div>
+    <div class="ch-title">避難設備・非常警報設備</div>
+  </div>
+  <div class="ch-icon">🚪</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">EVACUATION ZONE</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>誘導灯の非常点灯時間は最低何分だ！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>避難に必要な時間として……最低10分間？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>10分は短すぎる！最低<span class="eg">20分間</span>だ！大規模・高層建物は<span class="eg">60分間</span>！数字を正確に覚えろ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🚪 避難設備・非常警報のポイント</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">💡</span><span>誘導灯の非常点灯時間：最低<span class="eg">20分間</span>（大規模・高層建物は<span class="eg">60分間</span>）。「最低10分間」は誤り。停電時でも内蔵バッテリーで点灯。</span></div>
+      <div class="point-row"><span class="point-icon">🔗</span><span>非常警報設備と自動火災報知設備は、条件を満たせば<span class="eg">連動・兼用が認められる</span>場合がある。「必ず独立して設置」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">🏠</span><span>住宅用火災警報器は自動火災報知設備と<span class="er">同等の性能はない</span>。マンション等では自動火災報知設備の代替にはならない。</span></div>
+    </div>
+    <div class="trap">「住宅用火災警報器は自動火災報知設備の代替として使用できる」→ 誤り。性能が異なり、<span class="er">代替不可</span>。</div>
+  </div>
+</div>
+
+<!-- CH06 消火配管・ポンプ -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 06</div>
+    <div class="ch-title">消火配管・消火ポンプ・水源</div>
+  </div>
+  <div class="ch-icon">⚙️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PUMP ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>消火ポンプは平常時も常時稼働させておくべきか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>いつ火災が起きるかわからないから……常時稼働？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！平常時は<span class="eg">停止</span>だ！火災時のみ自動または手動で起動する！平常時の圧力維持は<span class="eg">ジョッキーポンプ</span>の仕事だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⚙️ 消火配管・ポンプのポイント</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">💤</span><span>消火ポンプは平常時<span class="eg">停止</span>。火災時のみ起動。「常時稼働が必要」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">🔄</span><span>平常時の配管内圧力維持は<span class="eb">ジョッキーポンプ（補助加圧ポンプ）</span>が担う。</span></div>
+      <div class="point-row"><span class="point-icon">🚫</span><span>消火配管と飲料水配管の<span class="er">兼用・直結は禁止</span>（クロスコネクションに該当）。「兼用が推奨」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">🔒</span><span>試験弁は<span class="eg">常時閉止</span>。試験時のみ開放して流量・圧力を確認する。「常時開放」は誤り。</span></div>
+    </div>
+    <div class="trap">「消火配管と飲料水配管の兼用が推奨されている」→ 誤り。クロスコネクションにあたり<span class="er">禁止</span>。</div>
+  </div>
+</div>
+
+<!-- CH07 消防法・点検 -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 07</div>
+    <div class="ch-title">消防法・点検義務・資格</div>
+  </div>
+  <div class="ch-icon">⚖️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">LAW ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>特定防火対象物の消防設備点検報告は何年に1回だ！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>非特定が3年に1回だから……特定は2年に1回？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！特定防火対象物は<span class="eg">1年に1回</span>だ！非特定が<span class="eg">3年に1回</span>！数字をセットで覚えろ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⚖️ 点検頻度・報告義務・資格</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>項目</th><th>頻度</th></tr></thead>
+      <tbody>
+        <tr><td>機器点検</td><td><span class="eg">6ヶ月に1回</span></td></tr>
+        <tr><td>総合点検</td><td><span class="eg">1年に1回</span></td></tr>
+        <tr><td>報告（特定防火対象物）</td><td><span class="eg">1年に1回</span></td></tr>
+        <tr><td>報告（非特定防火対象物）</td><td><span class="eg">3年に1回</span></td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">🪪</span><span>消防設備の工事には<span class="eb">消防設備士（甲種）</span>が必要。「配管工事資格があれば不要」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">👷</span><span>防火管理者は<span class="eb">防火管理者講習修了者</span>が担う。消防設備士資格は<span class="er">不要</span>（別の資格）。</span></div>
+      <div class="point-row"><span class="point-icon">⚖️</span><span>排煙設備は<span class="eg">消防法と建築基準法の両方</span>で規定されている。「建築基準法の規定は存在しない」は誤り。</span></div>
+    </div>
+    <div class="trap">「消火器の設置本数は一律で決まっている」→ 誤り。防火対象物の種類・用途・延べ面積・階数・構造により算定基準が異なる。</div>
+  </div>
+</div>
+
+<span class="sfx">🔥 全7テーマ制覇！！</span>
+
+<!-- CTA -->
+<div class="cta-block">
+  <div class="cta-title">理解できたら次のステップへ！</div>
+  <p class="cta-sub">解説ページで細部を固めて、演習問題で実力を確かめろ。</p>
+  <a href="/bunya/shobo/kaisetsu.html" class="cta-btn-primary">📖 詳細解説ページへ</a>
+  <a href="/bunya/shobo/" class="cta-btn-secondary">📝 演習問題を解く（30問）</a>
+</div>
+
+</div><!-- /manga-wrap -->
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.panel, .knowledge, .chapter-header, .cta-block')
+  .forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
