@@ -140,6 +140,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://kankoiji-pass.com/bunya/kiso/manga.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kankoiji-pass.com/column/index.html</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -171,6 +177,12 @@
   </url>
   <url>
     <loc>https://kankoiji-pass.com/niji/index.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kankoiji-pass.com/niji/manga.html</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
