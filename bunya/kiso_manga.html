@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一般基礎をマンガで理解する｜管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士・一般基礎の重要ポイントをスパナ軍曹とパイプ訓練生のマンガで解説。流体力学・熱力学・電気・材料・計装など8テーマ。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/kiso/manga.html">
+<meta property="og:title" content="一般基礎をマンガで理解する｜管工事PASS">
+<meta property="og:description" content="一般基礎の重要ポイント8テーマをマンガで解説。解説ページの前にこれを読め！">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kankoiji-pass.com/bunya/kiso/manga.html">
+<meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+<style>
+:root {
+  --bg:      #0f1117;
+  --surface: #1a1d27;
+  --surface2:#222636;
+  --border:  #2e3348;
+  --correct: #22c55e;
+  --warn:    #f59e0b;
+  --text:    #e8eaf0;
+  --muted:   #7a8099;
+  --danger:  #ef4444;
+  --ink:     #08090d;
+  --kiso:    #38bdf8;
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{ background:var(--bg); color:var(--text); font-family:'Noto Sans JP',sans-serif; overflow-x:hidden; }
+a{ color:inherit; text-decoration:none; }
+
+.site-header{ position:fixed; top:0; left:0; right:0; height:56px; background:rgba(15,17,23,0.92); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:0 1.5rem; z-index:1000; }
+.logo-main{ font-family:'Noto Sans JP',sans-serif; font-weight:900; font-size:1.1rem; background:linear-gradient(135deg,var(--kiso),#7dd3fc); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.header-nav{ display:flex; gap:1rem; align-items:center; font-size:0.8rem; color:var(--muted); }
+.header-nav a:hover{ color:var(--text); }
+.btn-sm-header{ background:var(--kiso); color:#0a1020; padding:0.35rem 0.9rem; border-radius:6px; font-size:0.75rem; font-weight:700; }
+
+.hero{ min-height:50vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:calc(56px + 2.5rem) 1.5rem 3rem; position:relative; overflow:hidden; background:#08090e; }
+.hero::before{ content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 70% at 50% 50%, rgba(56,189,248,0.12) 0%, transparent 65%), repeating-linear-gradient(45deg, transparent, transparent 38px, rgba(56,189,248,0.03) 38px, rgba(56,189,248,0.03) 39px); }
+.hero-badge{ display:inline-block; background:var(--kiso); color:#0a1020; font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.2em; padding:0.25rem 1rem; clip-path:polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%); margin-bottom:1.2rem; position:relative; font-weight:700; }
+.hero-title{ font-family:'Black Han Sans',sans-serif; font-size:clamp(2rem,7vw,4.5rem); line-height:0.95; color:#fff; text-shadow:3px 3px 0 var(--kiso), 6px 6px 0 rgba(56,189,248,0.25); margin-bottom:0.8rem; position:relative; }
+.hero-sub{ font-family:'Oswald',sans-serif; font-size:clamp(0.85rem,2.5vw,1.1rem); letter-spacing:0.12em; color:var(--muted); margin-bottom:1.5rem; position:relative; }
+.hero-links{ display:flex; gap:0.8rem; flex-wrap:wrap; justify-content:center; position:relative; }
+.hero-link-kaisetsu{ background:var(--kiso); color:#0a1020; padding:0.6rem 1.4rem; border-radius:7px; font-size:0.85rem; font-weight:700; transition:opacity 0.2s; }
+.hero-link-kaisetsu:hover{ opacity:0.85; }
+.hero-link-quiz{ background:rgba(56,189,248,0.12); color:var(--kiso); border:1px solid rgba(56,189,248,0.35); padding:0.6rem 1.4rem; border-radius:7px; font-size:0.85rem; font-weight:700; transition:background 0.2s; }
+.hero-link-quiz:hover{ background:rgba(56,189,248,0.22); }
+
+.toc-section{ max-width:860px; margin:0 auto; padding:2rem 1rem 1rem; }
+.toc-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:0.5rem; }
+.toc-item{ background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:0.5rem 0.8rem; font-size:0.78rem; display:flex; align-items:center; gap:0.5rem; cursor:pointer; transition:border-color 0.2s; }
+.toc-item:hover{ border-color:var(--kiso); color:var(--kiso); }
+.toc-num{ font-family:'Oswald',sans-serif; font-size:0.7rem; color:var(--kiso); min-width:22px; }
+
+.manga-wrap{ max-width:860px; margin:0 auto; padding:1rem 1rem 5rem; }
+
+.chapter-header{ display:flex; align-items:center; gap:0.8rem; margin:3rem 0 1.2rem; padding-bottom:0.8rem; border-bottom:3px solid var(--kiso); opacity:0; transform:translateY(20px); transition:opacity 0.5s ease,transform 0.5s ease; }
+.chapter-header.visible{ opacity:1; transform:translateY(0); }
+.ch-num{ font-family:'Oswald',sans-serif; font-size:2.5rem; font-weight:700; color:var(--kiso); line-height:1; min-width:3rem; }
+.ch-label{ font-size:0.65rem; letter-spacing:0.15em; color:var(--muted); font-family:'Oswald',sans-serif; }
+.ch-title{ font-size:clamp(1.1rem,3vw,1.5rem); font-weight:900; line-height:1.2; }
+.ch-icon{ font-size:2rem; margin-left:auto; }
+
+.panel{ background:var(--surface); border:2.5px solid #fff; border-radius:3px; margin-bottom:1.6rem; box-shadow:5px 5px 0 var(--ink); overflow:hidden; opacity:0; transform:translateY(24px); transition:opacity 0.45s ease,transform 0.45s ease; }
+.panel.visible{ opacity:1; transform:translateY(0); }
+.scene-label{ background:var(--ink); border-bottom:2px solid var(--border); padding:0.25rem 0.8rem; font-family:'Oswald',sans-serif; font-size:0.65rem; letter-spacing:0.15em; color:var(--muted); }
+
+.scene{ display:flex; min-height:140px; }
+.char-col{ width:110px; min-width:110px; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding:0.8rem 0.3rem 0.4rem; background:var(--surface2); border-right:2px solid #fff; position:relative; overflow:hidden; }
+.char-col::before{ content:''; position:absolute; inset:0; background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,0.025) 16px,rgba(255,255,255,0.025) 17px); }
+.char-col.right{ border-right:none; border-left:2px solid #fff; }
+.char-col.angry .char-emoji{ animation:rage 0.25s infinite alternate; }
+@keyframes rage{ from{ transform:rotate(-2deg) scale(1); } to{ transform:rotate(2deg) scale(1.06); } }
+.char-col.angry::after{ content:'💢'; position:absolute; top:6px; right:6px; font-size:1.2rem; }
+.char-emoji{ font-size:3.8rem; line-height:1; position:relative; z-index:1; }
+.char-name{ font-size:0.58rem; font-weight:900; color:var(--muted); text-align:center; position:relative; z-index:1; letter-spacing:0.05em; }
+
+.speech-col{ flex:1; padding:0.9rem 1.1rem; display:flex; flex-direction:column; gap:0.7rem; justify-content:center; }
+.bubble{ border:2px solid #fff; border-radius:4px; padding:0.6rem 0.9rem; line-height:1.65; font-size:clamp(0.8rem,2vw,0.88rem); background:var(--surface2); position:relative; }
+.bubble .spk{ display:block; font-size:0.6rem; font-weight:900; letter-spacing:0.1em; opacity:0.65; margin-bottom:0.25rem; }
+.bubble.shout{ background:var(--danger); color:#fff; font-weight:900; font-size:clamp(0.88rem,2.3vw,1rem); transform:rotate(-0.4deg); box-shadow:3px 3px 0 rgba(0,0,0,0.35); border-color:#fff; }
+.bubble.shout::before{ content:''; position:absolute; left:-11px; top:50%; transform:translateY(-50%); border:6px solid transparent; border-right-color:var(--danger); }
+.bubble.shout .er{ color:#fff !important; font-weight:900; text-decoration:underline 2px #fff; }
+.bubble.shout .eb{ color:#bae6fd !important; font-weight:900; }
+.bubble.shout .eg{ color:#a8ffb0 !important; font-weight:900; }
+.bubble.shout .ew{ color:#ffe08a !important; font-weight:900; }
+.bubble.reply{ background:#14231a; border-color:var(--correct); color:#c8f0cc; }
+.bubble.reply::before{ content:''; position:absolute; right:-11px; top:50%; transform:translateY(-50%); border:6px solid transparent; border-left-color:var(--correct); }
+.bubble.think{ background:#08192a; border-color:var(--kiso); border-style:dashed; color:#bae6fd; }
+.bubble.warn-bub{ background:#221700; border-color:var(--warn); color:#ffe0a0; }
+
+.narration{ background:var(--ink); border-top:2px solid var(--border); padding:0.5rem 1rem; font-size:0.75rem; color:var(--muted); letter-spacing:0.04em; }
+
+.knowledge{ background:var(--surface); border:2.5px solid var(--kiso); border-radius:4px; margin-bottom:1.6rem; box-shadow:5px 5px 0 rgba(56,189,248,0.18); opacity:0; transform:translateY(24px); transition:opacity 0.45s ease,transform 0.45s ease; }
+.knowledge.visible{ opacity:1; transform:translateY(0); }
+.knowledge-header{ background:rgba(56,189,248,0.1); border-bottom:2px solid var(--kiso); padding:0.5rem 1rem; font-family:'Oswald',sans-serif; font-size:0.75rem; letter-spacing:0.15em; color:var(--kiso); display:flex; align-items:center; gap:0.5rem; }
+.knowledge-body{ padding:1rem 1.2rem; }
+
+.k-table{ width:100%; border-collapse:collapse; font-size:0.8rem; margin-top:0.5rem; }
+.k-table th{ background:var(--surface2); padding:0.5rem 0.7rem; border:1.5px solid var(--border); color:var(--muted); font-weight:700; text-align:left; }
+.k-table td{ padding:0.5rem 0.7rem; border:1.5px solid var(--border); line-height:1.55; }
+.k-table tr:nth-child(even) td{ background:rgba(255,255,255,0.02); }
+
+.point-list{ display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem; }
+.point-row{ display:flex; gap:0.6rem; align-items:flex-start; font-size:0.82rem; line-height:1.6; }
+.point-icon{ font-size:1rem; flex-shrink:0; margin-top:0.1rem; }
+
+.trap{ background:#180d0d; border:2px solid var(--danger); border-radius:4px; padding:0.7rem 1rem; font-size:0.8rem; color:#fca5a5; margin-top:0.6rem; line-height:1.65; }
+.trap::before{ content:'⚠ 試験の引っかけ  '; font-weight:900; color:var(--danger); }
+
+/* 公式ボックス */
+.formula-box{ background:#08192a; border:2px solid var(--kiso); border-radius:4px; padding:0.8rem 1rem; margin-top:0.6rem; font-family:monospace; font-size:0.85rem; color:#bae6fd; line-height:2; }
+.formula-box .fl{ color:#fff; font-weight:900; }
+
+.er{ color:var(--danger);  font-weight:900; }
+.eb{ color:var(--kiso);    font-weight:900; }
+.eg{ color:var(--correct); font-weight:900; }
+.ew{ color:var(--warn);    font-weight:900; }
+
+.sfx{ font-family:'Black Han Sans',sans-serif; font-size:clamp(1.6rem,5vw,2.8rem); color:var(--warn); text-shadow:2px 2px 0 rgba(0,0,0,0.5); text-align:center; padding:0.3rem; transform:rotate(-1.5deg); display:block; line-height:1; margin:0.5rem 0 1.5rem; }
+
+.cta-block{ background:linear-gradient(135deg,#071520,#0e1a0e); border:3px solid var(--kiso); border-radius:6px; padding:2rem; text-align:center; margin-top:3rem; opacity:0; transform:translateY(24px); transition:opacity 0.5s ease,transform 0.5s ease; }
+.cta-block.visible{ opacity:1; transform:translateY(0); }
+.cta-title{ font-family:'Black Han Sans',sans-serif; font-size:clamp(1.4rem,4vw,2rem); color:#fff; text-shadow:2px 2px 0 var(--kiso); margin-bottom:0.6rem; }
+.cta-sub{ font-size:0.88rem; color:var(--muted); margin-bottom:1.4rem; }
+.cta-btn-primary{ display:inline-block; background:var(--kiso); color:#0a1020; font-family:'Oswald',sans-serif; font-size:1rem; letter-spacing:0.12em; padding:0.75rem 2.2rem; border-radius:7px; margin:0.3rem; font-weight:700; transition:opacity 0.2s,transform 0.1s; }
+.cta-btn-primary:hover{ opacity:0.85; transform:translateY(-2px); }
+.cta-btn-secondary{ display:inline-block; background:rgba(56,189,248,0.12); color:var(--kiso); border:1px solid rgba(56,189,248,0.35); font-size:0.85rem; padding:0.65rem 1.6rem; border-radius:7px; margin:0.3rem; transition:background 0.2s; }
+.cta-btn-secondary:hover{ background:rgba(56,189,248,0.22); }
+
+@media(max-width:600px){
+  .char-col{ width:72px; min-width:72px; }
+  .char-emoji{ font-size:2.6rem; }
+  .scene{ min-height:120px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/kiso/">演習問題</a>
+    <a href="/bunya/kiso/kaisetsu.html">解説ページ</a>
+    <a href="/bunya/kiso/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-badge">🌊 KISO — MANGA GUIDE</div>
+  <h1 class="hero-title">一般基礎<br>マンガで理解</h1>
+  <p class="hero-sub">解説を読む前にこれで7割つかめ — スパナ軍曹が全8テーマを叩き込む</p>
+  <div class="hero-links">
+    <a href="/bunya/kiso/kaisetsu.html" class="hero-link-kaisetsu">📖 詳細解説ページへ</a>
+    <a href="/bunya/kiso/" class="hero-link-quiz">📝 演習問題を解く</a>
+  </div>
+</section>
+
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>流体力学・ベルヌーイ</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>熱力学・伝熱</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>電気の基礎</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>材料・腐食・バルブ</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>ポンプ特性</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>計測・非破壊検査</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>湿り空気・空調負荷</div>
+    <div class="toc-item" onclick="document.getElementById('ch08').scrollIntoView({behavior:'smooth'})"><span class="toc-num">08</span>計装・自動制御</div>
+  </div>
+</div>
+
+<div class="manga-wrap">
+
+<!-- CH01 流体力学 -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 01</div>
+    <div class="ch-title">流体力学（ベルヌーイ・圧力損失）</div>
+  </div>
+  <div class="ch-icon">🌊</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">FLUID LAB</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>管が細くなって流速が増加したとき静圧はどうなる？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>勢いが強くなるから……静圧も上昇する？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ベルヌーイの定理だ！流速↑なら<span class="eg">静圧↓</span>！全圧が一定なんだから動圧が増えれば静圧は下がる！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🌊 流体力学の重要公式</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">⚡</span><span><span class="eb">ベルヌーイの定理</span>：全圧（動圧＋静圧＋位置水頭）は一定。管断面積↓→流速↑→<span class="eg">静圧↓</span>。「流速↑→静圧↑」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">🔄</span><span><span class="eb">連続の式</span>：A₁v₁＝A₂v₂。管径大→断面積大→<span class="eg">流速小</span>（反比例）。</span></div>
+      <div class="point-row"><span class="point-icon">📉</span><span><span class="eb">圧力損失</span>は流速の<span class="er">2乗に比例</span>。管径を小さくして流速を上げると圧力損失は<span class="er">増大</span>する（「減る」は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">🌀</span><span><span class="eb">レイノルズ数</span>：Re＞4000程度→<span class="er">乱流</span>。Re＜2300程度→<span class="eg">層流</span>。</span></div>
+      <div class="point-row"><span class="point-icon">💧</span><span>水（液体）の粘度：温度上昇→<span class="eg">粘度低下</span>（流れやすくなる）。気体は逆（温度↑→粘度↑）。</span></div>
+    </div>
+    <div class="formula-box">
+      <span class="fl">ベルヌーイ：</span> P/ρg + v²/2g + z = 一定<br>
+      <span class="fl">連続の式：</span> Q = A × v（流量＝断面積×流速）<br>
+      <span class="fl">圧力損失：</span> ΔP = λ × (L/D) × (ρv²/2)
+    </div>
+    <div class="trap">「管径を小さくして流速を上げると圧力損失が減る」→ 誤り。流速の2乗に比例するため<span class="er">圧力損失は増大</span>する。</div>
+  </div>
+</div>
+
+<!-- CH02 熱力学 -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 02</div>
+    <div class="ch-title">熱力学・伝熱</div>
+  </div>
+  <div class="ch-icon">🌡️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">THERMAL LAB</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>断熱材は熱伝導率が大きいほど性能が高いか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>大きいほど…熱を多く扱えるから……性能高い？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>逆だ！熱伝導率が<span class="eg">小さいほど</span>熱が逃げにくくて断熱性能が<span class="eg">高い</span>！「大きいほど高い」は真逆の誤りだ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🌡️ 熱の伝わり方と材料の比熱</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>項目</th><th>内容</th><th>注意点</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">水の比熱</span></td><td>約4.18 kJ/(kg·K)</td><td>鉄（約0.45）・銅（約0.39）より<span class="eg">はるかに大きい</span>。「水は比熱が小さい」は誤り</td></tr>
+        <tr><td><span class="eb">熱伝導</span></td><td>物質内部を温度差で熱が移動</td><td>熱伝導率が<span class="eg">小さい</span>ほど断熱性能が<span class="eg">高い</span></td></tr>
+        <tr><td><span class="eb">熱対流</span></td><td>流体の流れにより熱が移動</td><td>—</td></tr>
+        <tr><td><span class="eb">熱放射（輻射）</span></td><td>電磁波（赤外線）により熱が移動</td><td><span class="eg">真空中でも伝達される</span>（媒体不要）</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「熱伝導率が大きいほど断熱性能が高い」→ 誤り。熱伝導率が<span class="eg">小さいほど</span>熱が逃げにくく断熱性能が高い。</div>
+  </div>
+</div>
+
+<!-- CH03 電気の基礎 -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 03</div>
+    <div class="ch-title">電気の基礎</div>
+  </div>
+  <div class="ch-icon">⚡</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">ELECTRIC LAB</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>並列接続の合成抵抗は各抵抗の和か？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>直列も並列も足せばいい……のかな？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！並列は<span class="eg">逆数の和の逆数</span>だ！「各抵抗の和」は直列のみ！並列では合成抵抗は個々の抵抗より<span class="eg">小さく</span>なる！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⚡ 合成抵抗・三相交流・オームの法則</div>
+  <div class="knowledge-body">
+    <div class="formula-box">
+      <span class="fl">直列：</span> R合成 = R₁ + R₂ + …（各抵抗の和）<br>
+      <span class="fl">並列：</span> 1/R合成 = 1/R₁ + 1/R₂ + …（逆数の和の逆数）<br>
+      <span class="fl">オームの法則：</span> V = I × R<br>
+      <span class="fl">電力：</span> P = V × I = I²R = V²/R
+    </div>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">🔌</span><span>並列接続では合成抵抗は個々の抵抗より<span class="eg">小さく</span>なる（電流が流れやすくなる）。</span></div>
+      <div class="point-row"><span class="point-icon">3️⃣</span><span><span class="eb">三相交流</span>：位相が120°ずつ異なる3つの交流電圧で構成。単相交流より<span class="eg">電力伝送効率が高い</span>（「低い」は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">🏋️</span><span>ニュートン第2法則：F＝ma。1kg×1m/s²＝<span class="eg">1N</span>（「10N」は誤り）。</span></div>
+    </div>
+    <div class="trap">「並列接続の合成抵抗も各抵抗の和で求める」→ 誤り。並列は<span class="eg">逆数の和の逆数</span>。合成抵抗は個々より小さくなる。</div>
+  </div>
+</div>
+
+<!-- CH04 材料・バルブ -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 04</div>
+    <div class="ch-title">材料・腐食・バルブ</div>
+  </div>
+  <div class="ch-icon">🔩</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">MATERIAL LAB</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>亜鉛めっきは何の薄膜を形成して鋼材を守る？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>めっきだから……銅の薄膜？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>「亜鉛」めっきと言っとるだろ！<span class="eg">亜鉛の薄膜</span>だ！亜鉛が先に腐食する<span class="eg">犠牲防食</span>で鋼材を守るんだ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔩 材料・腐食・バルブの比較</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🛡️</span><span><span class="eb">亜鉛めっき</span>：<span class="eg">亜鉛の薄膜</span>を形成（「銅の薄膜」は誤り）。亜鉛が先に腐食する犠牲防食により鋼材を保護。</span></div>
+      <div class="point-row"><span class="point-icon">💥</span><span><span class="eb">ぜい性（脆性）材料</span>：弾性変形が小さく破断前にほとんど変形しない。変形が大きいのは延性材料。</span></div>
+    </div>
+    <table class="k-table" style="margin-top:0.8rem;">
+      <thead><tr><th>バルブ</th><th>圧力損失</th><th>主な用途</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">ゲートバルブ（仕切弁）</span></td><td><span class="eg">全開時は小さい</span></td><td>止め弁（開閉のみ）</td></tr>
+        <tr><td><span class="eb">グローブバルブ（玉形弁）</span></td><td><span class="er">大きい</span></td><td>流量調節。弁体は流路に<span class="er">垂直</span>に動く（「平行」は誤り）</td></tr>
+        <tr><td><span class="eb">バタフライバルブ</span></td><td><span class="eg">小さい</span></td><td>大口径配管・流量調節</td></tr>
+        <tr><td><span class="eb">チェックバルブ（逆止弁）</span></td><td>—</td><td>逆流防止専用</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「グローブバルブの弁体は流路に平行に動く」→ 誤り。流路に<span class="eg">垂直</span>に動く。そのため圧力損失が大きい。</div>
+  </div>
+</div>
+
+<!-- CH05 ポンプ特性 -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 05</div>
+    <div class="ch-title">ポンプ特性（並列・直列運転）</div>
+  </div>
+  <div class="ch-icon">⚙️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PUMP ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>直列運転で増加するのは流量か揚程か？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>直列に並べるから……流量が増える？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！直列で増えるのは<span class="eg">揚程</span>だ！流量を増やしたいなら<span class="eg">並列</span>だ！高層ビルへの給水は直列で揚程を上げる！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⚙️ ポンプ並列・直列運転の比較</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>運転方式</th><th>流量</th><th>揚程</th><th>用途</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">並列運転</span></td><td><span class="eg">増加↑</span></td><td>ほぼ変わらず</td><td>流量を増やしたい場合</td></tr>
+        <tr><td><span class="eb">直列運転</span></td><td>ほぼ変わらず</td><td><span class="eg">増加↑</span></td><td>揚程を増やしたい場合（高層ビルなど）</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">📊</span><span>絶対圧力＝ゲージ圧力<span class="eg">＋</span>大気圧（「−大気圧」は誤り）。</span></div>
+    </div>
+    <div class="trap">「直列運転で流量が増加する」→ 誤り。直列で増加するのは<span class="eg">揚程</span>。流量を増やすには並列運転。</div>
+  </div>
+</div>
+
+<!-- CH06 非破壊検査 -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 06</div>
+    <div class="ch-title">計測・非破壊検査</div>
+  </div>
+  <div class="ch-icon">🔬</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">INSPECTION LAB</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>浸透探傷試験（PT）は内部欠陥の検出に最も適しているか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>液体が浸透するから……内部まで検査できる？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！PTは<span class="eg">表面に開口した欠陥のみ</span>だ！内部欠陥を見たければ<span class="eg">RT（放射線）かUT（超音波）</span>を使え！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔬 非破壊検査の種類と検出対象</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>検査方法</th><th>略称</th><th>検出対象</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">放射線透過試験</span></td><td><span class="eg">RT</span></td><td><span class="eg">内部欠陥</span>（溶接内部の空洞・割れなど）</td></tr>
+        <tr><td><span class="eb">超音波探傷試験</span></td><td><span class="eg">UT</span></td><td><span class="eg">内部欠陥</span></td></tr>
+        <tr><td><span class="eb">磁粉探傷試験</span></td><td>MT</td><td>表面・表層の欠陥（<span class="er">磁性体のみ</span>に適用）</td></tr>
+        <tr><td><span class="eb">浸透探傷試験</span></td><td>PT</td><td><span class="er">表面に開口した欠陥のみ</span>（内部欠陥には不向き）</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「浸透探傷試験（PT）は内部欠陥の検出に最も適している」→ 誤り。PTは<span class="eg">表面開口欠陥専用</span>。内部欠陥はRT・UTを使用。</div>
+  </div>
+</div>
+
+<!-- CH07 湿り空気 -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 07</div>
+    <div class="ch-title">湿り空気・空調負荷・建物性能</div>
+  </div>
+  <div class="ch-icon">💧</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PSYCHRO LAB</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>熱貫流率（U値）が低いほど冷暖房負荷はどうなる？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>U値が低い……熱が逃げやすいから……負荷が大きい？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>逆だ！U値が<span class="eg">小さい＝断熱性能が高い＝冷暖房負荷が小さい</span>！U値と負荷は<span class="eg">比例関係</span>だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">💧 湿り空気・U値・照度のポイント</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🌡️</span><span>空気を加熱しても<span class="eg">絶対湿度は変わらない</span>。変わるのは相対湿度（低下する）。「加熱すると絶対湿度が増加する」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">🏠</span><span>U値（熱貫流率）が<span class="eg">小さい</span>→断熱性能が高い→冷暖房負荷が<span class="eg">小さい</span>。U値と負荷は比例関係。</span></div>
+      <div class="point-row"><span class="point-icon">💡</span><span>照度の逆二乗の法則：照度は光源からの距離の<span class="eg">2乗に反比例</span>して減少。距離2倍→照度1/4。「距離に比例して増加する」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">🌬️</span><span>空気の密度と温度：温度上昇→<span class="eg">密度低下</span>（熱膨張）→温かい空気は上昇。「夏場の方が密度が高い」は誤り。冬場の方が密度が高い。</span></div>
+    </div>
+    <div class="trap">「U値が低いほど冷暖房負荷が大きくなる」→ 誤り。U値が低い（小さい）ほど断熱性能が高く、冷暖房負荷は<span class="eg">小さくなる</span>。</div>
+  </div>
+</div>
+
+<!-- CH08 計装・自動制御 -->
+<div class="chapter-header" id="ch08">
+  <div class="ch-num">08</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 08</div>
+    <div class="ch-title">計装・自動制御</div>
+  </div>
+  <div class="ch-icon">🎛️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CONTROL ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>フィードフォワード制御は事後対応型か？先行型か？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>「フィード」が付いてるから……フィードバックと同じで事後対応？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>混同するな！フィードフォワードは<span class="eg">外乱を事前に予測して先行的に対処</span>する！事後対応はフィードバックだ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🎛️ 自動制御の種類と特徴</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>制御方式</th><th>概要</th><th>特徴</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">フィードバック制御</span></td><td>制御量を検出して目標値との偏差を修正</td><td><span class="ew">事後対応型</span>。偏差が出てから対処</td></tr>
+        <tr><td><span class="eg">フィードフォワード制御</span></td><td>外乱を事前に検出・予測して操作量を変化</td><td><span class="eg">先行型・予防型</span>（「事後対応型」は誤り）</td></tr>
+        <tr><td><span class="eb">PID制御</span></td><td>比例（P）＋積分（I）＋微分（D）の組み合わせ</td><td>最も広く使用される制御方式</td></tr>
+        <tr><td><span class="eb">オンオフ制御</span></td><td>ON/OFFのみで制御</td><td>最もシンプル。ハンチングが起きやすい</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">🔊</span><span>デシベル（dB）の加算：同じ60dBの音源が2つ→合計は<span class="eg">63dB</span>（120dBではない）。dBは対数スケールなので単純加算不可。</span></div>
+    </div>
+    <div class="trap">「フィードフォワード制御は事後対応型である」→ 誤り。フィードフォワードは<span class="eg">先行型・予防型</span>。事後対応型はフィードバック制御。</div>
+  </div>
+</div>
+
+<span class="sfx">🌊 全8テーマ制覇！！</span>
+
+<div class="cta-block">
+  <div class="cta-title">理解できたら次のステップへ！</div>
+  <p class="cta-sub">解説ページで細部を固めて、演習問題で実力を確かめろ。</p>
+  <a href="/bunya/kiso/kaisetsu.html" class="cta-btn-primary">📖 詳細解説ページへ</a>
+  <a href="/bunya/kiso/" class="cta-btn-secondary">📝 演習問題を解く（30問）</a>
+</div>
+
+</div><!-- /manga-wrap -->
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.panel, .knowledge, .chapter-header, .cta-block')
+  .forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
