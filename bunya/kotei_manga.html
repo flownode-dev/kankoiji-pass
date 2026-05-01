@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工程管理をマンガで理解する｜管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士・工程管理の重要ポイントをスパナ軍曹とパイプ訓練生のマンガで解説。バーチャート・ネットワーク工程表・クリティカルパス・フロートなど8テーマ。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/kotei/manga.html">
+<meta property="og:title" content="工程管理をマンガで理解する｜管工事PASS">
+<meta property="og:description" content="工程管理の重要ポイント8テーマをマンガで解説。解説ページの前にこれを読め！">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kankoiji-pass.com/bunya/kotei/manga.html">
+<meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+<style>
+:root {
+  --bg:      #0f1117;
+  --surface: #1a1d27;
+  --surface2:#222636;
+  --border:  #2e3348;
+  --accent:  #8b5cf6;
+  --correct: #22c55e;
+  --warn:    #f59e0b;
+  --text:    #e8eaf0;
+  --muted:   #7a8099;
+  --danger:  #ef4444;
+  --ink:     #08090d;
+  --kotei:   #8b5cf6;
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{ background:var(--bg); color:var(--text); font-family:'Noto Sans JP',sans-serif; overflow-x:hidden; }
+a{ color:inherit; text-decoration:none; }
+
+.site-header{ position:fixed; top:0; left:0; right:0; height:56px; background:rgba(15,17,23,0.92); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:0 1.5rem; z-index:1000; }
+.logo-main{ font-family:'Noto Sans JP',sans-serif; font-weight:900; font-size:1.1rem; background:linear-gradient(135deg,var(--kotei),#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.header-nav{ display:flex; gap:1rem; align-items:center; font-size:0.8rem; color:var(--muted); }
+.header-nav a:hover{ color:var(--text); }
+.btn-sm-header{ background:var(--kotei); color:#fff; padding:0.35rem 0.9rem; border-radius:6px; font-size:0.75rem; font-weight:700; }
+
+.hero{ min-height:50vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:calc(56px + 2.5rem) 1.5rem 3rem; position:relative; overflow:hidden; background:#08090e; }
+.hero::before{ content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 70% at 50% 50%, rgba(139,92,246,0.12) 0%, transparent 65%), repeating-linear-gradient(45deg, transparent, transparent 38px, rgba(139,92,246,0.03) 38px, rgba(139,92,246,0.03) 39px); }
+.hero-badge{ display:inline-block; background:var(--kotei); color:#fff; font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.2em; padding:0.25rem 1rem; clip-path:polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%); margin-bottom:1.2rem; position:relative; }
+.hero-title{ font-family:'Black Han Sans',sans-serif; font-size:clamp(2rem,7vw,4rem); line-height:0.95; color:#fff; text-shadow:3px 3px 0 var(--kotei), 6px 6px 0 rgba(139,92,246,0.25); margin-bottom:0.8rem; position:relative; }
+.hero-sub{ font-family:'Oswald',sans-serif; font-size:clamp(0.85rem,2.5vw,1.1rem); letter-spacing:0.12em; color:var(--muted); margin-bottom:1.5rem; position:relative; }
+.hero-links{ display:flex; gap:0.8rem; flex-wrap:wrap; justify-content:center; position:relative; }
+.hero-link-kaisetsu{ background:var(--kotei); color:#fff; padding:0.6rem 1.4rem; border-radius:7px; font-size:0.85rem; font-weight:700; transition:opacity 0.2s; }
+.hero-link-kaisetsu:hover{ opacity:0.85; }
+.hero-link-quiz{ background:rgba(139,92,246,0.12); color:var(--kotei); border:1px solid rgba(139,92,246,0.35); padding:0.6rem 1.4rem; border-radius:7px; font-size:0.85rem; font-weight:700; transition:background 0.2s; }
+.hero-link-quiz:hover{ background:rgba(139,92,246,0.22); }
+
+.toc-section{ max-width:860px; margin:0 auto; padding:2rem 1rem 1rem; }
+.toc-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:0.5rem; }
+.toc-item{ background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:0.5rem 0.8rem; font-size:0.78rem; display:flex; align-items:center; gap:0.5rem; cursor:pointer; transition:border-color 0.2s; }
+.toc-item:hover{ border-color:var(--kotei); color:var(--kotei); }
+.toc-num{ font-family:'Oswald',sans-serif; font-size:0.7rem; color:var(--kotei); min-width:22px; }
+
+.manga-wrap{ max-width:860px; margin:0 auto; padding:1rem 1rem 5rem; }
+
+.chapter-header{ display:flex; align-items:center; gap:0.8rem; margin:3rem 0 1.2rem; padding-bottom:0.8rem; border-bottom:3px solid var(--kotei); opacity:0; transform:translateY(20px); transition:opacity 0.5s ease,transform 0.5s ease; }
+.chapter-header.visible{ opacity:1; transform:translateY(0); }
+.ch-num{ font-family:'Oswald',sans-serif; font-size:2.5rem; font-weight:700; color:var(--kotei); line-height:1; min-width:3rem; }
+.ch-label{ font-size:0.65rem; letter-spacing:0.15em; color:var(--muted); font-family:'Oswald',sans-serif; }
+.ch-title{ font-size:clamp(1.1rem,3vw,1.5rem); font-weight:900; line-height:1.2; }
+.ch-icon{ font-size:2rem; margin-left:auto; }
+
+.panel{ background:var(--surface); border:2.5px solid #fff; border-radius:3px; margin-bottom:1.6rem; box-shadow:5px 5px 0 var(--ink); overflow:hidden; opacity:0; transform:translateY(24px); transition:opacity 0.45s ease,transform 0.45s ease; }
+.panel.visible{ opacity:1; transform:translateY(0); }
+.scene-label{ background:var(--ink); border-bottom:2px solid var(--border); padding:0.25rem 0.8rem; font-family:'Oswald',sans-serif; font-size:0.65rem; letter-spacing:0.15em; color:var(--muted); }
+
+.scene{ display:flex; min-height:140px; }
+.char-col{ width:110px; min-width:110px; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding:0.8rem 0.3rem 0.4rem; background:var(--surface2); border-right:2px solid #fff; position:relative; overflow:hidden; }
+.char-col::before{ content:''; position:absolute; inset:0; background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,0.025) 16px,rgba(255,255,255,0.025) 17px); }
+.char-col.right{ border-right:none; border-left:2px solid #fff; }
+.char-col.angry .char-emoji{ animation:rage 0.25s infinite alternate; }
+@keyframes rage{ from{ transform:rotate(-2deg) scale(1); } to{ transform:rotate(2deg) scale(1.06); } }
+.char-col.angry::after{ content:'💢'; position:absolute; top:6px; right:6px; font-size:1.2rem; }
+.char-emoji{ font-size:3.8rem; line-height:1; position:relative; z-index:1; }
+.char-name{ font-size:0.58rem; font-weight:900; color:var(--muted); text-align:center; position:relative; z-index:1; letter-spacing:0.05em; }
+
+.speech-col{ flex:1; padding:0.9rem 1.1rem; display:flex; flex-direction:column; gap:0.7rem; justify-content:center; }
+.bubble{ border:2px solid #fff; border-radius:4px; padding:0.6rem 0.9rem; line-height:1.65; font-size:clamp(0.8rem,2vw,0.88rem); background:var(--surface2); position:relative; }
+.bubble .spk{ display:block; font-size:0.6rem; font-weight:900; letter-spacing:0.1em; opacity:0.65; margin-bottom:0.25rem; }
+.bubble.shout{ background:var(--danger); color:#fff; font-weight:900; font-size:clamp(0.88rem,2.3vw,1rem); transform:rotate(-0.4deg); box-shadow:3px 3px 0 rgba(0,0,0,0.35); border-color:#fff; }
+.bubble.shout::before{ content:''; position:absolute; left:-11px; top:50%; transform:translateY(-50%); border:6px solid transparent; border-right-color:var(--danger); }
+.bubble.shout .er{ color:#fff !important; font-weight:900; text-decoration:underline 2px #fff; }
+.bubble.shout .eb{ color:#ddd6fe !important; font-weight:900; }
+.bubble.shout .eg{ color:#a8ffb0 !important; font-weight:900; }
+.bubble.shout .ew{ color:#ffe08a !important; font-weight:900; }
+.bubble.reply{ background:#14231a; border-color:var(--correct); color:#c8f0cc; }
+.bubble.reply::before{ content:''; position:absolute; right:-11px; top:50%; transform:translateY(-50%); border:6px solid transparent; border-left-color:var(--correct); }
+.bubble.think{ background:#1a1230; border-color:var(--kotei); border-style:dashed; color:#ddd6fe; }
+.bubble.warn-bub{ background:#221700; border-color:var(--warn); color:#ffe0a0; }
+
+.narration{ background:var(--ink); border-top:2px solid var(--border); padding:0.5rem 1rem; font-size:0.75rem; color:var(--muted); letter-spacing:0.04em; }
+
+.knowledge{ background:var(--surface); border:2.5px solid var(--kotei); border-radius:4px; margin-bottom:1.6rem; box-shadow:5px 5px 0 rgba(139,92,246,0.18); opacity:0; transform:translateY(24px); transition:opacity 0.45s ease,transform 0.45s ease; }
+.knowledge.visible{ opacity:1; transform:translateY(0); }
+.knowledge-header{ background:rgba(139,92,246,0.1); border-bottom:2px solid var(--kotei); padding:0.5rem 1rem; font-family:'Oswald',sans-serif; font-size:0.75rem; letter-spacing:0.15em; color:var(--kotei); display:flex; align-items:center; gap:0.5rem; }
+.knowledge-body{ padding:1rem 1.2rem; }
+
+.k-table{ width:100%; border-collapse:collapse; font-size:0.8rem; margin-top:0.5rem; }
+.k-table th{ background:var(--surface2); padding:0.5rem 0.7rem; border:1.5px solid var(--border); color:var(--muted); font-weight:700; text-align:left; }
+.k-table td{ padding:0.5rem 0.7rem; border:1.5px solid var(--border); line-height:1.55; }
+.k-table tr:nth-child(even) td{ background:rgba(255,255,255,0.02); }
+
+.point-list{ display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem; }
+.point-row{ display:flex; gap:0.6rem; align-items:flex-start; font-size:0.82rem; line-height:1.6; }
+.point-icon{ font-size:1rem; flex-shrink:0; margin-top:0.1rem; }
+
+.trap{ background:#180d0d; border:2px solid var(--danger); border-radius:4px; padding:0.7rem 1rem; font-size:0.8rem; color:#fca5a5; margin-top:0.6rem; line-height:1.65; }
+.trap::before{ content:'⚠ 試験の引っかけ  '; font-weight:900; color:var(--danger); }
+
+.er{ color:var(--danger);  font-weight:900; }
+.eb{ color:var(--kotei);   font-weight:900; }
+.eg{ color:var(--correct); font-weight:900; }
+.ew{ color:var(--warn);    font-weight:900; }
+
+.sfx{ font-family:'Black Han Sans',sans-serif; font-size:clamp(1.6rem,5vw,2.8rem); color:var(--warn); text-shadow:2px 2px 0 rgba(0,0,0,0.5); text-align:center; padding:0.3rem; transform:rotate(-1.5deg); display:block; line-height:1; margin:0.5rem 0 1.5rem; }
+
+.cta-block{ background:linear-gradient(135deg,#100a1f,#0e1a0e); border:3px solid var(--kotei); border-radius:6px; padding:2rem; text-align:center; margin-top:3rem; opacity:0; transform:translateY(24px); transition:opacity 0.5s ease,transform 0.5s ease; }
+.cta-block.visible{ opacity:1; transform:translateY(0); }
+.cta-title{ font-family:'Black Han Sans',sans-serif; font-size:clamp(1.4rem,4vw,2rem); color:#fff; text-shadow:2px 2px 0 var(--kotei); margin-bottom:0.6rem; }
+.cta-sub{ font-size:0.88rem; color:var(--muted); margin-bottom:1.4rem; }
+.cta-btn-primary{ display:inline-block; background:var(--kotei); color:#fff; font-family:'Oswald',sans-serif; font-size:1rem; letter-spacing:0.12em; padding:0.75rem 2.2rem; border-radius:7px; margin:0.3rem; transition:opacity 0.2s,transform 0.1s; }
+.cta-btn-primary:hover{ opacity:0.85; transform:translateY(-2px); }
+.cta-btn-secondary{ display:inline-block; background:rgba(139,92,246,0.12); color:var(--kotei); border:1px solid rgba(139,92,246,0.35); font-size:0.85rem; padding:0.65rem 1.6rem; border-radius:7px; margin:0.3rem; transition:background 0.2s; }
+.cta-btn-secondary:hover{ background:rgba(139,92,246,0.22); }
+
+/* 計算式ボックス */
+.formula-box{ background:#1a1230; border:2px solid var(--kotei); border-radius:4px; padding:0.8rem 1rem; margin-top:0.6rem; font-family:monospace; font-size:0.85rem; color:#ddd6fe; line-height:1.8; }
+
+@media(max-width:600px){
+  .char-col{ width:72px; min-width:72px; }
+  .char-emoji{ font-size:2.6rem; }
+  .scene{ min-height:120px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/kotei/">演習問題</a>
+    <a href="/bunya/kotei/kaisetsu.html">解説ページ</a>
+    <a href="/bunya/kotei/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-badge">📅 KOTEI — MANGA GUIDE</div>
+  <h1 class="hero-title">工程管理<br>マンガで理解</h1>
+  <p class="hero-sub">解説を読む前にこれで7割つかめ — スパナ軍曹が全8テーマを叩き込む</p>
+  <div class="hero-links">
+    <a href="/bunya/kotei/kaisetsu.html" class="hero-link-kaisetsu">📖 詳細解説ページへ</a>
+    <a href="/bunya/kotei/" class="hero-link-quiz">📝 演習問題を解く</a>
+  </div>
+</section>
+
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>工程表の種類と比較</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>ネットワーク工程表の用語</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>クリティカルパス</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>フロート（余裕時間）</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>最早・最遅時刻の計算</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>出来高進捗曲線（Sカーブ）</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>工期短縮・クラッシング</div>
+    <div class="toc-item" onclick="document.getElementById('ch08').scrollIntoView({behavior:'smooth'})"><span class="toc-num">08</span>PDCA・工程管理の実務</div>
+  </div>
+</div>
+
+<div class="manga-wrap">
+
+<!-- CH01 工程表の種類 -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 01</div>
+    <div class="ch-title">工程表の種類と比較</div>
+  </div>
+  <div class="ch-icon">📅</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PLANNING ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>バーチャートで作業間の依存関係を明確に表現できるか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>バーチャートは棒グラフで見やすいから……表現できそう？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>できない！依存関係の表現は<span class="eg">ネットワーク工程表</span>の得意分野だ！バーチャートは作成が<span class="eg">容易</span>なのが長所だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📅 工程表の種類と比較</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>長所</th><th>短所・注意点</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">バーチャート</span>（ガントチャート）</td><td><span class="eg">作成・理解が容易</span>。各作業の期間・開始・終了が一目でわかる</td><td><span class="er">作業間の依存関係を明確に表現できない</span>。大規模工事に不向き</td></tr>
+        <tr><td><span class="eb">ネットワーク工程表</span>（PERT・CPM）</td><td><span class="eg">作業間の依存関係を明確に表現できる</span>。クリティカルパス把握・工期短縮検討に優れる</td><td>作成・理解に専門知識が必要</td></tr>
+        <tr><td><span class="eb">タクト工程表</span></td><td>繰り返し作業（高層ビルの各階など）に最適</td><td>不規則・多様な工種の小規模工事には不向き</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「バーチャートは作業間の相互関係を明確に表現できる」→ 誤り。相互関係の表現は<span class="eg">ネットワーク工程表</span>が得意。また「ガントチャートとバーチャートはまったく異なる」→ 誤り。実質的に<span class="eg">同じ手法</span>。</div>
+  </div>
+</div>
+
+<!-- CH02 ネットワーク用語 -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 02</div>
+    <div class="ch-title">ネットワーク工程表の用語</div>
+  </div>
+  <div class="ch-icon">🔗</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">NETWORK LAB</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ダミーアクティビティは所要時間を持つか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>アクティビティは作業だから……時間があるんじゃ？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！ダミーは<span class="eg">時間も資源も消費しない仮想の作業</span>だ！所要時間は<span class="eg">ゼロ</span>！依存関係を示すためだけに存在する！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔗 ネットワーク工程表の用語整理</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>用語</th><th>定義</th><th>表し方</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">リアルアクティビティ</span></td><td>時間と資源を消費する実際の作業</td><td>実線の矢線（→）</td></tr>
+        <tr><td><span class="eb">ダミーアクティビティ</span></td><td><span class="eg">時間も資源も消費しない仮想の作業（所要時間＝0）</span></td><td>破線の矢線（- - →）</td></tr>
+        <tr><td><span class="eb">イベント（結合点）</span></td><td>作業の開始または終了を表す時点</td><td>丸（○）</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">🔀</span><span>作業の依存関係にはFS・SS・FF・SFの4種類がある。「必ずFS（終了→開始）の1種類のみ」は誤り。</span></div>
+    </div>
+    <div class="trap">「ダミーアクティビティは所要時間を持つ」→ 誤り。所要時間は<span class="eg">ゼロ</span>。依存関係を示すためだけの仮想の作業。</div>
+  </div>
+</div>
+
+<!-- CH03 クリティカルパス -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 03</div>
+    <div class="ch-title">クリティカルパス</div>
+  </div>
+  <div class="ch-icon">🎯</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CRITICAL ZONE</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>クリティカルパスは必ず1本だけか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>「クリティカル」な経路だから……1本だけ？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！同じ所要時間の経路が複数あれば<span class="eg">複数存在する</span>！「必ず1本」は試験の引っかけだ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🎯 クリティカルパスの性質</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">📏</span><span>クリティカルパス＝始点から終点までの<span class="eg">最長経路</span>。全体工期を決定する。</span></div>
+      <div class="point-row"><span class="point-icon">🔢</span><span>同じ所要時間の経路が複数ある場合、<span class="eg">複数のクリティカルパスが存在する</span>。「必ず1本」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">✂️</span><span><span class="eb">クリティカルパス上の作業を短縮</span>→ 全体工期が短縮される。</span></div>
+      <div class="point-row"><span class="point-icon">❌</span><span><span class="er">クリティカルパス以外の作業を短縮</span>→ 全体工期は変わらない（フロートが減るだけ）。</span></div>
+      <div class="point-row"><span class="point-icon">⛰️</span><span><span class="eb">山崩し（資源平準化）</span>はフロートのある作業の日程を調整する手法。クリティカルパス上の作業はフロート＝0のため<span class="er">日程調整できない</span>。</span></div>
+    </div>
+    <div class="trap">「山崩しはクリティカルパス上の作業を中心に行う」→ 誤り。クリティカルパス上の作業はフロート0のため調整不可。<span class="eg">フロートのある作業</span>が対象。</div>
+  </div>
+</div>
+
+<!-- CH04 フロート -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 04</div>
+    <div class="ch-title">フロート（余裕時間）</div>
+  </div>
+  <div class="ch-icon">⏱️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">TIME ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>フリーフロートがトータルフロートより大きくなることはあるか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>フリーの方が自由だから……大きくなることもある？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>絶対にない！<span class="eg">FF≦TF</span>は常に成立する！FFがTFを超えることは<span class="er">数学的にありえない</span>！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⏱️ トータルフロートとフリーフロートの違い</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>定義</th><th>ポイント</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">トータルフロート（TF）</span></td><td>全体工期を延ばさない範囲での最大余裕時間</td><td><span class="er">TF＝0</span>→ クリティカルパス上の作業（余裕なし）</td></tr>
+        <tr><td><span class="eb">フリーフロート（FF）</span></td><td>後続作業の最早開始時刻に影響を与えない範囲の余裕時間</td><td><span class="eg">FF≦TF</span>（常にTF以下。FFがTFより大きいことはない）</td></tr>
+      </tbody>
+    </table>
+    <div class="formula-box">
+      TF = LST − EST = LFT − EFT<br>
+      FF = 後続作業のEST − 当該作業のEFT
+    </div>
+    <div class="trap">「フロートが0の作業は余裕時間がある」→ 誤り。フロート0＝クリティカルパス上の作業で<span class="eg">余裕なし</span>。</div>
+  </div>
+</div>
+
+<!-- CH05 最早・最遅時刻 -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 05</div>
+    <div class="ch-title">最早・最遅時刻の計算方法</div>
+  </div>
+  <div class="ch-icon">🧮</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CALCULATION ZONE</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>最遅完了時刻は後続作業の最遅開始時刻の最大値か？最小値か？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>最遅だから……最大値？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>罠だ！最遅完了時刻は<span class="eg">最小値</span>を採用する！最大値を採用するのは最早開始時刻の方だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🧮 計算方向と採用する値</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>計算</th><th>方向</th><th>採用する値</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">最早開始時刻（EST）</span><br>最早完了時刻（EFT）</td><td>始点→終点<br>（フォワードパス）</td><td>前工程の最早完了時刻の<span class="eg">最大値</span></td></tr>
+        <tr><td><span class="eb">最遅完了時刻（LFT）</span><br>最遅開始時刻（LST）</td><td>終点→始点<br>（バックワードパス）</td><td>後続作業の最遅開始時刻の<span class="er">最小値</span></td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">💡</span><span>ESTとLSTが等しい → フロート0 → <span class="eg">クリティカルパス上</span>の作業という判定ができる。</span></div>
+    </div>
+    <div class="trap">「最遅完了時刻は後続作業の最遅開始時刻の最大値で決まる」→ 誤り。<span class="eg">最小値</span>を採用する（「最大値」はフォワードパスの話）。</div>
+  </div>
+</div>
+
+<!-- CH06 Sカーブ -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 06</div>
+    <div class="ch-title">出来高進捗曲線（Sカーブ）</div>
+  </div>
+  <div class="ch-icon">📈</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PROGRESS ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>実績Sカーブが計画を上回っているとき工事は遅延しているか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>上回るって多いってことだから……遅れてる？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>逆だ！実績が計画を<span class="eg">上回る＝工事が前倒し（進んでいる）</span>！遅延は<span class="er">下回る</span>ときだ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📈 Sカーブの読み方</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">📊</span><span>SカーブがS字形になる理由：初期（準備）と終盤（仕上げ・検査）は作業量が少なく、<span class="eb">中間期に作業量が集中</span>するため。</span></div>
+      <div class="point-row"><span class="point-icon">🔺</span><span>実績が計画を<span class="eg">上回る</span>→ 工事が計画より<span class="eg">進んでいる（前倒し）</span></span></div>
+      <div class="point-row"><span class="point-icon">🔻</span><span>実績が計画を<span class="er">下回る</span>→ 工事が計画より<span class="er">遅れている</span></span></div>
+      <div class="point-row"><span class="point-icon">📐</span><span>Sカーブの<span class="eb">傾きが急</span>→ その時期の出来高増加が大きい（作業量が多い）。「傾きが急なほど作業量が少ない」は誤り。</span></div>
+    </div>
+    <div class="trap">「実績が計画を上回る＝遅延」→ 誤り。上回る＝<span class="eg">前倒し</span>。遅延は実績が計画を<span class="er">下回る</span>とき。</div>
+  </div>
+</div>
+
+<!-- CH07 クラッシング -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 07</div>
+    <div class="ch-title">工期短縮・クラッシング</div>
+  </div>
+  <div class="ch-icon">⚡</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CRASH ZONE</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>クラッシングでコストはどうなる？削減できるか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>工期を短くすれば余計なコストがかからなくて……削減？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！追加の人員・機械を投入するから<span class="er">コストは増加</span>する！「削減しながら短縮」は試験の大罠だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⚡ クラッシング・工期短縮の手順</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">💰</span><span><span class="eb">クラッシング</span>＝追加コストをかけて作業の所要時間を短縮する手法。コストは<span class="er">増加</span>する。</span></div>
+      <div class="point-row"><span class="point-icon">①</span><span><span class="eg">クリティカルパス上の作業</span>を対象にする（それ以外を短縮しても工期は変わらない）。</span></div>
+      <div class="point-row"><span class="point-icon">②</span><span><span class="eb">コスト・スロープ</span>（1単位時間短縮のコスト増加額）が<span class="eg">小さい作業から短縮</span>する。</span></div>
+      <div class="point-row"><span class="point-icon">③</span><span>短縮後に<span class="eb">新たなクリティカルパスが発生しないか確認</span>する。</span></div>
+      <div class="point-row"><span class="point-icon">🔀</span><span><span class="eb">並行作業（パラレル化）</span>：直列作業を同時進行させて工期短縮。クラッシングと並ぶ代表的な手法。</span></div>
+    </div>
+    <div class="trap">「クラッシングはコストを削減しながら工期短縮できる」→ 誤り。追加コストが<span class="er">増加</span>するのがクラッシングの特徴。</div>
+  </div>
+</div>
+
+<!-- CH08 PDCA -->
+<div class="chapter-header" id="ch08">
+  <div class="ch-num">08</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 08</div>
+    <div class="ch-title">PDCA・工程管理の実務</div>
+  </div>
+  <div class="ch-icon">🔄</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">MANAGEMENT ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <div class="char-emoji">🔧</div>
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>工程遅延を回復するために品質検査・養生期間を省略してもいいか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>遅れを取り戻すためなら……やむを得ない？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>絶対ダメだ！<span class="er">品質と工程は両立が原則</span>！省略すれば後でもっと大きな遅延になるぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔄 PDCAサイクルと工程管理の実務</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>フェーズ</th><th>工程管理での具体例</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">Plan（計画）</span></td><td>工程表の作成・施工計画書の作成</td></tr>
+        <tr><td><span class="eb">Do（実施）</span></td><td>工事の施工・工程の実行</td></tr>
+        <tr><td><span class="eb">Check（確認）</span></td><td>出来高・進捗の確認・工程会議</td></tr>
+        <tr><td><span class="eb">Act（処置）</span></td><td>遅延対策・工程表の修正・資源追加投入</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">✏️</span><span>施工計画書・工程表は<span class="eg">変更可能</span>。「一度作成すれば変更できない」は誤り。条件変化に応じて適宜改訂する。</span></div>
+      <div class="point-row"><span class="point-icon">🚫</span><span>工程遅延回復のために<span class="er">品質検査・養生期間を省略することは不適切</span>。品質と工程は両立が原則。</span></div>
+      <div class="point-row"><span class="point-icon">🗓️</span><span>工程会議は<span class="eg">定期的（週次・月次）に開催</span>。「工事完了後に1回だけ」は誤り。</span></div>
+    </div>
+    <div class="trap">「安全より工程を優先すべき」→ 誤り。安全確保のための作業省略は禁止。災害発生による作業中断の方が<span class="er">大幅な工程遅延</span>につながる。</div>
+  </div>
+</div>
+
+<span class="sfx">📅 全8テーマ制覇！！</span>
+
+<div class="cta-block">
+  <div class="cta-title">理解できたら次のステップへ！</div>
+  <p class="cta-sub">解説ページで細部を固めて、演習問題で実力を確かめろ。</p>
+  <a href="/bunya/kotei/kaisetsu.html" class="cta-btn-primary">📖 詳細解説ページへ</a>
+  <a href="/bunya/kotei/" class="cta-btn-secondary">📝 演習問題を解く（30問）</a>
+</div>
+
+</div><!-- /manga-wrap -->
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.panel, .knowledge, .chapter-header, .cta-block')
+  .forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
