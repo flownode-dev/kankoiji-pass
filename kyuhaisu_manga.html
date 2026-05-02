@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>給排水衛生設備をマンガで理解する｜管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士・給排水衛生設備の重要ポイントをスパナ軍曹とパイプ訓練生のマンガで解説。給水方式・トラップ・通気・ガス設備など11テーマ。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/kyuhaisu/manga.html">
+<meta property="og:title" content="給排水衛生設備をマンガで理解する｜管工事PASS">
+<meta property="og:description" content="給排水衛生設備の重要ポイント11テーマをマンガで解説。解説ページの前にこれを読め！">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kankoiji-pass.com/bunya/kyuhaisu/manga.html">
+<meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+<style>
+:root {
+  --bg:      #0f1117;
+  --surface: #1a1d27;
+  --surface2:#222636;
+  --border:  #2e3348;
+  --accent:  #14b8a6;
+  --correct: #22c55e;
+  --warn:    #f59e0b;
+  --text:    #e8eaf0;
+  --muted:   #7a8099;
+  --danger:  #ef4444;
+  --ink:     #08090d;
+  --kyuhaisu:#14b8a6;
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{ background:var(--bg); color:var(--text); font-family:'Noto Sans JP',sans-serif; overflow-x:hidden; }
+a{ color:inherit; text-decoration:none; }
+
+/* HEADER */
+.site-header{ position:fixed; top:0; left:0; right:0; height:56px; background:rgba(15,17,23,0.92); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:0 1.5rem; z-index:1000; }
+.logo-main{ font-family:'Noto Sans JP',sans-serif; font-weight:900; font-size:1.1rem; background:linear-gradient(135deg,var(--kyuhaisu),#06b6d4); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.header-nav{ display:flex; gap:1rem; align-items:center; font-size:0.8rem; color:var(--muted); }
+.header-nav a:hover{ color:var(--text); }
+.btn-sm-header{ background:var(--kyuhaisu); color:#fff; padding:0.35rem 0.9rem; border-radius:6px; font-size:0.75rem; font-weight:700; }
+
+/* HERO */
+.hero{ min-height:50vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:calc(56px + 2.5rem) 1.5rem 3rem; position:relative; overflow:hidden; background:#08090e; }
+.hero::before{ content:''; position:absolute; inset:0; background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(20,184,166,0.12) 0%, transparent 65%), repeating-linear-gradient(45deg, transparent, transparent 38px, rgba(20,184,166,0.03) 38px, rgba(20,184,166,0.03) 39px); }
+.hero-badge{ display:inline-block; background:var(--kyuhaisu); color:#fff; font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.2em; padding:0.25rem 1rem; clip-path:polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%); margin-bottom:1.2rem; position:relative; }
+.hero-title{ font-family:'Black Han Sans',sans-serif; font-size:clamp(1.8rem,6vw,3.8rem); line-height:0.95; color:#fff; text-shadow:3px 3px 0 var(--kyuhaisu), 6px 6px 0 rgba(20,184,166,0.25); margin-bottom:0.8rem; position:relative; }
+.hero-sub{ font-family:'Oswald',sans-serif; font-size:clamp(0.85rem,2.5vw,1.1rem); letter-spacing:0.12em; color:var(--muted); margin-bottom:1.5rem; position:relative; }
+.hero-links{ display:flex; gap:0.8rem; flex-wrap:wrap; justify-content:center; position:relative; }
+.hero-link-kaisetsu{ background:var(--kyuhaisu); color:#fff; padding:0.6rem 1.4rem; border-radius:7px; font-size:0.85rem; font-weight:700; transition:opacity 0.2s; }
+.hero-link-kaisetsu:hover{ opacity:0.85; }
+.hero-link-quiz{ background:rgba(20,184,166,0.12); color:var(--kyuhaisu); border:1px solid rgba(20,184,166,0.35); padding:0.6rem 1.4rem; border-radius:7px; font-size:0.85rem; font-weight:700; transition:background 0.2s; }
+.hero-link-quiz:hover{ background:rgba(20,184,166,0.22); }
+
+/* TOC */
+.toc-section{ max-width:860px; margin:0 auto; padding:2rem 1rem 1rem; }
+.toc-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:0.5rem; }
+.toc-item{ background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:0.5rem 0.8rem; font-size:0.78rem; display:flex; align-items:center; gap:0.5rem; cursor:pointer; transition:border-color 0.2s; }
+.toc-item:hover{ border-color:var(--kyuhaisu); color:var(--kyuhaisu); }
+.toc-num{ font-family:'Oswald',sans-serif; font-size:0.7rem; color:var(--kyuhaisu); min-width:22px; }
+
+/* MANGA WRAP */
+.manga-wrap{ max-width:860px; margin:0 auto; padding:1rem 1rem 5rem; }
+
+/* CHAPTER HEADER */
+.chapter-header{ display:flex; align-items:center; gap:0.8rem; margin:3rem 0 1.2rem; padding-bottom:0.8rem; border-bottom:3px solid var(--kyuhaisu); opacity:0; transform:translateY(20px); transition:opacity 0.5s ease,transform 0.5s ease; }
+.chapter-header.visible{ opacity:1; transform:translateY(0); }
+.ch-num{ font-family:'Oswald',sans-serif; font-size:2.5rem; font-weight:700; color:var(--kyuhaisu); line-height:1; min-width:3rem; }
+.ch-label{ font-size:0.65rem; letter-spacing:0.15em; color:var(--muted); font-family:'Oswald',sans-serif; }
+.ch-title{ font-size:clamp(1.1rem,3vw,1.5rem); font-weight:900; line-height:1.2; }
+.ch-icon{ font-size:2rem; margin-left:auto; }
+
+/* PANEL */
+.panel{ background:var(--surface); border:2.5px solid #fff; border-radius:3px; margin-bottom:1.6rem; box-shadow:5px 5px 0 var(--ink); overflow:hidden; opacity:0; transform:translateY(24px); transition:opacity 0.45s ease,transform 0.45s ease; }
+.panel.visible{ opacity:1; transform:translateY(0); }
+.scene-label{ background:var(--ink); border-bottom:2px solid var(--border); padding:0.25rem 0.8rem; font-family:'Oswald',sans-serif; font-size:0.65rem; letter-spacing:0.15em; color:var(--muted); }
+
+/* SCENE */
+.scene{ display:flex; min-height:140px; }
+.char-col{ width:110px; min-width:110px; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding:0.8rem 0.3rem 0.4rem; background:var(--surface2); border-right:2px solid #fff; position:relative; overflow:hidden; }
+.char-col::before{ content:''; position:absolute; inset:0; background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,0.025) 16px,rgba(255,255,255,0.025) 17px); }
+.char-col.right{ border-right:none; border-left:2px solid #fff; }
+.char-col.angry .char-emoji{ animation:rage 0.25s infinite alternate; }
+@keyframes rage{ from{ transform:rotate(-2deg) scale(1); } to{ transform:rotate(2deg) scale(1.06); } }
+.char-col.angry::after{ content:'💢'; position:absolute; top:6px; right:6px; font-size:1.2rem; }
+.char-emoji{ font-size:3.8rem; line-height:1; position:relative; z-index:1; }
+.char-name{ font-size:0.58rem; font-weight:900; color:var(--muted); text-align:center; position:relative; z-index:1; letter-spacing:0.05em; }
+
+/* SPEECH */
+.speech-col{ flex:1; padding:0.9rem 1.1rem; display:flex; flex-direction:column; gap:0.7rem; justify-content:center; }
+.bubble{ border:2px solid #fff; border-radius:4px; padding:0.6rem 0.9rem; line-height:1.65; font-size:clamp(0.8rem,2vw,0.88rem); background:var(--surface2); position:relative; }
+.bubble .spk{ display:block; font-size:0.6rem; font-weight:900; letter-spacing:0.1em; opacity:0.65; margin-bottom:0.25rem; }
+.bubble.shout{ background:var(--danger); color:#fff; font-weight:900; font-size:clamp(0.88rem,2.3vw,1rem); transform:rotate(-0.4deg); box-shadow:3px 3px 0 rgba(0,0,0,0.35); border-color:#fff; }
+.bubble.shout::before{ content:''; position:absolute; left:-11px; top:50%; transform:translateY(-50%); border:6px solid transparent; border-right-color:var(--danger); }
+.bubble.shout .er{ color:#fff !important; font-weight:900; text-decoration:underline 2px #fff; }
+.bubble.shout .eb{ color:#a0f0e8 !important; font-weight:900; }
+.bubble.shout .eg{ color:#a8ffb0 !important; font-weight:900; }
+.bubble.shout .ew{ color:#ffe08a !important; font-weight:900; }
+.bubble.reply{ background:#14231a; border-color:var(--correct); color:#c8f0cc; }
+.bubble.reply::before{ content:''; position:absolute; right:-11px; top:50%; transform:translateY(-50%); border:6px solid transparent; border-left-color:var(--correct); }
+.bubble.think{ background:#12192e; border-color:var(--kyuhaisu); border-style:dashed; color:#b0f0ea; }
+.bubble.warn-bub{ background:#221700; border-color:var(--warn); color:#ffe0a0; }
+
+/* NARRATION */
+.narration{ background:var(--ink); border-top:2px solid var(--border); padding:0.5rem 1rem; font-size:0.75rem; color:var(--muted); letter-spacing:0.04em; }
+
+/* KNOWLEDGE */
+.knowledge{ background:var(--surface); border:2.5px solid var(--kyuhaisu); border-radius:4px; margin-bottom:1.6rem; box-shadow:5px 5px 0 rgba(20,184,166,0.18); opacity:0; transform:translateY(24px); transition:opacity 0.45s ease,transform 0.45s ease; }
+.knowledge.visible{ opacity:1; transform:translateY(0); }
+.knowledge-header{ background:rgba(20,184,166,0.1); border-bottom:2px solid var(--kyuhaisu); padding:0.5rem 1rem; font-family:'Oswald',sans-serif; font-size:0.75rem; letter-spacing:0.15em; color:var(--kyuhaisu); display:flex; align-items:center; gap:0.5rem; }
+.knowledge-body{ padding:1rem 1.2rem; }
+
+/* TABLE */
+.k-table{ width:100%; border-collapse:collapse; font-size:0.8rem; margin-top:0.5rem; }
+.k-table th{ background:var(--surface2); padding:0.5rem 0.7rem; border:1.5px solid var(--border); color:var(--muted); font-weight:700; text-align:left; }
+.k-table td{ padding:0.5rem 0.7rem; border:1.5px solid var(--border); line-height:1.55; }
+.k-table tr:nth-child(even) td{ background:rgba(255,255,255,0.02); }
+
+/* POINT LIST */
+.point-list{ display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem; }
+.point-row{ display:flex; gap:0.6rem; align-items:flex-start; font-size:0.82rem; line-height:1.6; }
+.point-icon{ font-size:1rem; flex-shrink:0; margin-top:0.1rem; }
+
+/* TRAP */
+.trap{ background:#180d0d; border:2px solid var(--danger); border-radius:4px; padding:0.7rem 1rem; font-size:0.8rem; color:#fca5a5; margin-top:0.6rem; line-height:1.65; }
+.trap::before{ content:'⚠ 試験の引っかけ  '; font-weight:900; color:var(--danger); }
+
+/* EM */
+.er{ color:var(--danger);  font-weight:900; }
+.eb{ color:var(--kyuhaisu); font-weight:900; }
+.eg{ color:var(--correct); font-weight:900; }
+.ew{ color:var(--warn);    font-weight:900; }
+
+/* SFX */
+.sfx{ font-family:'Black Han Sans',sans-serif; font-size:clamp(1.6rem,5vw,2.8rem); color:var(--warn); text-shadow:2px 2px 0 rgba(0,0,0,0.5); text-align:center; padding:0.3rem; transform:rotate(-1.5deg); display:block; line-height:1; margin:0.5rem 0 1.5rem; }
+
+/* CTA */
+.cta-block{ background:linear-gradient(135deg,#091a18,#0e1f12); border:3px solid var(--kyuhaisu); border-radius:6px; padding:2rem; text-align:center; margin-top:3rem; opacity:0; transform:translateY(24px); transition:opacity 0.5s ease,transform 0.5s ease; }
+.cta-block.visible{ opacity:1; transform:translateY(0); }
+.cta-title{ font-family:'Black Han Sans',sans-serif; font-size:clamp(1.4rem,4vw,2rem); color:#fff; text-shadow:2px 2px 0 var(--kyuhaisu); margin-bottom:0.6rem; }
+.cta-sub{ font-size:0.88rem; color:var(--muted); margin-bottom:1.4rem; }
+.cta-btn-primary{ display:inline-block; background:var(--kyuhaisu); color:#fff; font-family:'Oswald',sans-serif; font-size:1rem; letter-spacing:0.12em; padding:0.75rem 2.2rem; border-radius:7px; margin:0.3rem; transition:opacity 0.2s,transform 0.1s; }
+.cta-btn-primary:hover{ opacity:0.85; transform:translateY(-2px); }
+.cta-btn-secondary{ display:inline-block; background:rgba(20,184,166,0.12); color:var(--kyuhaisu); border:1px solid rgba(20,184,166,0.35); font-size:0.85rem; padding:0.65rem 1.6rem; border-radius:7px; margin:0.3rem; transition:background 0.2s; }
+.cta-btn-secondary:hover{ background:rgba(20,184,166,0.22); }
+
+@media(max-width:600px){
+  .char-col{ width:72px; min-width:72px; }
+  .char-emoji{ font-size:2.6rem; }
+  .scene{ min-height:120px; }
+}
+
+  /* キャラクター画像 */
+  .char-img {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin: 0 auto;
+  }
+  .char-col.angry .char-img {
+    animation: rage 0.25s infinite alternate;
+  }
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "給排水衛生設備をマンガで理解する｜管工事PASS",
+      "description": "給排水衛生設備の重要ポイント11テーマをマンガで解説。給水方式・トラップ・通気・レジオネラ・ガスなど。",
+      "url": "https://kankoiji-pass.com/bunya/kyuhaisu/manga.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "管工事PASS",
+        "url": "https://kankoiji-pass.com/"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://kankoiji-pass.com/"},
+          {"@type": "ListItem", "position": 2, "name": "給排水衛生設備", "item": "https://kankoiji-pass.com/bunya/kyuhaisu/manga.html"}
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "直結増圧方式は停電時でも給水できますか？", "acceptedAnswer": {"@type": "Answer", "text": "停電するとポンプが停止するため断水します。停電時でも一定時間給水できるのは高置水槽方式です。"}}, {"@type": "Question", "name": "封水破壊の跳ね出し作用とは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "排水立て管内の正圧によって封水が器具側に押し出される現象です。封水量が減少します。"}}, {"@type": "Question", "name": "レジオネラ菌が繁殖しやすい温度はどのくらいですか？", "acceptedAnswer": {"@type": "Answer", "text": "20〜50℃で繁殖しやすく、特に37℃付近で最も増殖します。60℃以上では死滅するため、貯湯槽は60℃以上に保つことが対策になります。"}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/kyuhaisu/">演習問題</a>
+    <a href="/bunya/kyuhaisu/kaisetsu.html">解説ページ</a>
+    <a href="/bunya/kyuhaisu/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">💧 KYUHAISU — MANGA GUIDE</div>
+  <h1 class="hero-title">給排水衛生設備<br>マンガで理解</h1>
+  <p class="hero-sub">解説を読む前にこれで7割つかめ — スパナ軍曹が全11テーマを叩き込む</p>
+  <div class="hero-links">
+    <a href="/bunya/kyuhaisu/kaisetsu.html" class="hero-link-kaisetsu">📖 詳細解説ページへ</a>
+    <a href="/bunya/kyuhaisu/" class="hero-link-quiz">📝 演習問題を解く</a>
+  </div>
+</section>
+
+<!-- TOC -->
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>給水設備・給水方式</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>受水槽・高置水槽</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>給水圧力・ウォーターハンマー</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>排水管・勾配・材料</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>トラップと封水破壊</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>通気設備</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>給湯設備・レジオネラ</div>
+    <div class="toc-item" onclick="document.getElementById('ch08').scrollIntoView({behavior:'smooth'})"><span class="toc-num">08</span>衛生器具・節水</div>
+    <div class="toc-item" onclick="document.getElementById('ch09').scrollIntoView({behavior:'smooth'})"><span class="toc-num">09</span>ガス設備</div>
+    <div class="toc-item" onclick="document.getElementById('ch10').scrollIntoView({behavior:'smooth'})"><span class="toc-num">10</span>雑用水・排水再利用</div>
+    <div class="toc-item" onclick="document.getElementById('ch11').scrollIntoView({behavior:'smooth'})"><span class="toc-num">11</span>法規・維持管理</div>
+  </div>
+</div>
+
+<!-- MANGA -->
+<div class="manga-wrap">
+
+<!-- CH01 給水方式 -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 01</div>
+    <div class="ch-title">給水設備・給水方式</div>
+  </div>
+  <div class="ch-icon">🚰</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PUMP ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>直結増圧方式は停電時でも断水しないか？！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>増圧ポンプがあるから……断水しない……？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！<span class="er">停電したらポンプが止まって断水する</span>！高置水槽方式なら重力給水で一定時間持ちこたえられる！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🚰 給水方式の比較</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>方式</th><th>概要</th><th>特徴・注意点</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">高置水槽方式</span></td><td>屋上タンクから重力給水</td><td><span class="eg">停電時でも一定時間給水可能</span>。水質管理が必要</td></tr>
+        <tr><td><span class="eb">直結直圧方式</span></td><td>水道本管の圧力をそのまま利用</td><td>受水槽不要で水質汚染リスク低。低層建物向き</td></tr>
+        <tr><td><span class="eb">直結増圧方式</span></td><td>増圧ポンプで中高層へ直結給水</td><td>受水槽不要。<span class="er">停電時はポンプ停止→断水</span></td></tr>
+        <tr><td><span class="eb">加圧給水ポンプ方式</span></td><td>受水槽＋加圧ポンプで給水</td><td>インバーター制御で省エネ対応可能</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「直結増圧方式は停電時でも断水しない」→ 誤り。増圧ポンプが停止するため<span class="er">断水が発生</span>する。</div>
+  </div>
+</div>
+
+<!-- CH02 受水槽 -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 02</div>
+    <div class="ch-title">受水槽・高置水槽</div>
+  </div>
+  <div class="ch-icon">🗄️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">TANK ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>受水槽の有効容量は1日使用水量の何倍が標準だ！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>大きければ安心なので……2倍くらい？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！<span class="er">1/2程度</span>が標準だ！大きすぎると水が滞留して水質が悪化するぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🗄️ 受水槽の構造・管理基準</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">📐</span><span>有効容量の目安：1日使用水量の<span class="eg">1/2程度</span>が標準。「2倍程度」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">🔲</span><span><span class="eb">6面点検</span>：底面・側面4面・天井面の計6面が点検できる構造が必要。底部を基礎スラブと兼用することは<span class="er">禁止</span>。</span></div>
+      <div class="point-row"><span class="point-icon">⛔</span><span>受水槽の<span class="er">上部への電気・機械設備・配管・ダクトの設置は禁止</span>。水質汚染・落下物リスクがあるため。</span></div>
+      <div class="point-row"><span class="point-icon">🧹</span><span>簡易専用水道（有効容量<span class="eb">10m³超</span>）の清掃は<span class="eg">年1回以上</span>が法的義務。「年2回以上」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">🚰</span><span>オーバーフロー管は<span class="eg">間接排水</span>とし、排水口空間を確保する。直接排水管に接続してはならない。</span></div>
+    </div>
+    <div class="trap">「受水槽の上部に設備を設置することが推奨されている」→ 誤り。水質汚染リスクがあるため<span class="er">設置禁止</span>。</div>
+  </div>
+</div>
+
+<!-- CH03 給水圧力・ウォーターハンマー -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 03</div>
+    <div class="ch-title">給水圧力・ウォーターハンマー・逆流防止</div>
+  </div>
+  <div class="ch-icon">💨</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PIPE CORRIDOR</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ウォーターハンマー対策に「流速を上げる」は有効か？！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>流れを早くすれば圧力変動が……緩和される？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>逆だ！<span class="er">流速を下げる</span>のが正解！管径を大きくするか弁をゆっくり閉めろ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">💨 圧力管理・逆流防止のポイント</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">📊</span><span>給水圧力は高すぎても低すぎてもダメ。適正範囲は<span class="eb">0.05〜0.74MPa程度</span>。「高ければ高いほど良い」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">💥</span><span><span class="eb">ウォーターハンマー</span>の原因：弁の急閉止による管内圧力の急激な変動。対策：<span class="eg">流速を下げる</span>／弁をゆっくり閉める／吸収器の設置。</span></div>
+      <div class="point-row"><span class="point-icon">🚫</span><span><span class="er">クロスコネクション</span>＝飲料水系統と他系統の直接接続。水道法・建築基準法で<span class="er">禁止</span>。逆止弁を設置しても免除されない。</span></div>
+      <div class="point-row"><span class="point-icon">🔵</span><span><span class="eb">バキュームブレーカー</span>：配管内が負圧になったとき空気を導入して逆サイホン（逆流）を防止する装置。</span></div>
+    </div>
+    <div class="trap">「ウォーターハンマー対策に流速を上げることが有効」→ 誤り。<span class="eg">流速を下げる</span>ことが基本対策。</div>
+  </div>
+</div>
+
+<!-- CH04 排水管 -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 04</div>
+    <div class="ch-title">排水管・勾配・材料</div>
+  </div>
+  <div class="ch-icon">🔩</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">DRAINAGE FIELD</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>管径が大きいほど急勾配が必要か？緩勾配でいいか？！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>管が大きいほど水が流れにくそうだから……急勾配が必要？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>反対だ！管径が大きいほど<span class="eg">緩勾配</span>でいい！反比例の関係を頭に叩き込め！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔩 排水管の勾配・材料</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>管径</th><th>勾配の目安</th></tr></thead>
+      <tbody>
+        <tr><td>50mm</td><td>1/50</td></tr>
+        <tr><td>75mm</td><td>1/100</td></tr>
+        <tr><td>100mm</td><td>1/100〜1/200</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">🔵</span><span><span class="eb">硬質塩化ビニル管（VP）</span>：軽量・耐食性◎・屋内排水に広く使用。<span class="er">60℃以上の高温排水には不適</span>。給湯排水には耐熱VP（HTVP）を使用。</span></div>
+      <div class="point-row"><span class="point-icon">⚫</span><span><span class="eb">鋳鉄管</span>：強度・耐久性◎。排水立て管・埋設排水管に使用。</span></div>
+      <div class="point-row"><span class="point-icon">🔥</span><span><span class="eb">耐火二層管</span>：合成樹脂管の外側に繊維モルタル被覆。<span class="eg">防火区画の貫通部に使用可能</span>。</span></div>
+      <div class="point-row"><span class="point-icon">🚫</span><span>汚水排水管と雨水排水管は<span class="er">屋内での合流禁止</span>。分流式下水道では外部でも分けて接続。</span></div>
+    </div>
+    <div class="trap">「硬質塩化ビニル管は高温排水への耐熱性が高い」→ 誤り。60℃以上で変形しやすいため<span class="eg">耐熱VP（HTVP）</span>を使用する。</div>
+  </div>
+</div>
+
+<!-- CH05 トラップ -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 05</div>
+    <div class="ch-title">トラップと封水破壊</div>
+  </div>
+  <div class="ch-icon">🌀</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">SANITATION LAB</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>跳ね出し作用で封水量はどうなる？増えるか減るか！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>正圧で押し出されるから……増える？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>逆だ！封水が器具側に押し出されて<span class="er">減少</span>する！「増加」は完全に誤りだ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🌀 封水破壊の4種類</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>原因</th><th>ポイント</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">自己サイホン作用</span></td><td>器具排水時にトラップ自身がサイホン管となり封水を引き込む</td><td>Sトラップ・Pトラップで起きやすい</td></tr>
+        <tr><td><span class="eb">誘導サイホン作用</span></td><td>他の器具の排水で排水管内が負圧になり封水が引き込まれる</td><td>通気管を設けることで防止</td></tr>
+        <tr><td><span class="eb">跳ね出し作用</span></td><td>排水立て管内の正圧で封水が器具側に押し出される</td><td>封水量が<span class="er">減少</span>する（「増加」は誤り）</td></tr>
+        <tr><td><span class="eb">蒸発</span></td><td>長期間器具を使用しないと封水が蒸発</td><td>定期的に水を流して補充する</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">📏</span><span>有効封水深は<span class="eg">50〜100mm</span>が標準。</span></div>
+      <div class="point-row"><span class="point-icon">🚫</span><span><span class="er">二重トラップ禁止</span>：同一排水系統に2つのトラップを設けると排水の流れが妨げられ封水破壊の原因になる。</span></div>
+    </div>
+    <div class="trap">「跳ね出し作用で封水量が増加する」→ 誤り。正圧で押し出されるため封水量は<span class="eg">減少</span>する。</div>
+  </div>
+</div>
+
+<!-- CH06 通気設備 -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 06</div>
+    <div class="ch-title">通気設備</div>
+  </div>
+  <div class="ch-icon">🌬️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">VENT SHAFT</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>伸頂通気管は排水立て管とは別の独立した立て管か？！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>通気専用だから……別の管？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！排水立て管の<span class="eg">頂部をそのまま延長</span>して大気開放するんだ！別管じゃない！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🌬️ 通気管の種類と設置基準</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>概要</th><th>ポイント</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">伸頂通気管</span></td><td>排水立て管の頂部をそのまま延長して大気開放</td><td>排水立て管と一体。「別の独立した立て管」は誤り</td></tr>
+        <tr><td><span class="eb">各個通気管</span></td><td>各衛生器具のトラップごとに設ける</td><td>最も確実な封水保護方法</td></tr>
+        <tr><td><span class="eb">ループ通気管</span></td><td>最上流器具の排水管に接続し通気立て管まで配管</td><td>複数器具をまとめて保護</td></tr>
+        <tr><td><span class="eb">逃がし通気管</span></td><td>排水横枝管の圧力変動を逃がす</td><td>—</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">🏠</span><span>通気管を屋上に突き出す場合：屋根面から<span class="eg">200mm以上</span>立ち上げる（「100mm以上」は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">📐</span><span>窓・換気口・出入口などの開口部から<span class="eg">600mm以上</span>離す。</span></div>
+      <div class="point-row"><span class="point-icon">🚫</span><span>排水槽の通気管は<span class="er">居室への開口禁止</span>。屋外大気へ開放または脱臭装置を通す。</span></div>
+    </div>
+    <div class="trap">「伸頂通気管は排水立て管とは別の独立した立て管である」→ 誤り。排水立て管の<span class="eg">頂部をそのまま延長</span>したものが伸頂通気管。</div>
+  </div>
+</div>
+
+<!-- CH07 給湯設備 -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 07</div>
+    <div class="ch-title">給湯設備・レジオネラ菌対策</div>
+  </div>
+  <div class="ch-icon">🔥</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">BOILER ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>レジオネラ菌は60℃以上で急増するか？死滅するか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>温かいほうが菌が増えそうだから……急増？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>完全に逆だ！<span class="eg">60℃以上では死滅</span>する！繁殖するのは<span class="er">20〜50℃</span>だ！貯湯槽は60℃以上に保て！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔥 レジオネラ菌対策と膨張タンク</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🦠</span><span>レジオネラ菌の繁殖温度：<span class="er">20〜50℃</span>（特に37℃付近で最も繁殖）。<span class="eg">60℃以上で死滅</span>。</span></div>
+      <div class="point-row"><span class="point-icon">🌡️</span><span>対策：貯湯槽を<span class="eg">60℃以上</span>に維持 ／ 末端給湯温度<span class="eg">55℃以上</span> ／ 死水域を作らない循環配管設計。</span></div>
+      <div class="point-row"><span class="point-icon">🪣</span><span><span class="eb">開放式膨張タンク</span>：最高位置への設置が必要。大気に触れるため水質管理が必要。</span></div>
+      <div class="point-row"><span class="point-icon">🔒</span><span><span class="eb">密閉式膨張タンク</span>：設置位置の<span class="eg">制約が少なく自由度が高い</span>。外気と遮断されるため<span class="eg">水質汚染リスクが低い</span>。</span></div>
+    </div>
+    <div class="trap">「60℃以上でレジオネラ菌が急激に増殖する」→ 完全に誤り。60℃以上では<span class="eg">死滅</span>する。繁殖するのは20〜50℃。</div>
+  </div>
+</div>
+
+<!-- CH08 衛生器具 -->
+<div class="chapter-header" id="ch08">
+  <div class="ch-num">08</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 08</div>
+    <div class="ch-title">衛生器具・節水</div>
+  </div>
+  <div class="ch-icon">🚽</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">RESTROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>フラッシュバルブ方式は給水管径を細くできるか？！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>バルブを使ってるから……細くても流れそうで……細くできる？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>逆だ！大量の水を瞬時に流すから<span class="er">太い管径が必要</span>だ！細くしたら水圧が足りんぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🚽 フラッシュバルブ vs ロータンク</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>項目</th><th>フラッシュバルブ</th><th>ロータンク</th></tr></thead>
+      <tbody>
+        <tr><td>連続使用</td><td><span class="eg">すぐ連続使用できる◎</span></td><td>タンク貯水時間が必要</td></tr>
+        <tr><td>給水管径</td><td><span class="er">太い管径が必要</span></td><td>細い管径でも対応可</td></tr>
+        <tr><td>給水圧力</td><td>一定以上の圧力が必要</td><td>低圧でも使用可</td></tr>
+        <tr><td>適用</td><td>学校・商業施設など</td><td>一般住宅など</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">💧</span><span>節水型大便器の洗浄水量：現在の最新機種は<span class="eg">3〜4L程度</span>。「最低10L以上必要」は誤り。</span></div>
+    </div>
+    <div class="trap">「フラッシュバルブ方式は給水管径を細くできる」→ 誤り。大量の水を瞬時に流すため<span class="eg">太い管径が必要</span>。</div>
+  </div>
+</div>
+
+<!-- CH09 ガス設備 -->
+<div class="chapter-header" id="ch09">
+  <div class="ch-num">09</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 09</div>
+    <div class="ch-title">ガス設備（都市ガス・LPG）</div>
+  </div>
+  <div class="ch-icon">🔥</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">GAS ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>LPGのガス警報器は天井と床のどちら近くに設置するか！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>ガスは軽くて上に溜まるイメージだから……天井？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>都市ガスと混同してるぞ！LPGは空気より<span class="er">重い</span>から<span class="eg">床面から30cm以内</span>に設置だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔥 都市ガス vs LPGの違い</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>項目</th><th>都市ガス（13A）</th><th>LPG（プロパン）</th></tr></thead>
+      <tbody>
+        <tr><td>主成分</td><td>メタン（CH₄）</td><td>プロパン・ブタン</td></tr>
+        <tr><td>空気との比重</td><td><span class="eb">空気より軽い</span></td><td><span class="er">空気より重い</span></td></tr>
+        <tr><td>ガスの滞留位置</td><td>天井付近</td><td><span class="er">床付近</span></td></tr>
+        <tr><td>警報器の設置位置</td><td><span class="eb">天井面から30cm以内</span></td><td><span class="eg">床面から30cm以内</span></td></tr>
+        <tr><td>発熱量（単位体積）</td><td>約45MJ/m³</td><td><span class="eg">約93MJ/m³（約2倍）</span></td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「LPGは都市ガスより発熱量が低い」→ 誤り。LPGの方が単位体積あたりの発熱量が<span class="eg">約2倍高い</span>。</div>
+  </div>
+</div>
+
+<!-- CH10 雑用水 -->
+<div class="chapter-header" id="ch10">
+  <div class="ch-num">10</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 10</div>
+    <div class="ch-title">雑用水（中水道）・排水再利用</div>
+  </div>
+  <div class="ch-icon">♻️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">RECYCLE PLANT</div>
+  <div class="scene">
+    <div class="char-col">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>雑用水は炊事・入浴・洗濯に使えるか？</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>節水のためなら使えそうですが……</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ダメだ！雑用水は<span class="eg">トイレ洗浄・散水・清掃用水</span>のみ！<span class="er">飲料・炊事・入浴・洗濯には使用不可</span>だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">♻️ 雑用水の用途と配管識別</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">✅</span><span>雑用水の使用可能用途：<span class="eg">トイレ洗浄水・散水・清掃用水</span>など飲料以外の用途。</span></div>
+      <div class="point-row"><span class="point-icon">🚫</span><span><span class="er">使用不可</span>：飲料・炊事・入浴・洗濯。</span></div>
+      <div class="point-row"><span class="point-icon">🧪</span><span>水質基準は飲料水と<span class="er">同じではない</span>。用途に応じた基準が適用される。</span></div>
+      <div class="point-row"><span class="point-icon">🎨</span><span>雑用水配管と上水配管は色や表示で<span class="eg">明確に区別する義務</span>がある。混同によるクロスコネクション防止のため。</span></div>
+      <div class="point-row"><span class="point-icon">📉</span><span>雑排水再利用システム：洗面・シャワーの排水を処理してトイレ洗浄水などに再利用→上水使用量を<span class="eg">削減</span>できる。</span></div>
+    </div>
+    <div class="trap">「雑排水再利用システムは上水使用量を増加させる」→ 完全に誤り。上水使用量を<span class="eg">削減</span>するのが目的。</div>
+  </div>
+</div>
+
+<!-- CH11 法規・維持管理 -->
+<div class="chapter-header" id="ch11">
+  <div class="ch-num">11</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 11</div>
+    <div class="ch-title">法規・維持管理</div>
+  </div>
+  <div class="ch-icon">⚖️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">REGULATION ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>簡易専用水道の受水槽清掃は年何回以上が義務だ！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>衛生管理は大事なので……年2回以上？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>惜しい！法律上の義務は<span class="eg">年1回以上</span>だ！「年2回以上」は余裕を持たせた話で法的義務ではないぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⚖️ 法規・維持管理のポイント</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">💊</span><span>給水栓における遊離残留塩素：<span class="eg">0.1mg/L以上</span>を保持しなければならない（水道法）。</span></div>
+      <div class="point-row"><span class="point-icon">🏢</span><span><span class="eb">簡易専用水道</span>：水道事業者からの供給水のみを水源とし、有効容量<span class="eb">10m³超</span>の受水槽を使用する給水施設。定期検査・清掃ともに<span class="eg">年1回以上</span>。</span></div>
+      <div class="point-row"><span class="point-icon">🏗️</span><span>建築基準法の配管設備規定は<span class="er">新築のみでなく</span>、改修・増築・用途変更にも適用される。</span></div>
+      <div class="point-row"><span class="point-icon">🍳</span><span><span class="eb">グリース阻集器</span>の清掃：蓄積した油脂・残渣は<span class="er">自然分解されない</span>。通常<span class="eg">週1回程度</span>の定期清掃が必須。</span></div>
+    </div>
+    <div class="trap">「グリース阻集器は自然分解されるため清掃不要」→ 誤り。<span class="eg">定期的な清掃（週1回程度）が必須</span>。</div>
+  </div>
+</div>
+
+<span class="sfx">💧 全11テーマ制覇！！</span>
+
+<!-- CTA -->
+<div class="cta-block">
+  <div class="cta-title">理解できたら次のステップへ！</div>
+  <p class="cta-sub">解説ページで細部を固めて、演習問題で実力を確かめろ。</p>
+  <a href="/bunya/kyuhaisu/kaisetsu.html" class="cta-btn-primary">📖 詳細解説ページへ</a>
+  <a href="/bunya/kyuhaisu/" class="cta-btn-secondary">📝 演習問題を解く（40問）</a>
+</div>
+
+</div><!-- /manga-wrap -->
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.panel, .knowledge, .chapter-header, .cta-block')
+  .forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
