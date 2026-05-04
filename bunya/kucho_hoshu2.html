@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【補習】空調設備 第2回：ダクト・換気・防火防煙設備 | 管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士・空調設備の補習マンガ第2回。ダクト設計・FDとSDの詳細メカニズム・換気方式・排煙設備を深掘り解説。試験で差がつく細かいポイントまで網羅。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/kucho/hoshu2.html">
+<meta property="og:title" content="【補習】空調設備 第2回：ダクト・換気・防火防煙設備 | 管工事PASS">
+<meta property="og:description" content="ダクト設計・FD・SD・換気方式・排煙設備を深掘り解説。試験で差がつく細かいポイントまで網羅。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kankoiji-pass.com/bunya/kucho/hoshu2.html">
+<meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "【補習】空調設備 第2回：ダクト・換気・防火防煙設備",
+      "description": "ダクト設計・FD・SD・換気方式・排煙設備を深掘り解説。試験で差がつく細かいポイントまで網羅。",
+      "url": "https://kankoiji-pass.com/bunya/kucho/hoshu2.html",
+      "publisher": {"@type": "Organization", "name": "管工事PASS", "url": "https://kankoiji-pass.com/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://kankoiji-pass.com/"},
+        {"@type": "ListItem", "position": 2, "name": "分野別演習", "item": "https://kankoiji-pass.com/bunya/"},
+        {"@type": "ListItem", "position": 3, "name": "空調設備", "item": "https://kankoiji-pass.com/bunya/kucho/"},
+        {"@type": "ListItem", "position": 4, "name": "補習第2回", "item": "https://kankoiji-pass.com/bunya/kucho/hoshu2.html"}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#0f1117;--surface:#1a1d27;--surface2:#222636;--border:#2e3348;
+  --kucho:#38bdf8;--correct:#22c55e;--warn:#f59e0b;--text:#e8eaf0;
+  --muted:#7a8099;--danger:#ef4444;--ink:#08090d;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-serif;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+
+.site-header{position:fixed;top:0;left:0;right:0;height:56px;background:rgba(15,17,23,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;}
+.logo-main{font-weight:900;font-size:1.1rem;background:linear-gradient(135deg,var(--kucho),#7dd3fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.header-nav{display:flex;gap:1rem;align-items:center;font-size:.8rem;color:var(--muted);}
+.header-nav a:hover{color:var(--text);}
+.btn-sm-header{background:var(--kucho);color:#0a1020;padding:.35rem .9rem;border-radius:6px;font-size:.75rem;font-weight:700;}
+
+.series-nav{background:var(--surface);border-bottom:1px solid var(--border);padding:.8rem 1.5rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:56px;}
+.series-label{font-size:.72rem;color:var(--muted);font-weight:700;white-space:nowrap;}
+.series-btn{padding:.35rem .9rem;border-radius:99px;font-size:.75rem;font-weight:700;border:1px solid var(--border);color:var(--muted);background:none;cursor:pointer;white-space:nowrap;}
+.series-btn.active{background:var(--kucho);color:#0a1020;border-color:var(--kucho);}
+.series-btn.done{background:rgba(56,189,248,.12);color:var(--kucho);border-color:rgba(56,189,248,.3);}
+.series-btn:hover:not(.active){border-color:var(--kucho);color:var(--kucho);}
+
+.hero{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;position:relative;overflow:hidden;background:#08090e;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(56,189,248,0.1) 0%,transparent 65%);}
+.hero-series{display:inline-block;background:rgba(56,189,248,.15);border:1px solid rgba(56,189,248,.3);color:var(--kucho);font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.2em;padding:.25rem 1rem;border-radius:99px;margin-bottom:1rem;position:relative;}
+.hero-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,3rem);line-height:1;color:#fff;text-shadow:3px 3px 0 rgba(56,189,248,.25);margin-bottom:.8rem;position:relative;}
+.hero-sub{font-family:'Oswald',sans-serif;font-size:clamp(.85rem,2.5vw,1rem);letter-spacing:.12em;color:var(--muted);margin-bottom:1.5rem;position:relative;}
+.hero-topics{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;position:relative;}
+.hero-topic{background:var(--surface);border:1px solid rgba(56,189,248,.25);color:var(--kucho);font-size:.75rem;padding:.25rem .8rem;border-radius:99px;}
+
+.toc-section{max-width:860px;margin:0 auto;padding:1.5rem 1rem 1rem;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.5rem;}
+.toc-item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.5rem .8rem;font-size:.78rem;display:flex;align-items:center;gap:.5rem;cursor:pointer;transition:border-color .2s;}
+.toc-item:hover{border-color:var(--kucho);color:var(--kucho);}
+.toc-num{font-family:'Oswald',sans-serif;font-size:.7rem;color:var(--kucho);min-width:22px;}
+
+.manga-wrap{max-width:860px;margin:0 auto;padding:1rem 1rem 5rem;}
+
+.chapter-header{display:flex;align-items:center;gap:.8rem;margin:3rem 0 1.2rem;padding-bottom:.8rem;border-bottom:3px solid var(--kucho);opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
+.chapter-header.visible{opacity:1;transform:translateY(0);}
+.ch-num{font-family:'Oswald',sans-serif;font-size:2.5rem;font-weight:700;color:var(--kucho);line-height:1;min-width:3rem;}
+.ch-label{font-size:.65rem;letter-spacing:.15em;color:var(--muted);font-family:'Oswald',sans-serif;}
+.ch-title{font-size:clamp(1.1rem,3vw,1.5rem);font-weight:900;line-height:1.2;}
+.ch-icon{font-size:2rem;margin-left:auto;}
+.ch-level{font-size:.68rem;padding:.2rem .6rem;border-radius:3px;margin-left:.5rem;font-weight:700;}
+.ch-level.deep{background:rgba(239,68,68,.15);color:var(--danger);border:1px solid rgba(239,68,68,.3);}
+
+.panel{background:var(--surface);border:2.5px solid #fff;border-radius:3px;margin-bottom:1.6rem;box-shadow:5px 5px 0 var(--ink);overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .45s ease,transform .45s ease;}
+.panel.visible{opacity:1;transform:translateY(0);}
+.scene-label{background:var(--ink);border-bottom:2px solid var(--border);padding:.25rem .8rem;font-family:'Oswald',sans-serif;font-size:.65rem;letter-spacing:.15em;color:var(--muted);}
+.scene{display:flex;min-height:140px;}
+.char-col{width:110px;min-width:110px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:.8rem .3rem .4rem;background:var(--surface2);border-right:2px solid #fff;position:relative;overflow:hidden;}
+.char-col::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,.025) 16px,rgba(255,255,255,.025) 17px);}
+.char-col.right{border-right:none;border-left:2px solid #fff;}
+.char-col.angry .char-img{animation:rage .25s infinite alternate;}
+@keyframes rage{from{transform:rotate(-2deg) scale(1);}to{transform:rotate(2deg) scale(1.06);}}
+.char-col.angry::after{content:'💢';position:absolute;top:6px;right:6px;font-size:1.2rem;}
+.char-img{width:80px;height:auto;object-fit:contain;position:relative;z-index:1;display:block;margin:0 auto;}
+.char-name{font-size:.58rem;font-weight:900;color:var(--muted);text-align:center;position:relative;z-index:1;letter-spacing:.05em;}
+.speech-col{flex:1;padding:.9rem 1.1rem;display:flex;flex-direction:column;gap:.7rem;justify-content:center;}
+.bubble{border:2px solid #fff;border-radius:4px;padding:.6rem .9rem;line-height:1.65;font-size:clamp(.8rem,2vw,.88rem);background:var(--surface2);position:relative;}
+.bubble .spk{display:block;font-size:.6rem;font-weight:900;letter-spacing:.1em;opacity:.65;margin-bottom:.25rem;}
+.bubble.shout{background:var(--danger);color:#fff;font-weight:900;font-size:clamp(.88rem,2.3vw,1rem);transform:rotate(-.4deg);box-shadow:3px 3px 0 rgba(0,0,0,.35);border-color:#fff;}
+.bubble.shout::before{content:'';position:absolute;left:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:var(--danger);}
+.bubble.shout .eb{color:#bae6fd!important;font-weight:900;}
+.bubble.shout .eg{color:#a8ffb0!important;font-weight:900;}
+.bubble.shout .ew{color:#ffe08a!important;font-weight:900;}
+.bubble.reply{background:#0d1f2e;border-color:var(--kucho);color:#bae6fd;}
+.bubble.reply::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:var(--kucho);}
+.bubble.think{background:#08192a;border-color:var(--kucho);border-style:dashed;color:#bae6fd;}
+/* 訓練生の吹き出し（右から） */
+.bubble.trainee{background:#1a1230;border-color:#a78bfa;border-style:dashed;color:#ddd6fe;}
+.bubble.trainee::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:#a78bfa;}
+
+.knowledge{background:var(--surface);border:2.5px solid var(--kucho);border-radius:4px;margin-bottom:1.6rem;box-shadow:5px 5px 0 rgba(56,189,248,.18);opacity:0;transform:translateY(24px);transition:opacity .45s ease,transform .45s ease;}
+.knowledge.visible{opacity:1;transform:translateY(0);}
+.knowledge-header{background:rgba(56,189,248,.1);border-bottom:2px solid var(--kucho);padding:.5rem 1rem;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:.15em;color:var(--kucho);display:flex;align-items:center;gap:.5rem;}
+.knowledge-body{padding:1rem 1.2rem;}
+
+.k-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:.5rem;}
+.k-table th{background:var(--surface2);padding:.5rem .7rem;border:1.5px solid var(--border);color:var(--muted);font-weight:700;text-align:left;}
+.k-table td{padding:.5rem .7rem;border:1.5px solid var(--border);line-height:1.55;}
+.k-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+
+.point-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem;}
+.point-row{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;line-height:1.6;}
+.point-icon{font-size:1rem;flex-shrink:0;margin-top:.1rem;}
+
+.deep-box{background:rgba(239,68,68,.05);border:2px solid rgba(239,68,68,.3);border-radius:6px;padding:.9rem 1.1rem;margin-top:.8rem;}
+.deep-box-title{font-size:.72rem;color:var(--danger);font-weight:700;letter-spacing:.1em;margin-bottom:.5rem;font-family:'Oswald',sans-serif;}
+.deep-box p{font-size:.82rem;color:#fca5a5;line-height:1.7;}
+
+.formula-box{background:#08192a;border:2px solid var(--kucho);border-radius:4px;padding:.8rem 1rem;margin-top:.6rem;font-family:monospace;font-size:.85rem;color:#bae6fd;line-height:2;}
+.formula-box .fl{color:#fff;font-weight:900;}
+
+.trap{background:#180d0d;border:2px solid var(--danger);border-radius:4px;padding:.7rem 1rem;font-size:.8rem;color:#fca5a5;margin-top:.6rem;line-height:1.65;}
+.trap::before{content:'⚠ 試験の引っかけ  ';font-weight:900;color:var(--danger);}
+
+/* FD・SD比較図 */
+.damper-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.8rem;}
+.damper-card{border-radius:8px;padding:1rem;border:2px solid;}
+.damper-card.fd{border-color:var(--danger);background:rgba(239,68,68,.05);}
+.damper-card.sd{border-color:var(--warn);background:rgba(245,158,11,.05);}
+.damper-card.sfd{border-color:var(--kucho);background:rgba(56,189,248,.05);}
+.damper-type{font-family:'Oswald',sans-serif;font-size:.85rem;font-weight:700;margin-bottom:.5rem;}
+.damper-card.fd .damper-type{color:var(--danger);}
+.damper-card.sd .damper-type{color:var(--warn);}
+.damper-card.sfd .damper-type{color:var(--kucho);}
+.damper-trigger{font-size:.8rem;line-height:1.7;color:#c8d0e8;}
+.damper-trigger strong{display:block;font-size:.72rem;color:var(--muted);margin-bottom:.2rem;}
+
+.er{color:var(--danger);font-weight:900;}
+.eb{color:var(--kucho);font-weight:900;}
+.eg{color:var(--correct);font-weight:900;}
+.ew{color:var(--warn);font-weight:900;}
+
+.sfx{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,2.8rem);color:var(--warn);text-shadow:2px 2px 0 rgba(0,0,0,.5);text-align:center;padding:.3rem;transform:rotate(-1.5deg);display:block;line-height:1;margin:.5rem 0 1.5rem;}
+
+.series-cta{background:var(--surface);border:2px solid var(--border);border-radius:10px;padding:1.5rem;margin:2rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.series-cta-text{font-size:.88rem;color:var(--muted);}
+.series-cta-text strong{color:var(--text);display:block;font-size:1rem;margin-bottom:.3rem;}
+.series-cta-btns{display:flex;gap:.6rem;flex-wrap:wrap;}
+.btn-next{background:var(--kucho);color:#0a1020;padding:.6rem 1.4rem;border-radius:7px;font-size:.85rem;font-weight:700;transition:opacity .2s;}
+.btn-next:hover{opacity:.85;}
+.btn-prev{background:rgba(56,189,248,.1);color:var(--kucho);border:1px solid rgba(56,189,248,.3);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;font-weight:700;}
+.btn-back{background:none;border:1px solid var(--border);color:var(--muted);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;}
+
+.cta-block{background:linear-gradient(135deg,#071520,#0e1a0e);border:3px solid var(--kucho);border-radius:6px;padding:2rem;text-align:center;margin-top:3rem;opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease;}
+.cta-block.visible{opacity:1;transform:translateY(0);}
+.cta-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.4rem,4vw,2rem);color:#fff;text-shadow:2px 2px 0 var(--kucho);margin-bottom:.6rem;}
+.cta-sub{font-size:.88rem;color:var(--muted);margin-bottom:1.4rem;}
+.cta-btn-primary{display:inline-block;background:var(--kucho);color:#0a1020;font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:.12em;padding:.75rem 2.2rem;border-radius:7px;margin:.3rem;font-weight:700;transition:opacity .2s,transform .1s;}
+.cta-btn-primary:hover{opacity:.85;transform:translateY(-2px);}
+.cta-btn-secondary{display:inline-block;background:rgba(56,189,248,.12);color:var(--kucho);border:1px solid rgba(56,189,248,.35);font-size:.85rem;padding:.65rem 1.6rem;border-radius:7px;margin:.3rem;}
+
+@media(max-width:600px){
+  .char-col{width:72px;min-width:72px;}
+  .char-img{width:58px;}
+  .scene{min-height:120px;}
+  .damper-compare{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/kucho/">演習問題</a>
+    <a href="/bunya/kucho/manga.html">基礎マンガ</a>
+    <a href="/bunya/kucho/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<div class="series-nav">
+  <span class="series-label">🔵 空調設備 補習シリーズ：</span>
+  <button class="series-btn done" onclick="location.href='hoshu1.html'">✅ 第1回 空調方式・熱源機器</button>
+  <button class="series-btn active" onclick="location.href='hoshu2.html'">第2回 ダクト・換気・防火防煙</button>
+  <button class="series-btn" onclick="location.href='hoshu3.html'">第3回 冷媒・省エネ・自動制御</button>
+</div>
+
+<section class="hero">
+  <div class="hero-series">🔵 空調設備 補習マンガ — 第2回 / 全3回</div>
+  <h1 class="hero-title">ダクト・換気・<br>防火防煙設備<br>深掘り解説</h1>
+  <p class="hero-sub">FDとSDを本当に理解しているか？ダクト設計の落とし穴まで叩き込む</p>
+  <div class="hero-topics">
+    <span class="hero-topic">FD・SD・SFDの詳細</span>
+    <span class="hero-topic">ダクト圧力損失計算</span>
+    <span class="hero-topic">第1〜3種換気の深掘り</span>
+    <span class="hero-topic">全熱交換器の仕組み</span>
+    <span class="hero-topic">排煙設備</span>
+    <span class="hero-topic">クリーンルーム</span>
+  </div>
+</section>
+
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>FD・SD・SFDの詳細メカニズム</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>ダクトの種類と圧力損失</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>VAVユニットと静圧制御</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>換気方式の深掘り</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>全熱交換器の仕組み</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>排煙設備（自然排煙・機械排煙）</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>クリーンルームの換気</div>
+    <div class="toc-item" onclick="document.getElementById('ch08').scrollIntoView({behavior:'smooth'})"><span class="toc-num">08</span>外気冷房・ナイトパージ</div>
+  </div>
+</div>
+
+<div class="manga-wrap">
+
+<!-- CH01 FD・SD・SFD -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 01</div>
+    <div class="ch-title">FD・SD・SFDの詳細メカニズム<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">🔥</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">DAMPER TRAINING</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>FDの温度ヒューズが溶断する温度は何度か！答えろ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>えっ……72℃……ですか？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>正解だ！<span class="eg">72℃が標準</span>だ！ただし厨房など高温場所は<span class="ew">120℃や150℃</span>の高温ヒューズを使う！場所によって使い分けるぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔥 FD・SD・SFDの詳細比較</div>
+  <div class="knowledge-body">
+    <div class="damper-compare">
+      <div class="damper-card fd">
+        <div class="damper-type">🔴 FD（防火ダンパー）</div>
+        <div class="damper-trigger">
+          <strong>作動トリガー</strong>
+          温度ヒューズ溶断（<span class="er">72℃が標準</span>）
+        </div>
+        <div class="damper-trigger">
+          <strong>設置場所</strong>
+          防火区画の貫通部
+        </div>
+        <div class="damper-trigger">
+          <strong>目的</strong>
+          火炎の延焼防止（煙ではなく炎・熱が対象）
+        </div>
+        <div class="damper-trigger">
+          <strong>復帰</strong>
+          手動復帰が必要（自動復帰なし）
+        </div>
+      </div>
+      <div class="damper-card sd">
+        <div class="damper-type">🟡 SD（防煙ダンパー）</div>
+        <div class="damper-trigger">
+          <strong>作動トリガー</strong>
+          <span class="ew">煙感知器の信号</span>（電気信号）
+        </div>
+        <div class="damper-trigger">
+          <strong>設置場所</strong>
+          防煙区画の貫通部
+        </div>
+        <div class="damper-trigger">
+          <strong>目的</strong>
+          煙の拡散防止（避難経路の安全確保）
+        </div>
+        <div class="damper-trigger">
+          <strong>復帰</strong>
+          自動復帰可能（制御盤からのリセット）
+        </div>
+      </div>
+      <div class="damper-card sfd" style="grid-column:1/-1;">
+        <div class="damper-type">🔵 SFD（防火防煙ダンパー）</div>
+        <div class="damper-trigger">
+          <strong>作動トリガー</strong>
+          <span class="eb">温度ヒューズ＋煙感知器の両方</span>（どちらが先に作動してもOK）
+        </div>
+        <div class="damper-trigger">
+          <strong>特徴</strong>
+          FDとSDの機能を一体化。防火区画かつ防煙区画を貫通する場合に使用。
+        </div>
+      </div>
+    </div>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 深掘りポイント：厨房のFD温度</div>
+      <p>厨房・ボイラー室など通常でも高温になる場所では、72℃のヒューズでは調理中に誤作動してしまう。このため<strong>120℃や150℃の高温ヒューズ</strong>を使用する。「すべての場所で72℃のFDを使用する」は誤り。</p>
+    </div>
+    <div class="trap">「FDは煙感知器の信号で作動し、SDは温度ヒューズで作動する」→ 完全に逆。<span class="eg">FDは温度ヒューズ（72℃）、SDは煙感知器の信号</span>で作動する。最頻出の引っかけ。</div>
+  </div>
+</div>
+
+<!-- CH02 ダクト -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 02</div>
+    <div class="ch-title">ダクトの種類と圧力損失<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">📐</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">DUCT DESIGN LAB</div>
+  <div class="scene">
+    <div class="char-col">
+      <img class="char-img" src="/images/pipe-trainee.png" alt="パイプ訓練生">
+      <div class="char-name">パイプ<br>訓練生</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>ダクトの断面積を小さくすると風速が上がって……圧力損失はどうなるんですか？</div>
+    </div>
+  </div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>圧力損失は風速の<span class="eg">2乗に比例</span>して増加する！断面積を半分にすると風速は2倍→圧力損失は<span class="er">4倍</span>になるぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📐 ダクトの種類と設計ポイント</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>特徴</th><th>用途・注意点</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">長方形ダクト</span></td><td>スペース効率◎。天井裏に収まりやすい</td><td>コーナー部の抵抗に注意。アスペクト比（長辺/短辺）は<span class="eg">4以下</span>が推奨</td></tr>
+        <tr><td><span class="eb">円形ダクト</span></td><td>圧力損失が<span class="eg">最も小さい</span>。製作コスト低</td><td>スペースを取る。高速ダクトに適している</td></tr>
+        <tr><td><span class="eb">スパイラルダクト</span></td><td>円形ダクトの一種。気密性高</td><td>低圧・中圧系統に多用</td></tr>
+        <tr><td><span class="eb">フレキシブルダクト</span></td><td>曲げ自在。吹出口への接続に使用</td><td>長く使うと<span class="er">圧力損失が大きい</span>。長さは最小限に</td></tr>
+      </tbody>
+    </table>
+    <div class="formula-box">
+      <span class="fl">圧力損失：</span> ΔP = λ × (L/D) × (ρv²/2)<br>
+      　λ：摩擦係数　L：ダクト長さ　D：相当直径<br>
+      　ρ：空気密度　v：風速<br>
+      <span class="fl">ポイント：</span> 風速vの<span style="color:#ef4444;">2乗</span>に比例する！
+    </div>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 深掘りポイント：アスペクト比の問題</div>
+      <p>長方形ダクトの長辺と短辺の比（アスペクト比）が大きいほど、同じ断面積でも周長が長くなり摩擦抵抗が増加する。アスペクト比は<strong>4以下</strong>が推奨で、8を超えると圧力損失が著しく増大し騒音も問題になる。</p>
+    </div>
+    <div class="trap">「フレキシブルダクトは長く使うほど圧力損失が小さくなる」→ 誤り。フレキシブルダクトは長いほど<span class="er">圧力損失が大きくなる</span>。接続部の余長は最小限にする。</div>
+  </div>
+</div>
+
+<!-- CH03 VAVユニットと静圧制御 -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 03</div>
+    <div class="ch-title">VAVユニットと静圧制御の詳細<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">💨</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PRESSURE CONTROL</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>VAVで各部屋の風量を絞ったとき、ダクト内の静圧はどうなる？！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>風量が減るから……静圧も下がる……？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>逆だ！VAVユニットを絞ると下流への流量が減って<span class="er">静圧が上昇</span>する！だから<span class="eg">送風機のインバーター制御</span>で静圧を一定に保つ制御が必要なんだ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">💨 VAVシステムの静圧制御</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">📈</span><span>VAVユニットを絞る→流量減少→ダクト内静圧<span class="er">上昇</span>。このまま放置すると騒音増大・機器損傷につながる。</span></div>
+      <div class="point-row"><span class="point-icon">⚡</span><span><span class="eb">送風機のインバーター制御</span>：静圧センサーの値に応じて送風機の回転数を下げて静圧を一定に保つ。大幅な省エネ効果がある。</span></div>
+      <div class="point-row"><span class="point-icon">🔊</span><span>静圧が高すぎると吹出口から<span class="er">騒音・ドラフト</span>が発生する。静圧設定値を適切に管理することが重要。</span></div>
+      <div class="point-row"><span class="point-icon">🌬️</span><span><span class="eb">最小風量の設定</span>：VAVを絞りすぎると換気不足になるため、最小風量（設計風量の30〜40%程度）を設ける。</span></div>
+    </div>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 深掘りポイント：インバーター制御の省エネ効果</div>
+      <p>送風機の動力は風量（回転数）の<strong>3乗に比例</strong>する。風量を80%に絞ると動力は約51%（0.8³≒0.51）に削減できる。VAV＋インバーターの組み合わせは最大の省エネ効果をもたらす。</p>
+    </div>
+    <div class="trap">「VAVシステムでは静圧管理は不要」→ 誤り。<span class="eg">静圧管理（インバーター制御）が必須</span>。これがVAVの複雑さの主な原因。</div>
+  </div>
+</div>
+
+<!-- CH04 換気方式深掘り -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 04</div>
+    <div class="ch-title">換気方式の深掘り（第1〜3種）<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">🌬️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">VENTILATION CLASS</div>
+  <div class="scene">
+    <div class="char-col">
+      <img class="char-img" src="/images/pipe-trainee.png" alt="パイプ訓練生">
+      <div class="char-name">パイプ<br>訓練生</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>第2種換気をトイレに使えない理由が「正圧だから」というのはわかったんですが……なぜ正圧だと問題なんですか？</div>
+    </div>
+  </div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>正圧だと室内の空気が<span class="er">外に押し出される</span>からだ！トイレの臭気が廊下や隣室に漏れ出すぞ！負圧（第3種）なら臭気を室内に引き込んで排気できる！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🌬️ 換気方式の詳細と適用場所</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種別</th><th>給気</th><th>排気</th><th>室内圧</th><th>適用場所と理由</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="eb">第1種</span></td>
+          <td>機械</td>
+          <td>機械</td>
+          <td>制御可能</td>
+          <td>大規模ビル全般・病院の手術室（正圧・負圧を用途で使い分け）</td>
+        </tr>
+        <tr>
+          <td><span class="er">第2種</span></td>
+          <td>機械</td>
+          <td>自然</td>
+          <td><span class="er">正圧</span>（＋）</td>
+          <td><span class="eg">クリーンルーム・手術室・無菌室</span>（外部からの汚染空気の侵入を防ぐ）<br><span class="er">トイレ・厨房・浴室には不適</span></td>
+        </tr>
+        <tr>
+          <td><span class="eg">第3種</span></td>
+          <td>自然</td>
+          <td>機械</td>
+          <td><span class="eg">負圧</span>（−）</td>
+          <td><span class="eg">トイレ・浴室・厨房・喫煙室</span>（臭気・煙が外に漏れない）<br>汚染空気を室内に閉じ込めて排気</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 深掘りポイント：病院の換気方式</div>
+      <p>病院では部屋の用途によって意図的に正圧・負圧を使い分ける。<strong>手術室・清潔区域→正圧</strong>（外部からの菌・汚染の侵入防止）、<strong>感染症病室・汚染区域→負圧</strong>（菌・ウイルスが外に出ないように）。どちらも第1種換気で圧力をコントロールする。</p>
+    </div>
+    <div class="trap">「病院の手術室は第3種換気（負圧）とする」→ 誤り。手術室は外部からの汚染を防ぐため<span class="eg">正圧</span>が基本（感染症病室は負圧）。</div>
+  </div>
+</div>
+
+<!-- CH05 全熱交換器 -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 05</div>
+    <div class="ch-title">全熱交換器の仕組みと限界<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">♻️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">HEAT EXCHANGER</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>全熱交換器を使ってはいけない場所はどこだ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>省エネになるなら……どこでも使えばいいんじゃ……</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>トイレや厨房の排気に全熱交換器を使うと<span class="er">臭気が給気側に混入</span>するぞ！汚染空気を室内に戻してどうする！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">♻️ 全熱交換器の詳細</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🔄</span><span><span class="eb">全熱交換器</span>：排気の<span class="eg">顕熱（温度）と潜熱（湿気）の両方</span>を回収して外気処理負荷を削減する。「顕熱のみ回収」は顕熱交換器の説明で誤り。</span></div>
+      <div class="point-row"><span class="point-icon">✅</span><span>適用場所：<span class="eg">一般的なオフィス・事務室・ホテル客室</span>など清浄な排気がある場所。</span></div>
+      <div class="point-row"><span class="point-icon">🚫</span><span>使用不可：<span class="er">トイレ・厨房・喫煙室・化学物質発生室</span>など汚染物質・臭気を含む排気がある場所（給気側への混入リスク）。</span></div>
+      <div class="point-row"><span class="point-icon">❄️</span><span>冬季の外気冷房時：全熱交換器の排熱回収が<span class="er">外気冷房の効果を打ち消す</span>場合があるため、バイパス回路が必要。</span></div>
+    </div>
+    <div class="formula-box">
+      <span class="fl">熱回収量：</span> Q = V × ρ × Cp × ε × ΔT<br>
+      　V：風量　ρ：空気密度　Cp：比熱<br>
+      　ε：熱交換効率（60〜80%程度）　ΔT：温度差
+    </div>
+    <div class="trap">「全熱交換器はすべての換気系統に設置することが推奨される」→ 誤り。<span class="er">臭気・汚染物質を含む排気系統</span>（トイレ・厨房など）には使用不可。</div>
+  </div>
+</div>
+
+<!-- CH06 排煙設備 -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 06</div>
+    <div class="ch-title">排煙設備の詳細（自然排煙・機械排煙）<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">💨</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">SMOKE EXHAUST</div>
+  <div class="scene">
+    <div class="char-col">
+      <img class="char-img" src="/images/pipe-trainee.png" alt="パイプ訓練生">
+      <div class="char-name">パイプ<br>訓練生</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>自然排煙と機械排煙はどう使い分けるんですか？</div>
+    </div>
+  </div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>自然排煙は<span class="eg">外気に面した開口部が必要</span>だ！地下室や内部廊下には使えない！そういう場所には<span class="eg">機械排煙</span>を使うぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">💨 排煙設備の種類と設計基準</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>仕組み</th><th>条件・注意点</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="eb">自然排煙</span></td>
+          <td>排煙窓を開放して煙の浮力で排出</td>
+          <td>有効開口面積：床面積の<span class="eg">1/50以上</span>。天井高が<span class="eg">3m以上</span>の場合は緩和規定あり。外気に面する必要あり</td>
+        </tr>
+        <tr>
+          <td><span class="eb">機械排煙</span></td>
+          <td>排煙機で強制的に排出</td>
+          <td>排煙量：<span class="eg">120m³/min以上</span>（1防煙区画あたり）。地下・内部廊下に必須。給気口の位置が重要</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:.8rem;">
+      <div class="point-row"><span class="point-icon">📏</span><span>防煙垂れ壁：天井から<span class="eg">50cm以上</span>垂れ下がらせて煙の流動を防ぐ仕切り。不燃材料で作成する。</span></div>
+      <div class="point-row"><span class="point-icon">⚠️</span><span>排煙設備は<span class="eg">建築基準法と消防法の両方</span>で規定されている。「消防法のみ」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">🌬️</span><span>機械排煙の給気口は<span class="eg">床面近く（1.5m以下）</span>に設ける。煙は上部に滞留するため、下から新鮮空気を入れて避難者を守る。</span></div>
+    </div>
+    <div class="trap">「排煙設備は消防法のみで規定されている」→ 誤り。<span class="eg">建築基準法と消防法の両方</span>で規定されている（目的が異なる）。</div>
+  </div>
+</div>
+
+<!-- CH07 クリーンルーム -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 07</div>
+    <div class="ch-title">クリーンルームの換気と圧力管理<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">🔬</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CLEAN ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>クリーンルームで使われるHEPAフィルターの捕集効率は何%以上か！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>99……パーセントくらい？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>甘い！<span class="eg">99.97%以上</span>だ！0.3μmの粒子に対してだ！これがHEPAフィルターの定義だぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔬 クリーンルームの換気・圧力管理</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🔵</span><span>クリーンルームは<span class="eg">正圧管理</span>（第2種換気の考え方）。外部からの汚染粒子の侵入を防ぐために室内圧力を外部より高く保つ。</span></div>
+      <div class="point-row"><span class="point-icon">🧹</span><span><span class="eb">HEPAフィルター</span>：0.3μmの粒子を<span class="eg">99.97%以上</span>捕集。クリーンルーム・病院手術室に使用。</span></div>
+      <div class="point-row"><span class="point-icon">💨</span><span><span class="eb">層流（ラミナーフロー）方式</span>：天井全面から均一に給気して床面から排気。気流が乱れず高い清浄度を保てる。</span></div>
+      <div class="point-row"><span class="point-icon">🔄</span><span>クリーンルームの換気回数は一般的なオフィス（6〜10回/h）より<span class="er">はるかに多く</span>、数十〜数百回/hに達する場合がある。</span></div>
+    </div>
+    <div class="trap">「クリーンルームは負圧管理とする」→ 誤り。クリーンルームは外部からの汚染侵入を防ぐため<span class="eg">正圧管理</span>が基本（感染症隔離室は負圧）。</div>
+  </div>
+</div>
+
+<!-- CH08 外気冷房・ナイトパージ -->
+<div class="chapter-header" id="ch08">
+  <div class="ch-num">08</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 08</div>
+    <div class="ch-title">外気冷房・ナイトパージ・エコノマイザー<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">🌙</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">ECONOMY MODE</div>
+  <div class="scene">
+    <div class="char-col">
+      <img class="char-img" src="/images/pipe-trainee.png" alt="パイプ訓練生">
+      <div class="char-name">パイプ<br>訓練生</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>外気冷房って冬に窓を開けることですか……？</div>
+    </div>
+  </div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！外気が室内より<span class="eg">低温低エンタルピー</span>のとき、冷凍機を使わずに外気を大量導入して冷房する手法だ！中間期・冬季の<span class="eg">大幅省エネ</span>になる！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🌙 外気冷房・ナイトパージ・エコノマイザー</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">❄️</span><span><span class="eb">外気冷房</span>：外気エンタルピーが室内より低い場合に外気を大量導入して冷房する。冷凍機の運転を減らせる。<span class="eg">中間期・冬季</span>に特に有効。</span></div>
+      <div class="point-row"><span class="point-icon">🌙</span><span><span class="eb">ナイトパージ</span>：夜間に蓄積した室内・躯体の熱を、夜間の涼しい外気で換気して排熱する手法。翌朝の冷房立ち上がり負荷を削減できる。</span></div>
+      <div class="point-row"><span class="point-icon">🔧</span><span><span class="eb">エコノマイザーサイクル</span>：外気冷房を自動的に制御するシステム。外気・還気のエンタルピーを比較して最適な外気取入量を決定する。</span></div>
+      <div class="point-row"><span class="point-icon">⚠️</span><span>外気冷房時に<span class="er">全熱交換器が作動</span>していると、せっかくの外気の冷熱が排熱で回収されてしまい効果が相殺される。<span class="eg">外気冷房時は全熱交換器をバイパスする</span>制御が必要。</span></div>
+    </div>
+    <div class="trap">「外気冷房は夏季の昼間に最も効果を発揮する」→ 誤り。外気が室内より低温になる<span class="eg">中間期・冬季・夜間</span>に効果を発揮する。</div>
+  </div>
+</div>
+
+<span class="sfx">💨 第2回 全8テーマ制覇！！</span>
+
+<div class="series-cta">
+  <div class="series-cta-text">
+    <strong>次は第3回：冷媒・省エネ・自動制御</strong>
+    冷媒のGWP・フロン規制・インバーター制御・ビルオートメーションを深掘り解説
+  </div>
+  <div class="series-cta-btns">
+    <a href="hoshu3.html" class="btn-next">第3回へ →</a>
+    <a href="hoshu1.html" class="btn-prev">← 第1回に戻る</a>
+    <a href="manga.html" class="btn-back">基礎マンガ</a>
+  </div>
+</div>
+
+<div class="cta-block">
+  <div class="cta-title">理解したら演習問題で確認しよう</div>
+  <p class="cta-sub">空調設備の演習問題で知識を定着させろ。</p>
+  <a href="/bunya/kucho/" class="cta-btn-primary">📝 空調設備 演習問題を解く</a>
+  <a href="/bunya/sogo/" class="cta-btn-secondary">🎯 総合確認問題</a>
+</div>
+
+</div><!-- /manga-wrap -->
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, {threshold:.1});
+document.querySelectorAll('.panel,.knowledge,.chapter-header,.cta-block')
+  .forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
