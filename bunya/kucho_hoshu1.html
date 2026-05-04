@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【補習】空調設備 第1回：空調方式・熱源機器 | 管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士・空調設備の補習マンガ第1回。VAV・CAV・FCU・冷凍機・ヒートポンプを深掘り解説。試験で差がつく細かいポイントまで網羅。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/kucho/hoshu1.html">
+<meta property="og:title" content="【補習】空調設備 第1回：空調方式・熱源機器 | 管工事PASS">
+<meta property="og:description" content="空調方式・熱源機器を深掘り解説。VAV・CAV・冷凍機・ヒートポンプの細かいポイントまで網羅。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kankoiji-pass.com/bunya/kucho/hoshu1.html">
+<meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "【補習】空調設備 第1回：空調方式・熱源機器",
+      "description": "空調方式・熱源機器を深掘り解説。VAV・CAV・冷凍機・ヒートポンプの細かいポイントまで網羅。",
+      "url": "https://kankoiji-pass.com/bunya/kucho/hoshu1.html",
+      "publisher": {"@type": "Organization", "name": "管工事PASS", "url": "https://kankoiji-pass.com/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://kankoiji-pass.com/"},
+        {"@type": "ListItem", "position": 2, "name": "分野別演習", "item": "https://kankoiji-pass.com/bunya/"},
+        {"@type": "ListItem", "position": 3, "name": "空調設備", "item": "https://kankoiji-pass.com/bunya/kucho/"},
+        {"@type": "ListItem", "position": 4, "name": "補習第1回", "item": "https://kankoiji-pass.com/bunya/kucho/hoshu1.html"}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#0f1117;--surface:#1a1d27;--surface2:#222636;--border:#2e3348;
+  --kucho:#38bdf8;--correct:#22c55e;--warn:#f59e0b;--text:#e8eaf0;
+  --muted:#7a8099;--danger:#ef4444;--ink:#08090d;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-serif;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+
+.site-header{position:fixed;top:0;left:0;right:0;height:56px;background:rgba(15,17,23,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;}
+.logo-main{font-weight:900;font-size:1.1rem;background:linear-gradient(135deg,var(--kucho),#7dd3fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.header-nav{display:flex;gap:1rem;align-items:center;font-size:.8rem;color:var(--muted);}
+.header-nav a:hover{color:var(--text);}
+.btn-sm-header{background:var(--kucho);color:#0a1020;padding:.35rem .9rem;border-radius:6px;font-size:.75rem;font-weight:700;}
+
+/* シリーズナビ */
+.series-nav{background:var(--surface);border-bottom:1px solid var(--border);padding:.8rem 1.5rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:56px;}
+.series-label{font-size:.72rem;color:var(--muted);font-weight:700;white-space:nowrap;}
+.series-btn{padding:.35rem .9rem;border-radius:99px;font-size:.75rem;font-weight:700;border:1px solid var(--border);color:var(--muted);background:none;cursor:pointer;white-space:nowrap;}
+.series-btn.active{background:var(--kucho);color:#0a1020;border-color:var(--kucho);}
+.series-btn.done{background:rgba(56,189,248,.12);color:var(--kucho);border-color:rgba(56,189,248,.3);}
+.series-btn:hover:not(.active){border-color:var(--kucho);color:var(--kucho);}
+
+.hero{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;position:relative;overflow:hidden;background:#08090e;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(56,189,248,0.1) 0%,transparent 65%);}
+.hero-series{display:inline-block;background:rgba(56,189,248,.15);border:1px solid rgba(56,189,248,.3);color:var(--kucho);font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.2em;padding:.25rem 1rem;border-radius:99px;margin-bottom:1rem;position:relative;}
+.hero-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,3rem);line-height:1;color:#fff;text-shadow:3px 3px 0 rgba(56,189,248,.25);margin-bottom:.8rem;position:relative;}
+.hero-sub{font-family:'Oswald',sans-serif;font-size:clamp(.85rem,2.5vw,1rem);letter-spacing:.12em;color:var(--muted);margin-bottom:1.5rem;position:relative;}
+.hero-topics{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;position:relative;}
+.hero-topic{background:var(--surface);border:1px solid rgba(56,189,248,.25);color:var(--kucho);font-size:.75rem;padding:.25rem .8rem;border-radius:99px;}
+
+.toc-section{max-width:860px;margin:0 auto;padding:1.5rem 1rem 1rem;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.5rem;}
+.toc-item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.5rem .8rem;font-size:.78rem;display:flex;align-items:center;gap:.5rem;cursor:pointer;transition:border-color .2s;}
+.toc-item:hover{border-color:var(--kucho);color:var(--kucho);}
+.toc-num{font-family:'Oswald',sans-serif;font-size:.7rem;color:var(--kucho);min-width:22px;}
+
+.manga-wrap{max-width:860px;margin:0 auto;padding:1rem 1rem 5rem;}
+
+.chapter-header{display:flex;align-items:center;gap:.8rem;margin:3rem 0 1.2rem;padding-bottom:.8rem;border-bottom:3px solid var(--kucho);opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
+.chapter-header.visible{opacity:1;transform:translateY(0);}
+.ch-num{font-family:'Oswald',sans-serif;font-size:2.5rem;font-weight:700;color:var(--kucho);line-height:1;min-width:3rem;}
+.ch-label{font-size:.65rem;letter-spacing:.15em;color:var(--muted);font-family:'Oswald',sans-serif;}
+.ch-title{font-size:clamp(1.1rem,3vw,1.5rem);font-weight:900;line-height:1.2;}
+.ch-icon{font-size:2rem;margin-left:auto;}
+.ch-level{font-size:.68rem;padding:.2rem .6rem;border-radius:3px;margin-left:.5rem;font-weight:700;}
+.ch-level.deep{background:rgba(239,68,68,.15);color:var(--danger);border:1px solid rgba(239,68,68,.3);}
+
+.panel{background:var(--surface);border:2.5px solid #fff;border-radius:3px;margin-bottom:1.6rem;box-shadow:5px 5px 0 var(--ink);overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .45s ease,transform .45s ease;}
+.panel.visible{opacity:1;transform:translateY(0);}
+.scene-label{background:var(--ink);border-bottom:2px solid var(--border);padding:.25rem .8rem;font-family:'Oswald',sans-serif;font-size:.65rem;letter-spacing:.15em;color:var(--muted);}
+.scene{display:flex;min-height:140px;}
+.char-col{width:110px;min-width:110px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:.8rem .3rem .4rem;background:var(--surface2);border-right:2px solid #fff;position:relative;overflow:hidden;}
+.char-col::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,.025) 16px,rgba(255,255,255,.025) 17px);}
+.char-col.angry .char-img{animation:rage .25s infinite alternate;}
+@keyframes rage{from{transform:rotate(-2deg) scale(1);}to{transform:rotate(2deg) scale(1.06);}}
+.char-col.angry::after{content:'💢';position:absolute;top:6px;right:6px;font-size:1.2rem;}
+.char-img{width:80px;height:auto;object-fit:contain;position:relative;z-index:1;display:block;margin:0 auto;}
+.char-name{font-size:.58rem;font-weight:900;color:var(--muted);text-align:center;position:relative;z-index:1;letter-spacing:.05em;}
+.speech-col{flex:1;padding:.9rem 1.1rem;display:flex;flex-direction:column;gap:.7rem;justify-content:center;}
+.bubble{border:2px solid #fff;border-radius:4px;padding:.6rem .9rem;line-height:1.65;font-size:clamp(.8rem,2vw,.88rem);background:var(--surface2);position:relative;}
+.bubble .spk{display:block;font-size:.6rem;font-weight:900;letter-spacing:.1em;opacity:.65;margin-bottom:.25rem;}
+.bubble.shout{background:var(--danger);color:#fff;font-weight:900;font-size:clamp(.88rem,2.3vw,1rem);transform:rotate(-.4deg);box-shadow:3px 3px 0 rgba(0,0,0,.35);border-color:#fff;}
+.bubble.shout::before{content:'';position:absolute;left:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:var(--danger);}
+.bubble.shout .eb{color:#bae6fd!important;font-weight:900;}
+.bubble.shout .eg{color:#a8ffb0!important;font-weight:900;}
+.bubble.shout .ew{color:#ffe08a!important;font-weight:900;}
+.bubble.reply{background:#0d1f2e;border-color:var(--kucho);color:#bae6fd;}
+.bubble.reply::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:var(--kucho);}
+.bubble.think{background:#08192a;border-color:var(--kucho);border-style:dashed;color:#bae6fd;}
+
+.knowledge{background:var(--surface);border:2.5px solid var(--kucho);border-radius:4px;margin-bottom:1.6rem;box-shadow:5px 5px 0 rgba(56,189,248,.18);opacity:0;transform:translateY(24px);transition:opacity .45s ease,transform .45s ease;}
+.knowledge.visible{opacity:1;transform:translateY(0);}
+.knowledge-header{background:rgba(56,189,248,.1);border-bottom:2px solid var(--kucho);padding:.5rem 1rem;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:.15em;color:var(--kucho);display:flex;align-items:center;gap:.5rem;}
+.knowledge-body{padding:1rem 1.2rem;}
+
+.k-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:.5rem;}
+.k-table th{background:var(--surface2);padding:.5rem .7rem;border:1.5px solid var(--border);color:var(--muted);font-weight:700;text-align:left;}
+.k-table td{padding:.5rem .7rem;border:1.5px solid var(--border);line-height:1.55;}
+.k-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+
+.point-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem;}
+.point-row{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;line-height:1.6;}
+.point-icon{font-size:1rem;flex-shrink:0;margin-top:.1rem;}
+
+/* 深掘りボックス */
+.deep-box{background:rgba(239,68,68,.05);border:2px solid rgba(239,68,68,.3);border-radius:6px;padding:.9rem 1.1rem;margin-top:.8rem;}
+.deep-box-title{font-size:.72rem;color:var(--danger);font-weight:700;letter-spacing:.1em;margin-bottom:.5rem;font-family:'Oswald',sans-serif;}
+.deep-box p{font-size:.82rem;color:#fca5a5;line-height:1.7;}
+
+/* 公式ボックス */
+.formula-box{background:#08192a;border:2px solid var(--kucho);border-radius:4px;padding:.8rem 1rem;margin-top:.6rem;font-family:monospace;font-size:.85rem;color:#bae6fd;line-height:2;}
+.formula-box .fl{color:#fff;font-weight:900;}
+
+.trap{background:#180d0d;border:2px solid var(--danger);border-radius:4px;padding:.7rem 1rem;font-size:.8rem;color:#fca5a5;margin-top:.6rem;line-height:1.65;}
+.trap::before{content:'⚠ 試験の引っかけ  ';font-weight:900;color:var(--danger);}
+
+.er{color:var(--danger);font-weight:900;}
+.eb{color:var(--kucho);font-weight:900;}
+.eg{color:var(--correct);font-weight:900;}
+.ew{color:var(--warn);font-weight:900;}
+
+.sfx{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,2.8rem);color:var(--warn);text-shadow:2px 2px 0 rgba(0,0,0,.5);text-align:center;padding:.3rem;transform:rotate(-1.5deg);display:block;line-height:1;margin:.5rem 0 1.5rem;}
+
+/* シリーズナビCTA */
+.series-cta{background:var(--surface);border:2px solid var(--border);border-radius:10px;padding:1.5rem;margin:2rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.series-cta-text{font-size:.88rem;color:var(--muted);}
+.series-cta-text strong{color:var(--text);display:block;font-size:1rem;margin-bottom:.3rem;}
+.series-cta-btns{display:flex;gap:.6rem;flex-wrap:wrap;}
+.btn-next{background:var(--kucho);color:#0a1020;padding:.6rem 1.4rem;border-radius:7px;font-size:.85rem;font-weight:700;transition:opacity .2s;}
+.btn-next:hover{opacity:.85;}
+.btn-back{background:rgba(56,189,248,.1);color:var(--kucho);border:1px solid rgba(56,189,248,.3);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;font-weight:700;}
+
+.cta-block{background:linear-gradient(135deg,#071520,#0e1a0e);border:3px solid var(--kucho);border-radius:6px;padding:2rem;text-align:center;margin-top:3rem;opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease;}
+.cta-block.visible{opacity:1;transform:translateY(0);}
+.cta-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.4rem,4vw,2rem);color:#fff;text-shadow:2px 2px 0 var(--kucho);margin-bottom:.6rem;}
+.cta-sub{font-size:.88rem;color:var(--muted);margin-bottom:1.4rem;}
+.cta-btn-primary{display:inline-block;background:var(--kucho);color:#0a1020;font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:.12em;padding:.75rem 2.2rem;border-radius:7px;margin:.3rem;font-weight:700;transition:opacity .2s,transform .1s;}
+.cta-btn-primary:hover{opacity:.85;transform:translateY(-2px);}
+.cta-btn-secondary{display:inline-block;background:rgba(56,189,248,.12);color:var(--kucho);border:1px solid rgba(56,189,248,.35);font-size:.85rem;padding:.65rem 1.6rem;border-radius:7px;margin:.3rem;}
+
+@media(max-width:600px){
+  .char-col{width:72px;min-width:72px;}
+  .char-img{width:58px;}
+  .scene{min-height:120px;}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/kucho/">演習問題</a>
+    <a href="/bunya/kucho/manga.html">基礎マンガ</a>
+    <a href="/bunya/kucho/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<!-- シリーズナビ -->
+<div class="series-nav">
+  <span class="series-label">🔵 空調設備 補習シリーズ：</span>
+  <button class="series-btn active" onclick="location.href='hoshu1.html'">第1回 空調方式・熱源機器</button>
+  <button class="series-btn" onclick="location.href='hoshu2.html'">第2回 ダクト・換気・防火防煙</button>
+  <button class="series-btn" onclick="location.href='hoshu3.html'">第3回 冷媒・省エネ・自動制御</button>
+</div>
+
+<section class="hero">
+  <div class="hero-series">🔵 空調設備 補習マンガ — 第1回 / 全3回</div>
+  <h1 class="hero-title">空調方式・熱源機器<br>深掘り解説</h1>
+  <p class="hero-sub">基礎マンガで物足りない人向け — 試験で差がつく細かいポイントまで</p>
+  <div class="hero-topics">
+    <span class="hero-topic">VAV vs CAV 徹底比較</span>
+    <span class="hero-topic">冷凍サイクル詳細</span>
+    <span class="hero-topic">COP計算</span>
+    <span class="hero-topic">吸収式冷凍機の仕組み</span>
+    <span class="hero-topic">ヒートポンプ暖房</span>
+    <span class="hero-topic">氷蓄熱システム</span>
+  </div>
+</section>
+
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>VAV・CAV・FCUの深掘り</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>冷凍サイクルの詳細</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>COP（成績係数）の計算</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>冷凍機の種類と特徴</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>吸収式冷凍機の仕組み</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>ヒートポンプの深掘り</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>氷蓄熱・水蓄熱システム</div>
+    <div class="toc-item" onclick="document.getElementById('ch08').scrollIntoView({behavior:'smooth'})"><span class="toc-num">08</span>冷却塔の詳細</div>
+  </div>
+</div>
+
+<div class="manga-wrap">
+
+<!-- CH01 VAV・CAV・FCU -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 01</div>
+    <div class="ch-title">VAV・CAV・FCUの深掘り比較<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">🌡️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">ADVANCED CLASS</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>VAVとCAVの違いを「送風量が変わるかどうか」以上に説明できるか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>えっと……VAVは変風量で省エネで……CAVは定風量で……それ以上は……</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>VAVは<span class="eg">各ゾーンのVAVユニットで風量を絞る</span>から静圧管理が必要だ！ダクト設計が複雑になるのはそのためだ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🌡️ VAV・CAV・FCU 詳細比較</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>方式</th><th>制御方法</th><th>長所</th><th>短所・注意点</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="eb">CAV</span><br>定風量単一ダクト</td>
+          <td>送風量<span class="eg">一定</span><br>温度で制御</td>
+          <td>シンプル・信頼性高<br>設計・施工が容易</td>
+          <td>個別制御<span class="er">不可</span><br>部分負荷時の省エネ効果が低い</td>
+        </tr>
+        <tr>
+          <td><span class="eb">VAV</span><br>変風量</td>
+          <td>送風量<span class="eg">可変</span><br>VAVユニットで絞る</td>
+          <td>個別制御◎<br>省エネ効果大<br>インバーター制御で動力削減</td>
+          <td>静圧管理が必要<br>ダクト設計が複雑<br>最小風量時の換気量不足に注意</td>
+        </tr>
+        <tr>
+          <td><span class="eb">FCU</span><br>ファンコイルユニット</td>
+          <td>各室のコイルで<br>冷温水を制御</td>
+          <td>個別制御容易<br>既存建物への適用◎</td>
+          <td>各室に水配管が必要<br>漏水リスク<br>換気は別系統が必要</td>
+        </tr>
+        <tr>
+          <td><span class="eb">二重ダクト方式</span></td>
+          <td>冷風・温風を<br>混合ボックスで調整</td>
+          <td>個別制御◎<br>急激な負荷変動に対応</td>
+          <td>ダクトスペースが<span class="er">2倍</span>必要<br>エネルギー損失が大きい</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 深掘りポイント：VAVの最小風量問題</div>
+      <p>VAVは負荷が小さいときに送風量を絞るが、絞りすぎると室内の<strong>換気量が不足</strong>する。このため設計上「最小風量」を設定し、それ以下には絞れないようにする。試験では「VAVは風量をゼロにできる」という誤り選択肢が出ることがある。</p>
+    </div>
+    <div class="trap">「VAV方式は静圧管理が不要で設計が容易」→ 誤り。VAVユニットで風量を絞るため<span class="eg">静圧管理が必要</span>でダクト設計は複雑になる。</div>
+  </div>
+</div>
+
+<!-- CH02 冷凍サイクル詳細 -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 02</div>
+    <div class="ch-title">冷凍サイクルの詳細<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">❄️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">REFRIGERATION LAB</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>蒸発器で冷媒はどんな変化をするか！液体か気体か答えろ！！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>蒸発……する……から液体が気体になる？</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！<span class="eg">液体→気体に蒸発</span>するときに周囲の熱を奪う（吸熱）！これが冷却の原理だ！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">❄️ 冷凍サイクル4工程の詳細</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>工程</th><th>機器</th><th>冷媒の状態変化</th><th>熱の動き</th></tr></thead>
+      <tbody>
+        <tr><td>① <span class="eb">蒸発</span></td><td>蒸発器</td><td>液体 → <span class="eg">気体</span>（低圧）</td><td>周囲から<span class="eg">吸熱</span>→冷却効果</td></tr>
+        <tr><td>② <span class="eb">圧縮</span></td><td>圧縮機</td><td>低圧気体 → <span class="ew">高圧気体</span></td><td>電力投入で圧縮・昇温</td></tr>
+        <tr><td>③ <span class="eb">凝縮</span></td><td>凝縮器</td><td>気体 → <span class="er">液体</span>（高圧）</td><td>外部へ<span class="er">放熱</span>（冷却塔等で排熱）</td></tr>
+        <tr><td>④ <span class="eb">膨張</span></td><td>膨張弁</td><td>高圧液体 → <span class="eg">低圧液体</span></td><td>減圧・冷却（次の蒸発に備える）</td></tr>
+      </tbody>
+    </table>
+    <div class="formula-box">
+      <span class="fl">覚え方：</span>「蒸圧凝膨」（じょうあつぎょうぼう）<br>
+      <span class="fl">蒸</span>=蒸発　<span class="fl">圧</span>=圧縮　<span class="fl">凝</span>=凝縮　<span class="fl">膨</span>=膨張
+    </div>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 深掘りポイント：凝縮温度と冷凍効率</div>
+      <p>凝縮温度が<strong>高い</strong>ほど圧縮機の仕事量が増えて効率（COP）が<strong>下がる</strong>。冷却塔の性能が落ちて凝縮温度が上昇すると、冷凍機の効率が悪化する。逆に冷水温度を<strong>高め</strong>に設定すると蒸発温度が上がりCOPが向上する。</p>
+    </div>
+    <div class="trap">「蒸発器では冷媒が気体から液体に変化する」→ 誤り。蒸発器では<span class="eg">液体→気体</span>に変化して吸熱する。</div>
+  </div>
+</div>
+
+<!-- CH03 COP -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 03</div>
+    <div class="ch-title">COP（成績係数）の計算と意味<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">📐</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CALCULATION ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ヒートポンプ暖房のCOPは必ず1以上になる理由を説明できるか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>えっ……1より大きいってエネルギーが増えてるってこと……？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>大気熱をタダで汲み上げるからだ！電力は<span class="eg">ポンプを動かす分だけ</span>でいい！投入エネルギー以上の熱を得られるんだ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📐 COPの定義と計算</div>
+  <div class="knowledge-body">
+    <div class="formula-box">
+      <span class="fl">冷房COP</span> = 冷凍能力（W）÷ 消費電力（W）<br>
+      <span class="fl">暖房COP</span> = 加熱能力（W）÷ 消費電力（W）<br><br>
+      <span class="fl">関係式：</span> 暖房COP = 冷房COP + 1<br>
+      （凝縮熱 = 蒸発熱 + 圧縮仕事 なので暖房COPは必ず冷房COPより<span class="eg">1大きい</span>）
+    </div>
+    <div class="point-list" style="margin-top:.8rem;">
+      <div class="point-row"><span class="point-icon">📈</span><span>冷水温度を<span class="eg">高く</span>設定→蒸発温度↑→COP<span class="eg">向上</span>（逆は低下）</span></div>
+      <div class="point-row"><span class="point-icon">📉</span><span>冷却水温度を<span class="eg">低く</span>設定→凝縮温度↓→COP<span class="eg">向上</span></span></div>
+      <div class="point-row"><span class="point-icon">♾️</span><span>ヒートポンプ暖房のCOPは<span class="eg">必ず1以上</span>（大気熱を利用するため）</span></div>
+    </div>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 深掘りポイント：COPと外気温の関係</div>
+      <p>ヒートポンプは外気温が<strong>低い</strong>ほど大気から熱を汲み上げにくくなりCOPが<strong>下がる</strong>。真冬の最も寒い日に暖房能力が不足しがちなのはこの理由。「外気温が低いほどCOPが上がる」は誤り。</p>
+    </div>
+    <div class="trap">「冷水温度を低く設定するほどCOPが向上する」→ 誤り。冷水温度を<span class="eg">高く</span>設定するほど蒸発温度が上がりCOPが向上する。</div>
+  </div>
+</div>
+
+<!-- CH04 冷凍機の種類 -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 04</div>
+    <div class="ch-title">冷凍機の種類と選定ポイント<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">🏭</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">MACHINE ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>遠心冷凍機が小容量に向かない理由は何だ？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>大きいから……？でも理由がわからないです……</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>インペラの<span class="eg">回転による遠心力</span>で圧縮するから小容量では圧力が作れないんだ！構造上の問題だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🏭 冷凍機の種類と特徴の詳細</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>容量</th><th>特徴</th><th>注意点</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="eb">遠心（ターボ）冷凍機</span></td>
+          <td><span class="eg">大容量</span>向き</td>
+          <td>インペラ回転で圧縮。振動少・高効率・大容量</td>
+          <td>小容量に<span class="er">不向き</span>。サージング（不安定振動）に注意。部分負荷効率に注意</td>
+        </tr>
+        <tr>
+          <td><span class="eb">往復動（レシプロ）冷凍機</span></td>
+          <td>小〜中容量</td>
+          <td>ピストンで圧縮。シンプルで信頼性高</td>
+          <td>振動・騒音が大きい。現在は<span class="ew">スクロール・スクリューに置換</span>されつつある</td>
+        </tr>
+        <tr>
+          <td><span class="eb">スクロール冷凍機</span></td>
+          <td>小〜中容量</td>
+          <td>渦巻き形状で圧縮。<span class="eg">振動少・高効率</span>・コンパクト</td>
+          <td>容量制御範囲が限られる</td>
+        </tr>
+        <tr>
+          <td><span class="eb">スクリュー冷凍機</span></td>
+          <td>中〜大容量</td>
+          <td>雄雌ロータで圧縮。<span class="eg">信頼性高・連続運転向き</span></td>
+          <td>油管理が重要</td>
+        </tr>
+        <tr>
+          <td><span class="eb">吸収式冷凍機</span></td>
+          <td>中〜大容量</td>
+          <td>圧縮機なし・熱で駆動。<span class="eg">電力消費が少ない</span></td>
+          <td>冷却水量が多い。腐食管理が重要。詳細は次項</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="trap">「遠心冷凍機はすべての容量域で最も効率が高い」→ 誤り。<span class="eg">大容量域では高効率</span>だが小容量には不向き。部分負荷時の効率低下にも注意。</div>
+  </div>
+</div>
+
+<!-- CH05 吸収式冷凍機 -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 05</div>
+    <div class="ch-title">吸収式冷凍機の仕組み<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">🔥</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">ABSORPTION UNIT</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>吸収式冷凍機は何を吸収剤として使うか言ってみろ！！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>えーっと……冷媒は水……吸収剤は……臭化リチウムですか？</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！<span class="eg">冷媒：水、吸収剤：臭化リチウム（LiBr）</span>の組み合わせが基本だ！よく覚えとけ！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔥 吸収式冷凍機の詳細</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">💧</span><span><span class="eb">冷媒：水（H₂O）</span>、<span class="eb">吸収剤：臭化リチウム（LiBr）</span>の組み合わせが標準。</span></div>
+      <div class="point-row"><span class="point-icon">⚙️</span><span>圧縮機の代わりに「吸収→再生→凝縮→蒸発」のサイクルで熱を移動させる。<span class="eg">電力消費が圧縮式の約1/10</span>程度。</span></div>
+      <div class="point-row"><span class="point-icon">🔥</span><span>駆動エネルギーは<span class="eg">蒸気・温水・ガス直焚き</span>など。廃熱利用に最適。</span></div>
+      <div class="point-row"><span class="point-icon">💦</span><span>冷却水量が圧縮式より<span class="er">多い</span>。冷却塔が大きくなる。</span></div>
+      <div class="point-row"><span class="point-icon">⚠️</span><span>LiBr水溶液は<span class="er">腐食性</span>が高い。腐食防止剤の管理が重要。</span></div>
+      <div class="point-row"><span class="point-icon">❄️</span><span>冷水温度は<span class="er">5℃以上</span>が下限（水が凍結するため）。蒸気圧縮式より冷水温度を低くできない。</span></div>
+    </div>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 深掘りポイント：二重効用と一重効用</div>
+      <p>一般的なビル用は<strong>二重効用型</strong>（高温再生器と低温再生器を持つ）でCOPが高い（約1.2程度）。一重効用型は廃熱・低温熱源利用向け（COPは約0.7程度）。「吸収式のCOPは必ず1以上」は誤り（一重効用は1未満）。</p>
+    </div>
+    <div class="trap">「吸収式冷凍機の冷媒はフロン系冷媒である」→ 誤り。吸収式の冷媒は<span class="eg">水（H₂O）</span>で、吸収剤が<span class="eg">臭化リチウム（LiBr）</span>。</div>
+  </div>
+</div>
+
+<!-- CH06 ヒートポンプ -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 06</div>
+    <div class="ch-title">ヒートポンプの深掘り<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">♨️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">HEAT PUMP ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>空冷ヒートポンプと水冷ヒートポンプ、効率がいいのはどっちだ！！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>水の方が熱を伝えやすいから……水冷の方が効率いいですか？</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！<span class="eg">水冷の方が空冷より熱交換効率が高い</span>！ただし冷却塔や配管が必要で設備コストが増える！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">♨️ ヒートポンプの種類と特徴</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>熱源</th><th>特徴</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">空冷ヒートポンプ</span></td><td>外気</td><td>設備シンプル・設置容易。外気温に依存してCOPが変動。寒冷地では能力低下</td></tr>
+        <tr><td><span class="eg">水冷ヒートポンプ</span></td><td>冷却水・河川水・地下水</td><td><span class="eg">熱交換効率が高くCOPが安定</span>。冷却塔・水源が必要</td></tr>
+        <tr><td><span class="eb">地中熱ヒートポンプ</span></td><td>地中熱</td><td>年間を通じて安定したCOP。初期コスト高。ボーリング工事が必要</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:.8rem;">
+      <div class="point-row"><span class="point-icon">🔄</span><span><span class="eb">四方弁（リバーシングバルブ）</span>：冷媒流れを切り替えて冷房↔暖房を切り替える弁。ヒートポンプの運転切替に必須の部品。</span></div>
+      <div class="point-row"><span class="point-icon">🌡️</span><span>外気温が<span class="er">低い</span>ほど空冷ヒートポンプの暖房COPは<span class="er">低下</span>する（外気熱が少ないため）。</span></div>
+    </div>
+    <div class="trap">「ヒートポンプの冷暖房切替は蒸発器と凝縮器を物理的に入れ替えて行う」→ 誤り。<span class="eg">四方弁で冷媒の流れ方向を切り替える</span>ことで実現する。</div>
+  </div>
+</div>
+
+<!-- CH07 蓄熱システム -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 07</div>
+    <div class="ch-title">氷蓄熱・水蓄熱システム<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">🧊</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">THERMAL STORAGE</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>氷蓄熱が水蓄熱より小さいタンクで同じ蓄熱量を確保できる理由は何だ！！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>氷の方が……冷たいから？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span><span class="eg">融解潜熱</span>だ！水が氷になるとき大量の熱を蓄える！<span class="eg">約335kJ/kg</span>！比熱だけの水蓄熱より圧倒的に蓄熱密度が高い！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🧊 蓄熱システムの比較</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>項目</th><th>氷蓄熱</th><th>水蓄熱</th></tr></thead>
+      <tbody>
+        <tr><td>蓄熱原理</td><td><span class="eg">融解潜熱</span>（約335kJ/kg）</td><td>顕熱（水の比熱×温度差）</td></tr>
+        <tr><td>蓄熱槽サイズ</td><td><span class="eg">小さくて済む</span></td><td>大きくなる</td></tr>
+        <tr><td>冷凍機の運転条件</td><td>製氷のため蒸発温度が<span class="er">低い</span>（−10℃程度）→COP<span class="er">低下</span></td><td>通常運転のCOPを維持しやすい</td></tr>
+        <tr><td>主なメリット</td><td>ピーク電力削減・夜間電力活用・タンク小</td><td>設備シンプル・冷凍機の効率維持</td></tr>
+      </tbody>
+    </table>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 深掘りポイント：氷蓄熱のCOP低下問題</div>
+      <p>氷蓄熱では夜間に−10℃程度まで冷やして製氷するため、冷凍機の蒸発温度が通常より低くなりCOPが<strong>低下</strong>する。「氷蓄熱は冷凍機の効率が向上する」は誤り。省エネ効果は主に夜間の割安電力活用とピーク電力削減によるものであって、冷凍効率の向上ではない。</p>
+    </div>
+    <div class="trap">「氷蓄熱は水蓄熱より蓄熱槽が大きくなる」→ 誤り。潜熱を利用するため<span class="eg">氷蓄熱の方がタンクが小さくて済む</span>。</div>
+  </div>
+</div>
+
+<!-- CH08 冷却塔 -->
+<div class="chapter-header" id="ch08">
+  <div class="ch-num">08</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 08</div>
+    <div class="ch-title">冷却塔の詳細<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">🏗️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">COOLING TOWER</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>開放型と密閉型冷却塔の違いを詳しく説明できるか！！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>開放型は水が空気に触れて……密閉型は触れない……ですか？</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解！<span class="eg">開放型は冷却水が大気と直接接触</span>するから冷却効率は高いが水質管理が重要になる！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🏗️ 冷却塔の種類と管理</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>特徴</th><th>注意点</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">開放型冷却塔</span></td><td>冷却水が大気と直接接触。<span class="eg">冷却効率高い</span>・コスト低</td><td>水質汚染リスク高。<span class="er">レジオネラ菌対策必須</span>。ブロー管理重要</td></tr>
+        <tr><td><span class="eb">密閉型冷却塔</span></td><td>コイル内の冷却水と大気が間接接触。水質管理容易</td><td>開放型より<span class="er">冷却効率がやや低い</span>。設備費高</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:.8rem;">
+      <div class="point-row"><span class="point-icon">💧</span><span>冷却塔は水の<span class="eg">蒸発潜熱</span>を利用して冷却するため、冷却能力は外気の<span class="eg">湿球温度</span>に依存する。乾球温度ではない。</span></div>
+      <div class="point-row"><span class="point-icon">🌡️</span><span>冷却水出口温度は外気湿球温度より<span class="er">必ず高くなる</span>（湿球温度を下回ることは物理的に不可能）。</span></div>
+      <div class="point-row"><span class="point-icon">🔬</span><span><span class="eb">濃縮倍数</span>：蒸発による不純物の濃縮を管理する指標。ブロー（排水）量を適切に管理して濃縮を防ぐ。</span></div>
+    </div>
+    <div class="trap">「冷却塔の冷却能力は外気乾球温度のみに依存する」→ 誤り。水の蒸発を利用するため<span class="eg">湿球温度</span>に依存する。</div>
+  </div>
+</div>
+
+<span class="sfx">🌡️ 第1回 全8テーマ制覇！！</span>
+
+<!-- シリーズCTA -->
+<div class="series-cta">
+  <div class="series-cta-text">
+    <strong>次は第2回：ダクト・換気・防火防煙設備</strong>
+    FD・SDの詳細メカニズム・ダクト設計・各種換気方式を深掘り解説
+  </div>
+  <div class="series-cta-btns">
+    <a href="hoshu2.html" class="btn-next">第2回へ →</a>
+    <a href="manga.html" class="btn-back">← 基礎マンガに戻る</a>
+  </div>
+</div>
+
+<div class="cta-block">
+  <div class="cta-title">理解したら演習問題で確認しよう</div>
+  <p class="cta-sub">空調設備の演習問題で知識を定着させろ。</p>
+  <a href="/bunya/kucho/" class="cta-btn-primary">📝 空調設備 演習問題を解く</a>
+  <a href="/bunya/sogo/" class="cta-btn-secondary">🎯 総合確認問題</a>
+</div>
+
+</div><!-- /manga-wrap -->
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, {threshold:.1});
+document.querySelectorAll('.panel,.knowledge,.chapter-header,.cta-block')
+  .forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
