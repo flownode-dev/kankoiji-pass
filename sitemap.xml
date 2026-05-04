@@ -17,6 +17,12 @@
   </url>
   <url>
     <loc>https://kankoiji-pass.com/schedule/</loc>
+  </url>
+  <url>
+    <loc>https://kankoiji-pass.com/benkyojikan/</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.85</priority>
     <lastmod>2026-05-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.85</priority>
