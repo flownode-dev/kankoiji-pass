@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【補習】空調設備 第3回：冷媒・省エネ・自動制御 | 管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士・空調設備の補習マンガ第3回。冷媒のGWP・フロン規制・インバーター制御・BEMS・自動制御を深掘り解説。試験で差がつく細かいポイントまで網羅。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/kucho/hoshu3.html">
+<meta property="og:title" content="【補習】空調設備 第3回：冷媒・省エネ・自動制御 | 管工事PASS">
+<meta property="og:description" content="冷媒のGWP・フロン規制・インバーター制御・BEMS・自動制御を深掘り解説。試験で差がつくポイントを網羅。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kankoiji-pass.com/bunya/kucho/hoshu3.html">
+<meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "【補習】空調設備 第3回：冷媒・省エネ・自動制御",
+      "description": "冷媒のGWP・フロン規制・インバーター制御・BEMS・自動制御を深掘り解説。",
+      "url": "https://kankoiji-pass.com/bunya/kucho/hoshu3.html",
+      "publisher": {"@type": "Organization", "name": "管工事PASS", "url": "https://kankoiji-pass.com/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://kankoiji-pass.com/"},
+        {"@type": "ListItem", "position": 2, "name": "分野別演習", "item": "https://kankoiji-pass.com/bunya/"},
+        {"@type": "ListItem", "position": 3, "name": "空調設備", "item": "https://kankoiji-pass.com/bunya/kucho/"},
+        {"@type": "ListItem", "position": 4, "name": "補習第3回", "item": "https://kankoiji-pass.com/bunya/kucho/hoshu3.html"}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#0f1117;--surface:#1a1d27;--surface2:#222636;--border:#2e3348;
+  --kucho:#38bdf8;--correct:#22c55e;--warn:#f59e0b;--text:#e8eaf0;
+  --muted:#7a8099;--danger:#ef4444;--ink:#08090d;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-serif;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+
+.site-header{position:fixed;top:0;left:0;right:0;height:56px;background:rgba(15,17,23,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;}
+.logo-main{font-weight:900;font-size:1.1rem;background:linear-gradient(135deg,var(--kucho),#7dd3fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.header-nav{display:flex;gap:1rem;align-items:center;font-size:.8rem;color:var(--muted);}
+.header-nav a:hover{color:var(--text);}
+.btn-sm-header{background:var(--kucho);color:#0a1020;padding:.35rem .9rem;border-radius:6px;font-size:.75rem;font-weight:700;}
+
+.series-nav{background:var(--surface);border-bottom:1px solid var(--border);padding:.8rem 1.5rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:56px;}
+.series-label{font-size:.72rem;color:var(--muted);font-weight:700;white-space:nowrap;}
+.series-btn{padding:.35rem .9rem;border-radius:99px;font-size:.75rem;font-weight:700;border:1px solid var(--border);color:var(--muted);background:none;cursor:pointer;white-space:nowrap;}
+.series-btn.active{background:var(--kucho);color:#0a1020;border-color:var(--kucho);}
+.series-btn.done{background:rgba(56,189,248,.12);color:var(--kucho);border-color:rgba(56,189,248,.3);}
+.series-btn:hover:not(.active){border-color:var(--kucho);color:var(--kucho);}
+
+.hero{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;position:relative;overflow:hidden;background:#08090e;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(56,189,248,0.1) 0%,transparent 65%);}
+.hero-series{display:inline-block;background:rgba(56,189,248,.15);border:1px solid rgba(56,189,248,.3);color:var(--kucho);font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.2em;padding:.25rem 1rem;border-radius:99px;margin-bottom:1rem;position:relative;}
+.hero-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,3rem);line-height:1;color:#fff;text-shadow:3px 3px 0 rgba(56,189,248,.25);margin-bottom:.8rem;position:relative;}
+.hero-sub{font-family:'Oswald',sans-serif;font-size:clamp(.85rem,2.5vw,1rem);letter-spacing:.12em;color:var(--muted);margin-bottom:1.5rem;position:relative;}
+.hero-topics{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;position:relative;}
+.hero-topic{background:var(--surface);border:1px solid rgba(56,189,248,.25);color:var(--kucho);font-size:.75rem;padding:.25rem .8rem;border-radius:99px;}
+
+/* 完走バナー */
+.complete-banner{background:linear-gradient(135deg,rgba(34,197,94,.12),rgba(56,189,248,.08));border:2px solid var(--correct);border-radius:10px;padding:1rem 1.5rem;margin:1.5rem 1rem 0;max-width:860px;margin-left:auto;margin-right:auto;display:flex;align-items:center;gap:1rem;}
+.complete-badge{font-size:2rem;flex-shrink:0;}
+.complete-text{font-size:.88rem;color:#c8d0e8;line-height:1.6;}
+.complete-text strong{color:var(--correct);display:block;margin-bottom:.2rem;}
+
+.toc-section{max-width:860px;margin:0 auto;padding:1.5rem 1rem 1rem;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.5rem;}
+.toc-item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.5rem .8rem;font-size:.78rem;display:flex;align-items:center;gap:.5rem;cursor:pointer;transition:border-color .2s;}
+.toc-item:hover{border-color:var(--kucho);color:var(--kucho);}
+.toc-num{font-family:'Oswald',sans-serif;font-size:.7rem;color:var(--kucho);min-width:22px;}
+
+.manga-wrap{max-width:860px;margin:0 auto;padding:1rem 1rem 5rem;}
+
+.chapter-header{display:flex;align-items:center;gap:.8rem;margin:3rem 0 1.2rem;padding-bottom:.8rem;border-bottom:3px solid var(--kucho);opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
+.chapter-header.visible{opacity:1;transform:translateY(0);}
+.ch-num{font-family:'Oswald',sans-serif;font-size:2.5rem;font-weight:700;color:var(--kucho);line-height:1;min-width:3rem;}
+.ch-label{font-size:.65rem;letter-spacing:.15em;color:var(--muted);font-family:'Oswald',sans-serif;}
+.ch-title{font-size:clamp(1.1rem,3vw,1.5rem);font-weight:900;line-height:1.2;}
+.ch-icon{font-size:2rem;margin-left:auto;}
+.ch-level{font-size:.68rem;padding:.2rem .6rem;border-radius:3px;margin-left:.5rem;font-weight:700;}
+.ch-level.deep{background:rgba(239,68,68,.15);color:var(--danger);border:1px solid rgba(239,68,68,.3);}
+.ch-level.final{background:rgba(34,197,94,.15);color:var(--correct);border:1px solid rgba(34,197,94,.3);}
+
+.panel{background:var(--surface);border:2.5px solid #fff;border-radius:3px;margin-bottom:1.6rem;box-shadow:5px 5px 0 var(--ink);overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .45s ease,transform .45s ease;}
+.panel.visible{opacity:1;transform:translateY(0);}
+.scene-label{background:var(--ink);border-bottom:2px solid var(--border);padding:.25rem .8rem;font-family:'Oswald',sans-serif;font-size:.65rem;letter-spacing:.15em;color:var(--muted);}
+.scene{display:flex;min-height:140px;}
+.char-col{width:110px;min-width:110px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:.8rem .3rem .4rem;background:var(--surface2);border-right:2px solid #fff;position:relative;overflow:hidden;}
+.char-col::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,.025) 16px,rgba(255,255,255,.025) 17px);}
+.char-col.right{border-right:none;border-left:2px solid #fff;}
+.char-col.angry .char-img{animation:rage .25s infinite alternate;}
+@keyframes rage{from{transform:rotate(-2deg) scale(1);}to{transform:rotate(2deg) scale(1.06);}}
+.char-col.angry::after{content:'💢';position:absolute;top:6px;right:6px;font-size:1.2rem;}
+.char-col.happy::after{content:'🌟';position:absolute;top:6px;right:6px;font-size:1.2rem;}
+.char-img{width:80px;height:auto;object-fit:contain;position:relative;z-index:1;display:block;margin:0 auto;}
+.char-name{font-size:.58rem;font-weight:900;color:var(--muted);text-align:center;position:relative;z-index:1;letter-spacing:.05em;}
+.speech-col{flex:1;padding:.9rem 1.1rem;display:flex;flex-direction:column;gap:.7rem;justify-content:center;}
+.bubble{border:2px solid #fff;border-radius:4px;padding:.6rem .9rem;line-height:1.65;font-size:clamp(.8rem,2vw,.88rem);background:var(--surface2);position:relative;}
+.bubble .spk{display:block;font-size:.6rem;font-weight:900;letter-spacing:.1em;opacity:.65;margin-bottom:.25rem;}
+.bubble.shout{background:var(--danger);color:#fff;font-weight:900;font-size:clamp(.88rem,2.3vw,1rem);transform:rotate(-.4deg);box-shadow:3px 3px 0 rgba(0,0,0,.35);border-color:#fff;}
+.bubble.shout::before{content:'';position:absolute;left:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:var(--danger);}
+.bubble.shout .eb{color:#bae6fd!important;font-weight:900;}
+.bubble.shout .eg{color:#a8ffb0!important;font-weight:900;}
+.bubble.shout .ew{color:#ffe08a!important;font-weight:900;}
+.bubble.reply{background:#0d1f2e;border-color:var(--kucho);color:#bae6fd;}
+.bubble.reply::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:var(--kucho);}
+.bubble.think{background:#08192a;border-color:var(--kucho);border-style:dashed;color:#bae6fd;}
+.bubble.trainee{background:#1a1230;border-color:#a78bfa;border-style:dashed;color:#ddd6fe;}
+.bubble.trainee::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:#a78bfa;}
+.bubble.proud{background:#0d2018;border-color:var(--correct);color:#bbf7d0;font-weight:700;}
+.bubble.proud::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:var(--correct);}
+
+.knowledge{background:var(--surface);border:2.5px solid var(--kucho);border-radius:4px;margin-bottom:1.6rem;box-shadow:5px 5px 0 rgba(56,189,248,.18);opacity:0;transform:translateY(24px);transition:opacity .45s ease,transform .45s ease;}
+.knowledge.visible{opacity:1;transform:translateY(0);}
+.knowledge-header{background:rgba(56,189,248,.1);border-bottom:2px solid var(--kucho);padding:.5rem 1rem;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:.15em;color:var(--kucho);display:flex;align-items:center;gap:.5rem;}
+.knowledge-body{padding:1rem 1.2rem;}
+
+.k-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:.5rem;}
+.k-table th{background:var(--surface2);padding:.5rem .7rem;border:1.5px solid var(--border);color:var(--muted);font-weight:700;text-align:left;}
+.k-table td{padding:.5rem .7rem;border:1.5px solid var(--border);line-height:1.55;}
+.k-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+
+.point-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem;}
+.point-row{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;line-height:1.6;}
+.point-icon{font-size:1rem;flex-shrink:0;margin-top:.1rem;}
+
+.deep-box{background:rgba(239,68,68,.05);border:2px solid rgba(239,68,68,.3);border-radius:6px;padding:.9rem 1.1rem;margin-top:.8rem;}
+.deep-box-title{font-size:.72rem;color:var(--danger);font-weight:700;letter-spacing:.1em;margin-bottom:.5rem;font-family:'Oswald',sans-serif;}
+.deep-box p{font-size:.82rem;color:#fca5a5;line-height:1.7;}
+
+.formula-box{background:#08192a;border:2px solid var(--kucho);border-radius:4px;padding:.8rem 1rem;margin-top:.6rem;font-family:monospace;font-size:.85rem;color:#bae6fd;line-height:2;}
+.formula-box .fl{color:#fff;font-weight:900;}
+
+.trap{background:#180d0d;border:2px solid var(--danger);border-radius:4px;padding:.7rem 1rem;font-size:.8rem;color:#fca5a5;margin-top:.6rem;line-height:1.65;}
+.trap::before{content:'⚠ 試験の引っかけ  ';font-weight:900;color:var(--danger);}
+
+/* 冷媒比較カード */
+.reito-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.8rem;margin-top:.8rem;}
+.reito-card{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:.9rem 1rem;transition:border-color .2s;}
+.reito-card:hover{border-color:var(--kucho);}
+.reito-name{font-weight:900;font-size:.9rem;margin-bottom:.5rem;color:var(--text);}
+.reito-tag{display:inline-block;font-size:.68rem;padding:.15rem .5rem;border-radius:3px;font-weight:700;margin-bottom:.4rem;}
+.reito-tag.bad{background:rgba(239,68,68,.15);color:var(--danger);}
+.reito-tag.ok{background:rgba(245,158,11,.15);color:var(--warn);}
+.reito-tag.good{background:rgba(34,197,94,.15);color:var(--correct);}
+.reito-spec{font-size:.78rem;color:#c8d0e8;line-height:1.7;}
+.reito-spec span{color:var(--muted);font-size:.72rem;display:block;}
+
+/* 省エネ効果バー */
+.energy-list{display:flex;flex-direction:column;gap:.8rem;margin-top:.8rem;}
+.energy-item{display:flex;align-items:center;gap:.8rem;}
+.energy-label{width:140px;min-width:140px;font-size:.82rem;color:#c8d0e8;}
+.energy-track{flex:1;height:24px;background:var(--surface2);border-radius:4px;overflow:hidden;}
+.energy-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:.5rem;font-size:.7rem;font-weight:700;color:#fff;transition:width 1.5s cubic-bezier(.4,0,.2,1);width:0;}
+.energy-fill.animated{width:var(--w);}
+.energy-num{width:60px;min-width:60px;font-family:'Oswald',sans-serif;font-size:.85rem;color:var(--kucho);text-align:right;}
+
+/* 卒業パネル */
+.graduation-panel{background:linear-gradient(135deg,rgba(34,197,94,.08),rgba(56,189,248,.08));border:3px solid var(--correct);border-radius:8px;padding:1.5rem;margin-bottom:1.6rem;opacity:0;transform:translateY(24px);transition:opacity .45s ease,transform .45s ease;}
+.graduation-panel.visible{opacity:1;transform:translateY(0);}
+
+.er{color:var(--danger);font-weight:900;}
+.eb{color:var(--kucho);font-weight:900;}
+.eg{color:var(--correct);font-weight:900;}
+.ew{color:var(--warn);font-weight:900;}
+
+.sfx{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,2.8rem);color:var(--warn);text-shadow:2px 2px 0 rgba(0,0,0,.5);text-align:center;padding:.3rem;transform:rotate(-1.5deg);display:block;line-height:1;margin:.5rem 0 1.5rem;}
+
+.series-cta{background:var(--surface);border:2px solid var(--correct);border-radius:10px;padding:1.5rem;margin:2rem 0;}
+.series-cta-title{font-weight:900;font-size:1rem;color:var(--correct);margin-bottom:.5rem;}
+.series-cta-text{font-size:.85rem;color:var(--muted);margin-bottom:1rem;line-height:1.7;}
+.series-cta-btns{display:flex;gap:.6rem;flex-wrap:wrap;}
+.btn-complete{background:var(--correct);color:#fff;padding:.65rem 1.4rem;border-radius:7px;font-size:.85rem;font-weight:700;}
+.btn-prev{background:rgba(56,189,248,.1);color:var(--kucho);border:1px solid rgba(56,189,248,.3);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;font-weight:700;}
+.btn-back{background:none;border:1px solid var(--border);color:var(--muted);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;}
+
+.cta-block{background:linear-gradient(135deg,#071520,#0e1a0e);border:3px solid var(--correct);border-radius:6px;padding:2rem;text-align:center;margin-top:3rem;opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease;}
+.cta-block.visible{opacity:1;transform:translateY(0);}
+.cta-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.4rem,4vw,2rem);color:#fff;text-shadow:2px 2px 0 var(--correct);margin-bottom:.6rem;}
+.cta-sub{font-size:.88rem;color:var(--muted);margin-bottom:1.4rem;}
+.cta-btn-primary{display:inline-block;background:var(--correct);color:#fff;font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:.12em;padding:.75rem 2.2rem;border-radius:7px;margin:.3rem;font-weight:700;transition:opacity .2s,transform .1s;}
+.cta-btn-primary:hover{opacity:.85;transform:translateY(-2px);}
+.cta-btn-secondary{display:inline-block;background:rgba(56,189,248,.12);color:var(--kucho);border:1px solid rgba(56,189,248,.35);font-size:.85rem;padding:.65rem 1.6rem;border-radius:7px;margin:.3rem;}
+
+@media(max-width:600px){
+  .char-col{width:72px;min-width:72px;}
+  .char-img{width:58px;}
+  .scene{min-height:120px;}
+  .reito-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/kucho/">演習問題</a>
+    <a href="/bunya/kucho/manga.html">基礎マンガ</a>
+    <a href="/bunya/kucho/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<div class="series-nav">
+  <span class="series-label">🔵 空調設備 補習シリーズ：</span>
+  <button class="series-btn done" onclick="location.href='hoshu1.html'">✅ 第1回 空調方式・熱源機器</button>
+  <button class="series-btn done" onclick="location.href='hoshu2.html'">✅ 第2回 ダクト・換気・防火防煙</button>
+  <button class="series-btn active">第3回 冷媒・省エネ・自動制御</button>
+</div>
+
+<section class="hero">
+  <div class="hero-series">🔵 空調設備 補習マンガ — 第3回 / 全3回【最終回】</div>
+  <h1 class="hero-title">冷媒・省エネ・<br>自動制御<br>深掘り解説</h1>
+  <p class="hero-sub">補習シリーズ最終回 — 環境規制・省エネ計算・自動制御まで完全制覇</p>
+  <div class="hero-topics">
+    <span class="hero-topic">冷媒GWPと規制</span>
+    <span class="hero-topic">フロン法の実務</span>
+    <span class="hero-topic">インバーター省エネ計算</span>
+    <span class="hero-topic">BEMS・BAS</span>
+    <span class="hero-topic">PID制御の詳細</span>
+    <span class="hero-topic">エネルギー管理</span>
+  </div>
+</section>
+
+<div class="complete-banner">
+  <div class="complete-badge">🏆</div>
+  <div class="complete-text">
+    <strong>補習シリーズ最終回！この回を完走すれば空調設備は完璧だ！</strong>
+    第1回・第2回を未読の場合は先に読んでおくことをおすすめする。
+  </div>
+</div>
+
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>冷媒の種類とGWP・ODP</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>フロン排出抑制法の実務</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>インバーター制御の省エネ計算</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>省エネルギー法と建築物</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>BEMS・BASの役割</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>PID制御の深掘り</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>湿り空気線図の読み方</div>
+    <div class="toc-item" onclick="document.getElementById('ch08').scrollIntoView({behavior:'smooth'})"><span class="toc-num">08</span>空調設備 総まとめ</div>
+  </div>
+</div>
+
+<div class="manga-wrap">
+
+<!-- CH01 冷媒GWP・ODP -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 01</div>
+    <div class="ch-title">冷媒の種類とGWP・ODP<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">❄️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">REFRIGERANT CLASS</div>
+  <div class="scene">
+    <div class="char-col">
+      <img class="char-img" src="/images/pipe-trainee.png" alt="パイプ訓練生">
+      <div class="char-name">パイプ<br>訓練生</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>CO₂冷媒ってGWPが高そうなイメージがあるんですが……</div>
+    </div>
+  </div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>CO₂のGWPは<span class="eg">1だ！</span>基準値そのものだ！GWPは<span class="eg">CO₂を1として相対評価</span>するから当然だ！R410Aとは全然違うぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">❄️ 主要冷媒の比較</div>
+  <div class="knowledge-body">
+    <div class="reito-grid">
+      <div class="reito-card">
+        <div class="reito-name">R22（HCFC）</div>
+        <div><span class="reito-tag bad">ODP あり</span> <span class="reito-tag bad">段階廃止</span></div>
+        <div class="reito-spec">
+          GWP：約1,810<br>
+          塩素含有→オゾン層破壊<br>
+          <span>モントリオール議定書で規制・廃止済み</span>
+        </div>
+      </div>
+      <div class="reito-card">
+        <div class="reito-name">R410A（HFC）</div>
+        <div><span class="reito-tag ok">ODP ゼロ</span> <span class="reito-tag bad">GWP 高</span></div>
+        <div class="reito-spec">
+          GWP：約2,090（非常に高い）<br>
+          塩素なし→オゾン層に安全<br>
+          <span>R22の代替として普及。次世代冷媒へ移行中</span>
+        </div>
+      </div>
+      <div class="reito-card">
+        <div class="reito-name">R32（HFC）</div>
+        <div><span class="reito-tag ok">ODP ゼロ</span> <span class="reito-tag ok">GWP 低め</span></div>
+        <div class="reito-spec">
+          GWP：約675<br>
+          R410Aより大幅にGWP低減<br>
+          <span>現在の家庭用エアコン主流</span>
+        </div>
+      </div>
+      <div class="reito-card">
+        <div class="reito-name">R744（CO₂）</div>
+        <div><span class="reito-tag good">ODP ゼロ</span> <span class="reito-tag good">GWP=1</span></div>
+        <div class="reito-spec">
+          GWP：<span style="color:var(--correct);">1（最低）</span><br>
+          自然冷媒・環境負荷最小<br>
+          <span>高圧対応設備が必要。ヒートポンプ給湯器等</span>
+        </div>
+      </div>
+      <div class="reito-card">
+        <div class="reito-name">R717（アンモニア）</div>
+        <div><span class="reito-tag good">ODP ゼロ</span> <span class="reito-tag good">GWP ゼロ</span></div>
+        <div class="reito-spec">
+          GWP：0<br>
+          自然冷媒・冷凍効率高<br>
+          <span>毒性・可燃性あり。食品冷凍倉庫等の大型施設向け</span>
+        </div>
+      </div>
+      <div class="reito-card">
+        <div class="reito-name">R1234yf・R1234ze（HFO）</div>
+        <div><span class="reito-tag good">ODP ゼロ</span> <span class="reito-tag good">GWP 超低</span></div>
+        <div class="reito-spec">
+          GWP：4以下<br>
+          次世代フッ素系冷媒<br>
+          <span>自動車用エアコン・大型冷凍機向けに普及拡大中</span>
+        </div>
+      </div>
+    </div>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 深掘りポイント：ODPとGWPの違い</div>
+      <p><strong>ODP（オゾン破壊係数）</strong>：オゾン層への影響度。R11を1として相対評価。塩素・臭素を含む冷媒が問題。HFCはODP=0。<br>
+      <strong>GWP（地球温暖化係数）</strong>：温暖化への影響度。CO₂を1として相対評価。HFCはODPゼロだがGWPが非常に高い。「ODPゼロなら環境にやさしい」は誤り。</p>
+    </div>
+    <div class="trap">「CO₂（R744）はGWPが非常に高い」→ 誤り。CO₂のGWP＝<span class="eg">1</span>（基準値）。高GWPなのはR410A（約2,090）やR22（約1,810）。</div>
+  </div>
+</div>
+
+<!-- CH02 フロン法 -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 02</div>
+    <div class="ch-title">フロン排出抑制法の実務<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">📋</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">FRON LAW</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>フロン排出抑制法で定期点検が義務付けられている対象は何だ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>エアコン全般……ですか？家庭用も含まれますか？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span><span class="eg">業務用のみ</span>だ！家庭用エアコンは対象外！「第一種特定製品」つまり<span class="eg">業務用の空調・冷凍冷蔵機器</span>が対象だぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📋 フロン排出抑制法の要点</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>項目</th><th>内容</th><th>注意点</th></tr></thead>
+      <tbody>
+        <tr><td>対象機器</td><td><span class="eg">第一種特定製品</span>（業務用エアコン・業務用冷凍冷蔵機器）</td><td>家庭用エアコンは<span class="er">対象外</span></td></tr>
+        <tr><td>簡易点検</td><td>3ヶ月に1回（使用者が実施）</td><td>目視確認・異常の有無を記録</td></tr>
+        <tr><td>定期点検（小）</td><td>圧縮機出力<span class="eg">7.5kW以上50kW未満</span>→<span class="eg">3年に1回</span></td><td>有資格者（第一種フロン取扱技術者等）が実施</td></tr>
+        <tr><td>定期点検（大）</td><td>圧縮機出力<span class="eg">50kW以上</span>→<span class="eg">1年に1回</span></td><td>有資格者が実施。記録・保存義務</td></tr>
+        <tr><td>冷媒充填</td><td>第一種フロン類充填回収業者が実施</td><td>無資格者による充填は<span class="er">禁止</span></td></tr>
+        <tr><td>機器廃棄時</td><td>フロン類の回収が義務</td><td>回収せずに廃棄は<span class="er">違法</span></td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「フロン排出抑制法は家庭用エアコンにも業務用と同様の点検義務がある」→ 誤り。対象は<span class="eg">業務用（第一種特定製品）のみ</span>。家庭用は対象外。</div>
+  </div>
+</div>
+
+<!-- CH03 インバーター省エネ計算 -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 03</div>
+    <div class="ch-title">インバーター制御の省エネ計算<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">⚡</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">ENERGY SAVING LAB</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>送風機の風量を80%に落としたとき消費電力は何%になるか計算してみろ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>80%に落とすから……消費電力も80%になる……？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>甘い！動力は回転数の<span class="eg">3乗</span>だ！0.8の3乗は<span class="eg">0.512</span>！つまり約<span class="eg">51%</span>まで削減できる！インバーターの威力はそこだ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⚡ インバーター制御の省エネ効果</div>
+  <div class="knowledge-body">
+    <div class="formula-box">
+      <span class="fl">相似則（ファンの法則）：</span><br>
+      　風量 Q ∝ 回転数 N<br>
+      　静圧 P ∝ N²（回転数の2乗）<br>
+      　動力 L ∝ N³（回転数の<span style="color:#ef4444;">3乗</span>）<br><br>
+      <span class="fl">例：</span>風量を80%に制御 → 動力 = 0.8³ = 0.512 → <span style="color:#22c55e;">約49%削減</span>
+    </div>
+    <div class="energy-list" id="energyList">
+      <div class="energy-item">
+        <div class="energy-label">風量100%（全開）</div>
+        <div class="energy-track"><div class="energy-fill" style="--w:100%;background:linear-gradient(90deg,#ef4444,#f97316);">100%</div></div>
+        <div class="energy-num">100%</div>
+      </div>
+      <div class="energy-item">
+        <div class="energy-label">風量90%</div>
+        <div class="energy-track"><div class="energy-fill" style="--w:72.9%;background:linear-gradient(90deg,#f97316,#f59e0b);">72.9%</div></div>
+        <div class="energy-num">72.9%</div>
+      </div>
+      <div class="energy-item">
+        <div class="energy-label">風量80%</div>
+        <div class="energy-track"><div class="energy-fill" style="--w:51.2%;background:linear-gradient(90deg,#f59e0b,#22c55e);">51.2%</div></div>
+        <div class="energy-num">51.2%</div>
+      </div>
+      <div class="energy-item">
+        <div class="energy-label">風量70%</div>
+        <div class="energy-track"><div class="energy-fill" style="--w:34.3%;background:linear-gradient(90deg,#22c55e,#14b8a6);">34.3%</div></div>
+        <div class="energy-num">34.3%</div>
+      </div>
+      <div class="energy-item">
+        <div class="energy-label">風量60%</div>
+        <div class="energy-track"><div class="energy-fill" style="--w:21.6%;background:linear-gradient(90deg,#14b8a6,#38bdf8);">21.6%</div></div>
+        <div class="energy-num">21.6%</div>
+      </div>
+    </div>
+    <div class="trap">「風量を半分にすると消費電力も半分になる」→ 誤り。動力は回転数の<span class="er">3乗</span>に比例するため、風量50%では動力は<span class="eg">12.5%（0.5³）</span>まで削減できる。</div>
+  </div>
+</div>
+
+<!-- CH04 省エネ法 -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 04</div>
+    <div class="ch-title">省エネルギー法と建築物への適用<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">🏢</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">ENERGY LAW</div>
+  <div class="scene">
+    <div class="char-col">
+      <img class="char-img" src="/images/pipe-trainee.png" alt="パイプ訓練生">
+      <div class="char-name">パイプ<br>訓練生</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>省エネ法って工場だけが対象じゃないんですか……？</div>
+    </div>
+  </div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！<span class="eg">建築物にも適用</span>される！一定規模以上のビル・商業施設の管理者にも省エネ義務がある！「工場のみ」は定番の引っかけだぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🏢 省エネルギー法（建築物への適用）</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🏗️</span><span><span class="eb">特定建築物</span>：延べ面積<span class="eg">2,000m²以上</span>の非住宅建築物。省エネ措置の届出義務あり。</span></div>
+      <div class="point-row"><span class="point-icon">📊</span><span><span class="eb">エネルギー管理指定工場</span>：年間エネルギー使用量<span class="eg">1,500kL以上（原油換算）</span>の工場・ビルは「第一種エネルギー管理指定工場」となり、エネルギー管理士の選任が義務。</span></div>
+      <div class="point-row"><span class="point-icon">📋</span><span><span class="eb">定期報告義務</span>：特定事業者は毎年エネルギー使用量を国に報告する義務がある。</span></div>
+      <div class="point-row"><span class="point-icon">⭐</span><span><span class="eb">BELS（建築物省エネルギー性能表示制度）</span>：建築物の省エネ性能を星の数（1〜5）で表示する制度。</span></div>
+    </div>
+    <div class="trap">「省エネルギー法は製造業の工場にのみ適用される」→ 誤り。<span class="eg">建築物（ビル・商業施設・学校など）にも適用</span>される。</div>
+  </div>
+</div>
+
+<!-- CH05 BEMS・BAS -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 05</div>
+    <div class="ch-title">BEMS・BASの役割と違い<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">🖥️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">BUILDING SYSTEM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>BEMSとBASの違いを説明できるか！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>BASはビルの設備を自動制御するシステムで……BEMSはエネルギーを管理するシステム……ですか？</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！<span class="eg">BASは制御、BEMSは管理・分析</span>だ！BEMSはBASのデータを使ってエネルギーを<span class="eg">可視化・最適化</span>するぞ！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🖥️ BEMS・BAS・その他システムの比較</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>システム</th><th>正式名称</th><th>役割</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="eb">BAS</span></td>
+          <td>Building Automation System</td>
+          <td>空調・照明・防災設備などを<span class="eg">自動制御</span>する。設定値通りに機器を動かす「制御」が主目的</td>
+        </tr>
+        <tr>
+          <td><span class="eb">BEMS</span></td>
+          <td>Building Energy Management System</td>
+          <td>エネルギー使用量を<span class="eg">計測・分析・最適化</span>する。BASのデータを活用して省エネを図る「管理」が主目的</td>
+        </tr>
+        <tr>
+          <td><span class="eb">FEMS</span></td>
+          <td>Factory Energy Management System</td>
+          <td>工場版のEMS。製造プロセスのエネルギー管理</td>
+        </tr>
+        <tr>
+          <td><span class="eb">HEMS</span></td>
+          <td>Home Energy Management System</td>
+          <td>家庭版のEMS。太陽光・蓄電池・家電の統合管理</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 深掘りポイント：BEMSの具体的な機能</div>
+      <p>BEMSの主な機能：①エネルギー使用量の<strong>見える化</strong>（用途別・時間帯別）②<strong>デマンド制御</strong>（最大需要電力の抑制）③<strong>最適起動停止制御</strong>（空調の運転開始・停止時刻の自動最適化）④<strong>異常検知</strong>（通常より消費が多い機器を検出）。</p>
+    </div>
+    <div class="trap">「BEMSは建物の設備を自動制御するシステムである」→ 誤り。自動制御はBAS。BEMSは<span class="eg">エネルギーの管理・分析・最適化</span>が主目的。</div>
+  </div>
+</div>
+
+<!-- CH06 PID制御深掘り -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 06</div>
+    <div class="ch-title">PID制御の深掘り<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">🎛️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CONTROL ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>P制御（比例制御）だけだとオフセットが残る理由を説明できるか！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>オフセット……？目標値に完全に一致しないってことですか？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>そうだ！P制御は偏差に比例した操作量しか出せない！偏差がゼロに近づくと<span class="er">操作量も小さくなり完全一致できない</span>！だから積分（I）が必要なんだ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🎛️ PID制御の各動作の役割</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>動作</th><th>概要</th><th>特徴・問題点</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="eb">P（比例）動作</span></td>
+          <td>偏差に<span class="eg">比例</span>した操作量を出力</td>
+          <td><span class="er">オフセット（定常偏差）が残る</span>。応答は速い。単独では目標値に完全一致しない</td>
+        </tr>
+        <tr>
+          <td><span class="eb">I（積分）動作</span></td>
+          <td>偏差を<span class="eg">積分</span>して累積偏差に比例した操作量を追加</td>
+          <td><span class="eg">オフセットを解消</span>できる。ただし応答が遅れハンチング（振動）を起こしやすい</td>
+        </tr>
+        <tr>
+          <td><span class="eb">D（微分）動作</span></td>
+          <td>偏差の<span class="eg">変化速度</span>に比例した操作量を追加</td>
+          <td>急激な変化に素早く対応。<span class="er">ノイズに敏感</span>なため単独では使用しない</td>
+        </tr>
+        <tr>
+          <td><span class="eg">PID（組み合わせ）</span></td>
+          <td>P＋I＋Dの組み合わせ</td>
+          <td><span class="eg">最もよく使われる制御方式</span>。空調の温度・湿度制御に標準的に採用</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 深掘りポイント：オン・オフ制御との違い</div>
+      <p>オン・オフ制御は最もシンプルだが、目標値付近でオン・オフを繰り返す<strong>ハンチング</strong>が発生しやすい。精密な温湿度管理が必要な空調にはPID制御が必須。「オン・オフ制御は高精度な制御に最適」は誤り。</p>
+    </div>
+    <div class="trap">「P制御（比例制御）だけで目標値に完全一致できる」→ 誤り。P制御のみでは<span class="er">オフセット（定常偏差）が残る</span>。オフセットを解消するにはI（積分）動作が必要。</div>
+  </div>
+</div>
+
+<!-- CH07 湿り空気線図 -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 07</div>
+    <div class="ch-title">湿り空気線図の読み方<span class="ch-level deep">深掘り</span></div>
+  </div>
+  <div class="ch-icon">📊</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PSYCHRO CHART</div>
+  <div class="scene">
+    <div class="char-col">
+      <img class="char-img" src="/images/pipe-trainee.png" alt="パイプ訓練生">
+      <div class="char-name">パイプ<br>訓練生</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>空気を加熱したら相対湿度が変わるのに、絶対湿度は変わらないのはなぜですか？</div>
+    </div>
+  </div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>加熱しても水分量は変わらないからだ！絶対湿度は<span class="eg">空気1kgあたりの水分量</span>だ！加熱で増えるのは「飽和水蒸気量」だから相対湿度（割合）だけが下がる！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📊 湿り空気の各変化と絶対湿度・相対湿度の関係</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>空気の変化</th><th>絶対湿度</th><th>相対湿度</th><th>ポイント</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">加熱</span>（温度↑）</td><td><span class="eg">変化なし</span></td><td><span class="er">低下</span></td><td>飽和水蒸気量↑→相対湿度↓</td></tr>
+        <tr><td><span class="eb">冷却</span>（温度↓）</td><td><span class="eg">変化なし</span>（露点以上の場合）</td><td><span class="er">上昇</span></td><td>露点以下では結露→絶対湿度も低下</td></tr>
+        <tr><td><span class="eb">加湿</span>（水分添加）</td><td><span class="eg">増加</span></td><td><span class="eg">上昇</span></td><td>水分量が増える</td></tr>
+        <tr><td><span class="eb">除湿</span>（冷却除湿）</td><td><span class="eg">低下</span></td><td>制御可能</td><td>冷却→結露→水分除去→再加熱</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:.8rem;">
+      <div class="point-row"><span class="point-icon">🌡️</span><span><span class="eb">乾球温度</span>：通常の温度計で測定する温度。空気の感覚的な温度。</span></div>
+      <div class="point-row"><span class="point-icon">💧</span><span><span class="eb">湿球温度</span>：湿らせた布を巻いた温度計で測定。蒸発冷却の効果で乾球温度より低い。<span class="eg">冷却塔の冷却能力は湿球温度に依存</span>。</span></div>
+      <div class="point-row"><span class="point-icon">🌫️</span><span><span class="eb">露点温度</span>：その空気が飽和（相対湿度100%）に達する温度。これ以下に冷やすと結露が発生。</span></div>
+    </div>
+    <div class="trap">「空気を加熱すると絶対湿度が増加する」→ 誤り。加熱しても水分量（絶対湿度）は変わらない。変化するのは<span class="eg">相対湿度</span>（低下）。</div>
+  </div>
+</div>
+
+<!-- CH08 総まとめ -->
+<div class="chapter-header" id="ch08">
+  <div class="ch-num">08</div>
+  <div class="ch-body">
+    <div class="ch-label">FINAL SECTION</div>
+    <div class="ch-title">空調設備 補習シリーズ 総まとめ<span class="ch-level final">🏆 最終回</span></div>
+  </div>
+  <div class="ch-icon">🎖️</div>
+</div>
+
+<div class="graduation-panel" id="gradPanel">
+  <div style="display:flex;gap:1rem;align-items:flex-end;margin-bottom:1.5rem;flex-wrap:wrap;">
+    <img src="/images/spanner-sergeant.png" alt="スパナ軍曹" style="width:80px;filter:drop-shadow(0 4px 12px rgba(34,197,94,.4));">
+    <div style="flex:1;">
+      <div style="background:var(--correct);color:#fff;font-weight:900;font-size:.92rem;padding:.8rem 1.1rem;border-radius:10px;line-height:1.6;position:relative;">
+        よくやった！3回シリーズを完走したぞ！これで空調設備は完璧だ！あとは演習問題で本番に備えろ！！
+        <div style="position:absolute;left:24px;bottom:-10px;border:6px solid transparent;border-top-color:var(--correct);"></div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:1rem;align-items:flex-end;flex-direction:row-reverse;flex-wrap:wrap;">
+    <img src="/images/pipe-trainee.png" alt="パイプ訓練生" style="width:70px;filter:drop-shadow(0 4px 12px rgba(167,139,250,.4));">
+    <div style="flex:1;">
+      <div style="background:#0d2018;border:2px solid var(--correct);color:#bbf7d0;font-weight:700;font-size:.88rem;padding:.8rem 1.1rem;border-radius:10px;line-height:1.6;position:relative;text-align:right;">
+        ありがとうございます！3回全部終えて空調設備への自信がつきました！絶対合格します！！
+        <div style="position:absolute;right:24px;bottom:-10px;border:6px solid transparent;border-top-color:var(--correct);"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🎖️ 補習シリーズ3回の頻出引っかけ 総集編</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">1️⃣</span><span>VAVは静圧管理が<span class="eg">必要</span>（「不要」は誤り）。インバーター制御で静圧を一定に保つ。</span></div>
+      <div class="point-row"><span class="point-icon">2️⃣</span><span>冷水温度を<span class="eg">高く</span>設定するほどCOPが向上（「低く」は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">3️⃣</span><span>吸収式冷凍機の冷媒は<span class="eg">水（H₂O）</span>、吸収剤は<span class="eg">LiBr</span>（フロンではない）。</span></div>
+      <div class="point-row"><span class="point-icon">4️⃣</span><span>氷蓄熱は水蓄熱より蓄熱槽が<span class="eg">小さくて済む</span>（融解潜熱を利用）。</span></div>
+      <div class="point-row"><span class="point-icon">5️⃣</span><span>FDは<span class="eg">温度ヒューズ（72℃）</span>、SDは<span class="eg">煙感知器</span>で作動（逆は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">6️⃣</span><span>全熱交換器は<span class="er">トイレ・厨房の排気系統に使用不可</span>（臭気混入リスク）。</span></div>
+      <div class="point-row"><span class="point-icon">7️⃣</span><span>クリーンルームは<span class="eg">正圧管理</span>（感染症病室は負圧）。</span></div>
+      <div class="point-row"><span class="point-icon">8️⃣</span><span>CO₂（R744）のGWP＝<span class="eg">1</span>（高いのはR410Aの約2,090）。</span></div>
+      <div class="point-row"><span class="point-icon">9️⃣</span><span>フロン排出抑制法の対象は<span class="eg">業務用のみ</span>（家庭用は対象外）。</span></div>
+      <div class="point-row"><span class="point-icon">🔟</span><span>送風機の動力は風量の<span class="eg">3乗</span>に比例（風量80%→動力51%）。</span></div>
+      <div class="point-row"><span class="point-icon">➕</span><span>BASは<span class="eg">自動制御</span>、BEMSは<span class="eg">エネルギー管理・分析</span>（混同注意）。</span></div>
+      <div class="point-row"><span class="point-icon">➕</span><span>P制御のみでは<span class="er">オフセットが残る</span>。解消にはI（積分）動作が必要。</span></div>
+      <div class="point-row"><span class="point-icon">➕</span><span>加熱しても<span class="eg">絶対湿度は変わらない</span>（変化するのは相対湿度）。</span></div>
+    </div>
+  </div>
+</div>
+
+<span class="sfx">🏆 補習シリーズ 全3回 完全制覇！！</span>
+
+<div class="series-cta">
+  <div class="series-cta-title">🎉 空調設備 補習シリーズ 完走！</div>
+  <div class="series-cta-text">
+    第1回（空調方式・熱源機器）→ 第2回（ダクト・換気・防火防煙）→ 第3回（冷媒・省エネ・自動制御）を完走した。
+    あとは演習問題で実力を確かめるだけだ。他の分野の補習も続けていこう。
+  </div>
+  <div class="series-cta-btns">
+    <a href="/bunya/kucho/" class="btn-complete">📝 空調演習問題を解く</a>
+    <a href="hoshu2.html" class="btn-prev">← 第2回に戻る</a>
+    <a href="manga.html" class="btn-back">基礎マンガ</a>
+  </div>
+</div>
+
+<div class="cta-block">
+  <div class="cta-title">🏆 空調設備 完全制覇！次の分野へ</div>
+  <p class="cta-sub">空調設備の演習問題で最終確認をしてから、他の分野も攻略しよう。</p>
+  <a href="/bunya/kucho/" class="cta-btn-primary">📝 空調設備 演習問題を解く</a>
+  <a href="/bunya/sogo/" class="cta-btn-secondary">🎯 総合確認問題</a>
+</div>
+
+</div><!-- /manga-wrap -->
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      // エネルギーバーのアニメーション
+      e.target.querySelectorAll('.energy-fill').forEach(bar => {
+        setTimeout(() => bar.classList.add('animated'), 200);
+      });
+      obs.unobserve(e.target);
+    }
+  });
+}, {threshold:.1});
+document.querySelectorAll('.panel,.knowledge,.chapter-header,.cta-block,.graduation-panel')
+  .forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
