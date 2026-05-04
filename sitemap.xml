@@ -14,6 +14,12 @@
   </url>
   <url>
     <loc>https://kankoiji-pass.com/taisaku/</loc>
+  </url>
+  <url>
+    <loc>https://kankoiji-pass.com/schedule/</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.85</priority>
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
