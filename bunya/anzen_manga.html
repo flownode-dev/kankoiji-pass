@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>品質・安全管理をマンガで理解する｜管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士【品質・安全管理】重要ポイント8テーマをマンガで解説。QC七つ道具・管理図・高所作業・酸欠・ハインリッヒの法則など頻出引っかけを完全網羅。無料。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/anzen/manga.html">
+<meta property="og:title" content="品質・安全管理をマンガで理解する｜管工事PASS">
+<meta property="og:description" content="品質・安全管理の重要ポイント8テーマをマンガで解説。解説ページの前にこれを読め！">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kankoiji-pass.com/bunya/anzen/manga.html">
+<meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+<style>
+:root {
+  --bg:      #0f1117;
+  --surface: #1a1d27;
+  --surface2:#222636;
+  --border:  #2e3348;
+  --accent:  #10b981;
+  --correct: #22c55e;
+  --warn:    #f59e0b;
+  --text:    #e8eaf0;
+  --muted:   #7a8099;
+  --danger:  #ef4444;
+  --ink:     #08090d;
+  --anzen:   #10b981;
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{ background:var(--bg); color:var(--text); font-family:'Noto Sans JP',sans-serif; overflow-x:hidden; }
+a{ color:inherit; text-decoration:none; }
+
+.site-header{ position:fixed; top:0; left:0; right:0; height:56px; background:rgba(15,17,23,0.92); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:0 1.5rem; z-index:1000; }
+.logo-main{ font-family:'Noto Sans JP',sans-serif; font-weight:900; font-size:1.1rem; background:linear-gradient(135deg,var(--anzen),#34d399); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.header-nav{ display:flex; gap:1rem; align-items:center; font-size:0.8rem; color:var(--muted); }
+.header-nav a:hover{ color:var(--text); }
+.btn-sm-header{ background:var(--anzen); color:#fff; padding:0.35rem 0.9rem; border-radius:6px; font-size:0.75rem; font-weight:700; }
+
+.hero{ min-height:50vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:calc(56px + 2.5rem) 1.5rem 3rem; position:relative; overflow:hidden; background:#08090e; }
+.hero::before{ content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 70% at 50% 50%, rgba(16,185,129,0.12) 0%, transparent 65%), repeating-linear-gradient(45deg, transparent, transparent 38px, rgba(16,185,129,0.03) 38px, rgba(16,185,129,0.03) 39px); }
+.hero-badge{ display:inline-block; background:var(--anzen); color:#fff; font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.2em; padding:0.25rem 1rem; clip-path:polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%); margin-bottom:1.2rem; position:relative; }
+.hero-title{ font-family:'Black Han Sans',sans-serif; font-size:clamp(1.8rem,6vw,3.8rem); line-height:0.95; color:#fff; text-shadow:3px 3px 0 var(--anzen), 6px 6px 0 rgba(16,185,129,0.25); margin-bottom:0.8rem; position:relative; }
+.hero-sub{ font-family:'Oswald',sans-serif; font-size:clamp(0.85rem,2.5vw,1.1rem); letter-spacing:0.12em; color:var(--muted); margin-bottom:1.5rem; position:relative; }
+.hero-links{ display:flex; gap:0.8rem; flex-wrap:wrap; justify-content:center; position:relative; }
+.hero-link-kaisetsu{ background:var(--anzen); color:#fff; padding:0.6rem 1.4rem; border-radius:7px; font-size:0.85rem; font-weight:700; transition:opacity 0.2s; }
+.hero-link-kaisetsu:hover{ opacity:0.85; }
+.hero-link-quiz{ background:rgba(16,185,129,0.12); color:var(--anzen); border:1px solid rgba(16,185,129,0.35); padding:0.6rem 1.4rem; border-radius:7px; font-size:0.85rem; font-weight:700; transition:background 0.2s; }
+.hero-link-quiz:hover{ background:rgba(16,185,129,0.22); }
+
+.toc-section{ max-width:860px; margin:0 auto; padding:2rem 1rem 1rem; }
+.toc-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:0.5rem; }
+.toc-item{ background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:0.5rem 0.8rem; font-size:0.78rem; display:flex; align-items:center; gap:0.5rem; cursor:pointer; transition:border-color 0.2s; }
+.toc-item:hover{ border-color:var(--anzen); color:var(--anzen); }
+.toc-num{ font-family:'Oswald',sans-serif; font-size:0.7rem; color:var(--anzen); min-width:22px; }
+
+.manga-wrap{ max-width:860px; margin:0 auto; padding:1rem 1rem 5rem; }
+
+.chapter-header{ display:flex; align-items:center; gap:0.8rem; margin:3rem 0 1.2rem; padding-bottom:0.8rem; border-bottom:3px solid var(--anzen); opacity:0; transform:translateY(20px); transition:opacity 0.5s ease,transform 0.5s ease; }
+.chapter-header.visible{ opacity:1; transform:translateY(0); }
+.ch-num{ font-family:'Oswald',sans-serif; font-size:2.5rem; font-weight:700; color:var(--anzen); line-height:1; min-width:3rem; }
+.ch-label{ font-size:0.65rem; letter-spacing:0.15em; color:var(--muted); font-family:'Oswald',sans-serif; }
+.ch-title{ font-size:clamp(1.1rem,3vw,1.5rem); font-weight:900; line-height:1.2; }
+.ch-icon{ font-size:2rem; margin-left:auto; }
+
+.panel{ background:var(--surface); border:2.5px solid #fff; border-radius:3px; margin-bottom:1.6rem; box-shadow:5px 5px 0 var(--ink); overflow:hidden; opacity:0; transform:translateY(24px); transition:opacity 0.45s ease,transform 0.45s ease; }
+.panel.visible{ opacity:1; transform:translateY(0); }
+.scene-label{ background:var(--ink); border-bottom:2px solid var(--border); padding:0.25rem 0.8rem; font-family:'Oswald',sans-serif; font-size:0.65rem; letter-spacing:0.15em; color:var(--muted); }
+
+.scene{ display:flex; min-height:140px; }
+.char-col{ width:110px; min-width:110px; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding:0.8rem 0.3rem 0.4rem; background:var(--surface2); border-right:2px solid #fff; position:relative; overflow:hidden; }
+.char-col::before{ content:''; position:absolute; inset:0; background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,0.025) 16px,rgba(255,255,255,0.025) 17px); }
+.char-col.right{ border-right:none; border-left:2px solid #fff; }
+.char-col.angry .char-emoji{ animation:rage 0.25s infinite alternate; }
+@keyframes rage{ from{ transform:rotate(-2deg) scale(1); } to{ transform:rotate(2deg) scale(1.06); } }
+.char-col.angry::after{ content:'💢'; position:absolute; top:6px; right:6px; font-size:1.2rem; }
+.char-emoji{ font-size:3.8rem; line-height:1; position:relative; z-index:1; }
+.char-name{ font-size:0.58rem; font-weight:900; color:var(--muted); text-align:center; position:relative; z-index:1; letter-spacing:0.05em; }
+
+.speech-col{ flex:1; padding:0.9rem 1.1rem; display:flex; flex-direction:column; gap:0.7rem; justify-content:center; }
+.bubble{ border:2px solid #fff; border-radius:4px; padding:0.6rem 0.9rem; line-height:1.65; font-size:clamp(0.8rem,2vw,0.88rem); background:var(--surface2); position:relative; }
+.bubble .spk{ display:block; font-size:0.6rem; font-weight:900; letter-spacing:0.1em; opacity:0.65; margin-bottom:0.25rem; }
+.bubble.shout{ background:var(--danger); color:#fff; font-weight:900; font-size:clamp(0.88rem,2.3vw,1rem); transform:rotate(-0.4deg); box-shadow:3px 3px 0 rgba(0,0,0,0.35); border-color:#fff; }
+.bubble.shout::before{ content:''; position:absolute; left:-11px; top:50%; transform:translateY(-50%); border:6px solid transparent; border-right-color:var(--danger); }
+.bubble.shout .er{ color:#fff !important; font-weight:900; text-decoration:underline 2px #fff; }
+.bubble.shout .eb{ color:#6ee7b7 !important; font-weight:900; }
+.bubble.shout .eg{ color:#a8ffb0 !important; font-weight:900; }
+.bubble.shout .ew{ color:#ffe08a !important; font-weight:900; }
+.bubble.reply{ background:#14231a; border-color:var(--correct); color:#c8f0cc; }
+.bubble.reply::before{ content:''; position:absolute; right:-11px; top:50%; transform:translateY(-50%); border:6px solid transparent; border-left-color:var(--correct); }
+.bubble.think{ background:#0d1f18; border-color:var(--anzen); border-style:dashed; color:#6ee7b7; }
+.bubble.warn-bub{ background:#221700; border-color:var(--warn); color:#ffe0a0; }
+
+.narration{ background:var(--ink); border-top:2px solid var(--border); padding:0.5rem 1rem; font-size:0.75rem; color:var(--muted); letter-spacing:0.04em; }
+
+.knowledge{ background:var(--surface); border:2.5px solid var(--anzen); border-radius:4px; margin-bottom:1.6rem; box-shadow:5px 5px 0 rgba(16,185,129,0.18); opacity:0; transform:translateY(24px); transition:opacity 0.45s ease,transform 0.45s ease; }
+.knowledge.visible{ opacity:1; transform:translateY(0); }
+.knowledge-header{ background:rgba(16,185,129,0.1); border-bottom:2px solid var(--anzen); padding:0.5rem 1rem; font-family:'Oswald',sans-serif; font-size:0.75rem; letter-spacing:0.15em; color:var(--anzen); display:flex; align-items:center; gap:0.5rem; }
+.knowledge-body{ padding:1rem 1.2rem; }
+
+.k-table{ width:100%; border-collapse:collapse; font-size:0.8rem; margin-top:0.5rem; }
+.k-table th{ background:var(--surface2); padding:0.5rem 0.7rem; border:1.5px solid var(--border); color:var(--muted); font-weight:700; text-align:left; }
+.k-table td{ padding:0.5rem 0.7rem; border:1.5px solid var(--border); line-height:1.55; }
+.k-table tr:nth-child(even) td{ background:rgba(255,255,255,0.02); }
+
+.point-list{ display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem; }
+.point-row{ display:flex; gap:0.6rem; align-items:flex-start; font-size:0.82rem; line-height:1.6; }
+.point-icon{ font-size:1rem; flex-shrink:0; margin-top:0.1rem; }
+
+.trap{ background:#180d0d; border:2px solid var(--danger); border-radius:4px; padding:0.7rem 1rem; font-size:0.8rem; color:#fca5a5; margin-top:0.6rem; line-height:1.65; }
+.trap::before{ content:'⚠ 試験の引っかけ  '; font-weight:900; color:var(--danger); }
+
+.er{ color:var(--danger);  font-weight:900; }
+.eb{ color:var(--anzen);   font-weight:900; }
+.eg{ color:var(--correct); font-weight:900; }
+.ew{ color:var(--warn);    font-weight:900; }
+
+/* ハインリッヒ図 */
+.heinrich-box{ background:var(--surface2); border:2px solid var(--border); border-radius:6px; padding:1rem; margin-top:0.8rem; text-align:center; }
+.h-pyramid{ display:flex; flex-direction:column; align-items:center; gap:0.3rem; }
+.h-row{ display:flex; align-items:center; justify-content:center; border-radius:3px; font-weight:900; font-size:0.82rem; color:#fff; }
+.h-row.top   { background:var(--danger);  width:120px; height:44px; }
+.h-row.mid   { background:var(--warn);    width:200px; height:40px; color:#0a0a0a; }
+.h-row.bottom{ background:var(--anzen);   width:290px; height:40px; }
+
+.sfx{ font-family:'Black Han Sans',sans-serif; font-size:clamp(1.6rem,5vw,2.8rem); color:var(--warn); text-shadow:2px 2px 0 rgba(0,0,0,0.5); text-align:center; padding:0.3rem; transform:rotate(-1.5deg); display:block; line-height:1; margin:0.5rem 0 1.5rem; }
+
+.cta-block{ background:linear-gradient(135deg,#071a12,#0e1a0e); border:3px solid var(--anzen); border-radius:6px; padding:2rem; text-align:center; margin-top:3rem; opacity:0; transform:translateY(24px); transition:opacity 0.5s ease,transform 0.5s ease; }
+.cta-block.visible{ opacity:1; transform:translateY(0); }
+.cta-title{ font-family:'Black Han Sans',sans-serif; font-size:clamp(1.4rem,4vw,2rem); color:#fff; text-shadow:2px 2px 0 var(--anzen); margin-bottom:0.6rem; }
+.cta-sub{ font-size:0.88rem; color:var(--muted); margin-bottom:1.4rem; }
+.cta-btn-primary{ display:inline-block; background:var(--anzen); color:#fff; font-family:'Oswald',sans-serif; font-size:1rem; letter-spacing:0.12em; padding:0.75rem 2.2rem; border-radius:7px; margin:0.3rem; transition:opacity 0.2s,transform 0.1s; }
+.cta-btn-primary:hover{ opacity:0.85; transform:translateY(-2px); }
+.cta-btn-secondary{ display:inline-block; background:rgba(16,185,129,0.12); color:var(--anzen); border:1px solid rgba(16,185,129,0.35); font-size:0.85rem; padding:0.65rem 1.6rem; border-radius:7px; margin:0.3rem; transition:background 0.2s; }
+.cta-btn-secondary:hover{ background:rgba(16,185,129,0.22); }
+
+@media(max-width:600px){
+  .char-col{ width:72px; min-width:72px; }
+  .char-emoji{ font-size:2.6rem; }
+  .scene{ min-height:120px; }
+}
+
+  /* キャラクター画像 */
+  .char-img {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin: 0 auto;
+  }
+  .char-col.angry .char-img {
+    animation: rage 0.25s infinite alternate;
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "品質・安全管理をマンガで理解する｜管工事PASS",
+      "description": "品質安全管理の重要ポイント8テーマをマンガで解説。QC七つ道具・管理図・高所作業・酸欠・ハインリッヒなど。",
+      "url": "https://kankoiji-pass.com/bunya/anzen/manga.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "管工事PASS",
+        "url": "https://kankoiji-pass.com/"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://kankoiji-pass.com/"},
+          {"@type": "ListItem", "position": 2, "name": "品質・安全管理", "item": "https://kankoiji-pass.com/bunya/anzen/manga.html"}
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "特性要因図（フィッシュボーン図）とパレート図の違いは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "特性要因図は原因と結果を魚の骨の形で整理するツールです。パレート図は不良項目を頻度順に並べた棒グラフと累積折れ線の組み合わせです。"}}, {"@type": "Question", "name": "ハインリッヒの法則の比率はどのくらいですか？", "acceptedAnswer": {"@type": "Answer", "text": "1件の重大事故の背後に29件の軽微な事故、300件のヒヤリハットが存在するとされています（1：29：300の法則）。"}}, {"@type": "Question", "name": "第1種と第2種酸素欠乏危険作業の違いは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "第2種は酸素欠乏に加えて硫化水素中毒の危険も伴う場所での作業で、第1種より危険度が高く、専用の資格が必要です。"}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/anzen/">演習問題</a>
+    <a href="/bunya/anzen/kaisetsu.html">解説ページ</a>
+    <a href="/bunya/anzen/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-badge">📊 ANZEN — MANGA GUIDE</div>
+  <h1 class="hero-title">品質・安全管理<br>マンガで理解</h1>
+  <p class="hero-sub">解説を読む前にこれで7割つかめ — スパナ軍曹が全8テーマを叩き込む</p>
+  <div class="hero-links">
+    <a href="/bunya/anzen/kaisetsu.html" class="hero-link-kaisetsu">📖 詳細解説ページへ</a>
+    <a href="/bunya/anzen/" class="hero-link-quiz">📝 演習問題を解く</a>
+  </div>
+</section>
+
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>QC七つ道具</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>管理図の読み方</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>ISO 9001</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>労働安全衛生法の体制</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>高所作業・墜落防止</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>酸素欠乏危険作業</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>クレーン・建設機械</div>
+    <div class="toc-item" onclick="document.getElementById('ch08').scrollIntoView({behavior:'smooth'})"><span class="toc-num">08</span>安全教育・ハインリッヒ</div>
+  </div>
+</div>
+
+<div class="manga-wrap">
+
+<!-- CH01 QC七つ道具 -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 01</div>
+    <div class="ch-title">QC七つ道具</div>
+  </div>
+  <div class="ch-icon">📊</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">QUALITY LAB</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>原因と結果を魚の骨で表すのは何だ！パレート図か？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>パレート……棒グラフじゃなかった？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>正しい疑問だ！魚の骨は<span class="eg">特性要因図</span>！パレート図は<span class="eg">不良を頻度順に並べた棒グラフ</span>だ！混同するな！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📊 QC七つ道具の一覧</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>ツール</th><th>形状・特徴</th><th>用途</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">特性要因図</span>（フィッシュボーン図）</td><td><span class="eg">魚の骨の形</span>。原因を層別して整理</td><td>問題（特性）とその原因の関係を整理</td></tr>
+        <tr><td><span class="eb">パレート図</span></td><td><span class="eg">棒グラフ（頻度順）＋累積折れ線</span></td><td>重点管理すべき不良項目の特定</td></tr>
+        <tr><td><span class="eb">ヒストグラム</span></td><td>度数分布の棒グラフ</td><td>データのばらつき・分布の把握</td></tr>
+        <tr><td><span class="eb">散布図</span></td><td>2変数を点でプロット</td><td><span class="eg">2つの変数間の相関関係</span>の把握</td></tr>
+        <tr><td><span class="eb">管理図</span></td><td>折れ線グラフ＋UCL・LCL</td><td>工程の安定性の監視・異常検出</td></tr>
+        <tr><td><span class="eb">チェックシート</span></td><td>記録用のシート</td><td>データの収集・記録</td></tr>
+        <tr><td><span class="eb">層別</span></td><td>データをグループに分ける</td><td>原因・要因ごとの分析</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「パレート図は原因と結果を魚の骨で表す」→ 誤り。魚の骨は<span class="eg">特性要因図</span>。「散布図は不良項目を頻度順に並べる」→ 誤り。頻度順は<span class="eg">パレート図</span>。</div>
+  </div>
+</div>
+
+<!-- CH02 管理図 -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 02</div>
+    <div class="ch-title">管理図の読み方</div>
+  </div>
+  <div class="ch-icon">📉</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CONTROL CHART ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>測定値が全部UCL・LCL内にあれば工程は必ず安定しているか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>管理限界内に全部収まってるなら……安定してる？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>罠だ！<span class="er">片側に7点以上連続</span>したり<span class="er">周期パターン</span>が出たら異常だ！内側にあるだけでは判断できないぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📉 管理図の異常判定ルール</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🔴</span><span>UCLまたはLCLの<span class="er">外に点が出る</span>→ 異常</span></div>
+      <div class="point-row"><span class="point-icon">🔴</span><span>連続して同じ側に<span class="er">7点以上並ぶ</span>→ 異常（管理限界内でも）</span></div>
+      <div class="point-row"><span class="point-icon">🔴</span><span>連続して<span class="er">上昇または下降する傾向</span>がある→ 異常</span></div>
+      <div class="point-row"><span class="point-icon">🔴</span><span><span class="er">規則的な周期パターン</span>が現れる→ 異常</span></div>
+      <div class="point-row"><span class="point-icon">📋</span><span><span class="eb">X̄-R管理図</span>：X̄（平均値）とR（範囲＝最大値−最小値）を管理。工程の中心とばらつきを同時に監視できる。</span></div>
+    </div>
+    <div class="trap">「測定値が全部UCL・LCL内にあれば必ず工程は安定している」→ 誤り。<span class="eg">連続して片側に偏るパターンや周期性</span>があれば異常と判断する。</div>
+  </div>
+</div>
+
+<!-- CH03 ISO 9001 -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 03</div>
+    <div class="ch-title">ISO 9001</div>
+  </div>
+  <div class="ch-icon">🏅</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CERTIFICATION ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ISO 9001の認証取得で製品の品質は保証されるか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>品質マネジメントの認証だから……製品も保証される？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！認証されるのは<span class="eg">品質マネジメントのシステム（仕組み）</span>だ！個々の製品・工事の品質を直接保証するものではないぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🏅 ISO 9001が認証するもの・しないもの</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">✅</span><span>ISO 9001が認証するもの：組織の<span class="eg">品質マネジメントシステム（QMS）が規格の要求事項を満たしていること</span>を第三者機関が認証する。</span></div>
+      <div class="point-row"><span class="point-icon">🚫</span><span>ISO 9001が保証<span class="er">しない</span>もの：個々の製品・工事の品質を直接保証するものではない。</span></div>
+      <div class="point-row"><span class="point-icon">🏭</span><span>製造業・建設業・サービス業など<span class="eg">幅広い業種</span>で適用される。</span></div>
+    </div>
+    <div class="trap">「ISO 9001認証取得企業の製品はすべて欠陥がなく品質が保証される」→ 誤り。<span class="eg">システム（仕組み）</span>を認証するもので、個々の製品品質を直接保証しない。</div>
+  </div>
+</div>
+
+<!-- CH04 労働安全衛生法 -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 04</div>
+    <div class="ch-title">労働安全衛生法の安全衛生管理体制</div>
+  </div>
+  <div class="ch-icon">⚖️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">LAW ROOM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>安全管理者の選任義務は業種を問わずすべての事業場にあるか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>安全は大事だから……全業種？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！安全管理者は<span class="eg">一定業種のみ</span>だ！業種を問わずすべてに義務があるのは<span class="eg">衛生管理者</span>だ！混同するな！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⚖️ 安全衛生管理体制の選任義務</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>役職</th><th>選任義務</th><th>ポイント</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">安全管理者</span></td><td>常時<span class="eg">50人以上</span>（<span class="er">一定業種のみ</span>）</td><td>「全業種」は誤り</td></tr>
+        <tr><td><span class="eb">衛生管理者</span></td><td>常時<span class="eg">50人以上</span>（<span class="eg">すべての業種</span>）</td><td>業種問わず義務</td></tr>
+        <tr><td><span class="eb">産業医</span></td><td>常時<span class="eg">50人以上</span></td><td>—</td></tr>
+        <tr><td><span class="eb">安全衛生委員会</span></td><td>両委員会の設置義務がある場合</td><td>統合して設置することが<span class="eg">認められる</span></td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">🏗️</span><span>特定元方事業者の義務：関係請負人と合同で<span class="eg">安全衛生協議会を設置・運営</span>する。関係請負人も自社の労働者への安全管理義務を負う（「義務なし」は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">👷</span><span>作業主任者を選任しても<span class="er">事業者の責任は残る</span>。「責任を免れる」は誤り。</span></div>
+    </div>
+    <div class="trap">「安全委員会と衛生委員会は統合できない」→ 誤り。両方の設置義務がある場合、<span class="eg">安全衛生委員会として統合して設置することが認められる</span>。</div>
+  </div>
+</div>
+
+<!-- CH05 高所作業 -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 05</div>
+    <div class="ch-title">高所作業・墜落防止</div>
+  </div>
+  <div class="ch-icon">🪜</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">HIGH PLACE</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>作業床を設ければ安全帯は一切不要か？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>作業床があれば落ちないから……不要？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>違う！作業床があっても<span class="er">状況に応じて安全帯が必要</span>な場合がある！「一切不要」は完全な誤りだ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🪜 高所作業の数値基準</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">📏</span><span>高さ<span class="eg">2m以上</span>の作業床：端・開口部に手すり・囲いなどの墜落防止措置が必要。作業床の幅は<span class="eg">40cm以上</span>。</span></div>
+      <div class="point-row"><span class="point-icon">👷</span><span>高さ<span class="eg">5m以上</span>の足場の組立・解体・変更：<span class="eb">足場の組立等作業主任者</span>の選任が必要。「選任しなくてよい」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">🦺</span><span>安全帯（墜落制止用器具）の位置付け：設備的な墜落防止措置（手すり・囲い）が<span class="eg">優先</span>。安全帯はそれが困難な場合の補完的措置。</span></div>
+    </div>
+    <div class="trap">「安全帯を着用すれば他の措置はすべて不要」→ 誤り。設備的な措置（手すり・囲い）が<span class="eg">優先</span>。安全帯は補完的措置。</div>
+  </div>
+</div>
+
+<!-- CH06 酸欠 -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 06</div>
+    <div class="ch-title">酸素欠乏危険作業</div>
+  </div>
+  <div class="ch-icon">😮‍💨</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CONFINED SPACE</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>第2種酸素欠乏危険作業は第1種より危険度が低いか？！</div>
+      <div class="bubble think"><span class="spk">😰 パイプ訓練生</span>第1種の方が上のナンバーだから……第2種は低い？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>逆だ！第2種は<span class="er">硫化水素中毒の危険まで加わる</span>から<span class="eg">危険度が高い</span>！数字で判断するな！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">😮‍💨 酸素欠乏危険作業の区分</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>区分</th><th>対象</th><th>危険度・必要資格</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">第1種</span></td><td>酸素欠乏の危険がある場所での作業</td><td>酸素欠乏危険作業主任者技能講習修了者</td></tr>
+        <tr><td><span class="er">第2種</span></td><td>酸素欠乏＋<span class="er">硫化水素中毒</span>の危険がある場所での作業</td><td><span class="er">第1種より危険度が高い</span>。酸素欠乏・硫化水素危険作業主任者技能講習修了者が必要</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">🌬️</span><span>酸素欠乏の定義：空気中の酸素濃度が<span class="er">18%未満</span>の状態。「20%未満」は誤り。</span></div>
+    </div>
+    <div class="trap">「第2種は第1種より危険度が低い」→ 誤り。硫化水素中毒の危険も伴うため<span class="eg">第2種の方が危険度が高い</span>。</div>
+  </div>
+</div>
+
+<!-- CH07 クレーン -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 07</div>
+    <div class="ch-title">クレーン・車両系建設機械の安全管理</div>
+  </div>
+  <div class="ch-icon">🏗️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CRANE SITE</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>クレーン作業でつり荷の下に作業者を入れてもいい場合があるか？！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>必要がある場合は……いいんじゃ……</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span><span class="er">絶対ダメだ！！</span>いかなる場合も立入禁止！例外はない！これは法律で決まってる！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🏗️ クレーン・機械の安全規制</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🚫</span><span>つり荷の下への立入は<span class="er">絶対禁止</span>。例外なし。「必要がある場合は継続してよい」は完全に誤り。</span></div>
+      <div class="point-row"><span class="point-icon">💨</span><span>強風時の作業中止：10分間平均風速<span class="eg">10m/s以上</span>の場合はクレーン作業を中止する。</span></div>
+      <div class="point-row"><span class="point-icon">⚡</span><span>交流100V・200Vなどの<span class="eb">低圧電気でも感電による死亡事故が発生</span>する。「低圧では死亡リスクなし」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">🔴</span><span>酸素ボンベと可燃性ガス（アセチレン・プロパン）のボンベは<span class="er">同一場所への保管禁止</span>。爆発リスクが極めて高い。</span></div>
+    </div>
+    <div class="trap">「低圧電気（100V・200V）では死亡リスクはない」→ 誤り。<span class="er">低圧でも感電による死亡事故は発生</span>する。</div>
+  </div>
+</div>
+
+<!-- CH08 ハインリッヒ -->
+<div class="chapter-header" id="ch08">
+  <div class="ch-num">08</div>
+  <div class="ch-body">
+    <div class="ch-label">SECTION 08</div>
+    <div class="ch-title">安全教育・KY活動・ハインリッヒの法則</div>
+  </div>
+  <div class="ch-icon">🙋</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">SAFETY MEETING</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ハインリッヒの法則！1件の重大事故の背後に何件のヒヤリハットがある？！</div>
+      <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>えっと……10件くらい？</div>
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>桁が違う！<span class="eg">300件</span>だ！1：29：300の法則を丸暗記しろ！ヒヤリハットを放置するな！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🙋 ハインリッヒの法則と安全教育</div>
+  <div class="knowledge-body">
+    <div class="heinrich-box">
+      <div class="h-pyramid">
+        <div class="h-row top">重大事故 1件</div>
+        <div class="h-row mid">軽微な事故 29件</div>
+        <div class="h-row bottom">ヒヤリハット 300件</div>
+      </div>
+    </div>
+    <div class="point-list" style="margin-top:0.8rem;">
+      <div class="point-row"><span class="point-icon">⚠️</span><span>ヒヤリハットを放置すると重大事故につながる。「ヒヤリハットの報告・記録は不要」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">📋</span><span>新規入場者教育は新たに現場に入場するすべての作業員に<span class="eg">その都度実施</span>する。「最初の1回のみ」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">🏭</span><span>5S活動（整理・整頓・清掃・清潔・しつけ）は<span class="eg">建設工事現場でも有効</span>。「建設現場では意味をなさない」は誤り。</span></div>
+      <div class="point-row"><span class="point-icon">🪪</span><span>特別教育と技能講習は<span class="er">別制度</span>。「特別教育を受ければ技能講習が免除される」は誤り。</span></div>
+    </div>
+    <div class="trap">「ヒヤリハットは軽微なので記録・報告は不要」→ 誤り。1件の重大事故の背後に<span class="eg">300件のヒヤリハット</span>があるとされ、放置は重大事故につながる。</div>
+  </div>
+</div>
+
+<span class="sfx">📊 全8テーマ制覇！！</span>
+
+<div class="cta-block">
+  <div class="cta-title">理解できたら次のステップへ！</div>
+  <p class="cta-sub">解説ページで細部を固めて、演習問題で実力を確かめろ。</p>
+  <a href="/bunya/anzen/kaisetsu.html" class="cta-btn-primary">📖 詳細解説ページへ</a>
+  <a href="/bunya/anzen/" class="cta-btn-secondary">📝 演習問題を解く（30問）</a>
+</div>
+
+</div><!-- /manga-wrap -->
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.panel, .knowledge, .chapter-header, .cta-block')
+  .forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
