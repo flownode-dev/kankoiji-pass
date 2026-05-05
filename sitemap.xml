@@ -379,4 +379,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
+  <url>
+    <loc>https://kankoiji-pass.com/bunya/kiso/hoshu1.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kankoiji-pass.com/bunya/kiso/hoshu2.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kankoiji-pass.com/bunya/kiso/hoshu3.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
 </urlset>
