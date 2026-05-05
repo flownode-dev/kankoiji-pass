@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【補習】品質・安全管理 第2回：施工検査・試験・ISO品質システム | 管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士・品質安全管理の補習マンガ第2回。全数検査・抜取検査の使い分け・計数と計量の違い・ISO 9000認証の仕組みを深掘り解説。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/anzen/hoshu2.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-E37L2YPT6X');</script>
+<style>
+:root{--bg:#0f1117;--surface:#1a1d27;--surface2:#222636;--border:#2e3348;--anzen:#22c55e;--correct:#22c55e;--warn:#f59e0b;--text:#e8eaf0;--muted:#7a8099;--danger:#ef4444;--ink:#08090d;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-serif;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+.site-header{position:fixed;top:0;left:0;right:0;height:56px;background:rgba(15,17,23,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;}
+.logo-main{font-weight:900;font-size:1.1rem;background:linear-gradient(135deg,var(--anzen),#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.header-nav{display:flex;gap:1rem;align-items:center;font-size:.8rem;color:var(--muted);}
+.btn-sm-header{background:var(--anzen);color:#0a2010;padding:.35rem .9rem;border-radius:6px;font-size:.75rem;font-weight:700;}
+.series-nav{background:var(--surface);border-bottom:1px solid var(--border);padding:.8rem 1.5rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:56px;}
+.series-label{font-size:.72rem;color:var(--muted);font-weight:700;white-space:nowrap;}
+.series-btn{padding:.35rem .9rem;border-radius:99px;font-size:.75rem;font-weight:700;border:1px solid var(--border);color:var(--muted);background:none;cursor:pointer;white-space:nowrap;}
+.series-btn.active{background:var(--anzen);color:#0a2010;border-color:var(--anzen);}
+.series-btn.done{background:rgba(34,197,94,.12);color:var(--anzen);border-color:rgba(34,197,94,.3);}
+.series-btn:hover:not(.active){border-color:var(--anzen);color:var(--anzen);}
+.hero{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;position:relative;overflow:hidden;background:#081208;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(34,197,94,.1) 0%,transparent 65%);}
+.hero-series{display:inline-block;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);color:var(--anzen);font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.2em;padding:.25rem 1rem;border-radius:99px;margin-bottom:1rem;position:relative;}
+.hero-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,3rem);line-height:1.05;color:#fff;text-shadow:3px 3px 0 rgba(34,197,94,.25);margin-bottom:.8rem;position:relative;}
+.hero-sub{font-family:'Oswald',sans-serif;font-size:clamp(.85rem,2.5vw,1rem);letter-spacing:.12em;color:var(--muted);margin-bottom:1.5rem;position:relative;}
+.hero-topics{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;position:relative;}
+.hero-topic{background:var(--surface);border:1px solid rgba(34,197,94,.25);color:var(--anzen);font-size:.75rem;padding:.25rem .8rem;border-radius:99px;}
+.toc-section{max-width:860px;margin:0 auto;padding:1.5rem 1rem 1rem;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.5rem;}
+.toc-item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.5rem .8rem;font-size:.78rem;display:flex;align-items:center;gap:.5rem;cursor:pointer;transition:border-color .2s;}
+.toc-item:hover{border-color:var(--anzen);color:var(--anzen);}
+.toc-num{font-family:'Oswald',sans-serif;font-size:.7rem;color:var(--anzen);min-width:22px;}
+.manga-wrap{max-width:860px;margin:0 auto;padding:1rem 1rem 5rem;}
+.chapter-header{display:flex;align-items:center;gap:.8rem;margin:3rem 0 1.2rem;padding-bottom:.8rem;border-bottom:3px solid var(--anzen);opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s;}
+.chapter-header.visible{opacity:1;transform:translateY(0);}
+.ch-num{font-family:'Oswald',sans-serif;font-size:2.5rem;font-weight:700;color:var(--anzen);line-height:1;min-width:3rem;}
+.ch-label{font-size:.65rem;letter-spacing:.15em;color:var(--muted);font-family:'Oswald',sans-serif;}
+.ch-title{font-size:clamp(1.1rem,3vw,1.5rem);font-weight:900;line-height:1.2;}
+.ch-icon{font-size:2rem;margin-left:auto;}
+.ch-level{font-size:.68rem;padding:.2rem .6rem;border-radius:3px;margin-left:.5rem;font-weight:700;background:rgba(239,68,68,.15);color:var(--danger);border:1px solid rgba(239,68,68,.3);}
+.panel{background:var(--surface);border:2.5px solid #fff;border-radius:3px;margin-bottom:1.6rem;box-shadow:5px 5px 0 var(--ink);overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .45s,transform .45s;}
+.panel.visible{opacity:1;transform:translateY(0);}
+.scene-label{background:var(--ink);border-bottom:2px solid var(--border);padding:.25rem .8rem;font-family:'Oswald',sans-serif;font-size:.65rem;letter-spacing:.15em;color:var(--muted);}
+.scene{display:flex;min-height:140px;}
+.char-col{width:110px;min-width:110px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:.8rem .3rem .4rem;background:var(--surface2);border-right:2px solid #fff;position:relative;overflow:hidden;}
+.char-col::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,.025) 16px,rgba(255,255,255,.025) 17px);}
+.char-col.angry .char-img{animation:rage .25s infinite alternate;}
+@keyframes rage{from{transform:rotate(-2deg) scale(1);}to{transform:rotate(2deg) scale(1.06);}}
+.char-col.angry::after{content:'💢';position:absolute;top:6px;right:6px;font-size:1.2rem;}
+.char-img{width:80px;height:auto;object-fit:contain;position:relative;z-index:1;display:block;margin:0 auto;}
+.char-name{font-size:.58rem;font-weight:900;color:var(--muted);text-align:center;position:relative;z-index:1;}
+.speech-col{flex:1;padding:.9rem 1.1rem;display:flex;flex-direction:column;gap:.7rem;justify-content:center;}
+.bubble{border:2px solid #fff;border-radius:4px;padding:.6rem .9rem;line-height:1.65;font-size:clamp(.8rem,2vw,.88rem);background:var(--surface2);position:relative;}
+.bubble .spk{display:block;font-size:.6rem;font-weight:900;letter-spacing:.1em;opacity:.65;margin-bottom:.25rem;}
+.bubble.shout{background:var(--danger);color:#fff;font-weight:900;font-size:clamp(.88rem,2.3vw,1rem);transform:rotate(-.4deg);box-shadow:3px 3px 0 rgba(0,0,0,.35);border-color:#fff;}
+.bubble.shout::before{content:'';position:absolute;left:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:var(--danger);}
+.bubble.shout .eb{color:#bbf7d0!important;font-weight:900;}
+.bubble.shout .eg{color:#bbf7d0!important;font-weight:900;}
+.bubble.reply{background:#082010;border-color:var(--anzen);color:#bbf7d0;}
+.bubble.reply::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:var(--anzen);}
+.bubble.trainee{background:#1a1230;border-color:#a78bfa;border-style:dashed;color:#ddd6fe;}
+.bubble.trainee::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:#a78bfa;}
+.knowledge{background:var(--surface);border:2.5px solid var(--anzen);border-radius:4px;margin-bottom:1.6rem;box-shadow:5px 5px 0 rgba(34,197,94,.18);opacity:0;transform:translateY(24px);transition:opacity .45s,transform .45s;}
+.knowledge.visible{opacity:1;transform:translateY(0);}
+.knowledge-header{background:rgba(34,197,94,.1);border-bottom:2px solid var(--anzen);padding:.5rem 1rem;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:.15em;color:var(--anzen);}
+.knowledge-body{padding:1rem 1.2rem;}
+.k-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:.5rem;}
+.k-table th{background:var(--surface2);padding:.5rem .7rem;border:1.5px solid var(--border);color:var(--muted);font-weight:700;text-align:left;}
+.k-table td{padding:.5rem .7rem;border:1.5px solid var(--border);line-height:1.55;}
+.k-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.point-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem;}
+.point-row{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;line-height:1.6;}
+.point-icon{font-size:1rem;flex-shrink:0;margin-top:.1rem;}
+.deep-box{background:rgba(239,68,68,.05);border:2px solid rgba(239,68,68,.3);border-radius:6px;padding:.9rem 1.1rem;margin-top:.8rem;}
+.deep-box-title{font-size:.72rem;color:var(--danger);font-weight:700;letter-spacing:.1em;margin-bottom:.5rem;font-family:'Oswald',sans-serif;}
+.deep-box p{font-size:.82rem;color:#fca5a5;line-height:1.7;}
+.trap{background:#180d0d;border:2px solid var(--danger);border-radius:4px;padding:.7rem 1rem;font-size:.8rem;color:#fca5a5;margin-top:.6rem;line-height:1.65;}
+.trap::before{content:'⚠ 試験の引っかけ  ';font-weight:900;color:var(--danger);}
+.er{color:var(--danger);font-weight:900;}
+.eb{color:var(--anzen);font-weight:900;}
+.eg{color:var(--correct);font-weight:900;}
+.ew{color:var(--warn);font-weight:900;}
+.sfx{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,2.8rem);color:var(--anzen);text-shadow:2px 2px 0 rgba(0,0,0,.5);text-align:center;padding:.3rem;transform:rotate(-1.5deg);display:block;line-height:1;margin:.5rem 0 1.5rem;}
+.series-cta{background:var(--surface);border:2px solid var(--border);border-radius:10px;padding:1.5rem;margin:2rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.series-cta-text strong{color:var(--text);display:block;font-size:1rem;margin-bottom:.3rem;}
+.series-cta-text{font-size:.88rem;color:var(--muted);}
+.series-cta-btns{display:flex;gap:.6rem;flex-wrap:wrap;}
+.btn-next{background:var(--anzen);color:#0a2010;padding:.6rem 1.4rem;border-radius:7px;font-size:.85rem;font-weight:700;}
+.btn-prev{background:rgba(34,197,94,.1);color:var(--anzen);border:1px solid rgba(34,197,94,.3);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;font-weight:700;}
+.btn-back{background:none;border:1px solid var(--border);color:var(--muted);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;}
+.cta-block{background:linear-gradient(135deg,#082010,#0e1a0e);border:3px solid var(--anzen);border-radius:6px;padding:2rem;text-align:center;margin-top:3rem;opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s;}
+.cta-block.visible{opacity:1;transform:translateY(0);}
+.cta-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.4rem,4vw,2rem);color:#fff;text-shadow:2px 2px 0 var(--anzen);margin-bottom:.6rem;}
+.cta-sub{font-size:.88rem;color:var(--muted);margin-bottom:1.4rem;}
+.cta-btn-primary{display:inline-block;background:var(--anzen);color:#0a2010;font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:.12em;padding:.75rem 2.2rem;border-radius:7px;margin:.3rem;font-weight:700;}
+.cta-btn-secondary{display:inline-block;background:rgba(34,197,94,.12);color:var(--anzen);border:1px solid rgba(34,197,94,.35);font-size:.85rem;padding:.65rem 1.6rem;border-radius:7px;margin:.3rem;}
+@media(max-width:600px){.char-col{width:72px;min-width:72px;}.char-img{width:58px;}.scene{min-height:120px;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/anzen/">演習問題</a>
+    <a href="/bunya/anzen/manga.html">基礎マンガ</a>
+    <a href="/bunya/anzen/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<div class="series-nav">
+  <span class="series-label">🛡️ 品質・安全管理 補習シリーズ：</span>
+  <button class="series-btn done" onclick="location.href='hoshu1.html'">✅ 第1回 QC七つ道具・品質管理の基礎</button>
+  <button class="series-btn active">第2回 施工検査・試験・ISO品質システム</button>
+  <button class="series-btn" onclick="location.href='hoshu3.html'">第3回 安全管理・労働安全衛生法の数値まとめ</button>
+</div>
+
+<section class="hero">
+  <div class="hero-series">🛡️ 品質・安全管理 補習マンガ — 第2回 / 全3回</div>
+  <h1 class="hero-title">施工検査・試験・<br>ISO品質システム<br>深掘り解説</h1>
+  <p class="hero-sub">検査の選び方・計数と計量の違い・ISO認証の仕組みを完全攻略</p>
+  <div class="hero-topics">
+    <span class="hero-topic">全数検査と抜取検査の使い分け</span>
+    <span class="hero-topic">計数抜取検査と計量抜取検査</span>
+    <span class="hero-topic">水圧試験・気密試験の基準</span>
+    <span class="hero-topic">ISO 9001の認証仕組み</span>
+    <span class="hero-topic">QC工程図の内容</span>
+    <span class="hero-topic">ダクト・配管の施工検査</span>
+  </div>
+</section>
+
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>全数検査と抜取検査の使い分け</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>計数抜取検査と計量抜取検査</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>配管の水圧試験・気密試験</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>ダクト・保温の施工検査</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>機器の試運転調整の確認項目</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>ISO 9000ファミリー規格</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>QC工程図と品質計画</div>
+    <div class="toc-item" onclick="document.getElementById('ch08').scrollIntoView({behavior:'smooth'})"><span class="toc-num">08</span>品質管理の効果と費用</div>
+  </div>
+</div>
+
+<div class="manga-wrap">
+
+<!-- CH01 全数・抜取検査 -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div><div class="ch-label">SECTION 01</div><div class="ch-title">全数検査と抜取検査の使い分け<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🔍</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">INSPECTION METHOD</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>「確実に良品のみを選別する」ならどちらの検査を使うか！「破壊しないと検査できない」はどちらか！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>確実に良品を選別するなら全数検査……破壊試験が必要なら抜取検査……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！「破壊試験＝全数検査」は典型的な誤りだぞ！全数破壊したら商品がなくなる！<span class="eg">抜取検査</span>しか選択肢がない！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔍 全数検査と抜取検査の使い分け</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>検査の種類</th><th>使う場面</th><th>特徴</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="eb">全数検査</span></td>
+          <td>
+            ・<span class="eg">確実に良品のみを選別</span>したい場合<br>
+            ・取外し困難な機器の試験<br>
+            ・<span class="eg">配管の水圧試験</span><br>
+            ・防火ダンパーの機能確認
+          </td>
+          <td>高信頼・高コスト。1個でも見逃せない場合</td>
+        </tr>
+        <tr>
+          <td><span class="eg">抜取検査</span></td>
+          <td>
+            ・<span class="eg">破壊しないと検査できないもの</span><br>
+            ・大量生産品（電線・ヒューズ等）<br>
+            ・検査で商品価値がなくなるもの<br>
+            ・連続体（電線の引張試験等）
+          </td>
+          <td>コスト低・一部見逃しリスクあり</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="trap">「品物を破壊しなければ検査できないものには全数検査を適用する」→ 誤り。全数を破壊すると製品がなくなるため<span class="eg">抜取検査</span>を適用する。</div>
+    <div class="trap">「多数の製品から確実に良品のみを選別する場合は抜取検査を適用する」→ 誤り。確実に良品を選別するには<span class="eg">全数検査</span>が必要。抜取検査では一部不良品が混入するリスクがある。</div>
+  </div>
+</div>
+
+<!-- CH02 計数・計量抜取検査 -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div><div class="ch-label">SECTION 02</div><div class="ch-title">計数抜取検査と計量抜取検査の違い<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">📏</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">SAMPLING TYPE</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ダクトの板厚や寸法を測定する検査は計数か計量か！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>板厚も寸法も連続量で測るから……計量抜取検査……ですか？</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！「ダクトの板厚検査は計数抜取検査」は<span class="er">誤り</span>だぞ！板厚は連続値（mm単位）だから<span class="eg">計量抜取検査</span>だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📏 計数抜取検査と計量抜取検査の違い</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>対象データ</th><th>適用例</th><th>前提条件</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="eb">計数抜取検査</span></td>
+          <td>不良品数・欠点数など<span class="eg">個数・件数（不連続値）</span></td>
+          <td>溶接の欠陥箇所数・外観不良個数の検査</td>
+          <td>合否の判定（良品/不良品）</td>
+        </tr>
+        <tr>
+          <td><span class="eg">計量抜取検査</span></td>
+          <td>長さ・質量・強度など<span class="eg">連続量（測定値）</span></td>
+          <td><span class="eg">ダクトの板厚・寸法・配管肉厚の測定</span></td>
+          <td>ロットの特性値がほぼ<span class="eg">正規分布</span>とみなせることが前提</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 深掘りポイント：計量抜取検査の前提条件</div>
+      <p>計量抜取検査を適用するには、<strong>ロットの特性値がほぼ正規分布とみなせること</strong>が前提条件。この前提が成立しない場合は計量抜取検査の精度が低下する。</p>
+    </div>
+    <div class="trap">「ダクトの板厚や寸法の検査は計数抜取検査で確認する」→ 誤り。板厚・寸法は連続量（測定値）のため<span class="eg">計量抜取検査</span>で確認する。</div>
+  </div>
+</div>
+
+<!-- CH03 水圧試験・気密試験 -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div><div class="ch-label">SECTION 03</div><div class="ch-title">配管の水圧試験・気密試験の基準<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">💧</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PRESSURE TEST</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>水圧試験と気密試験の違いは何か！気密試験に空気以外で使える気体は！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>水圧試験は水で圧力をかける……気密試験は空気または不活性ガスで行う……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！冷媒配管の気密試験は<span class="eg">窒素等の不活性ガス</span>を使うぞ！可燃性ガスは絶対ダメだ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">💧 主な配管試験の種類と基準</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>試験の種類</th><th>試験圧力・方法</th><th>主な適用配管</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">水圧試験（耐圧試験）</span></td><td>最高使用圧力の<span class="eg">1.5倍以上</span>（最低0.75MPa）・保持時間60分</td><td>冷温水管・給水管・蒸気管</td></tr>
+        <tr><td><span class="eb">満水試験</span></td><td>系統内を水で満たし<span class="eg">30kPa以上</span>で漏水確認</td><td>排水管（隠蔽前・埋設前）</td></tr>
+        <tr><td><span class="eg">気密試験</span></td><td>空気または<span class="eg">不活性ガス（窒素等）</span>で加圧・石けん液等で漏洩確認</td><td>冷媒配管・ガス配管・LPG配管</td></tr>
+        <tr><td><span class="eb">通水・通気試験</span></td><td>実際に通水・通気して系統の流れを確認</td><td>給排水管・通気管</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:.8rem;">
+      <div class="point-row"><span class="point-icon">⏱️</span><span>水圧試験の実施タイミング：<span class="eg">配管途中・隠蔽前・埋戻し前、または配管完了後の被覆施工前</span>に区間ごとに実施する（完成後では手遅れ）。</span></div>
+    </div>
+    <div class="trap">「冷媒配管の気密試験は可燃性ガスを使用して漏洩確認を行う」→ 誤り。気密試験には<span class="eg">空気または不活性ガス（窒素等）</span>を使用する。可燃性ガスは爆発の危険があり使用禁止。</div>
+  </div>
+</div>
+
+<!-- CH04 ダクト・保温の施工検査 -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div><div class="ch-label">SECTION 04</div><div class="ch-title">ダクト・保温の施工検査ポイント<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🌬️</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🌬️ ダクト・保温の主な施工検査項目</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>項目</th><th>確認内容</th><th>基準値・注意点</th></tr></thead>
+      <tbody>
+        <tr><td>ダクトの板厚</td><td>設計図書の仕様と一致しているか</td><td><span class="eg">計量抜取検査</span>で確認（連続量）</td></tr>
+        <tr><td>ダクトの吊り間隔</td><td>横走りダクトの吊りボルト間隔</td><td>アングルフランジ：3,000mm以下、スパイラル：3,000mm以下</td></tr>
+        <tr><td>フランジ接合部</td><td>ガスケットの均等圧縮・ボルトの均等締め</td><td>片締め禁止</td></tr>
+        <tr><td>防火ダンパー</td><td>温度ヒューズの作動温度・羽根の開閉</td><td>一般系統<span class="eg">72℃</span>・排煙系統<span class="eg">280℃</span></td></tr>
+        <tr><td>保温材の継目</td><td>継目の方向・テープ巻き</td><td>継目は<span class="eg">千鳥（互い違い）</span>に。同一直線上は熱橋が生じるため不可</td></tr>
+        <tr><td>防火ダンパーの全数確認</td><td>作動試験</td><td>全数が対象（抜取検査では不可）</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「電線等の連続体や防火ダンパー用ヒューズの作動試験は全数検査で確認する」→ 誤り。電線等の連続体や防火ダンパーのヒューズを全数作動させると使用不能になるため<span class="eg">抜取検査</span>で確認する。（防火ダンパーの「作動試験」は別途。ヒューズの「破壊試験」が抜取。）</div>
+  </div>
+</div>
+
+<!-- CH05 機器の試運転調整 -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div><div class="ch-label">SECTION 05</div><div class="ch-title">機器の試運転調整の確認項目<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">⚙️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">COMMISSIONING</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ポンプの試運転でベアリング温度は何℃以上上昇したら異常か！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>周囲温度より40℃以上高くなっていたら異常……ですか？</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！「60℃以上」「30℃以上」は引っかけ値だぞ！<span class="eg">周囲温度＋40℃以内</span>が正常範囲だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⚙️ 試運転調整の主な確認項目と基準値</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>機器</th><th>確認項目</th><th>基準値・注意点</th></tr></thead>
+      <tbody>
+        <tr><td>ポンプ</td><td>軸受け部の温度上昇</td><td>周囲空気温度より<span class="eg">40℃以上高くならない</span>こと</td></tr>
+        <tr><td>冷凍機</td><td>インターロックの確認</td><td>冷水ポンプ・冷却水ポンプ・冷却塔との<span class="eg">インターロックを確認</span>してから起動</td></tr>
+        <tr><td>ボイラー（蒸気）</td><td>低水位遮断の確認</td><td>水位検出器の水位を<span class="eg">下げて</span>バーナー停止・警報を確認（上げる×）</td></tr>
+        <tr><td>冷却塔</td><td>冷却水の運転水位</td><td>散水状態・ボールタップの作動確認</td></tr>
+        <tr><td>排水用水中ポンプ</td><td>自動交互運転</td><td><span class="eg">水位上昇</span>による自動起動・交互運転を確認（満水警報では×）</td></tr>
+        <tr><td>冷凍機（搬入時）</td><td>気密保持の確認</td><td>真空または窒素加圧で搬入された場合、<span class="eg">気密が保持されていること</span>を確認してから据付</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「ボイラーの低水位燃焼遮断装置の確認は、水位検出器の水位を上げてバーナーが停止することを確認する」→ 誤り。水位を<span class="eg">下げて</span>低水位状態にし、バーナーが停止することを確認する。</div>
+  </div>
+</div>
+
+<!-- CH06 ISO 9000 -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div><div class="ch-label">SECTION 06</div><div class="ch-title">ISO 9000ファミリー規格の仕組み<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🌐</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">ISO SYSTEM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ISO 9001の認証は第何者機関が行うか！また要求事項の「すべて」を守ることが必須か！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>認証は第三者機関（審査登録機関）が行う……要求事項はすべて守る必要はなく組織の状況に応じて除外できる……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！「すべての要求事項を必ず守る」という問題文は<span class="er">誤り</span>だぞ！除外規定があることを忘れるな！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🌐 ISO 9000ファミリー規格の詳細</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🏢</span><span>ISO 9001：<span class="eg">品質マネジメントシステムの要求事項</span>を規定した規格。あらゆる組織に適用可能。</span></div>
+      <div class="point-row"><span class="point-icon">✅</span><span>認証の仕組み：企業の品質システムが要求事項に照らして妥当かを<span class="eg">第三者機関（審査登録機関）</span>がチェックして認証。</span></div>
+      <div class="point-row"><span class="point-icon">📋</span><span>要求事項の適用：<span class="er">すべての要求事項が必須ではない</span>。組織の規模・業種・状況によって<span class="eg">除外できる項目</span>がある（除外規定）。</span></div>
+      <div class="point-row"><span class="point-icon">🔄</span><span>継続的改善：ISO 9001はPDCAサイクルを基盤として<span class="eg">継続的な品質改善</span>を求める。一度取得して終わりではない。</span></div>
+    </div>
+    <div class="trap">「ISO規格の要求事項はすべての事項を必ず守るものとして規定されている」→ 誤り。組織の状況によって<span class="eg">除外できる項目</span>があり、すべてが必須ではない。</div>
+  </div>
+</div>
+
+<!-- CH07 QC工程図 -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div><div class="ch-label">SECTION 07</div><div class="ch-title">QC工程図と品質計画の内容<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">📊</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📊 QC工程図の内容と品質計画</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">📋</span><span><span class="eb">QC工程図（フロー）</span>：品質計画を具現化するためのもの。工程の流れに沿って以下を定める。</span></div>
+      <div class="point-row"><span class="point-icon">📌</span><span>QC工程図に定める内容：<span class="eg">①管理項目（何を管理するか）②管理水準（どのレベルで管理するか）③管理方法（どうやって管理するか）④管理値を外れた場合の処置方法</span></span></div>
+      <div class="point-row"><span class="point-icon">🔍</span><span>品質基準が明確で<span class="eg">再現性が確保されている製品</span>には抜取検査を適用する。</span></div>
+      <div class="point-row"><span class="point-icon">📐</span><span>管工事の品質は設計図書により<span class="eg">下限が定められる</span>（最低限満足すべき品質基準）</span></div>
+    </div>
+    <div class="trap">「QC工程図には管理項目・管理水準・管理方法のみを定め、異常時の処置は別途定める」→ 誤り。QC工程図には<span class="eg">管理値を外れた場合の処置方法も含めて</span>定めておく。</div>
+  </div>
+</div>
+
+<!-- CH08 品質管理の効果と費用 -->
+<div class="chapter-header" id="ch08">
+  <div class="ch-num">08</div>
+  <div><div class="ch-label">SECTION 08</div><div class="ch-title">品質管理の効果と費用<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">💰</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">💰 品質管理の効果と品質コスト</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">✅</span><span>品質管理の主な効果：<span class="eg">①品質の向上　②手直し・やり直しの減少　③工事原価の低減　④クレームの減少　⑤工期の短縮</span></span></div>
+      <div class="point-row"><span class="point-icon">💴</span><span>品質コストの分類：<span class="eg">予防コスト</span>（教育・QC計画）＋<span class="eg">評価コスト</span>（検査・試験）＋<span class="eg">失敗コスト</span>（手直し・クレーム処理）</span></div>
+      <div class="point-row"><span class="point-icon">📈</span><span>予防コスト・評価コストに投資すると失敗コストが大幅に減少し、総品質コストが下がる。品質管理は「コストをかける」のではなく「コストを下げる」活動。</span></div>
+    </div>
+    <div class="trap">「品質管理を徹底すると検査コストが増加するため工事原価が上昇する」→ 誤り。品質管理の徹底は手直し・やり直しの削減により<span class="eg">工事原価の低減</span>につながる。</div>
+  </div>
+</div>
+
+<span class="sfx">🛡️ 第2回 全8テーマ制覇！！</span>
+
+<div class="series-cta">
+  <div class="series-cta-text">
+    <strong>次は第3回：安全管理・労働安全衛生法の数値まとめ</strong>
+    リスクアセスメント・特別教育と技能講習の違い・労働災害の指標を深掘り
+  </div>
+  <div class="series-cta-btns">
+    <a href="hoshu3.html" class="btn-next">第3回へ →</a>
+    <a href="hoshu1.html" class="btn-prev">← 第1回に戻る</a>
+    <a href="manga.html" class="btn-back">基礎マンガ</a>
+  </div>
+</div>
+
+<div class="cta-block">
+  <div class="cta-title">理解したら演習問題で確認しよう</div>
+  <p class="cta-sub">品質・安全管理の演習問題で知識を定着させろ。</p>
+  <a href="/bunya/anzen/" class="cta-btn-primary">📝 品質・安全管理 演習問題を解く</a>
+  <a href="/bunya/sogo/" class="cta-btn-secondary">🎯 総合確認問題</a>
+</div>
+
+</div>
+<script>
+const obs=new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:.1});
+document.querySelectorAll('.panel,.knowledge,.chapter-header,.cta-block').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

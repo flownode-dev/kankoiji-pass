@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【補習】品質・安全管理 第1回：QC七つ道具・品質管理の基礎 | 管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士・品質安全管理の補習マンガ第1回。QC七つ道具の使い分け・パレート図・特性要因図・管理図を深掘り解説。試験頻出の引っかけを完全制覇。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/anzen/hoshu1.html">
+<meta property="og:title" content="【補習】品質・安全管理 第1回：QC七つ道具・品質管理の基礎 | 管工事PASS">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kankoiji-pass.com/bunya/anzen/hoshu1.html">
+<meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-E37L2YPT6X');</script>
+<style>
+:root{--bg:#0f1117;--surface:#1a1d27;--surface2:#222636;--border:#2e3348;--anzen:#22c55e;--correct:#22c55e;--warn:#f59e0b;--text:#e8eaf0;--muted:#7a8099;--danger:#ef4444;--ink:#08090d;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-serif;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+.site-header{position:fixed;top:0;left:0;right:0;height:56px;background:rgba(15,17,23,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;}
+.logo-main{font-weight:900;font-size:1.1rem;background:linear-gradient(135deg,var(--anzen),#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.header-nav{display:flex;gap:1rem;align-items:center;font-size:.8rem;color:var(--muted);}
+.header-nav a:hover{color:var(--text);}
+.btn-sm-header{background:var(--anzen);color:#0a2010;padding:.35rem .9rem;border-radius:6px;font-size:.75rem;font-weight:700;}
+.series-nav{background:var(--surface);border-bottom:1px solid var(--border);padding:.8rem 1.5rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:56px;}
+.series-label{font-size:.72rem;color:var(--muted);font-weight:700;white-space:nowrap;}
+.series-btn{padding:.35rem .9rem;border-radius:99px;font-size:.75rem;font-weight:700;border:1px solid var(--border);color:var(--muted);background:none;cursor:pointer;white-space:nowrap;}
+.series-btn.active{background:var(--anzen);color:#0a2010;border-color:var(--anzen);}
+.series-btn.done{background:rgba(34,197,94,.12);color:var(--anzen);border-color:rgba(34,197,94,.3);}
+.series-btn:hover:not(.active){border-color:var(--anzen);color:var(--anzen);}
+.hero{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;position:relative;overflow:hidden;background:#081208;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(34,197,94,.1) 0%,transparent 65%);}
+.hero-series{display:inline-block;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);color:var(--anzen);font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.2em;padding:.25rem 1rem;border-radius:99px;margin-bottom:1rem;position:relative;}
+.hero-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,3rem);line-height:1.05;color:#fff;text-shadow:3px 3px 0 rgba(34,197,94,.25);margin-bottom:.8rem;position:relative;}
+.hero-sub{font-family:'Oswald',sans-serif;font-size:clamp(.85rem,2.5vw,1rem);letter-spacing:.12em;color:var(--muted);margin-bottom:1.5rem;position:relative;}
+.hero-topics{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;position:relative;}
+.hero-topic{background:var(--surface);border:1px solid rgba(34,197,94,.25);color:var(--anzen);font-size:.75rem;padding:.25rem .8rem;border-radius:99px;}
+.toc-section{max-width:860px;margin:0 auto;padding:1.5rem 1rem 1rem;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.5rem;}
+.toc-item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.5rem .8rem;font-size:.78rem;display:flex;align-items:center;gap:.5rem;cursor:pointer;transition:border-color .2s;}
+.toc-item:hover{border-color:var(--anzen);color:var(--anzen);}
+.toc-num{font-family:'Oswald',sans-serif;font-size:.7rem;color:var(--anzen);min-width:22px;}
+.manga-wrap{max-width:860px;margin:0 auto;padding:1rem 1rem 5rem;}
+.chapter-header{display:flex;align-items:center;gap:.8rem;margin:3rem 0 1.2rem;padding-bottom:.8rem;border-bottom:3px solid var(--anzen);opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s;}
+.chapter-header.visible{opacity:1;transform:translateY(0);}
+.ch-num{font-family:'Oswald',sans-serif;font-size:2.5rem;font-weight:700;color:var(--anzen);line-height:1;min-width:3rem;}
+.ch-label{font-size:.65rem;letter-spacing:.15em;color:var(--muted);font-family:'Oswald',sans-serif;}
+.ch-title{font-size:clamp(1.1rem,3vw,1.5rem);font-weight:900;line-height:1.2;}
+.ch-icon{font-size:2rem;margin-left:auto;}
+.ch-level{font-size:.68rem;padding:.2rem .6rem;border-radius:3px;margin-left:.5rem;font-weight:700;background:rgba(239,68,68,.15);color:var(--danger);border:1px solid rgba(239,68,68,.3);}
+.panel{background:var(--surface);border:2.5px solid #fff;border-radius:3px;margin-bottom:1.6rem;box-shadow:5px 5px 0 var(--ink);overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .45s,transform .45s;}
+.panel.visible{opacity:1;transform:translateY(0);}
+.scene-label{background:var(--ink);border-bottom:2px solid var(--border);padding:.25rem .8rem;font-family:'Oswald',sans-serif;font-size:.65rem;letter-spacing:.15em;color:var(--muted);}
+.scene{display:flex;min-height:140px;}
+.char-col{width:110px;min-width:110px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:.8rem .3rem .4rem;background:var(--surface2);border-right:2px solid #fff;position:relative;overflow:hidden;}
+.char-col::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,.025) 16px,rgba(255,255,255,.025) 17px);}
+.char-col.angry .char-img{animation:rage .25s infinite alternate;}
+@keyframes rage{from{transform:rotate(-2deg) scale(1);}to{transform:rotate(2deg) scale(1.06);}}
+.char-col.angry::after{content:'💢';position:absolute;top:6px;right:6px;font-size:1.2rem;}
+.char-img{width:80px;height:auto;object-fit:contain;position:relative;z-index:1;display:block;margin:0 auto;}
+.char-name{font-size:.58rem;font-weight:900;color:var(--muted);text-align:center;position:relative;z-index:1;}
+.speech-col{flex:1;padding:.9rem 1.1rem;display:flex;flex-direction:column;gap:.7rem;justify-content:center;}
+.bubble{border:2px solid #fff;border-radius:4px;padding:.6rem .9rem;line-height:1.65;font-size:clamp(.8rem,2vw,.88rem);background:var(--surface2);position:relative;}
+.bubble .spk{display:block;font-size:.6rem;font-weight:900;letter-spacing:.1em;opacity:.65;margin-bottom:.25rem;}
+.bubble.shout{background:var(--danger);color:#fff;font-weight:900;font-size:clamp(.88rem,2.3vw,1rem);transform:rotate(-.4deg);box-shadow:3px 3px 0 rgba(0,0,0,.35);border-color:#fff;}
+.bubble.shout::before{content:'';position:absolute;left:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:var(--danger);}
+.bubble.shout .eb{color:#bbf7d0!important;font-weight:900;}
+.bubble.shout .eg{color:#bbf7d0!important;font-weight:900;}
+.bubble.shout .er{color:#fca5a5!important;font-weight:900;}
+.bubble.reply{background:#082010;border-color:var(--anzen);color:#bbf7d0;}
+.bubble.reply::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:var(--anzen);}
+.bubble.trainee{background:#1a1230;border-color:#a78bfa;border-style:dashed;color:#ddd6fe;}
+.bubble.trainee::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:#a78bfa;}
+.knowledge{background:var(--surface);border:2.5px solid var(--anzen);border-radius:4px;margin-bottom:1.6rem;box-shadow:5px 5px 0 rgba(34,197,94,.18);opacity:0;transform:translateY(24px);transition:opacity .45s,transform .45s;}
+.knowledge.visible{opacity:1;transform:translateY(0);}
+.knowledge-header{background:rgba(34,197,94,.1);border-bottom:2px solid var(--anzen);padding:.5rem 1rem;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:.15em;color:var(--anzen);}
+.knowledge-body{padding:1rem 1.2rem;}
+.k-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:.5rem;}
+.k-table th{background:var(--surface2);padding:.5rem .7rem;border:1.5px solid var(--border);color:var(--muted);font-weight:700;text-align:left;}
+.k-table td{padding:.5rem .7rem;border:1.5px solid var(--border);line-height:1.55;}
+.k-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.point-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem;}
+.point-row{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;line-height:1.6;}
+.point-icon{font-size:1rem;flex-shrink:0;margin-top:.1rem;}
+.deep-box{background:rgba(239,68,68,.05);border:2px solid rgba(239,68,68,.3);border-radius:6px;padding:.9rem 1.1rem;margin-top:.8rem;}
+.deep-box-title{font-size:.72rem;color:var(--danger);font-weight:700;letter-spacing:.1em;margin-bottom:.5rem;font-family:'Oswald',sans-serif;}
+.deep-box p{font-size:.82rem;color:#fca5a5;line-height:1.7;}
+.trap{background:#180d0d;border:2px solid var(--danger);border-radius:4px;padding:.7rem 1rem;font-size:.8rem;color:#fca5a5;margin-top:.6rem;line-height:1.65;}
+.trap::before{content:'⚠ 試験の引っかけ  ';font-weight:900;color:var(--danger);}
+.er{color:var(--danger);font-weight:900;}
+.eb{color:var(--anzen);font-weight:900;}
+.eg{color:var(--correct);font-weight:900;}
+.ew{color:var(--warn);font-weight:900;}
+.sfx{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,2.8rem);color:var(--anzen);text-shadow:2px 2px 0 rgba(0,0,0,.5);text-align:center;padding:.3rem;transform:rotate(-1.5deg);display:block;line-height:1;margin:.5rem 0 1.5rem;}
+.series-cta{background:var(--surface);border:2px solid var(--border);border-radius:10px;padding:1.5rem;margin:2rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.series-cta-text strong{color:var(--text);display:block;font-size:1rem;margin-bottom:.3rem;}
+.series-cta-text{font-size:.88rem;color:var(--muted);}
+.series-cta-btns{display:flex;gap:.6rem;flex-wrap:wrap;}
+.btn-next{background:var(--anzen);color:#0a2010;padding:.6rem 1.4rem;border-radius:7px;font-size:.85rem;font-weight:700;}
+.btn-next:hover{opacity:.85;}
+.btn-back{background:rgba(34,197,94,.1);color:var(--anzen);border:1px solid rgba(34,197,94,.3);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;font-weight:700;}
+.cta-block{background:linear-gradient(135deg,#082010,#0e1a0e);border:3px solid var(--anzen);border-radius:6px;padding:2rem;text-align:center;margin-top:3rem;opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s;}
+.cta-block.visible{opacity:1;transform:translateY(0);}
+.cta-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.4rem,4vw,2rem);color:#fff;text-shadow:2px 2px 0 var(--anzen);margin-bottom:.6rem;}
+.cta-sub{font-size:.88rem;color:var(--muted);margin-bottom:1.4rem;}
+.cta-btn-primary{display:inline-block;background:var(--anzen);color:#0a2010;font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:.12em;padding:.75rem 2.2rem;border-radius:7px;margin:.3rem;font-weight:700;}
+.cta-btn-secondary{display:inline-block;background:rgba(34,197,94,.12);color:var(--anzen);border:1px solid rgba(34,197,94,.35);font-size:.85rem;padding:.65rem 1.6rem;border-radius:7px;margin:.3rem;}
+@media(max-width:600px){.char-col{width:72px;min-width:72px;}.char-img{width:58px;}.scene{min-height:120px;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/anzen/">演習問題</a>
+    <a href="/bunya/anzen/manga.html">基礎マンガ</a>
+    <a href="/bunya/anzen/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<div class="series-nav">
+  <span class="series-label">🛡️ 品質・安全管理 補習シリーズ：</span>
+  <button class="series-btn active">第1回 QC七つ道具・品質管理の基礎</button>
+  <button class="series-btn" onclick="location.href='hoshu2.html'">第2回 施工検査・試験・ISO品質システム</button>
+  <button class="series-btn" onclick="location.href='hoshu3.html'">第3回 安全管理・労働安全衛生法の数値まとめ</button>
+</div>
+
+<section class="hero">
+  <div class="hero-series">🛡️ 品質・安全管理 補習マンガ — 第1回 / 全3回</div>
+  <h1 class="hero-title">QC七つ道具・<br>品質管理の基礎<br>深掘り解説</h1>
+  <p class="hero-sub">各ツールの「何を読み取るか」を正確に理解して得点源にする</p>
+  <div class="hero-topics">
+    <span class="hero-topic">パレート図と管理図の違い</span>
+    <span class="hero-topic">特性要因図の目的</span>
+    <span class="hero-topic">ヒストグラムの読み方</span>
+    <span class="hero-topic">散布図の相関関係</span>
+    <span class="hero-topic">層別の意味</span>
+    <span class="hero-topic">PDCAとデミングサイクル</span>
+  </div>
+</section>
+
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>QC七つ道具の全体像</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>パレート図の正しい理解</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>特性要因図（魚の骨図）</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>管理図の読み方</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>ヒストグラムの活用</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>散布図・層別・チェックシート</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>PDCAとデミングサイクル</div>
+    <div class="toc-item" onclick="document.getElementById('ch08').scrollIntoView({behavior:'smooth'})"><span class="toc-num">08</span>品質管理の基本概念まとめ</div>
+  </div>
+</div>
+
+<div class="manga-wrap">
+
+<!-- CH01 QC七つ道具 全体像 -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div><div class="ch-label">SECTION 01</div><div class="ch-title">QC七つ道具の全体像<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🔧</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">QC TOOLS OVERVIEW</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>QC七つ道具を全部言え！それぞれ何を明らかにするかも答えろ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>パレート図・特性要因図・管理図・ヒストグラム・散布図・層別・チェックシート……7つです！</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>完璧だ！試験では<span class="eg">どのツールが何を明らかにするか</span>の説明が入れ替わる引っかけが頻出だぞ！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔧 QC七つ道具 一覧と目的</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>ツール</th><th>何を明らかにするか</th><th>軸・形式</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">パレート図</span></td><td>不良項目の順位・累積割合→<span class="eg">重点管理項目を特定</span></td><td>棒グラフ＋累積折れ線</td></tr>
+        <tr><td><span class="eb">特性要因図</span></td><td>結果（不良）に影響する<span class="eg">原因の体系的整理</span></td><td>魚の骨（フィッシュボーン）</td></tr>
+        <tr><td><span class="eb">管理図</span></td><td>データの時間的変化・<span class="eg">異常なばらつきの検出</span></td><td>折れ線＋管理限界線（UCL/LCL）</td></tr>
+        <tr><td><span class="eb">ヒストグラム</span></td><td>データの<span class="eg">分布・ばらつき・平均値</span>の把握</td><td>柱状図（区間別の度数）</td></tr>
+        <tr><td><span class="eb">散布図</span></td><td>2つのデータの<span class="eg">相関関係</span></td><td>点のプロット</td></tr>
+        <tr><td><span class="eb">層別</span></td><td>データを条件別グループに分け<span class="eg">傾向の差異</span>を把握</td><td>グループ分けの考え方</td></tr>
+        <tr><td><span class="eb">チェックシート</span></td><td>不良・欠点等のデータを<span class="eg">収集・集計・整理</span></td><td>チェック記入形式</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- CH02 パレート図 -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div><div class="ch-label">SECTION 02</div><div class="ch-title">パレート図の正しい理解<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">📊</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PARETO CHART</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>パレート図で読み取れることを3つ答えろ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>大きな不良項目の順位……各項目の全体に占める割合……累積割合の確認……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！「データの時間的変化がわかる」は<span class="er">管理図の説明</span>だぞ！パレート図と管理図を混同させる問題が超頻出だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📊 パレート図の詳細</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">📊</span><span>横軸：不良項目（大きい順に左から並べる）／縦軸左：件数または金額／縦軸右：累積%</span></div>
+      <div class="point-row"><span class="point-icon">📌</span><span>読み取れること：<span class="eg">①不良項目の大きさの順位　②各項目の全体に占める割合　③累積割合</span></span></div>
+      <div class="point-row"><span class="point-icon">🎯</span><span>活用：上位20〜30%の項目を重点管理することで不良の80〜90%を改善できる（パレートの法則）</span></div>
+    </div>
+    <div class="trap">「パレート図はデータの時間的変化や異常なばらつきがわかる」→ 誤り。時間的変化・異常なばらつきがわかるのは<span class="eg">管理図</span>。パレート図は<span class="eg">不良項目の順位と割合</span>を明らかにする。</div>
+  </div>
+</div>
+
+<!-- CH03 特性要因図 -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div><div class="ch-label">SECTION 03</div><div class="ch-title">特性要因図（フィッシュボーン図）<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🐟</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CAUSE AND EFFECT</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>特性要因図で読み取れることとパレート図で読み取れることを区別して答えろ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>特性要因図は原因と結果の関係……パレート図は不良項目の順位と割合……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！試験では特性要因図の説明に<span class="er">「不良項目の順位がわかる」</span>という誤りが紛れ込む！それはパレート図だぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🐟 特性要因図の詳細</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🎯</span><span>目的：ある結果（品質特性）に影響を与える<span class="eg">原因（要因）を体系的に整理</span>して問題の根本原因を探る。</span></div>
+      <div class="point-row"><span class="point-icon">🐟</span><span>別名：フィッシュボーン図（魚の骨図）・石川図（考案者の石川馨氏にちなむ）</span></div>
+      <div class="point-row"><span class="point-icon">📋</span><span>構成：「大骨」→「中骨」→「小骨」と階層的に原因を展開する。右端の「頭」が特性（結果）。</span></div>
+      <div class="point-row"><span class="point-icon">⚠️</span><span>特性要因図は<span class="er">「不良項目の順位や割合」はわからない</span>。それはパレート図の役割。</span></div>
+    </div>
+    <div class="trap">「特性要因図は大きな不良項目・不良項目の順位・各不良項目が全体に占める割合等を読み取ることができる」→ 誤り。それは<span class="eg">パレート図</span>の説明。特性要因図は原因と結果の関係を整理するもの。</div>
+  </div>
+</div>
+
+<!-- CH04 管理図 -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div><div class="ch-label">SECTION 04</div><div class="ch-title">管理図の読み方と管理限界線<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">📈</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CONTROL CHART</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>管理図のUCLとLCLは何を意味するか！データが管理限界を超えたらどうするか！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>UCLは上方管理限界、LCLは下方管理限界……超えたら異常として原因を調査……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！管理図は<span class="eg">時間の経過とともに工程が安定しているか</span>を監視するぞ！ヒストグラムとの違いを確実に覚えとけ！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📈 管理図の詳細</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">📏</span><span>管理線：中心線（CL）＋上方管理限界線（UCL）＋下方管理限界線（LCL）の3本で構成。通常±3σに設定。</span></div>
+      <div class="point-row"><span class="point-icon">⏱️</span><span>横軸は<span class="eg">時間（サンプル採取順序）</span>。データの時間的変化・工程の安定性を監視する。</span></div>
+      <div class="point-row"><span class="point-icon">🚨</span><span>異常の判定基準：①データが管理限界を外れる②中心線の片側に連続して点が並ぶ（ラン）等。</span></div>
+      <div class="point-row"><span class="point-icon">🆚</span><span>ヒストグラムとの違い：管理図は<span class="eg">時系列データの変化</span>を見る。ヒストグラムは<span class="eg">データの分布・ばらつき</span>を見る。</span></div>
+    </div>
+    <div class="trap">「管理図はデータをいくつかの区間に分けて柱状図で示し、ばらつきの状況を把握する」→ 誤り。それは<span class="eg">ヒストグラム</span>の説明。管理図は折れ線と管理限界線で時間的変化を把握する。</div>
+  </div>
+</div>
+
+<!-- CH05 ヒストグラム -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div><div class="ch-label">SECTION 05</div><div class="ch-title">ヒストグラムの活用<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">📉</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📉 ヒストグラムの詳細と読み取り</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">📊</span><span>形式：計量データを一定の区間に分割し、各区間の<span class="eg">度数（頻度）を棒の高さで表す</span>柱状図。</span></div>
+      <div class="point-row"><span class="point-icon">📌</span><span>読み取れること：<span class="eg">①データの分布形状　②平均値の位置（概ね）　③ばらつきの大きさ</span></span></div>
+      <div class="point-row"><span class="point-icon">🔍</span><span>分布形状の種類：正規分布型（釣り鐘型）・偏った形・二峰型・歯型など。分布形状から工程の問題を推察できる。</span></div>
+      <div class="point-row"><span class="point-icon">⚠️</span><span>ヒストグラムは<span class="er">時間的な変化は読み取れない</span>。時間的変化の把握には管理図を使う。</span></div>
+    </div>
+    <div class="trap">「ヒストグラムはデータをプロットして結んだ折れ線と管理限界線により、データの時間的変化がわかる」→ 誤り。それは<span class="eg">管理図</span>の説明。ヒストグラムは柱状図でばらつきを示す。</div>
+  </div>
+</div>
+
+<!-- CH06 散布図・層別・チェックシート -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div><div class="ch-label">SECTION 06</div><div class="ch-title">散布図・層別・チェックシートの使い方<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🔵</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔵 散布図・層別・チェックシートの詳細</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>ツール</th><th>形式</th><th>読み取れること</th><th>注意点</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="eb">散布図</span></td>
+          <td>2つの変数をx軸・y軸に取り点をプロット</td>
+          <td><span class="eg">2変数間の相関関係</span>（正相関・負相関・無相関）</td>
+          <td>「因果関係」ではなく「相関関係」。相関があっても因果とは限らない</td>
+        </tr>
+        <tr>
+          <td><span class="eb">層別</span></td>
+          <td>データを特性ごとにグループ分け</td>
+          <td><span class="eg">グループ間の差異・傾向の違い</span></td>
+          <td>QC七つ道具の「考え方・手法」であり、特定のグラフ形式ではない</td>
+        </tr>
+        <tr>
+          <td><span class="eb">チェックシート</span></td>
+          <td>チェック記号で記録するシート</td>
+          <td>不良・欠点の<span class="eg">発生箇所・頻度のデータ収集</span></td>
+          <td>データ収集のツール。分析は他のツールと組み合わせる</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="trap">「散布図は2つのデータの因果関係がわかる」→ 誤り。散布図でわかるのは<span class="eg">相関関係</span>（一方が増えると他方が増減する傾向）であり、因果関係（原因と結果）を証明するものではない。</div>
+  </div>
+</div>
+
+<!-- CH07 PDCAとデミングサイクル -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div><div class="ch-label">SECTION 07</div><div class="ch-title">PDCAとデミングサイクルの詳細<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🔄</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PDCA CYCLE</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>デミングサイクルのPDCAは何の略か！それぞれ日本語で答えろ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>P＝Plan（計画）、D＝Do（実施）、C＝Check（点検・確認）、A＝Act（改善）……4段階です！</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>完璧だ！「3段階」「5段階」という引っかけが出るぞ！また<span class="eg">繰り返し回すこと</span>で継続的改善につながる点も重要だ！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔄 PDCAサイクルとQC工程図</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">📋</span><span>PDCAの4段階：<span class="eg">P（Plan：計画）→D（Do：実施）→C（Check：点検）→A（Act：改善）</span>を繰り返す</span></div>
+      <div class="point-row"><span class="point-icon">🔄</span><span>デミングサイクルの特徴：4段階を<span class="eg">繰り返す</span>ことで品質を継続的に向上させる「スパイラルアップ」の考え方</span></div>
+      <div class="point-row"><span class="point-icon">📊</span><span><span class="eb">QC工程図（フロー）</span>：品質計画を具現化するためのもの。工程の流れに沿い管理項目・管理水準・管理方法を定め、管理値を外れた場合の処置方法等を定めておく</span></div>
+    </div>
+    <div class="trap">「デミングサイクルは計画・実施・点検の3つの段階を繰り返す」→ 誤り。<span class="eg">計画（P）・実施（D）・点検（C）・改善（A）の4段階</span>。「改善（A）」が抜けている。</div>
+  </div>
+</div>
+
+<!-- CH08 品質管理の基本概念 -->
+<div class="chapter-header" id="ch08">
+  <div class="ch-num">08</div>
+  <div><div class="ch-label">SECTION 08</div><div class="ch-title">品質管理の基本概念まとめ<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">📋</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📋 品質管理の基本概念</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🏗️</span><span>建設工事の品質管理は<span class="eg">工程管理を通じて</span>行う（結果だけでなく工程を管理して品質を確保）</span></div>
+      <div class="point-row"><span class="point-icon">📐</span><span>管工事の品質は設計図書で寸法・材質・適用法規・JIS等が示され<span class="eg">下限が定められる</span></span></div>
+      <div class="point-row"><span class="point-icon">🌐</span><span><span class="eb">ISO 9000ファミリー規格</span>：企業の品質システムが要求事項に適合しているかを<span class="eg">第三者機関（審査登録機関）が認証</span>する仕組み</span></div>
+      <div class="point-row"><span class="point-icon">✅</span><span>品質管理の効果：品質向上だけでなく<span class="eg">手直しの減少・工事原価の低減・クレームの削減</span>等の副次的効果もある</span></div>
+    </div>
+    <div class="trap">「建設工事は一品生産のため統計的手法による品質管理は有効でない」→ 誤り。建設工事でも<span class="eg">統計的手法（QC七つ道具等）は有効</span>に活用できる。</div>
+  </div>
+</div>
+
+<span class="sfx">🛡️ 第1回 全8テーマ制覇！！</span>
+
+<div class="series-cta">
+  <div class="series-cta-text">
+    <strong>次は第2回：施工検査・試験・ISO品質システム</strong>
+    全数検査・抜取検査の使い分け・計数と計量の違い・ISO認証の仕組みを深掘り解説
+  </div>
+  <div class="series-cta-btns">
+    <a href="hoshu2.html" class="btn-next">第2回へ →</a>
+    <a href="manga.html" class="btn-back">← 基礎マンガに戻る</a>
+  </div>
+</div>
+
+<div class="cta-block">
+  <div class="cta-title">理解したら演習問題で確認しよう</div>
+  <p class="cta-sub">品質・安全管理の演習問題で知識を定着させろ。</p>
+  <a href="/bunya/anzen/" class="cta-btn-primary">📝 品質・安全管理 演習問題を解く</a>
+  <a href="/bunya/sogo/" class="cta-btn-secondary">🎯 総合確認問題</a>
+</div>
+
+</div>
+<script>
+const obs=new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:.1});
+document.querySelectorAll('.panel,.knowledge,.chapter-header,.cta-block').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
