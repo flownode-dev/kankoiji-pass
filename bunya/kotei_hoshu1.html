@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【補習】工程管理 第1回：ネットワーク工程表・CP・フロート | 管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士・工程管理の補習マンガ第1回。ネットワーク工程表・クリティカルパス・フロート計算・ダミーを深掘り解説。試験で差がつく細かいポイントまで網羅。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/kotei/hoshu1.html">
+<meta property="og:title" content="【補習】工程管理 第1回：ネットワーク工程表・CP・フロート | 管工事PASS">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kankoiji-pass.com/bunya/kotei/hoshu1.html">
+<meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-E37L2YPT6X');</script>
+<style>
+:root{--bg:#0f1117;--surface:#1a1d27;--surface2:#222636;--border:#2e3348;--kotei:#f59e0b;--correct:#22c55e;--warn:#f59e0b;--text:#e8eaf0;--muted:#7a8099;--danger:#ef4444;--ink:#08090d;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-serif;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+.site-header{position:fixed;top:0;left:0;right:0;height:56px;background:rgba(15,17,23,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;}
+.logo-main{font-weight:900;font-size:1.1rem;background:linear-gradient(135deg,var(--kotei),#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.header-nav{display:flex;gap:1rem;align-items:center;font-size:.8rem;color:var(--muted);}
+.header-nav a:hover{color:var(--text);}
+.btn-sm-header{background:var(--kotei);color:#1a0800;padding:.35rem .9rem;border-radius:6px;font-size:.75rem;font-weight:700;}
+.series-nav{background:var(--surface);border-bottom:1px solid var(--border);padding:.8rem 1.5rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:56px;}
+.series-label{font-size:.72rem;color:var(--muted);font-weight:700;white-space:nowrap;}
+.series-btn{padding:.35rem .9rem;border-radius:99px;font-size:.75rem;font-weight:700;border:1px solid var(--border);color:var(--muted);background:none;cursor:pointer;white-space:nowrap;}
+.series-btn.active{background:var(--kotei);color:#1a0800;border-color:var(--kotei);}
+.series-btn.done{background:rgba(245,158,11,.12);color:var(--kotei);border-color:rgba(245,158,11,.3);}
+.series-btn:hover:not(.active){border-color:var(--kotei);color:var(--kotei);}
+.hero{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;position:relative;overflow:hidden;background:#0c0900;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(245,158,11,.1) 0%,transparent 65%);}
+.hero-series{display:inline-block;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.3);color:var(--kotei);font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.2em;padding:.25rem 1rem;border-radius:99px;margin-bottom:1rem;position:relative;}
+.hero-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,3rem);line-height:1.05;color:#fff;text-shadow:3px 3px 0 rgba(245,158,11,.25);margin-bottom:.8rem;position:relative;}
+.hero-sub{font-family:'Oswald',sans-serif;font-size:clamp(.85rem,2.5vw,1rem);letter-spacing:.12em;color:var(--muted);margin-bottom:1.5rem;position:relative;}
+.hero-topics{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;position:relative;}
+.hero-topic{background:var(--surface);border:1px solid rgba(245,158,11,.25);color:var(--kotei);font-size:.75rem;padding:.25rem .8rem;border-radius:99px;}
+.toc-section{max-width:860px;margin:0 auto;padding:1.5rem 1rem 1rem;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.5rem;}
+.toc-item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.5rem .8rem;font-size:.78rem;display:flex;align-items:center;gap:.5rem;cursor:pointer;transition:border-color .2s;}
+.toc-item:hover{border-color:var(--kotei);color:var(--kotei);}
+.toc-num{font-family:'Oswald',sans-serif;font-size:.7rem;color:var(--kotei);min-width:22px;}
+.manga-wrap{max-width:860px;margin:0 auto;padding:1rem 1rem 5rem;}
+.chapter-header{display:flex;align-items:center;gap:.8rem;margin:3rem 0 1.2rem;padding-bottom:.8rem;border-bottom:3px solid var(--kotei);opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s;}
+.chapter-header.visible{opacity:1;transform:translateY(0);}
+.ch-num{font-family:'Oswald',sans-serif;font-size:2.5rem;font-weight:700;color:var(--kotei);line-height:1;min-width:3rem;}
+.ch-label{font-size:.65rem;letter-spacing:.15em;color:var(--muted);font-family:'Oswald',sans-serif;}
+.ch-title{font-size:clamp(1.1rem,3vw,1.5rem);font-weight:900;line-height:1.2;}
+.ch-icon{font-size:2rem;margin-left:auto;}
+.ch-level{font-size:.68rem;padding:.2rem .6rem;border-radius:3px;margin-left:.5rem;font-weight:700;background:rgba(239,68,68,.15);color:var(--danger);border:1px solid rgba(239,68,68,.3);}
+.panel{background:var(--surface);border:2.5px solid #fff;border-radius:3px;margin-bottom:1.6rem;box-shadow:5px 5px 0 var(--ink);overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .45s,transform .45s;}
+.panel.visible{opacity:1;transform:translateY(0);}
+.scene-label{background:var(--ink);border-bottom:2px solid var(--border);padding:.25rem .8rem;font-family:'Oswald',sans-serif;font-size:.65rem;letter-spacing:.15em;color:var(--muted);}
+.scene{display:flex;min-height:140px;}
+.char-col{width:110px;min-width:110px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:.8rem .3rem .4rem;background:var(--surface2);border-right:2px solid #fff;position:relative;overflow:hidden;}
+.char-col::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,.025) 16px,rgba(255,255,255,.025) 17px);}
+.char-col.angry .char-img{animation:rage .25s infinite alternate;}
+@keyframes rage{from{transform:rotate(-2deg) scale(1);}to{transform:rotate(2deg) scale(1.06);}}
+.char-col.angry::after{content:'💢';position:absolute;top:6px;right:6px;font-size:1.2rem;}
+.char-img{width:80px;height:auto;object-fit:contain;position:relative;z-index:1;display:block;margin:0 auto;}
+.char-name{font-size:.58rem;font-weight:900;color:var(--muted);text-align:center;position:relative;z-index:1;}
+.speech-col{flex:1;padding:.9rem 1.1rem;display:flex;flex-direction:column;gap:.7rem;justify-content:center;}
+.bubble{border:2px solid #fff;border-radius:4px;padding:.6rem .9rem;line-height:1.65;font-size:clamp(.8rem,2vw,.88rem);background:var(--surface2);position:relative;}
+.bubble .spk{display:block;font-size:.6rem;font-weight:900;letter-spacing:.1em;opacity:.65;margin-bottom:.25rem;}
+.bubble.shout{background:var(--danger);color:#fff;font-weight:900;font-size:clamp(.88rem,2.3vw,1rem);transform:rotate(-.4deg);box-shadow:3px 3px 0 rgba(0,0,0,.35);border-color:#fff;}
+.bubble.shout::before{content:'';position:absolute;left:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:var(--danger);}
+.bubble.shout .eb{color:#fde68a!important;font-weight:900;}
+.bubble.shout .eg{color:#a8ffb0!important;font-weight:900;}
+.bubble.shout .er{color:#fca5a5!important;font-weight:900;}
+.bubble.reply{background:#1a1000;border-color:var(--kotei);color:#fde68a;}
+.bubble.reply::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:var(--kotei);}
+.bubble.trainee{background:#1a1230;border-color:#a78bfa;border-style:dashed;color:#ddd6fe;}
+.bubble.trainee::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:#a78bfa;}
+.knowledge{background:var(--surface);border:2.5px solid var(--kotei);border-radius:4px;margin-bottom:1.6rem;box-shadow:5px 5px 0 rgba(245,158,11,.18);opacity:0;transform:translateY(24px);transition:opacity .45s,transform .45s;}
+.knowledge.visible{opacity:1;transform:translateY(0);}
+.knowledge-header{background:rgba(245,158,11,.1);border-bottom:2px solid var(--kotei);padding:.5rem 1rem;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:.15em;color:var(--kotei);}
+.knowledge-body{padding:1rem 1.2rem;}
+.k-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:.5rem;}
+.k-table th{background:var(--surface2);padding:.5rem .7rem;border:1.5px solid var(--border);color:var(--muted);font-weight:700;text-align:left;}
+.k-table td{padding:.5rem .7rem;border:1.5px solid var(--border);line-height:1.55;}
+.k-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.point-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem;}
+.point-row{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;line-height:1.6;}
+.point-icon{font-size:1rem;flex-shrink:0;margin-top:.1rem;}
+.deep-box{background:rgba(239,68,68,.05);border:2px solid rgba(239,68,68,.3);border-radius:6px;padding:.9rem 1.1rem;margin-top:.8rem;}
+.deep-box-title{font-size:.72rem;color:var(--danger);font-weight:700;letter-spacing:.1em;margin-bottom:.5rem;font-family:'Oswald',sans-serif;}
+.deep-box p{font-size:.82rem;color:#fca5a5;line-height:1.7;}
+/* ネットワーク図 */
+.net-diagram{background:var(--surface2);border:1.5px solid var(--border);border-radius:8px;padding:1.2rem;margin:.8rem 0;font-family:'Oswald',sans-serif;overflow-x:auto;}
+.net-diagram pre{color:#fde68a;font-size:.78rem;line-height:1.8;white-space:pre;}
+.net-table{width:100%;border-collapse:collapse;font-size:.78rem;margin-top:.6rem;}
+.net-table th{background:rgba(245,158,11,.15);padding:.4rem .6rem;border:1px solid rgba(245,158,11,.3);color:var(--kotei);font-weight:700;text-align:center;}
+.net-table td{padding:.4rem .6rem;border:1px solid var(--border);text-align:center;line-height:1.5;}
+.net-table .cp{background:rgba(239,68,68,.1);color:var(--danger);font-weight:700;}
+.trap{background:#180d0d;border:2px solid var(--danger);border-radius:4px;padding:.7rem 1rem;font-size:.8rem;color:#fca5a5;margin-top:.6rem;line-height:1.65;}
+.trap::before{content:'⚠ 試験の引っかけ  ';font-weight:900;color:var(--danger);}
+.er{color:var(--danger);font-weight:900;}
+.eb{color:var(--kotei);font-weight:900;}
+.eg{color:var(--correct);font-weight:900;}
+.ew{color:var(--warn);font-weight:900;}
+.sfx{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,2.8rem);color:var(--kotei);text-shadow:2px 2px 0 rgba(0,0,0,.5);text-align:center;padding:.3rem;transform:rotate(-1.5deg);display:block;line-height:1;margin:.5rem 0 1.5rem;}
+.series-cta{background:var(--surface);border:2px solid var(--border);border-radius:10px;padding:1.5rem;margin:2rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.series-cta-text strong{color:var(--text);display:block;font-size:1rem;margin-bottom:.3rem;}
+.series-cta-text{font-size:.88rem;color:var(--muted);}
+.series-cta-btns{display:flex;gap:.6rem;flex-wrap:wrap;}
+.btn-next{background:var(--kotei);color:#1a0800;padding:.6rem 1.4rem;border-radius:7px;font-size:.85rem;font-weight:700;}
+.btn-next:hover{opacity:.85;}
+.btn-back{background:rgba(245,158,11,.1);color:var(--kotei);border:1px solid rgba(245,158,11,.3);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;font-weight:700;}
+.cta-block{background:linear-gradient(135deg,#1a1000,#0e1a0e);border:3px solid var(--kotei);border-radius:6px;padding:2rem;text-align:center;margin-top:3rem;opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s;}
+.cta-block.visible{opacity:1;transform:translateY(0);}
+.cta-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.4rem,4vw,2rem);color:#fff;text-shadow:2px 2px 0 var(--kotei);margin-bottom:.6rem;}
+.cta-sub{font-size:.88rem;color:var(--muted);margin-bottom:1.4rem;}
+.cta-btn-primary{display:inline-block;background:var(--kotei);color:#1a0800;font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:.12em;padding:.75rem 2.2rem;border-radius:7px;margin:.3rem;font-weight:700;}
+.cta-btn-secondary{display:inline-block;background:rgba(245,158,11,.12);color:var(--kotei);border:1px solid rgba(245,158,11,.35);font-size:.85rem;padding:.65rem 1.6rem;border-radius:7px;margin:.3rem;}
+@media(max-width:600px){.char-col{width:72px;min-width:72px;}.char-img{width:58px;}.scene{min-height:120px;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/kotei/">演習問題</a>
+    <a href="/bunya/kotei/manga.html">基礎マンガ</a>
+    <a href="/bunya/kotei/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<div class="series-nav">
+  <span class="series-label">📊 工程管理 補習シリーズ：</span>
+  <button class="series-btn active">第1回 ネットワーク工程表・CP・フロート</button>
+  <button class="series-btn" onclick="location.href='hoshu2.html'">第2回 工期短縮・バーチャート・実務</button>
+  <button class="series-btn" onclick="location.href='hoshu3.html'">第3回 施工計画・原価・数値まとめ</button>
+</div>
+
+<section class="hero">
+  <div class="hero-series">📊 工程管理 補習マンガ — 第1回 / 全3回</div>
+  <h1 class="hero-title">ネットワーク工程表・<br>クリティカルパス・<br>フロート計算</h1>
+  <p class="hero-sub">計算問題を確実に解くための考え方を手順ごとに深掘り解説</p>
+  <div class="hero-topics">
+    <span class="hero-topic">最早開始時刻の求め方</span>
+    <span class="hero-topic">最遅完了時刻の求め方</span>
+    <span class="hero-topic">トータルフロートの計算</span>
+    <span class="hero-topic">フリーフロートの計算</span>
+    <span class="hero-topic">ダミーの意味と落とし穴</span>
+    <span class="hero-topic">CPが複数ある場合</span>
+  </div>
+</section>
+
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>ネットワーク工程表の基本用語</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>最早・最遅時刻の計算手順</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>クリティカルパスの特定</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>トータルフロートの計算</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>フリーフロートの計算</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>インターフェアリングフロート</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>ダミーの正しい理解</div>
+    <div class="toc-item" onclick="document.getElementById('ch08').scrollIntoView({behavior:'smooth'})"><span class="toc-num">08</span>総合例題で確認</div>
+  </div>
+</div>
+
+<div class="manga-wrap">
+
+<!-- CH01 基本用語 -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div><div class="ch-label">SECTION 01</div><div class="ch-title">ネットワーク工程表の基本用語<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">📐</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">NETWORK BASICS</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>アクティビティ・イベント・ダミーの3つをそれぞれ一言で説明しろ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>アクティビティは作業（矢線）、イベントは結合点（丸）、ダミーは依存関係だけを示す点線……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>完璧だ！ダミーは<span class="eb">所要時間がゼロ</span>の矢線で、<span class="eg">論理的な依存関係</span>だけを表すぞ！ここを間違える者が多い！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📐 ネットワーク工程表の基本用語</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>用語</th><th>記号</th><th>意味</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">アクティビティ（作業）</span></td><td>→（実線矢線）</td><td>実際の作業。矢線の上に作業名、下に所要日数を記入</td></tr>
+        <tr><td><span class="eb">イベント（結合点）</span></td><td>○（丸）</td><td>作業の開始・終了点。番号で識別</td></tr>
+        <tr><td><span class="eb">ダミー</span></td><td>→（点線矢線）</td><td>所要時間ゼロ。論理的な依存関係を示すだけ</td></tr>
+        <tr><td><span class="eb">パス</span></td><td>—</td><td>始点から終点への経路。複数のパスが存在する</td></tr>
+        <tr><td><span class="eg">クリティカルパス（CP）</span></td><td>—</td><td>最長のパス＝全体工期を決定する経路</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「ダミーは作業の一種で所要時間を持つ」→ 誤り。ダミーは<span class="eg">所要時間ゼロ</span>の点線矢線で、論理的な依存関係のみを表す。</div>
+  </div>
+</div>
+
+<!-- CH02 最早・最遅時刻 -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div><div class="ch-label">SECTION 02</div><div class="ch-title">最早開始時刻・最遅完了時刻の計算手順<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">⏱️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">TIME CALCULATION</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>最早開始時刻はどの方向に計算するか！最遅完了時刻はどっちだ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>最早は始点から終点方向に「足す」…最遅は終点から始点方向に「引く」……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！最早は<span class="eg">→方向に最大値を取る</span>！最遅は<span class="eg">←方向に最小値を取る</span>！複数経路があるときの「最大・最小」が重要だぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⏱️ 最早・最遅時刻の計算ルール</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">➡️</span><span><span class="eb">最早開始時刻（EST）</span>：始点から順に計算。複数の矢線が入るイベントでは<span class="eg">最大値を採用</span>する。<br>EST＝（前イベントのEST）＋（作業日数）← 複数あれば最大値</span></div>
+      <div class="point-row"><span class="point-icon">⬅️</span><span><span class="eb">最遅完了時刻（LFT）</span>：終点から逆方向に計算。複数の矢線が出るイベントでは<span class="eg">最小値を採用</span>する。<br>LFT＝（後イベントのLFT）－（作業日数）← 複数あれば最小値</span></div>
+    </div>
+    <div class="net-diagram">
+      <pre>  例）A(3日)→①→B(4日)→③→D(2日)→⑤（完了）
+              ↑C(2日)↗
+              ②→───→
+
+  EST計算（→方向）：
+  ①のEST＝0（始点）
+  ②のEST＝3（①+A3日）
+  ③のEST＝max(0+3+4, 0+C2)＝max(7,2)＝7
+  ⑤のEST＝7+2＝9日（全体工期）</pre>
+    </div>
+    <div class="trap">「複数の経路が入るイベントの最早時刻は最小値を採用する」→ 誤り。<span class="eg">最大値を採用</span>する。すべての先行作業が完了してからでないと次の作業を開始できないため。</div>
+  </div>
+</div>
+
+<!-- CH03 クリティカルパス -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div><div class="ch-label">SECTION 03</div><div class="ch-title">クリティカルパスの特定と工期<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🔴</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CRITICAL PATH</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>CPは必ず1本だけか！！CPの作業を1日短縮したら必ず全体工期も1日短縮されるか！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>CPは複数本ある場合がある……1日短縮しても他のパスがCPになって工期が短縮されないこともある……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！この2点は超頻出の引っかけだぞ！必ず覚えとけ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔴 クリティカルパス（CP）の重要ポイント</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">📌</span><span>CPの定義：始点から終点への<span class="eg">最長経路</span>。全体工期はCPの長さで決まる。</span></div>
+      <div class="point-row"><span class="point-icon">⚠️</span><span>CPは<span class="er">複数本存在する場合がある</span>。同じ長さのパスが2本以上あれば両方がCP。</span></div>
+      <div class="point-row"><span class="point-icon">✂️</span><span>CP上の作業を短縮しても、<span class="er">別のパスがCPになれば工期は短縮されない</span>場合がある。</span></div>
+      <div class="point-row"><span class="point-icon">🔒</span><span>CP上の作業の<span class="eb">トータルフロートは必ず0</span>。フロートが0＝その作業がCP上にあることの証明。</span></div>
+      <div class="point-row"><span class="point-icon">📊</span><span>CP上のイベントは<span class="eg">EST＝LFT</span>（最早開始時刻＝最遅完了時刻）になる。</span></div>
+    </div>
+    <div class="trap">「CPの作業を短縮すれば必ず全体工期が短縮される」→ 誤り。<span class="er">別のパスがCPの長さに並ぶと</span>、そちらが新たなCPとなり工期短縮にならない場合がある。</div>
+  </div>
+</div>
+
+<!-- CH04 トータルフロート -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div><div class="ch-label">SECTION 04</div><div class="ch-title">トータルフロート（TF）の計算<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">⏳</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">TOTAL FLOAT</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>トータルフロートを使い切るとどうなるか！後続作業への影響を答えろ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>TFを使い切ると後続作業のフロートが減る……後続作業がCPになる可能性がある……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！TFは<span class="er">後続作業と共有</span>するフロートだ！自分だけのフロートは<span class="eg">フリーフロート</span>だぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⏳ トータルフロート（TF）の計算式と意味</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">📐</span><span><span class="eb">トータルフロート（TF）</span>の計算式：<br><strong>TF＝（終点イベントのLFT）－（始点イベントのEST）－（作業日数）</strong></span></div>
+      <div class="point-row"><span class="point-icon">🔗</span><span>TFは<span class="er">後続作業と共有</span>するフロート。TFを全部使うと後続作業のフロートがゼロになる。</span></div>
+      <div class="point-row"><span class="point-icon">🔒</span><span>CP上の作業のTFは必ず<span class="eg">0</span>。「TF＝0」がCPの条件。</span></div>
+    </div>
+    <div class="net-diagram">
+      <pre>  作業X（①→③、5日）のTF計算：
+  TF＝③のLFT－①のEST－5日
+  例）③のLFT＝12、①のEST＝0 のとき
+  TF＝12－0－5＝7日</pre>
+    </div>
+    <div class="trap">「トータルフロートを使い切っても後続作業のフロートは変わらない」→ 誤り。TFは後続作業と<span class="er">共有</span>するため、TFを使い切ると<span class="er">後続作業のフロートが減少</span>する。</div>
+  </div>
+</div>
+
+<!-- CH05 フリーフロート -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div><div class="ch-label">SECTION 05</div><div class="ch-title">フリーフロート（FF）の計算<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🆓</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">FREE FLOAT</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>フリーフロートの定義を一言で言え！後続作業への影響は！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>後続作業の最早開始時刻を遅らせずに使える余裕時間……後続作業への影響はゼロ……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>完璧だ！FFを使い切っても<span class="eg">後続作業に遅れは生じない</span>！これがTFとの最大の違いだぞ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🆓 フリーフロート（FF）の計算式と意味</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">📐</span><span><span class="eb">フリーフロート（FF）</span>の計算式：<br><strong>FF＝（後続イベントのEST）－（当該イベントのEST）－（作業日数）</strong></span></div>
+      <div class="point-row"><span class="point-icon">✅</span><span>FFを使い切っても<span class="eg">後続作業の最早開始時刻は変わらない</span>。後続作業に影響なし。</span></div>
+      <div class="point-row"><span class="point-icon">📊</span><span>常に<span class="eg">FF ≤ TF</span>の関係が成立する。FFはTFの一部（後続作業に影響しない部分）。</span></div>
+    </div>
+    <div class="net-diagram">
+      <pre>  作業X（①→③、5日）のFF計算：
+  FF＝③のEST－①のEST－5日
+  例）③のEST＝9、①のEST＝0 のとき
+  FF＝9－0－5＝4日</pre>
+    </div>
+    <div class="trap">「フリーフロートを使用すると後続作業に遅れが生じる」→ 誤り。FFを使い切っても後続作業の<span class="eg">最早開始時刻は変わらないため遅れは生じない</span>。</div>
+  </div>
+</div>
+
+<!-- CH06 インターフェアリングフロート -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div><div class="ch-label">SECTION 06</div><div class="ch-title">インターフェアリングフロート（IF）<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🔀</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔀 3種のフロートの関係</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>フロートの種類</th><th>計算式</th><th>後続作業への影響</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">トータルフロート（TF）</span></td><td>終点LFT－始点EST－作業日数</td><td><span class="er">後続作業のフロートが減る</span></td></tr>
+        <tr><td><span class="eg">フリーフロート（FF）</span></td><td>後続イベントEST－始点EST－作業日数</td><td><span class="eg">影響なし</span></td></tr>
+        <tr><td><span class="eb">インターフェアリングフロート（IF）</span></td><td><span class="eg">IF＝TF－FF</span></td><td><span class="er">後続作業に影響する余裕</span></td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:.8rem;">
+      <div class="point-row"><span class="point-icon">💡</span><span>IFはTFとFFの差分。IFを使うと後続作業のフロートが減少する（後続作業に干渉する）。</span></div>
+      <div class="point-row"><span class="point-icon">📊</span><span>関係式：<strong>TF＝FF＋IF</strong>　これが試験で問われる。</span></div>
+    </div>
+    <div class="trap">「インターフェアリングフロートを使用しても後続作業に影響しない」→ 誤り。IFは<span class="er">後続作業のフロートを消費</span>するため影響する。影響しないのはFF（フリーフロート）のみ。</div>
+  </div>
+</div>
+
+<!-- CH07 ダミー -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div><div class="ch-label">SECTION 07</div><div class="ch-title">ダミーの正しい理解と落とし穴<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">➡️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">DUMMY ACTIVITY</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ダミーはクリティカルパス上に存在できるか！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>所要時間ゼロでもCPの経路の一部になり得る……できる……ですか？</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！ダミーもCPの経路上に<span class="eg">存在できる</span>ぞ！「ダミーはCPになれない」は典型的な誤りだ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">➡️ ダミーに関する重要ポイント</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">✅</span><span>ダミーは<span class="eg">CP上に存在できる</span>。所要時間ゼロであっても論理的な依存関係を示す経路の一部となりうる。</span></div>
+      <div class="point-row"><span class="point-icon">📋</span><span>ダミーの目的①：<span class="eb">論理的な依存関係の表現</span>（AとBが両方終わってからCを開始するなど）</span></div>
+      <div class="point-row"><span class="point-icon">📋</span><span>ダミーの目的②：<span class="eb">イベント番号の重複防止</span>（同じ2つのイベント間に2つの作業がある場合に区別するため）</span></div>
+      <div class="point-row"><span class="point-icon">⏱️</span><span>ダミーのフロート計算：所要日数＝0として通常通り計算する。</span></div>
+    </div>
+    <div class="trap">「ダミーはクリティカルパス上に存在できない」→ 誤り。所要時間ゼロでも<span class="eg">CP上に存在できる</span>。経路の一部として扱う。</div>
+  </div>
+</div>
+
+<!-- CH08 総合例題 -->
+<div class="chapter-header" id="ch08">
+  <div class="ch-num">08</div>
+  <div><div class="ch-label">SECTION 08</div><div class="ch-title">総合例題でフロートを計算<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">📝</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📝 総合例題：フロート計算</div>
+  <div class="knowledge-body">
+    <div class="net-diagram">
+      <pre>  ①→A(3)→②→C(4)→④→E(2)→⑥（完了）
+  ①→B(5)→③→D(3)→④
+              ③→F(6)→⑤→G(1)→⑥
+
+  各パスの長さ：
+  ①→②→④→⑥ : 3+4+2＝9日
+  ①→③→④→⑥ : 5+3+2＝10日  ← CP（最長）
+  ①→③→⑤→⑥ : 5+6+1＝12日  ← CP（最長）
+
+  全体工期＝12日</pre>
+    </div>
+    <table class="net-table">
+      <thead><tr><th>作業</th><th>始点EST</th><th>終点LFT</th><th>日数</th><th>TF</th><th>終点EST</th><th>FF</th><th>IF</th><th>CP</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>0</td><td>6</td><td>3</td><td>3</td><td>5</td><td>2</td><td>1</td><td>—</td></tr>
+        <tr class="cp"><td>B</td><td>0</td><td>5</td><td>5</td><td>0</td><td>5</td><td>0</td><td>0</td><td>★CP</td></tr>
+        <tr><td>C</td><td>3</td><td>10</td><td>4</td><td>3</td><td>10</td><td>3</td><td>0</td><td>—</td></tr>
+        <tr><td>D</td><td>5</td><td>10</td><td>3</td><td>2</td><td>10</td><td>2</td><td>0</td><td>—</td></tr>
+        <tr class="cp"><td>F</td><td>5</td><td>11</td><td>6</td><td>0</td><td>11</td><td>0</td><td>0</td><td>★CP</td></tr>
+        <tr><td>E</td><td>10</td><td>12</td><td>2</td><td>0</td><td>12</td><td>0</td><td>0</td><td>★CP</td></tr>
+        <tr class="cp"><td>G</td><td>11</td><td>12</td><td>1</td><td>0</td><td>12</td><td>0</td><td>0</td><td>★CP</td></tr>
+      </tbody>
+    </table>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 深掘りポイント：CPは2本存在する</div>
+      <p>この例ではCP①→③→④→⑥（10日）と①→③→⑤→⑥（12日）が存在し、<strong>最長パス12日がCP</strong>。作業Eのみが両方のCPに含まれる。「CPは必ず1本」は誤りだと確認できる。</p>
+    </div>
+  </div>
+</div>
+
+<span class="sfx">📊 第1回 全8テーマ制覇！！</span>
+
+<div class="series-cta">
+  <div class="series-cta-text">
+    <strong>次は第2回：工期短縮・バーチャート・実務</strong>
+    工期短縮の検討手順・バーチャートとの比較・人員配置計画を深掘り解説
+  </div>
+  <div class="series-cta-btns">
+    <a href="hoshu2.html" class="btn-next">第2回へ →</a>
+    <a href="manga.html" class="btn-back">← 基礎マンガに戻る</a>
+  </div>
+</div>
+
+<div class="cta-block">
+  <div class="cta-title">理解したら演習問題で確認しよう</div>
+  <p class="cta-sub">工程管理の演習問題で知識を定着させろ。</p>
+  <a href="/bunya/kotei/" class="cta-btn-primary">📝 工程管理 演習問題を解く</a>
+  <a href="/bunya/sogo/" class="cta-btn-secondary">🎯 総合確認問題</a>
+</div>
+
+</div>
+<script>
+const obs=new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:.1});
+document.querySelectorAll('.panel,.knowledge,.chapter-header,.cta-block').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
