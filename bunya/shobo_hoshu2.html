@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【補習】消防設備 第2回：不活性ガス・泡・粉末消火設備 | 管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士・消防設備の補習マンガ第2回。不活性ガス・泡・粉末・ハロン消火設備の貯蔵容器・放射時間・防護区画を深掘り解説。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/shobo/hoshu2.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-E37L2YPT6X');</script>
+<style>
+:root{--bg:#0f1117;--surface:#1a1d27;--surface2:#222636;--border:#2e3348;--shobo:#f97316;--correct:#22c55e;--warn:#f59e0b;--text:#e8eaf0;--muted:#7a8099;--danger:#ef4444;--ink:#08090d;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-serif;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+.site-header{position:fixed;top:0;left:0;right:0;height:56px;background:rgba(15,17,23,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;}
+.logo-main{font-weight:900;font-size:1.1rem;background:linear-gradient(135deg,var(--shobo),#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.header-nav{display:flex;gap:1rem;align-items:center;font-size:.8rem;color:var(--muted);}
+.btn-sm-header{background:var(--shobo);color:#fff;padding:.35rem .9rem;border-radius:6px;font-size:.75rem;font-weight:700;}
+.series-nav{background:var(--surface);border-bottom:1px solid var(--border);padding:.8rem 1.5rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:56px;}
+.series-label{font-size:.72rem;color:var(--muted);font-weight:700;white-space:nowrap;}
+.series-btn{padding:.35rem .9rem;border-radius:99px;font-size:.75rem;font-weight:700;border:1px solid var(--border);color:var(--muted);background:none;cursor:pointer;white-space:nowrap;}
+.series-btn.active{background:var(--shobo);color:#fff;border-color:var(--shobo);}
+.series-btn.done{background:rgba(249,115,22,.12);color:var(--shobo);border-color:rgba(249,115,22,.3);}
+.series-btn:hover:not(.active){border-color:var(--shobo);color:var(--shobo);}
+.hero{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;position:relative;overflow:hidden;background:#0e0800;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(249,115,22,.1) 0%,transparent 65%);}
+.hero-series{display:inline-block;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.3);color:var(--shobo);font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.2em;padding:.25rem 1rem;border-radius:99px;margin-bottom:1rem;position:relative;}
+.hero-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,3rem);line-height:1.05;color:#fff;text-shadow:3px 3px 0 rgba(249,115,22,.25);margin-bottom:.8rem;position:relative;}
+.hero-sub{font-family:'Oswald',sans-serif;font-size:clamp(.85rem,2.5vw,1rem);letter-spacing:.12em;color:var(--muted);margin-bottom:1.5rem;position:relative;}
+.hero-topics{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;position:relative;}
+.hero-topic{background:var(--surface);border:1px solid rgba(249,115,22,.25);color:var(--shobo);font-size:.75rem;padding:.25rem .8rem;border-radius:99px;}
+.toc-section{max-width:860px;margin:0 auto;padding:1.5rem 1rem 1rem;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.5rem;}
+.toc-item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.5rem .8rem;font-size:.78rem;display:flex;align-items:center;gap:.5rem;cursor:pointer;transition:border-color .2s;}
+.toc-item:hover{border-color:var(--shobo);color:var(--shobo);}
+.toc-num{font-family:'Oswald',sans-serif;font-size:.7rem;color:var(--shobo);min-width:22px;}
+.manga-wrap{max-width:860px;margin:0 auto;padding:1rem 1rem 5rem;}
+.chapter-header{display:flex;align-items:center;gap:.8rem;margin:3rem 0 1.2rem;padding-bottom:.8rem;border-bottom:3px solid var(--shobo);opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s;}
+.chapter-header.visible{opacity:1;transform:translateY(0);}
+.ch-num{font-family:'Oswald',sans-serif;font-size:2.5rem;font-weight:700;color:var(--shobo);line-height:1;min-width:3rem;}
+.ch-label{font-size:.65rem;letter-spacing:.15em;color:var(--muted);font-family:'Oswald',sans-serif;}
+.ch-title{font-size:clamp(1.1rem,3vw,1.5rem);font-weight:900;line-height:1.2;}
+.ch-icon{font-size:2rem;margin-left:auto;}
+.ch-level{font-size:.68rem;padding:.2rem .6rem;border-radius:3px;margin-left:.5rem;font-weight:700;background:rgba(239,68,68,.15);color:var(--danger);border:1px solid rgba(239,68,68,.3);}
+.panel{background:var(--surface);border:2.5px solid #fff;border-radius:3px;margin-bottom:1.6rem;box-shadow:5px 5px 0 var(--ink);overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .45s,transform .45s;}
+.panel.visible{opacity:1;transform:translateY(0);}
+.scene-label{background:var(--ink);border-bottom:2px solid var(--border);padding:.25rem .8rem;font-family:'Oswald',sans-serif;font-size:.65rem;letter-spacing:.15em;color:var(--muted);}
+.scene{display:flex;min-height:140px;}
+.char-col{width:110px;min-width:110px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:.8rem .3rem .4rem;background:var(--surface2);border-right:2px solid #fff;position:relative;overflow:hidden;}
+.char-col::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,.025) 16px,rgba(255,255,255,.025) 17px);}
+.char-col.angry .char-img{animation:rage .25s infinite alternate;}
+@keyframes rage{from{transform:rotate(-2deg) scale(1);}to{transform:rotate(2deg) scale(1.06);}}
+.char-col.angry::after{content:'💢';position:absolute;top:6px;right:6px;font-size:1.2rem;}
+.char-img{width:80px;height:auto;object-fit:contain;position:relative;z-index:1;display:block;margin:0 auto;}
+.char-name{font-size:.58rem;font-weight:900;color:var(--muted);text-align:center;position:relative;z-index:1;}
+.speech-col{flex:1;padding:.9rem 1.1rem;display:flex;flex-direction:column;gap:.7rem;justify-content:center;}
+.bubble{border:2px solid #fff;border-radius:4px;padding:.6rem .9rem;line-height:1.65;font-size:clamp(.8rem,2vw,.88rem);background:var(--surface2);position:relative;}
+.bubble .spk{display:block;font-size:.6rem;font-weight:900;letter-spacing:.1em;opacity:.65;margin-bottom:.25rem;}
+.bubble.shout{background:var(--danger);color:#fff;font-weight:900;font-size:clamp(.88rem,2.3vw,1rem);transform:rotate(-.4deg);box-shadow:3px 3px 0 rgba(0,0,0,.35);border-color:#fff;}
+.bubble.shout::before{content:'';position:absolute;left:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:var(--danger);}
+.bubble.shout .eb{color:#fed7aa!important;font-weight:900;}
+.bubble.shout .eg{color:#a8ffb0!important;font-weight:900;}
+.bubble.shout .ew{color:#ffe08a!important;font-weight:900;}
+.bubble.reply{background:#1c0e00;border-color:var(--shobo);color:#fed7aa;}
+.bubble.reply::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:var(--shobo);}
+.bubble.trainee{background:#1a1230;border-color:#a78bfa;border-style:dashed;color:#ddd6fe;}
+.bubble.trainee::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:#a78bfa;}
+.knowledge{background:var(--surface);border:2.5px solid var(--shobo);border-radius:4px;margin-bottom:1.6rem;box-shadow:5px 5px 0 rgba(249,115,22,.18);opacity:0;transform:translateY(24px);transition:opacity .45s,transform .45s;}
+.knowledge.visible{opacity:1;transform:translateY(0);}
+.knowledge-header{background:rgba(249,115,22,.1);border-bottom:2px solid var(--shobo);padding:.5rem 1rem;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:.15em;color:var(--shobo);}
+.knowledge-body{padding:1rem 1.2rem;}
+.k-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:.5rem;}
+.k-table th{background:var(--surface2);padding:.5rem .7rem;border:1.5px solid var(--border);color:var(--muted);font-weight:700;text-align:left;}
+.k-table td{padding:.5rem .7rem;border:1.5px solid var(--border);line-height:1.55;}
+.k-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.point-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem;}
+.point-row{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;line-height:1.6;}
+.point-icon{font-size:1rem;flex-shrink:0;margin-top:.1rem;}
+.deep-box{background:rgba(239,68,68,.05);border:2px solid rgba(239,68,68,.3);border-radius:6px;padding:.9rem 1.1rem;margin-top:.8rem;}
+.deep-box-title{font-size:.72rem;color:var(--danger);font-weight:700;letter-spacing:.1em;margin-bottom:.5rem;font-family:'Oswald',sans-serif;}
+.deep-box p{font-size:.82rem;color:#fca5a5;line-height:1.7;}
+.trap{background:#180d0d;border:2px solid var(--danger);border-radius:4px;padding:.7rem 1rem;font-size:.8rem;color:#fca5a5;margin-top:.6rem;line-height:1.65;}
+.trap::before{content:'⚠ 試験の引っかけ  ';font-weight:900;color:var(--danger);}
+.er{color:var(--danger);font-weight:900;}
+.eb{color:var(--shobo);font-weight:900;}
+.eg{color:var(--correct);font-weight:900;}
+.ew{color:var(--warn);font-weight:900;}
+.sfx{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,2.8rem);color:var(--shobo);text-shadow:2px 2px 0 rgba(0,0,0,.5);text-align:center;padding:.3rem;transform:rotate(-1.5deg);display:block;line-height:1;margin:.5rem 0 1.5rem;}
+.series-cta{background:var(--surface);border:2px solid var(--border);border-radius:10px;padding:1.5rem;margin:2rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.series-cta-text{font-size:.88rem;color:var(--muted);}
+.series-cta-text strong{color:var(--text);display:block;font-size:1rem;margin-bottom:.3rem;}
+.series-cta-btns{display:flex;gap:.6rem;flex-wrap:wrap;}
+.btn-next{background:var(--shobo);color:#fff;padding:.6rem 1.4rem;border-radius:7px;font-size:.85rem;font-weight:700;}
+.btn-next:hover{opacity:.85;}
+.btn-prev{background:rgba(249,115,22,.1);color:var(--shobo);border:1px solid rgba(249,115,22,.3);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;font-weight:700;}
+.btn-back{background:none;border:1px solid var(--border);color:var(--muted);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;}
+.cta-block{background:linear-gradient(135deg,#1c0e00,#150800);border:3px solid var(--shobo);border-radius:6px;padding:2rem;text-align:center;margin-top:3rem;opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s;}
+.cta-block.visible{opacity:1;transform:translateY(0);}
+.cta-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.4rem,4vw,2rem);color:#fff;text-shadow:2px 2px 0 var(--shobo);margin-bottom:.6rem;}
+.cta-sub{font-size:.88rem;color:var(--muted);margin-bottom:1.4rem;}
+.cta-btn-primary{display:inline-block;background:var(--shobo);color:#fff;font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:.12em;padding:.75rem 2.2rem;border-radius:7px;margin:.3rem;font-weight:700;}
+.cta-btn-secondary{display:inline-block;background:rgba(249,115,22,.12);color:var(--shobo);border:1px solid rgba(249,115,22,.35);font-size:.85rem;padding:.65rem 1.6rem;border-radius:7px;margin:.3rem;}
+@media(max-width:600px){.char-col{width:72px;min-width:72px;}.char-img{width:58px;}.scene{min-height:120px;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/shobo/">演習問題</a>
+    <a href="/bunya/shobo/manga.html">基礎マンガ</a>
+    <a href="/bunya/shobo/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<div class="series-nav">
+  <span class="series-label">🔥 消防設備 補習シリーズ：</span>
+  <button class="series-btn done" onclick="location.href='hoshu1.html'">✅ 第1回 スプリンクラー・屋内外消火栓・水噴霧</button>
+  <button class="series-btn active">第2回 不活性ガス・泡・粉末消火設備</button>
+  <button class="series-btn" onclick="location.href='hoshu3.html'">第3回 警報設備・排煙・法規数値まとめ</button>
+</div>
+
+<section class="hero">
+  <div class="hero-series">🔥 消防設備 補習マンガ — 第2回 / 全3回</div>
+  <h1 class="hero-title">不活性ガス・泡・<br>粉末消火設備<br>深掘り解説</h1>
+  <p class="hero-sub">貯蔵容器の圧力・放射時間・防護区画の要件を徹底解説</p>
+  <div class="hero-topics">
+    <span class="hero-topic">CO₂と窒素の放射時間の違い</span>
+    <span class="hero-topic">不活性ガスの貯蔵容器設置条件</span>
+    <span class="hero-topic">泡消火の膨張比</span>
+    <span class="hero-topic">粉末の消火効果（負触媒）</span>
+    <span class="hero-topic">ハロン1301の特徴</span>
+    <span class="hero-topic">防護区画の開口部制限</span>
+  </div>
+</section>
+
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>不活性ガス消火設備の種類</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>CO₂消火設備の基準数値</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>イナートガス消火設備</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>泡消火設備の種類と膨張比</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>粉末消火設備の消火原理</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>ハロゲン化物消火設備</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>防護区画の共通要件</div>
+    <div class="toc-item" onclick="document.getElementById('ch08').scrollIntoView({behavior:'smooth'})"><span class="toc-num">08</span>各消火設備の適用場所まとめ</div>
+  </div>
+</div>
+
+<div class="manga-wrap">
+
+<!-- CH01 不活性ガスの種類 -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div><div class="ch-label">SECTION 01</div><div class="ch-title">不活性ガス消火設備の種類<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">💨</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">INERT GAS LAB</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>不活性ガス消火設備の種類を答えろ！CO₂だけじゃないぞ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>二酸化炭素・窒素・IG-55・IG-541……ですか？</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！CO₂以外を総称して<span class="eg">イナートガス消火設備</span>と呼ぶぞ！消火原理は共通して<span class="eg">窒息効果</span>だが人体への危険性が違う！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">💨 不活性ガス消火設備の種類比較</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>消火剤</th><th>人体への影響</th><th>放射時間</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">二酸化炭素消火設備</span></td><td>CO₂（液化）</td><td><span class="er">高濃度で致死的</span>。人がいる場所は原則不可</td><td><span class="eg">1分以内（全域）</span></td></tr>
+        <tr><td><span class="eb">窒素消火設備</span></td><td>N₂（高圧ガス）</td><td>酸素濃度低下による<span class="ew">窒息注意</span></td><td><span class="eg">60秒以内に95%放射（全域）</span></td></tr>
+        <tr><td><span class="eb">IG-55消火設備</span></td><td>N₂50%＋Ar50%</td><td>窒素より人体影響小さい</td><td><span class="eg">60秒以内</span></td></tr>
+        <tr><td><span class="eb">IG-541消火設備</span></td><td>N₂52%＋Ar40%＋CO₂8%</td><td>最も人体影響が少ない（少量のCO₂で呼吸促進）</td><td><span class="eg">60秒以内</span></td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「不活性ガス消火設備は人がいる場所でも安全に使用できる」→ 誤り。CO₂は高濃度で<span class="er">致死的</span>。イナートガス（窒素等）も酸素濃度を低下させるため避難が必要。</div>
+  </div>
+</div>
+
+<!-- CH02 CO₂消火設備の基準数値 -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div><div class="ch-label">SECTION 02</div><div class="ch-title">CO₂消火設備の基準数値<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🫧</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CO2 SYSTEM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>CO₂消火設備の貯蔵容器の設置条件で「温度40℃以下」「直射日光を避ける」以外に何があるか！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>防護区画以外の場所……点検が容易な場所……ですか？</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！<span class="eg">防護区画以外の場所</span>というのが頻出の引っかけポイントだぞ！防護区画の内部に置いたら放射時に中の人が逃げられない！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🫧 二酸化炭素消火設備の基準数値</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>項目</th><th>基準・数値</th></tr></thead>
+      <tbody>
+        <tr><td>貯蔵容器の設置場所</td><td><span class="er">防護区画以外</span>の場所で温度40℃以下・直射日光を避ける</td></tr>
+        <tr><td>全域放出の放射時間</td><td>表面火災：<span class="eg">1分以内</span>、深部火災：<span class="eg">7分以内</span></td></tr>
+        <tr><td>非常電源の容量</td><td><span class="eg">1時間以上</span>（他の消火設備は30分以上が多い→CO₂は長い）</td></tr>
+        <tr><td>手動起動装置</td><td>防護区画ごとに設置。操作部は床面から<span class="eg">0.8〜1.5m</span>の高さ</td></tr>
+        <tr><td>閉止弁（配管）</td><td>容積率計算に使用する開口部は自動閉鎖装置で閉鎖</td></tr>
+        <tr><td>放出遅延装置</td><td>手動起動後、人員退避のため<span class="eg">20秒以上の遅延</span>が必要</td></tr>
+      </tbody>
+    </table>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 深掘りポイント：非常電源1時間の理由</div>
+      <p>CO₂消火設備の非常電源は<strong>1時間以上</strong>の容量が必要（多くの消防用設備は30分）。深部火災では<strong>7分以上の放射継続</strong>が必要なうえ、消火後の安全確認・換気にも時間がかかるため、長い非常電源が要求される。</p>
+    </div>
+    <div class="trap">「CO₂消火設備の貯蔵容器は防護区画内に設置してよい」→ 誤り。貯蔵容器は<span class="eg">防護区画以外の場所</span>に設置しなければならない。</div>
+  </div>
+</div>
+
+<!-- CH03 イナートガス -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div><div class="ch-label">SECTION 03</div><div class="ch-title">イナートガス消火設備の圧力上昇対策<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🏛️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">INERT GAS PRESSURE</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>窒素・IG-55・IG-541を全域放出するとき防護区画に必ず必要な設備は何か！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>圧力上昇を逃がす……圧力逃し口（開口部）……ですか？</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！大量のガスが一気に入ると<span class="er">室内の圧力が急上昇</span>して壁や窓が破損するぞ！<span class="eg">圧力上昇を防ぐ措置</span>が必須だ！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🏛️ イナートガス消火設備の特徴と基準</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">💥</span><span>窒素・IG-55・IG-541の全域放出：大量のガス放出で<span class="er">防護区画内の圧力が急上昇</span>→<span class="eg">圧力上昇を防ぐための措置（圧力逃し口等）が必要</span></span></div>
+      <div class="point-row"><span class="point-icon">⚡</span><span>非常電源：<span class="eg">1時間以上</span>作動できる容量（CO₂と同じ）</span></div>
+      <div class="point-row"><span class="point-icon">🔧</span><span>貯蔵容器：高圧ガスボンベで充填。温度40℃以下・防護区画以外の場所に設置</span></div>
+    </div>
+    <div class="trap">「イナートガス消火設備（窒素等）を全域放出する場合、圧力上昇防止措置は不要」→ 誤り。大量のガス放出で室内圧力が上昇するため<span class="eg">圧力上昇を防止する措置が必要</span>。</div>
+  </div>
+</div>
+
+<!-- CH04 泡消火設備 -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div><div class="ch-label">SECTION 04</div><div class="ch-title">泡消火設備の種類と膨張比<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🫧</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">FOAM SYSTEM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>泡消火設備の低発泡と高発泡の違いを膨張比で答えろ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>低発泡は膨張比が20以下……高発泡は80以上……ですか？</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！低発泡は<span class="eg">20以下</span>で駐車場・油槽所に！高発泡は<span class="eg">80以上500未満</span>または<span class="eg">1000以上</span>で地下街・大型倉庫に使うぞ！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🫧 泡消火設備の種類と特徴</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>膨張比</th><th>適用場所</th><th>消火原理</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">低発泡</span></td><td><span class="eg">20以下</span></td><td>駐車場・航空機格納庫・油槽所</td><td>窒息＋冷却</td></tr>
+        <tr><td><span class="eb">高発泡</span></td><td><span class="eg">80〜1000</span></td><td>地下街・船舶・倉庫</td><td>窒息＋冷却（大容量充填）</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:.8rem;">
+      <div class="point-row"><span class="point-icon">🛢️</span><span>泡原液の種類：たんぱく泡・水成膜泡（AFFF）・合成界面活性剤泡等。水成膜泡は油面に薄い膜を形成して<span class="eg">再着火防止効果</span>が高い。</span></div>
+      <div class="point-row"><span class="point-icon">💧</span><span>泡消火の消火効果：<span class="eg">窒息効果＋冷却効果</span>（第1回で確認）。油火災に特に有効。</span></div>
+    </div>
+    <div class="trap">「泡消火設備の低発泡の膨張比は80以上である」→ 誤り。低発泡の膨張比は<span class="eg">20以下</span>。80以上は高発泡。</div>
+  </div>
+</div>
+
+<!-- CH05 粉末消火設備 -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div><div class="ch-label">SECTION 05</div><div class="ch-title">粉末消火設備の消火原理<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🌨️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">POWDER SYSTEM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>粉末消火設備の主な消火効果は何だ！「窒息」だけじゃないぞ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>負触媒効果（抑制効果）……燃焼の連鎖反応を断ち切る……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！粉末の主効果は<span class="eg">負触媒効果（抑制効果）</span>だ！「拡散効果」という表現は誤りだから注意しろ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🌨️ 粉末消火設備の種類と消火効果</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>粉末の種類</th><th>主成分</th><th>適応火災</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">第1種粉末</span></td><td>炭酸水素ナトリウム（NaHCO₃）</td><td>B・C火災（油・電気）</td></tr>
+        <tr><td><span class="eb">第2種粉末</span></td><td>炭酸水素カリウム（KHCO₃）</td><td>B・C火災</td></tr>
+        <tr><td><span class="eg">第3種粉末</span></td><td>リン酸アンモニウム等</td><td><span class="eg">A・B・C火災（万能型）</span></td></tr>
+        <tr><td><span class="eb">第4種粉末</span></td><td>炭酸水素カリウム＋尿素</td><td>B・C火災</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:.8rem;">
+      <div class="point-row"><span class="point-icon">⚗️</span><span>粉末消火の主効果：<span class="eg">負触媒効果（抑制効果）</span>＋窒息効果。粉末が燃焼の連鎖反応を化学的に断ち切る。</span></div>
+      <div class="point-row"><span class="point-icon">⚡</span><span>粉末消火の放射時間：全域放出方式で<span class="eg">30秒以内</span>（CO₂の1分以内より短い）</span></div>
+    </div>
+    <div class="trap">「粉末消火設備は拡散効果により消火する」→ 誤り。主な消火効果は<span class="eg">負触媒効果（燃焼の連鎖反応の抑制）</span>と窒息効果。「拡散効果」は誤った表現。</div>
+  </div>
+</div>
+
+<!-- CH06 ハロゲン化物消火設備 -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div><div class="ch-label">SECTION 06</div><div class="ch-title">ハロゲン化物消火設備の特徴<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🔬</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">HALON SYSTEM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ハロン1301が製造禁止になった理由と、現在でも使用可能な場合を答えろ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>オゾン層破壊物質だから製造禁止……でも既設の設備は使用継続できる……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！ハロン1301は<span class="er">モントリオール議定書</span>で製造禁止だが既設設備の<span class="eg">維持・使用は継続可能</span>だぞ！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔬 ハロゲン化物消火設備の特徴</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🧪</span><span><span class="eb">ハロン1301（ブロモトリフルオロメタン）</span>：消火効果が高く、電気設備・コンピュータ室に最適だったが<span class="er">オゾン層破壊物質</span>のため製造・輸入は禁止。</span></div>
+      <div class="point-row"><span class="point-icon">♻️</span><span>既設のハロン設備：維持・使用は継続可能。ただし廃棄時は回収・破壊が義務。</span></div>
+      <div class="point-row"><span class="point-icon">🆕</span><span>ハロン代替物質：<span class="eg">HFC-23（トリフルオロメタン）・FK-5-1-12</span>等が開発・使用されている。</span></div>
+      <div class="point-row"><span class="point-icon">⚗️</span><span>消火効果：<span class="eg">負触媒効果（抑制効果）</span>が主。少量で高い消火効果があり電気系統への悪影響が少ない。</span></div>
+    </div>
+    <div class="trap">「ハロン1301はオゾン層を破壊しないため現在も製造されている」→ 誤り。ハロン1301は<span class="er">オゾン層破壊物質</span>であり、モントリオール議定書に基づき<span class="er">製造・輸入が禁止</span>されている。</div>
+  </div>
+</div>
+
+<!-- CH07 防護区画の共通要件 -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div><div class="ch-label">SECTION 07</div><div class="ch-title">防護区画の共通要件<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🏠</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PROTECTED AREA</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>全域放出方式の防護区画に常時人がいる場合に必要な措置を答えろ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>局所放出方式に変更……または手動起動にして人が逃げてから放射……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！常時人がいる区画は<span class="er">全域放出方式・局所放出方式ともに使用不可</span>が原則だぞ！例外は別として覚えとけ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🏠 防護区画に関する共通要件</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🚪</span><span>防護区画の開口部：消火剤放射前に<span class="eg">自動閉鎖装置</span>で閉鎖する。消火剤が漏れると消火効果が低下するため。</span></div>
+      <div class="point-row"><span class="point-icon">👥</span><span>常時人がいる区画：全域放出方式は<span class="er">原則使用不可</span>（CO₂・ハロン等の毒性・酸欠の危険）</span></div>
+      <div class="point-row"><span class="point-icon">🔔</span><span>音響警報装置：消火剤放射前に<span class="eg">警報を発する</span>こと（人員退避のため）</span></div>
+      <div class="point-row"><span class="point-icon">⏱️</span><span>放出遅延：手動起動後<span class="eg">20秒以上の遅延</span>で人員退避の時間を確保</span></div>
+      <div class="point-row"><span class="point-icon">🏗️</span><span>貯蔵容器：<span class="eg">防護区画以外</span>の場所に設置（CO₂・ハロン・粉末等すべて共通）</span></div>
+    </div>
+    <div class="trap">「全域放出方式の防護区画では、人がいる場合でも自動で消火剤を放射できる」→ 誤り。常時人がいる区画への全域放出方式は<span class="er">原則禁止</span>。</div>
+  </div>
+</div>
+
+<!-- CH08 適用場所まとめ -->
+<div class="chapter-header" id="ch08">
+  <div class="ch-num">08</div>
+  <div><div class="ch-label">SECTION 08</div><div class="ch-title">各消火設備の適用場所・消火効果まとめ<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">📊</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📊 特殊消火設備 比較まとめ</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>設備</th><th>主な消火効果</th><th>主な適用場所</th><th>放射時間（全域）</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">水噴霧</span></td><td>冷却・窒息・乳化・希釈</td><td>駐車場・変電室・通信機械室</td><td>—</td></tr>
+        <tr><td><span class="eb">泡</span></td><td>窒息・冷却</td><td>駐車場・航空機格納庫・油槽所</td><td>—</td></tr>
+        <tr><td><span class="eb">CO₂</span></td><td>窒息（主）・冷却</td><td>電気室・通信機械室・美術館</td><td><span class="eg">1分以内（表面火災）</span></td></tr>
+        <tr><td><span class="eb">イナートガス</span></td><td>窒息</td><td>電気室・通信機械室</td><td><span class="eg">60秒以内</span></td></tr>
+        <tr><td><span class="eg">粉末</span></td><td><span class="eg">負触媒（主）</span>・窒息</td><td>駐車場・指定可燃物・厨房</td><td><span class="eg">30秒以内</span></td></tr>
+        <tr><td><span class="eb">ハロゲン化物</span></td><td>負触媒（主）</td><td>電算機室（既設のみ）</td><td>10秒以内</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「CO₂消火設備の放射時間は30秒以内」→ 誤り。表面火災は<span class="eg">1分以内</span>、深部火災は7分以内。30秒以内は粉末消火設備の基準値。</div>
+  </div>
+</div>
+
+<span class="sfx">🔥 第2回 全8テーマ制覇！！</span>
+
+<div class="series-cta">
+  <div class="series-cta-text">
+    <strong>次は第3回：警報設備・排煙・法規数値まとめ</strong>
+    自動火災報知設備の感知器・避難設備・重要数値を総まとめ
+  </div>
+  <div class="series-cta-btns">
+    <a href="hoshu3.html" class="btn-next">第3回へ →</a>
+    <a href="hoshu1.html" class="btn-prev">← 第1回に戻る</a>
+    <a href="manga.html" class="btn-back">基礎マンガ</a>
+  </div>
+</div>
+
+<div class="cta-block">
+  <div class="cta-title">理解したら演習問題で確認しよう</div>
+  <p class="cta-sub">消防設備の演習問題で知識を定着させろ。</p>
+  <a href="/bunya/shobo/" class="cta-btn-primary">📝 消防設備 演習問題を解く</a>
+  <a href="/bunya/sogo/" class="cta-btn-secondary">🎯 総合確認問題</a>
+</div>
+
+</div>
+<script>
+const obs=new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:.1});
+document.querySelectorAll('.panel,.knowledge,.chapter-header,.cta-block').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
