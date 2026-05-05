@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【補習】一般基礎 第1回：流体力学・レイノルズ数・ベルヌーイ・ウォーターハンマー | 管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士・一般基礎の補習マンガ第1回。レイノルズ数・ベルヌーイの定理・ダルシーワイスバッハの式・ウォーターハンマーを深掘り解説。計算問題の考え方も。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/kiso/hoshu1.html">
+<meta property="og:title" content="【補習】一般基礎 第1回：流体力学・レイノルズ数・ベルヌーイ・ウォーターハンマー | 管工事PASS">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kankoiji-pass.com/bunya/kiso/hoshu1.html">
+<meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-E37L2YPT6X');</script>
+<style>
+:root{--bg:#0f1117;--surface:#1a1d27;--surface2:#222636;--border:#2e3348;--kiso:#94a3b8;--correct:#22c55e;--warn:#f59e0b;--text:#e8eaf0;--muted:#7a8099;--danger:#ef4444;--ink:#08090d;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-serif;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+.site-header{position:fixed;top:0;left:0;right:0;height:56px;background:rgba(15,17,23,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;}
+.logo-main{font-weight:900;font-size:1.1rem;background:linear-gradient(135deg,var(--kiso),#cbd5e1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.header-nav{display:flex;gap:1rem;align-items:center;font-size:.8rem;color:var(--muted);}
+.header-nav a:hover{color:var(--text);}
+.btn-sm-header{background:var(--kiso);color:#0f1117;padding:.35rem .9rem;border-radius:6px;font-size:.75rem;font-weight:700;}
+.series-nav{background:var(--surface);border-bottom:1px solid var(--border);padding:.8rem 1.5rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:56px;}
+.series-label{font-size:.72rem;color:var(--muted);font-weight:700;white-space:nowrap;}
+.series-btn{padding:.35rem .9rem;border-radius:99px;font-size:.75rem;font-weight:700;border:1px solid var(--border);color:var(--muted);background:none;cursor:pointer;white-space:nowrap;}
+.series-btn.active{background:var(--kiso);color:#0f1117;border-color:var(--kiso);}
+.series-btn.done{background:rgba(148,163,184,.12);color:var(--kiso);border-color:rgba(148,163,184,.3);}
+.series-btn:hover:not(.active){border-color:var(--kiso);color:var(--kiso);}
+.hero{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;position:relative;overflow:hidden;background:#080a0f;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(148,163,184,.08) 0%,transparent 65%);}
+.hero-series{display:inline-block;background:rgba(148,163,184,.15);border:1px solid rgba(148,163,184,.3);color:var(--kiso);font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.2em;padding:.25rem 1rem;border-radius:99px;margin-bottom:1rem;position:relative;}
+.hero-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,3rem);line-height:1.05;color:#fff;text-shadow:3px 3px 0 rgba(148,163,184,.2);margin-bottom:.8rem;position:relative;}
+.hero-sub{font-family:'Oswald',sans-serif;font-size:clamp(.85rem,2.5vw,1rem);letter-spacing:.12em;color:var(--muted);margin-bottom:1.5rem;position:relative;}
+.hero-topics{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;position:relative;}
+.hero-topic{background:var(--surface);border:1px solid rgba(148,163,184,.25);color:var(--kiso);font-size:.75rem;padding:.25rem .8rem;border-radius:99px;}
+.toc-section{max-width:860px;margin:0 auto;padding:1.5rem 1rem 1rem;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.5rem;}
+.toc-item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.5rem .8rem;font-size:.78rem;display:flex;align-items:center;gap:.5rem;cursor:pointer;transition:border-color .2s;}
+.toc-item:hover{border-color:var(--kiso);color:var(--kiso);}
+.toc-num{font-family:'Oswald',sans-serif;font-size:.7rem;color:var(--kiso);min-width:22px;}
+.manga-wrap{max-width:860px;margin:0 auto;padding:1rem 1rem 5rem;}
+.chapter-header{display:flex;align-items:center;gap:.8rem;margin:3rem 0 1.2rem;padding-bottom:.8rem;border-bottom:3px solid var(--kiso);opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s;}
+.chapter-header.visible{opacity:1;transform:translateY(0);}
+.ch-num{font-family:'Oswald',sans-serif;font-size:2.5rem;font-weight:700;color:var(--kiso);line-height:1;min-width:3rem;}
+.ch-label{font-size:.65rem;letter-spacing:.15em;color:var(--muted);font-family:'Oswald',sans-serif;}
+.ch-title{font-size:clamp(1.1rem,3vw,1.5rem);font-weight:900;line-height:1.2;}
+.ch-icon{font-size:2rem;margin-left:auto;}
+.ch-level{font-size:.68rem;padding:.2rem .6rem;border-radius:3px;margin-left:.5rem;font-weight:700;background:rgba(239,68,68,.15);color:var(--danger);border:1px solid rgba(239,68,68,.3);}
+.panel{background:var(--surface);border:2.5px solid #fff;border-radius:3px;margin-bottom:1.6rem;box-shadow:5px 5px 0 var(--ink);overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .45s,transform .45s;}
+.panel.visible{opacity:1;transform:translateY(0);}
+.scene-label{background:var(--ink);border-bottom:2px solid var(--border);padding:.25rem .8rem;font-family:'Oswald',sans-serif;font-size:.65rem;letter-spacing:.15em;color:var(--muted);}
+.scene{display:flex;min-height:140px;}
+.char-col{width:110px;min-width:110px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:.8rem .3rem .4rem;background:var(--surface2);border-right:2px solid #fff;position:relative;overflow:hidden;}
+.char-col::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,.025) 16px,rgba(255,255,255,.025) 17px);}
+.char-col.angry .char-img{animation:rage .25s infinite alternate;}
+@keyframes rage{from{transform:rotate(-2deg) scale(1);}to{transform:rotate(2deg) scale(1.06);}}
+.char-col.angry::after{content:'💢';position:absolute;top:6px;right:6px;font-size:1.2rem;}
+.char-img{width:80px;height:auto;object-fit:contain;position:relative;z-index:1;display:block;margin:0 auto;}
+.char-name{font-size:.58rem;font-weight:900;color:var(--muted);text-align:center;position:relative;z-index:1;}
+.speech-col{flex:1;padding:.9rem 1.1rem;display:flex;flex-direction:column;gap:.7rem;justify-content:center;}
+.bubble{border:2px solid #fff;border-radius:4px;padding:.6rem .9rem;line-height:1.65;font-size:clamp(.8rem,2vw,.88rem);background:var(--surface2);position:relative;}
+.bubble .spk{display:block;font-size:.6rem;font-weight:900;letter-spacing:.1em;opacity:.65;margin-bottom:.25rem;}
+.bubble.shout{background:var(--danger);color:#fff;font-weight:900;font-size:clamp(.88rem,2.3vw,1rem);transform:rotate(-.4deg);box-shadow:3px 3px 0 rgba(0,0,0,.35);border-color:#fff;}
+.bubble.shout::before{content:'';position:absolute;left:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:var(--danger);}
+.bubble.shout .eb{color:#e2e8f0!important;font-weight:900;}
+.bubble.shout .eg{color:#a8ffb0!important;font-weight:900;}
+.bubble.shout .ew{color:#fde68a!important;font-weight:900;}
+.bubble.reply{background:#0c0e14;border-color:var(--kiso);color:#e2e8f0;}
+.bubble.reply::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:var(--kiso);}
+.bubble.trainee{background:#0a1220;border-color:#38bdf8;border-style:dashed;color:#bae6fd;}
+.bubble.trainee::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:#38bdf8;}
+.knowledge{background:var(--surface);border:2.5px solid var(--kiso);border-radius:4px;margin-bottom:1.6rem;box-shadow:5px 5px 0 rgba(148,163,184,.18);opacity:0;transform:translateY(24px);transition:opacity .45s,transform .45s;}
+.knowledge.visible{opacity:1;transform:translateY(0);}
+.knowledge-header{background:rgba(148,163,184,.08);border-bottom:2px solid var(--kiso);padding:.5rem 1rem;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:.15em;color:var(--kiso);}
+.knowledge-body{padding:1rem 1.2rem;}
+.k-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:.5rem;}
+.k-table th{background:var(--surface2);padding:.5rem .7rem;border:1.5px solid var(--border);color:var(--muted);font-weight:700;text-align:left;}
+.k-table td{padding:.5rem .7rem;border:1.5px solid var(--border);line-height:1.55;}
+.k-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.point-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem;}
+.point-row{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;line-height:1.6;}
+.point-icon{font-size:1rem;flex-shrink:0;margin-top:.1rem;}
+.formula-box{background:#0a0c12;border:1.5px solid var(--border);border-radius:6px;padding:.8rem 1.1rem;margin:.6rem 0;font-family:'Oswald',sans-serif;font-size:.85rem;color:#e2e8f0;letter-spacing:.05em;}
+.formula-box .fl{color:var(--kiso);font-weight:700;font-size:.72rem;margin-bottom:.3rem;display:block;letter-spacing:.12em;}
+.deep-box{background:rgba(239,68,68,.05);border:2px solid rgba(239,68,68,.3);border-radius:6px;padding:.9rem 1.1rem;margin-top:.8rem;}
+.deep-box-title{font-size:.72rem;color:var(--danger);font-weight:700;letter-spacing:.1em;margin-bottom:.5rem;font-family:'Oswald',sans-serif;}
+.deep-box p{font-size:.82rem;color:#fca5a5;line-height:1.7;}
+.trap{background:#180d0d;border:2px solid var(--danger);border-radius:4px;padding:.7rem 1rem;font-size:.8rem;color:#fca5a5;margin-top:.6rem;line-height:1.65;}
+.trap::before{content:'⚠ 試験の引っかけ  ';font-weight:900;color:var(--danger);}
+.er{color:var(--danger);font-weight:900;}
+.eb{color:var(--kiso);font-weight:900;}
+.eg{color:var(--correct);font-weight:900;}
+.ew{color:var(--warn);font-weight:900;}
+.sfx{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,2.8rem);color:var(--kiso);text-shadow:2px 2px 0 rgba(0,0,0,.5);text-align:center;padding:.3rem;transform:rotate(-1.5deg);display:block;line-height:1;margin:.5rem 0 1.5rem;}
+.series-cta{background:var(--surface);border:2px solid var(--border);border-radius:10px;padding:1.5rem;margin:2rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.series-cta-text strong{color:var(--text);display:block;font-size:1rem;margin-bottom:.3rem;}
+.series-cta-text{font-size:.88rem;color:var(--muted);}
+.series-cta-btns{display:flex;gap:.6rem;flex-wrap:wrap;}
+.btn-next{background:var(--kiso);color:#0f1117;padding:.6rem 1.4rem;border-radius:7px;font-size:.85rem;font-weight:700;}
+.btn-next:hover{opacity:.85;}
+.btn-back{background:rgba(148,163,184,.1);color:var(--kiso);border:1px solid rgba(148,163,184,.3);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;font-weight:700;}
+.cta-block{background:linear-gradient(135deg,#080a0f,#0e1015);border:3px solid var(--kiso);border-radius:6px;padding:2rem;text-align:center;margin-top:3rem;opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s;}
+.cta-block.visible{opacity:1;transform:translateY(0);}
+.cta-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.4rem,4vw,2rem);color:#fff;text-shadow:2px 2px 0 var(--kiso);margin-bottom:.6rem;}
+.cta-sub{font-size:.88rem;color:var(--muted);margin-bottom:1.4rem;}
+.cta-btn-primary{display:inline-block;background:var(--kiso);color:#0f1117;font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:.12em;padding:.75rem 2.2rem;border-radius:7px;margin:.3rem;font-weight:700;}
+.cta-btn-secondary{display:inline-block;background:rgba(148,163,184,.12);color:var(--kiso);border:1px solid rgba(148,163,184,.35);font-size:.85rem;padding:.65rem 1.6rem;border-radius:7px;margin:.3rem;}
+@media(max-width:600px){.char-col{width:72px;min-width:72px;}.char-img{width:58px;}.scene{min-height:120px;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/kiso/">演習問題</a>
+    <a href="/bunya/kiso/manga.html">基礎マンガ</a>
+    <a href="/bunya/kiso/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<div class="series-nav">
+  <span class="series-label">⚗️ 一般基礎 補習シリーズ：</span>
+  <button class="series-btn active">第1回 流体力学・レイノルズ数・ベルヌーイ</button>
+  <button class="series-btn" onclick="location.href='hoshu2.html'">第2回 熱力学・伝熱・冷凍サイクル</button>
+  <button class="series-btn" onclick="location.href='hoshu3.html'">第3回 電気・建築構造・腐食・保温材</button>
+</div>
+
+<section class="hero">
+  <div class="hero-series">⚗️ 一般基礎 補習マンガ — 第1回 / 全3回</div>
+  <h1 class="hero-title">流体力学・<br>レイノルズ数・<br>ベルヌーイの定理</h1>
+  <p class="hero-sub">計算問題の「考え方」を身に付けて得点源に変える</p>
+  <div class="hero-topics">
+    <span class="hero-topic">レイノルズ数と層流・乱流</span>
+    <span class="hero-topic">動粘性係数の定義</span>
+    <span class="hero-topic">ベルヌーイの定理</span>
+    <span class="hero-topic">ダルシー・ワイスバッハの式</span>
+    <span class="hero-topic">連続の式（質量保存）</span>
+    <span class="hero-topic">ウォーターハンマー</span>
+  </div>
+</section>
+
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>流体の種類と粘性係数</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>レイノルズ数と層流・乱流</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>ベルヌーイの定理</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>連続の式と流量計算</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>ダルシー・ワイスバッハの式</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>ウォーターハンマー（水撃作用）</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>流量測定（オリフィス・ベンチュリ）</div>
+    <div class="toc-item" onclick="document.getElementById('ch08').scrollIntoView({behavior:'smooth'})"><span class="toc-num">08</span>計算問題の解き方まとめ</div>
+  </div>
+</div>
+
+<div class="manga-wrap">
+
+<!-- CH01 流体の種類と粘性 -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div><div class="ch-label">SECTION 01</div><div class="ch-title">流体の種類と粘性係数・動粘性係数<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">💧</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">FLUID BASICS</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>動粘性係数は粘性係数を何で割った値か！！答えろ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>粘性係数を……流体の密度で割った値……ですか？</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！「速度で割る」は<span class="er">誤り</span>だぞ！<span class="eg">ν＝μ/ρ</span>（動粘性係数＝粘性係数÷密度）だ！レイノルズ数の計算に使う！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">💧 流体の基本量と温度の関係</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>物理量</th><th>記号</th><th>定義・特徴</th><th>温度との関係</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">粘性係数（粘度）</span></td><td>μ</td><td>流体の内部摩擦を示す量</td><td>水：温度↑→μ<span class="eg">↓</span>（温度が上がると粘度が下がる）<br>空気：温度↑→μ<span class="er">↑</span>（温度が上がると粘度が上がる）</td></tr>
+        <tr><td><span class="eb">動粘性係数</span></td><td>ν＝μ/ρ</td><td>粘性係数を密度で除した値</td><td>水：温度↑→ν↓（μが密度より大きく低下）</td></tr>
+        <tr><td><span class="eb">密度</span></td><td>ρ</td><td>単位体積当たりの質量</td><td>水：温度↑→ρ↓（膨張するため）</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「動粘性係数は粘性係数を流体の速度で除した値である」→ 誤り。動粘性係数は粘性係数を<span class="eg">流体の密度（ρ）</span>で除した値（ν＝μ/ρ）。速度は関係ない。</div>
+  </div>
+</div>
+
+<!-- CH02 レイノルズ数 -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div><div class="ch-label">SECTION 02</div><div class="ch-title">レイノルズ数と層流・乱流の判定<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🌊</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">REYNOLDS NUMBER</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>レイノルズ数が2,000の場合、流れは層流か乱流か！Re＝15,000の場合に流速を1/9にすると層流になるか確認しろ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>Re＝2,000は層流……Re＝15,000で流速を1/9にするとRe≒1,667で2,000未満……層流になる！</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！レイノルズ数は<span class="eg">流速・管径に比例</span>、<span class="eg">動粘性係数に反比例</span>する！計算問題で比率を使うパターンを覚えとけ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🌊 レイノルズ数と計算の考え方</div>
+  <div class="knowledge-body">
+    <div class="formula-box">
+      <span class="fl">📐 レイノルズ数の式</span>
+      Re＝vd/ν　（v：流速 [m/s]、d：管内径 [m]、ν：動粘性係数 [m²/s]）
+    </div>
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">📊</span><span>流れの判定：Re＜<span class="eg">2,000</span>→層流、Re＞<span class="er">4,000</span>→乱流、2,000〜4,000→遷移域</span></div>
+      <div class="point-row"><span class="point-icon">📈</span><span>Reを大きくする→乱流に近づく：流速↑・管径↑・動粘性係数↓</span></div>
+      <div class="point-row"><span class="point-icon">📉</span><span>Reを小さくする→層流に近づく：流速↓・管径↓・動粘性係数↑</span></div>
+    </div>
+    <div class="deep-box">
+      <div class="deep-box-title">🔴 計算問題の解き方：Re比の利用</div>
+      <p>Re＝15,000で乱流の場合に層流（Re＜2,000）にするには？<br>
+      管径を1/Xにする→Re＝15,000/X＜2,000→X＞7.5 つまり<strong>管径を1/8以下</strong>にすれば可。<br>
+      流速を1/Xにする→Re＝15,000/X＜2,000→X＞7.5 つまり<strong>流速を1/8以下</strong>にすれば可。</p>
+    </div>
+    <div class="trap">「レイノルズ数が2,000のとき乱流が生じる」→ 誤り。Re＜2,000は<span class="eg">層流</span>。乱流が生じるのはRe＞4,000程度。</div>
+  </div>
+</div>
+
+<!-- CH03 ベルヌーイの定理 -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div><div class="ch-label">SECTION 03</div><div class="ch-title">ベルヌーイの定理と計算<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">⚡</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">BERNOULLI'S THEOREM</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ベルヌーイの定理で保存される3つのエネルギーを全部言え！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>運動エネルギー（動圧）・位置エネルギー（水頭）・圧力エネルギー（静圧）……の和が流線に沿って一定……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>完璧だ！さらに摩擦損失がある場合は<span class="eg">損失水頭を加算</span>する！計算問題では損失を忘れるな！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⚡ ベルヌーイの定理の式と計算</div>
+  <div class="knowledge-body">
+    <div class="formula-box">
+      <span class="fl">📐 ベルヌーイの定理（損失なし）</span>
+      P₁/ρg ＋ v₁²/2g ＋ z₁ ＝ P₂/ρg ＋ v₂²/2g ＋ z₂
+      <br>（静圧水頭＋速度水頭＋位置水頭＝一定）
+    </div>
+    <div class="formula-box">
+      <span class="fl">📐 圧力（Pa）で表すベルヌーイ（損失あり）</span>
+      P₁ ＋ ρv₁²/2 ＝ P₂ ＋ ρv₂²/2 ＋ ΔP（圧力損失）
+    </div>
+    <div class="point-list" style="margin-top:.6rem;">
+      <div class="point-row"><span class="point-icon">💡</span><span>「流速が速い部分は圧力が低い」→ ベルヌーイの定理の直感的な理解（速度水頭↑→静圧水頭↓）</span></div>
+      <div class="point-row"><span class="point-icon">🔧</span><span>オリフィス・ベンチュリメータ・ピトー管による流量・流速測定はすべてベルヌーイの定理を利用。</span></div>
+    </div>
+    <div class="trap">「ベルヌーイの定理は、流体の運動エネルギーと位置エネルギーの和が一定であることを示す」→ 誤り。<span class="eg">静圧（圧力エネルギー）も含めた3つの和</span>が一定。</div>
+  </div>
+</div>
+
+<!-- CH04 連続の式 -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div><div class="ch-label">SECTION 04</div><div class="ch-title">連続の式（質量保存則）と流量計算<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🔄</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔄 連続の式と絞り管の計算</div>
+  <div class="knowledge-body">
+    <div class="formula-box">
+      <span class="fl">📐 連続の式（非圧縮性流体）</span>
+      A₁v₁ ＝ A₂v₂ ＝ Q（流量一定）
+      <br>（A：断面積 [m²]、v：流速 [m/s]、Q：流量 [m³/s]）
+    </div>
+    <div class="point-list" style="margin-top:.6rem;">
+      <div class="point-row"><span class="point-icon">💡</span><span>配管が細くなる（断面積↓）→流速↑（流量は変化しない）</span></div>
+      <div class="point-row"><span class="point-icon">📐</span><span>計算例：断面積0.04m²の管を流量0.6m³/min→流速＝0.6/(60×0.04)＝0.25m/s。断面積0.01m²に絞ると流速＝0.25×(0.04/0.01)＝1m/s（流量は同じ0.6m³/min）</span></div>
+    </div>
+    <div class="trap">「管内径が小さくなると流量が減少する」→ 誤り。連続の式により<span class="eg">流量は変化せず流速が増加</span>する（圧力損失は増える）。</div>
+  </div>
+</div>
+
+<!-- CH05 ダルシー・ワイスバッハの式 -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div><div class="ch-label">SECTION 05</div><div class="ch-title">ダルシー・ワイスバッハの式と圧力損失<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">📉</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">PRESSURE LOSS</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ダルシー・ワイスバッハの式で流速がN倍になったとき圧力損失は何倍になるか！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>式にv²が含まれているから……N²倍になる……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！圧力損失は<span class="eg">流速の2乗に比例</span>するぞ！流速が3倍になったら損失は<span class="eg">9倍</span>だ！この関係を問う計算問題が頻出だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📉 ダルシー・ワイスバッハの式</div>
+  <div class="knowledge-body">
+    <div class="formula-box">
+      <span class="fl">📐 ダルシー・ワイスバッハの式</span>
+      ΔP ＝ λ × (L/D) × (ρv²/2)
+      <br>（λ：管摩擦係数、L：管長 [m]、D：管内径 [m]、ρ：密度、v：流速）
+    </div>
+    <div class="point-list" style="margin-top:.6rem;">
+      <div class="point-row"><span class="point-icon">📌</span><span>圧力損失は流速の<span class="eg">2乗に比例</span>・管長に<span class="eg">比例</span>・管径に<span class="eg">反比例</span></span></div>
+      <div class="point-row"><span class="point-icon">💡</span><span>「粘性のために流体摩擦が働いて圧力損失が生じる」→ 正しい。摩擦の原因は粘性。</span></div>
+      <div class="point-row"><span class="point-icon">⚠️</span><span>管長に<span class="eg">比例</span>（1乗）。「管長の2乗に比例」は誤り。</span></div>
+    </div>
+    <div class="trap">「固体壁両側の流体間の熱移動量は、固体壁の厚さの2乗に反比例する」→ 誤り（これは熱通過の話）。ダルシー式では<span class="eg">圧力損失は管長の1乗に比例</span>（2乗ではない）。</div>
+  </div>
+</div>
+
+<!-- CH06 ウォーターハンマー -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div><div class="ch-label">SECTION 06</div><div class="ch-title">ウォーターハンマー（水撃作用）の原理<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">💥</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">WATER HAMMER</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>鋼管と硬質塩化ビニル管でウォーターハンマーが発生しやすいのはどちらか！理由も答えろ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>鋼管の方が発生しやすい……弾性が小さくて衝撃を吸収できないから……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！硬質塩ビ管は<span class="eg">弾性が大きく</span>圧力波を吸収できるので発生しにくいぞ！ジュコフスキーの式で計算できることも覚えとけ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">💥 ウォーターハンマーの原理と対策</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">💧</span><span>発生原因：弁を急閉止することで流体の運動エネルギーが急激に圧力に変換され、<span class="eg">衝撃的な圧力上昇波</span>が生じる現象。</span></div>
+      <div class="point-row"><span class="point-icon">📐</span><span><span class="eb">ジュコフスキーの式</span>：ΔP＝ρ×c×v（c：音速、v：流速、ρ：密度）。<span class="eg">密度が大きいほど圧力上昇が大きい</span>。</span></div>
+      <div class="point-row"><span class="point-icon">🔧</span><span>鋼管＞硬質塩ビ管：鋼管の方が弾性率が高く圧力波を吸収しにくいため<span class="er">ウォーターハンマーが発生しやすい</span>。</span></div>
+    </div>
+    <div class="point-list" style="margin-top:.5rem;">
+      <div class="point-row"><span class="point-icon">🛠️</span><span>防止対策：①弁をゆっくり閉じる②ウォーターハンマーアブソーバー設置③エアチャンバー設置④流速を下げる</span></div>
+    </div>
+    <div class="trap">「硬質塩化ビニル管は鋼管より水撃（ウォーターハンマー）が発生しやすい」→ 誤り。硬質塩ビ管は弾性が大きく衝撃を吸収できるため<span class="eg">ウォーターハンマーが発生しにくい</span>。</div>
+  </div>
+</div>
+
+<!-- CH07 流量測定 -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div><div class="ch-label">SECTION 07</div><div class="ch-title">流量測定器具とジュコフスキーの式の用途<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">📏</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📏 主な流量・流速測定と関連法則</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>測定器具・法則</th><th>利用する原理</th><th>引っかけポイント</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">オリフィス</span></td><td>ベルヌーイの定理（絞り前後の圧力差→流量）</td><td>「ジュコフスキーの式を利用」は誤り</td></tr>
+        <tr><td><span class="eb">ベンチュリメータ</span></td><td>ベルヌーイの定理（オリフィスより圧力損失小）</td><td>精度高・損失小</td></tr>
+        <tr><td><span class="eb">ピトー管</span></td><td>ベルヌーイの定理（全圧と静圧の差→流速）</td><td>流量ではなく流速を測定</td></tr>
+        <tr><td><span class="eg">ジュコフスキーの式</span></td><td><span class="eg">ウォーターハンマー（水撃）の圧力上昇計算</span></td><td>「流量測定」「毛管現象」とは無関係</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「オリフィスはジュコフスキーの式により流量測定を行う」→ 誤り。オリフィスは<span class="eg">ベルヌーイの定理</span>を利用。ジュコフスキーの式はウォーターハンマーの圧力上昇計算に使う。</div>
+  </div>
+</div>
+
+<!-- CH08 計算問題のまとめ -->
+<div class="chapter-header" id="ch08">
+  <div class="ch-num">08</div>
+  <div><div class="ch-label">SECTION 08</div><div class="ch-title">流体力学 計算問題の解き方まとめ<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">📐</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📐 流体力学 重要公式と計算手順まとめ</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>公式・法則</th><th>式</th><th>問われる変化の方向</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">レイノルズ数</span></td><td>Re＝vd/ν</td><td>v↑→Re↑（乱流）、d↑→Re↑、ν↑→Re↓（層流）</td></tr>
+        <tr><td><span class="eb">連続の式</span></td><td>A₁v₁＝A₂v₂</td><td>A↓→v↑（流量一定）</td></tr>
+        <tr><td><span class="eg">ダルシー・ワイスバッハ</span></td><td>ΔP＝λ(L/D)ρv²/2</td><td>v<span class="eg">²</span>に比例・L↑→ΔP↑・D↑→ΔP↓</td></tr>
+        <tr><td><span class="eb">ジュコフスキー</span></td><td>ΔP＝ρcv</td><td>ρ↑→ΔP↑、v↑→ΔP↑</td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:.8rem;">
+      <div class="point-row"><span class="point-icon">🎯</span><span><span class="eb">計算問題の解き方のコツ</span>：選択肢の数値は「比率の変化」で選ぶ。絶対値ではなく変化量のパターンを見る。</span></div>
+      <div class="point-row"><span class="point-icon">⚠️</span><span>「〜の何倍か」という問題はそれぞれの式で変化する変数の指数に注意：ダルシー式の流速はv²（2乗）。</span></div>
+    </div>
+  </div>
+</div>
+
+<span class="sfx">⚗️ 第1回 全8テーマ制覇！！</span>
+
+<div class="series-cta">
+  <div class="series-cta-text">
+    <strong>次は第2回：熱力学・伝熱・冷凍サイクル</strong>
+    エンタルピー・エントロピー・熱伝導の式・冷凍サイクルのCOPを深掘り解説
+  </div>
+  <div class="series-cta-btns">
+    <a href="hoshu2.html" class="btn-next">第2回へ →</a>
+    <a href="manga.html" class="btn-back">← 基礎マンガに戻る</a>
+  </div>
+</div>
+
+<div class="cta-block">
+  <div class="cta-title">理解したら演習問題で確認しよう</div>
+  <p class="cta-sub">一般基礎の演習問題で知識を定着させろ。</p>
+  <a href="/bunya/kiso/" class="cta-btn-primary">📝 一般基礎 演習問題を解く</a>
+  <a href="/bunya/sogo/" class="cta-btn-secondary">🎯 総合確認問題</a>
+</div>
+
+</div>
+<script>
+const obs=new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:.1});
+document.querySelectorAll('.panel,.knowledge,.chapter-header,.cta-block').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

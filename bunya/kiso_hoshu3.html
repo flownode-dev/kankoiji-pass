@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【補習】一般基礎 第3回：電気・建築構造・腐食・保温材 | 管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士・一般基礎の補習マンガ第3回（最終回）。D種接地・RC造梁貫通孔・ガルバニック腐食・グラスウール・配管材料記号を深掘り解説。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/kiso/hoshu3.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-E37L2YPT6X');</script>
+<style>
+:root{--bg:#0f1117;--surface:#1a1d27;--surface2:#222636;--border:#2e3348;--kiso:#94a3b8;--correct:#22c55e;--warn:#f59e0b;--text:#e8eaf0;--muted:#7a8099;--danger:#ef4444;--ink:#08090d;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-serif;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+.site-header{position:fixed;top:0;left:0;right:0;height:56px;background:rgba(15,17,23,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;}
+.logo-main{font-weight:900;font-size:1.1rem;background:linear-gradient(135deg,var(--kiso),#cbd5e1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.header-nav{display:flex;gap:1rem;align-items:center;font-size:.8rem;color:var(--muted);}
+.btn-sm-header{background:var(--kiso);color:#0f1117;padding:.35rem .9rem;border-radius:6px;font-size:.75rem;font-weight:700;}
+.series-nav{background:var(--surface);border-bottom:1px solid var(--border);padding:.8rem 1.5rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:56px;}
+.series-label{font-size:.72rem;color:var(--muted);font-weight:700;white-space:nowrap;}
+.series-btn{padding:.35rem .9rem;border-radius:99px;font-size:.75rem;font-weight:700;border:1px solid var(--border);color:var(--muted);background:none;cursor:pointer;white-space:nowrap;}
+.series-btn.active{background:var(--kiso);color:#0f1117;border-color:var(--kiso);}
+.series-btn.done{background:rgba(148,163,184,.12);color:var(--kiso);border-color:rgba(148,163,184,.3);}
+.series-btn:hover:not(.active){border-color:var(--kiso);color:var(--kiso);}
+.hero{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;position:relative;overflow:hidden;background:#080a0f;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(148,163,184,.08) 0%,transparent 65%);}
+.hero-series{display:inline-block;background:rgba(148,163,184,.15);border:1px solid rgba(148,163,184,.3);color:var(--kiso);font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.2em;padding:.25rem 1rem;border-radius:99px;margin-bottom:1rem;position:relative;}
+.hero-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,3rem);line-height:1.05;color:#fff;text-shadow:3px 3px 0 rgba(148,163,184,.2);margin-bottom:.8rem;position:relative;}
+.hero-sub{font-family:'Oswald',sans-serif;font-size:clamp(.85rem,2.5vw,1rem);letter-spacing:.12em;color:var(--muted);margin-bottom:1.5rem;position:relative;}
+.hero-topics{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;position:relative;}
+.hero-topic{background:var(--surface);border:1px solid rgba(148,163,184,.25);color:var(--kiso);font-size:.75rem;padding:.25rem .8rem;border-radius:99px;}
+.complete-banner{background:linear-gradient(135deg,rgba(148,163,184,.12),rgba(148,163,184,.04));border:2px solid var(--kiso);border-radius:10px;padding:1rem 1.5rem;margin:1.5rem auto 0;max-width:860px;display:flex;align-items:center;gap:1rem;}
+.complete-badge{font-size:2rem;flex-shrink:0;}
+.complete-text{font-size:.88rem;color:#c8d0e8;line-height:1.6;}
+.complete-text strong{color:var(--kiso);display:block;margin-bottom:.2rem;}
+.toc-section{max-width:860px;margin:0 auto;padding:1.5rem 1rem 1rem;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.5rem;}
+.toc-item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.5rem .8rem;font-size:.78rem;display:flex;align-items:center;gap:.5rem;cursor:pointer;transition:border-color .2s;}
+.toc-item:hover{border-color:var(--kiso);color:var(--kiso);}
+.toc-num{font-family:'Oswald',sans-serif;font-size:.7rem;color:var(--kiso);min-width:22px;}
+.manga-wrap{max-width:860px;margin:0 auto;padding:1rem 1rem 5rem;}
+.chapter-header{display:flex;align-items:center;gap:.8rem;margin:3rem 0 1.2rem;padding-bottom:.8rem;border-bottom:3px solid var(--kiso);opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s;}
+.chapter-header.visible{opacity:1;transform:translateY(0);}
+.ch-num{font-family:'Oswald',sans-serif;font-size:2.5rem;font-weight:700;color:var(--kiso);line-height:1;min-width:3rem;}
+.ch-label{font-size:.65rem;letter-spacing:.15em;color:var(--muted);font-family:'Oswald',sans-serif;}
+.ch-title{font-size:clamp(1.1rem,3vw,1.5rem);font-weight:900;line-height:1.2;}
+.ch-icon{font-size:2rem;margin-left:auto;}
+.ch-level{font-size:.68rem;padding:.2rem .6rem;border-radius:3px;margin-left:.5rem;font-weight:700;background:rgba(239,68,68,.15);color:var(--danger);border:1px solid rgba(239,68,68,.3);}
+.ch-level.final{background:rgba(148,163,184,.15);color:var(--kiso);border:1px solid rgba(148,163,184,.3);}
+.panel{background:var(--surface);border:2.5px solid #fff;border-radius:3px;margin-bottom:1.6rem;box-shadow:5px 5px 0 var(--ink);overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .45s,transform .45s;}
+.panel.visible{opacity:1;transform:translateY(0);}
+.scene-label{background:var(--ink);border-bottom:2px solid var(--border);padding:.25rem .8rem;font-family:'Oswald',sans-serif;font-size:.65rem;letter-spacing:.15em;color:var(--muted);}
+.scene{display:flex;min-height:140px;}
+.char-col{width:110px;min-width:110px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:.8rem .3rem .4rem;background:var(--surface2);border-right:2px solid #fff;position:relative;overflow:hidden;}
+.char-col::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,.025) 16px,rgba(255,255,255,.025) 17px);}
+.char-col.angry .char-img{animation:rage .25s infinite alternate;}
+@keyframes rage{from{transform:rotate(-2deg) scale(1);}to{transform:rotate(2deg) scale(1.06);}}
+.char-col.angry::after{content:'💢';position:absolute;top:6px;right:6px;font-size:1.2rem;}
+.char-img{width:80px;height:auto;object-fit:contain;position:relative;z-index:1;display:block;margin:0 auto;}
+.char-name{font-size:.58rem;font-weight:900;color:var(--muted);text-align:center;position:relative;z-index:1;}
+.speech-col{flex:1;padding:.9rem 1.1rem;display:flex;flex-direction:column;gap:.7rem;justify-content:center;}
+.bubble{border:2px solid #fff;border-radius:4px;padding:.6rem .9rem;line-height:1.65;font-size:clamp(.8rem,2vw,.88rem);background:var(--surface2);position:relative;}
+.bubble .spk{display:block;font-size:.6rem;font-weight:900;letter-spacing:.1em;opacity:.65;margin-bottom:.25rem;}
+.bubble.shout{background:var(--danger);color:#fff;font-weight:900;font-size:clamp(.88rem,2.3vw,1rem);transform:rotate(-.4deg);box-shadow:3px 3px 0 rgba(0,0,0,.35);border-color:#fff;}
+.bubble.shout::before{content:'';position:absolute;left:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:var(--danger);}
+.bubble.shout .eb{color:#e2e8f0!important;font-weight:900;}
+.bubble.shout .eg{color:#a8ffb0!important;font-weight:900;}
+.bubble.shout .ew{color:#fde68a!important;font-weight:900;}
+.bubble.reply{background:#0c0e14;border-color:var(--kiso);color:#e2e8f0;}
+.bubble.reply::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:var(--kiso);}
+.bubble.trainee{background:#0a1220;border-color:#38bdf8;border-style:dashed;color:#bae6fd;}
+.bubble.trainee::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:#38bdf8;}
+.knowledge{background:var(--surface);border:2.5px solid var(--kiso);border-radius:4px;margin-bottom:1.6rem;box-shadow:5px 5px 0 rgba(148,163,184,.18);opacity:0;transform:translateY(24px);transition:opacity .45s,transform .45s;}
+.knowledge.visible{opacity:1;transform:translateY(0);}
+.knowledge-header{background:rgba(148,163,184,.08);border-bottom:2px solid var(--kiso);padding:.5rem 1rem;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:.15em;color:var(--kiso);}
+.knowledge-body{padding:1rem 1.2rem;}
+.k-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:.5rem;}
+.k-table th{background:var(--surface2);padding:.5rem .7rem;border:1.5px solid var(--border);color:var(--muted);font-weight:700;text-align:left;}
+.k-table td{padding:.5rem .7rem;border:1.5px solid var(--border);line-height:1.55;}
+.k-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.point-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem;}
+.point-row{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;line-height:1.6;}
+.point-icon{font-size:1rem;flex-shrink:0;margin-top:.1rem;}
+.formula-box{background:#0a0c12;border:1.5px solid var(--border);border-radius:6px;padding:.8rem 1.1rem;margin:.6rem 0;font-family:'Oswald',sans-serif;font-size:.85rem;color:#e2e8f0;letter-spacing:.05em;}
+.formula-box .fl{color:var(--kiso);font-weight:700;font-size:.72rem;margin-bottom:.3rem;display:block;letter-spacing:.12em;}
+.deep-box{background:rgba(239,68,68,.05);border:2px solid rgba(239,68,68,.3);border-radius:6px;padding:.9rem 1.1rem;margin-top:.8rem;}
+.deep-box-title{font-size:.72rem;color:var(--danger);font-weight:700;letter-spacing:.1em;margin-bottom:.5rem;font-family:'Oswald',sans-serif;}
+.deep-box p{font-size:.82rem;color:#fca5a5;line-height:1.7;}
+.trap{background:#180d0d;border:2px solid var(--danger);border-radius:4px;padding:.7rem 1rem;font-size:.8rem;color:#fca5a5;margin-top:.6rem;line-height:1.65;}
+.trap::before{content:'⚠ 試験の引っかけ  ';font-weight:900;color:var(--danger);}
+.er{color:var(--danger);font-weight:900;}
+.eb{color:var(--kiso);font-weight:900;}
+.eg{color:var(--correct);font-weight:900;}
+.ew{color:var(--warn);font-weight:900;}
+.sfx{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,2.8rem);color:var(--kiso);text-shadow:2px 2px 0 rgba(0,0,0,.5);text-align:center;padding:.3rem;transform:rotate(-1.5deg);display:block;line-height:1;margin:.5rem 0 1.5rem;}
+.graduation-panel{background:linear-gradient(135deg,rgba(148,163,184,.08),rgba(148,163,184,.03));border:3px solid var(--kiso);border-radius:8px;padding:1.5rem;margin-bottom:1.6rem;opacity:0;transform:translateY(24px);transition:opacity .45s,transform .45s;}
+.graduation-panel.visible{opacity:1;transform:translateY(0);}
+.series-cta{background:var(--surface);border:2px solid var(--kiso);border-radius:10px;padding:1.5rem;margin:2rem 0;}
+.series-cta-title{font-weight:900;font-size:1rem;color:var(--kiso);margin-bottom:.5rem;}
+.series-cta-text{font-size:.85rem;color:var(--muted);margin-bottom:1rem;line-height:1.7;}
+.series-cta-btns{display:flex;gap:.6rem;flex-wrap:wrap;}
+.btn-complete{background:var(--kiso);color:#0f1117;padding:.65rem 1.4rem;border-radius:7px;font-size:.85rem;font-weight:700;}
+.btn-prev{background:rgba(148,163,184,.1);color:var(--kiso);border:1px solid rgba(148,163,184,.3);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;font-weight:700;}
+.btn-back{background:none;border:1px solid var(--border);color:var(--muted);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;}
+.cta-block{background:linear-gradient(135deg,#080a0f,#0e1015);border:3px solid var(--kiso);border-radius:6px;padding:2rem;text-align:center;margin-top:3rem;opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s;}
+.cta-block.visible{opacity:1;transform:translateY(0);}
+.cta-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.4rem,4vw,2rem);color:#fff;text-shadow:2px 2px 0 var(--kiso);margin-bottom:.6rem;}
+.cta-sub{font-size:.88rem;color:var(--muted);margin-bottom:1.4rem;}
+.cta-btn-primary{display:inline-block;background:var(--kiso);color:#0f1117;font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:.12em;padding:.75rem 2.2rem;border-radius:7px;margin:.3rem;font-weight:700;}
+.cta-btn-secondary{display:inline-block;background:rgba(148,163,184,.12);color:var(--kiso);border:1px solid rgba(148,163,184,.35);font-size:.85rem;padding:.65rem 1.6rem;border-radius:7px;margin:.3rem;}
+@media(max-width:600px){.char-col{width:72px;min-width:72px;}.char-img{width:58px;}.scene{min-height:120px;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/kiso/">演習問題</a>
+    <a href="/bunya/kiso/manga.html">基礎マンガ</a>
+    <a href="/bunya/kiso/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<div class="series-nav">
+  <span class="series-label">⚗️ 一般基礎 補習シリーズ：</span>
+  <button class="series-btn done" onclick="location.href='hoshu1.html'">✅ 第1回 流体力学・レイノルズ数・ベルヌーイ</button>
+  <button class="series-btn done" onclick="location.href='hoshu2.html'">✅ 第2回 熱力学・伝熱・冷凍サイクル</button>
+  <button class="series-btn active">第3回 電気・建築構造・腐食・保温材</button>
+</div>
+
+<section class="hero">
+  <div class="hero-series">⚗️ 一般基礎 補習マンガ — 第3回 / 全3回【最終回】</div>
+  <h1 class="hero-title">電気・建築構造・<br>腐食・保温材<br>総まとめ</h1>
+  <p class="hero-sub">補習シリーズ最終回 — 残りの頻出テーマを一挙制覇して得点源にする</p>
+  <div class="hero-topics">
+    <span class="hero-topic">D種接地工事の接地抵抗値</span>
+    <span class="hero-topic">RC造梁貫通孔の制限</span>
+    <span class="hero-topic">ガルバニック腐食の仕組み</span>
+    <span class="hero-topic">溝状腐食の発生原因</span>
+    <span class="hero-topic">グラスウールの密度と熱伝導率</span>
+    <span class="hero-topic">配管材料記号（SGP-VA・VD）</span>
+  </div>
+</section>
+
+<div class="complete-banner">
+  <div class="complete-badge">🏆</div>
+  <div class="complete-text">
+    <strong>補習シリーズ最終回！この回を完走すれば一般基礎は完璧だ！</strong>
+    第1回・第2回を未読の場合は先に読んでおくことをおすすめする。
+  </div>
+</div>
+
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>電気設備の基礎知識</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>接地工事の種類と接地抵抗値</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>RC造の構造と設備施工制限</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>金属の腐食の種類と仕組み</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>炭素鋼管の腐食速度と温度</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>保温材・断熱材の特性</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>配管材料の種類と記号</div>
+    <div class="toc-item" onclick="document.getElementById('ch08').scrollIntoView({behavior:'smooth'})"><span class="toc-num">08</span>一般基礎 補習シリーズ 総まとめ</div>
+  </div>
+</div>
+
+<div class="manga-wrap">
+
+<!-- CH01 電気設備の基礎知識 -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div><div class="ch-label">SECTION 01</div><div class="ch-title">電気設備の基礎知識（三相・電動機）<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">⚡</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">ELECTRICAL BASICS</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>三相誘導電動機の3線のうち2線を入れ替えると何が変わるか！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>2線を入れ替えると回転方向が逆になる……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！現場での試運転時に回転方向確認は必須だぞ！直入れ始動の始動電流は定格の<span class="eg">4〜8倍</span>になることも覚えとけ！「1倍程度」は<span class="er">誤り</span>！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⚡ 電気設備の基礎まとめ</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>項目</th><th>内容</th><th>注意点</th></tr></thead>
+      <tbody>
+        <tr><td>三相誘導電動機の回転方向</td><td>3線のうち<span class="eg">いずれか2線を入れ替え</span>ると逆回転</td><td>1線だけ入れ替えても逆転しない</td></tr>
+        <tr><td>直入れ始動時の始動電流</td><td>定格電流の<span class="eg">4〜8倍</span>程度</td><td>「1倍程度」は誤り。大電流が流れる</td></tr>
+        <tr><td>インバータ制御の注意点</td><td>高調波が発生する</td><td>フィルタ等の<span class="eg">高調波対策が必要</span></td></tr>
+        <tr><td>三相3線式回路の金属管工事</td><td>1回路の電線全部を<span class="eg">同一の金属管内</span>に収める</td><td>分けて配管すると誘導障害が起きる</td></tr>
+        <tr><td>出力0.2kW以下の電動機</td><td>過負荷保護装置を設けなくてよい</td><td>0.2kW超は過負荷保護装置が必要</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「直入れ始動方式では、始動電流は定格電流の1倍程度となる」→ 誤り。直入れ始動では始動電流は定格電流の<span class="eg">4〜8倍程度</span>の大電流が流れる。</div>
+  </div>
+</div>
+
+<!-- CH02 接地工事 -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div><div class="ch-label">SECTION 02</div><div class="ch-title">接地工事の種類と接地抵抗値<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🔌</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">GROUNDING</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>D種接地工事の接地抵抗値の最大値を答えろ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>100Ω以下……です！</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！「1,000Ω以下」という引っかけが頻出だぞ！D種は<span class="eg">100Ω以下</span>だ！A種は10Ω以下・C種は10Ω以下・B種は計算値で覚えとけ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔌 接地工事の種類と接地抵抗値</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>種類</th><th>接地抵抗値</th><th>対象機器・回路</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">A種接地工事</span></td><td><span class="eg">10Ω以下</span></td><td>高圧・特別高圧機器の外箱等</td></tr>
+        <tr><td><span class="eb">B種接地工事</span></td><td>計算値（変圧器の高圧側電流から算出）</td><td>変圧器の低圧側中性点</td></tr>
+        <tr><td><span class="eb">C種接地工事</span></td><td><span class="eg">10Ω以下</span></td><td>300V超の低圧用機器の外箱等</td></tr>
+        <tr><td><span class="eg">D種接地工事</span></td><td><span class="eg">100Ω以下</span></td><td>300V以下の低圧用機器の外箱等（一般的なコンセント・照明等）</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「D種接地工事の接地抵抗値は1,000Ω以下である」→ 誤り。D種接地工事の接地抵抗値は<span class="eg">100Ω以下</span>。1,000Ωは古い基準値で現在は100Ω以下が正しい。</div>
+  </div>
+</div>
+
+<!-- CH03 RC造の構造と設備施工制限 -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div><div class="ch-label">SECTION 03</div><div class="ch-title">RC造の梁貫通孔・かぶり厚さの制限<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🏗️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">RC STRUCTURE</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>RC造の梁に貫通孔を設ける場合、孔の径は梁せいの何分の1以下にするか！また貫通孔の中心間隔は孔径の何倍以上か！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>孔の径は梁せいの3分の1以下……中心間隔は孔径の3倍以上……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！「1/2以下」「1/4以下」や「2倍以上」は引っかけ値だぞ！<span class="eg">1/3以下・3倍以上</span>で覚えとけ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🏗️ RC造の設備施工に関する制限</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>項目</th><th>制限値</th><th>引っかけ値</th></tr></thead>
+      <tbody>
+        <tr><td>梁貫通孔の径</td><td>梁せいの<span class="eg">1/3以下</span></td><td>「1/2以下」「1/4以下」は誤り</td></tr>
+        <tr><td>梁貫通孔の中心間隔（同径2孔）</td><td>孔径の<span class="eg">3倍以上</span></td><td>「2倍以上」は誤り</td></tr>
+        <tr><td>鉄筋のかぶり厚さ</td><td>最外側鉄筋外面から<span class="eg">コンクリート表面</span>までの最短距離</td><td>「主筋の外側から」は不正確</td></tr>
+        <tr><td>鉄筋とコンクリートの線膨張係数</td><td>常温では<span class="eg">ほぼ等しい</span></td><td>「異なる」は誤り。ほぼ同じだから一体化できる</td></tr>
+        <tr><td>梁の側面型枠（せき板）の取外し</td><td>コンクリートの圧縮強度<span class="eg">5N/mm²以上</span></td><td>「10N/mm²以上」は誤り</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「鉄筋コンクリート造の梁貫通孔の径は梁せいの1/2以下とする」→ 誤り。<span class="eg">梁せいの1/3以下</span>が正しい基準。</div>
+  </div>
+</div>
+
+<!-- CH04 金属の腐食の種類 -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div><div class="ch-label">SECTION 04</div><div class="ch-title">金属の腐食の種類と仕組み<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🔩</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CORROSION TYPES</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>ガルバニック腐食（異種金属接触腐食）で腐食するのは「貴」な金属か「卑」な金属か！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>腐食するのは「卑」な金属……電気化学的にイオン化しやすい方が溶け出す……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！「貴な金属が腐食する」は典型的な引っかけだぞ！<span class="eg">卑な金属（アノード側）</span>が腐食する！電池の負極と同じ原理だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔩 金属腐食の主な種類</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>腐食の種類</th><th>発生機構</th><th>防止対策</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">ガルバニック腐食</span>（異種金属接触腐食）</td><td>貴・卑の異種金属が水中で接触→<span class="eg">卑な金属</span>が腐食</td><td>絶縁フランジ・絶縁継手で異種金属を分離</td></tr>
+        <tr><td><span class="eb">溝状腐食</span></td><td>配管用炭素鋼鋼管（白）の溶接部などに生じる溝状の腐食。<span class="eg">鍛接管・電縫管</span>で特に発生しやすいビード形状が起因</td><td>耐溝状腐食電縫鋼管・鍛接鋼管を使用</td></tr>
+        <tr><td><span class="eb">すきま腐食</span></td><td>フランジ接合部等のすきまで<span class="eg">酸素濃淡電池</span>が形成されて腐食</td><td>すきまをなくす・密封</td></tr>
+        <tr><td><span class="eb">エロージョン・コロージョン</span></td><td>高流速での壁面への衝撃・摩擦が腐食を促進</td><td>流速を下げる・曲がり部の材質強化</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「異種金属接触腐食とは、貴な金属が腐食することをいう」→ 誤り。腐食するのは<span class="eg">卑な金属</span>（イオン化傾向が大きい方）。貴な金属（銅・白金等）は腐食されにくい。</div>
+  </div>
+</div>
+
+<!-- CH05 炭素鋼管の腐食速度と温度 -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div><div class="ch-label">SECTION 05</div><div class="ch-title">炭素鋼管の腐食速度と温度・流速の関係<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🌡️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">CORROSION RATE</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>開放系配管の炭素鋼の腐食速度は水温何℃あたりを境に増加から減少に転じるか！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>80℃あたりを境に……80℃以下では水温↑→腐食速度↑……80℃超では水温↑→腐食速度↓……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！80℃超では溶存酸素が放出されて腐食が起きにくくなるぞ！「60℃」「100℃」は引っかけ値だ！<span class="eg">80℃</span>を境に覚えとけ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🌡️ 炭素鋼管の腐食速度と各因子の関係</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🌡️</span><span><span class="eb">水温と腐食速度</span>：開放系配管では水温↑→腐食速度↑（〜80℃まで）。<span class="eg">80℃を境</span>に高温側では溶存酸素が放出されて腐食速度↓。</span></div>
+      <div class="point-row"><span class="point-icon">💨</span><span><span class="eb">流速と腐食速度</span>：管内流速が速くなると保護皮膜が剥ぎ取られて腐食速度↑。ただし<span class="eg">不動態化が促進される特定の流速域では腐食速度↓</span>（逆の現象あり）。</span></div>
+      <div class="point-row"><span class="point-icon">🧪</span><span><span class="eb">pH値と腐食速度</span>：pH↓（酸性）→腐食速度↑。pH↑（アルカリ）→不動態皮膜が安定して腐食↓。「pH↓→腐食しにくい」は誤り。</span></div>
+    </div>
+    <div class="trap">「配管用炭素鋼鋼管（白）は、pH値が低くなるほど腐食は進行せず、pH値が高くなるほど腐食が進行する」→ 誤り。<span class="eg">pH値が低い（酸性）ほど腐食が進行</span>する。酸性環境は炭素鋼を侵食する。</div>
+  </div>
+</div>
+
+<!-- CH06 保温材・断熱材 -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div><div class="ch-label">SECTION 06</div><div class="ch-title">保温材・断熱材の種類と熱伝導率<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🧶</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">INSULATION MATERIAL</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>グラスウール保温材は密度が大きい方が熱伝導率はどうなるか！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>密度が大きい（繊維が詰まっている）方が熱伝導率は小さくなる……断熱性能が向上する……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！「密度大→熱伝導率大」は<span class="er">誤り</span>だぞ！グラスウールは繊維が詰まるほど空気層が減るが繊維の固体伝導が増えて<span class="eg">熱伝導率は小さくなる</span>！断熱性UP！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🧶 主な保温材・断熱材の特徴</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>材料</th><th>特徴</th><th>密度と熱伝導率の関係</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">グラスウール</span></td><td>ガラス繊維製。軽量・安価。吸湿注意。発泡材ではない。</td><td>密度↑→熱伝導率<span class="eg">↓</span>（断熱性向上）</td></tr>
+        <tr><td><span class="eb">ロックウール（岩綿）</span></td><td>岩石を溶融・繊維化。耐熱性高。グラスウールより耐火性に優れる。</td><td>密度↑→熱伝導率<span class="eg">↓</span></td></tr>
+        <tr><td><span class="eb">硬質ウレタンフォーム</span></td><td>独立気泡構造の発泡プラスチック。軽量・断熱性が高い。</td><td>独立気泡→吸水率低</td></tr>
+        <tr><td><span class="eb">発泡スチロール（PS）</span></td><td>軽量・安価。高温では変形する（耐熱性低）。</td><td>低温保温・建材向け</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「グラスウール保温材は、密度が大きい方が熱伝導率は大きい」→ 誤り。グラスウールは密度が大きい方が<span class="eg">熱伝導率は小さく</span>なり断熱性能が向上する。「大きい」と「小さい」が逆。</div>
+  </div>
+</div>
+
+<!-- CH07 配管材料の種類と記号 -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div><div class="ch-label">SECTION 07</div><div class="ch-title">配管材料の種類と記号（SGP-VA・VD等）<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🔧</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔧 主な配管材料記号と用途</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>記号</th><th>名称</th><th>用途・特徴</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eg">SGP-VA</span></td><td>水道用硬質塩化ビニルライニング鋼管（黒）</td><td>給水・給湯配管（屋内給水）。内面に塩ビライニング</td></tr>
+        <tr><td><span class="eg">SGP-VD</span></td><td>排水用硬質塩化ビニルライニング鋼管</td><td>排水配管。SGP-VAとは用途が異なる</td></tr>
+        <tr><td><span class="eb">SGP-PB</span></td><td>水道用ポリエチレン粉体ライニング鋼管（白）</td><td>給水・給湯配管。外面にもライニング</td></tr>
+        <tr><td><span class="eb">RS-VU</span></td><td>リサイクル硬質ポリ塩化ビニル三層管</td><td>排水用。内外層が新材・中間層が再生材の三層構造</td></tr>
+        <tr><td><span class="eb">HIVP</span></td><td>耐衝撃性硬質塩化ビニル管</td><td>給水配管。衝撃に強い。一般VPより柔軟</td></tr>
+        <tr><td><span class="eb">DVLP</span></td><td>耐火二層管</td><td>排水・通気。硬質PVC管＋繊維モルタル被覆</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「設計図書に記載の配管材料で、水道用硬質塩化ビニルライニング鋼管（黒）の記号はSGP-VDである」→ 誤り。SGP-VDは<span class="eg">排水用</span>。水道用（黒）は<span class="eg">SGP-VA</span>。VAとVDを混同させる引っかけに注意。</div>
+  </div>
+</div>
+
+<!-- CH08 総まとめ -->
+<div class="chapter-header" id="ch08">
+  <div class="ch-num">08</div>
+  <div><div class="ch-label">FINAL SECTION</div><div class="ch-title">一般基礎 補習シリーズ 総まとめ<span class="ch-level final">🏆 最終回</span></div></div>
+  <div class="ch-icon">🎖️</div>
+</div>
+
+<div class="graduation-panel">
+  <div style="display:flex;gap:1rem;align-items:flex-end;margin-bottom:1.5rem;flex-wrap:wrap;">
+    <img src="/images/spanner-sergeant.png" alt="スパナ軍曹" style="width:80px;filter:drop-shadow(0 4px 12px rgba(148,163,184,.4));">
+    <div style="flex:1;">
+      <div style="background:var(--kiso);color:#0f1117;font-weight:900;font-size:.92rem;padding:.8rem 1.1rem;border-radius:10px;line-height:1.6;position:relative;">
+        よくやった！3回シリーズ完走だ！一般基礎は完璧だぞ！計算は比率で考えて、暗記は引っかけパターンで確認しろ！！
+        <div style="position:absolute;left:24px;bottom:-10px;border:6px solid transparent;border-top-color:var(--kiso);"></div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:1rem;align-items:flex-end;flex-direction:row-reverse;flex-wrap:wrap;">
+    <img src="/images/pipe-trainee.png" alt="パイプ訓練生" style="width:70px;filter:drop-shadow(0 4px 12px rgba(148,163,184,.4));">
+    <div style="flex:1;">
+      <div style="background:#0c0e14;border:2px solid var(--kiso);color:#e2e8f0;font-weight:700;font-size:.88rem;padding:.8rem 1.1rem;border-radius:10px;line-height:1.6;text-align:right;position:relative;">
+        3回全部終わりました！計算問題が苦手でしたが「比率の変化」で考えると解けるようになりました！
+        <div style="position:absolute;right:24px;bottom:-10px;border:6px solid transparent;border-top-color:var(--kiso);"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🎖️ 一般基礎 補習シリーズ3回 頻出引っかけ 総集編</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">1️⃣</span><span>動粘性係数は粘性係数を<span class="eg">密度で割った値</span>（「速度で割る」は誤り）。ν＝μ/ρ。</span></div>
+      <div class="point-row"><span class="point-icon">2️⃣</span><span>Re＜2,000は<span class="eg">層流</span>・Re＞4,000は乱流（「Re＝2,000で乱流」は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">3️⃣</span><span>ダルシー式：圧力損失は流速の<span class="eg">2乗</span>に比例（「管長の2乗」は誤り。管長は1乗）。</span></div>
+      <div class="point-row"><span class="point-icon">4️⃣</span><span>硬質塩ビ管は鋼管より<span class="eg">ウォーターハンマーが発生しにくい</span>（「しやすい」は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">5️⃣</span><span>エントロピーは不可逆変化で<span class="eg">必ず増加</span>（「減少」は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">6️⃣</span><span>自然対流は<span class="eg">密度差・浮力</span>が原因（「ファン等の強制力」は強制対流）。</span></div>
+      <div class="point-row"><span class="point-icon">7️⃣</span><span>黒体放射エネルギーは絶対温度の<span class="eg">4乗</span>に比例（「2乗」は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">8️⃣</span><span>熱通過率は表面の<span class="eg">気流速度で変わる</span>（「影響しない」は誤り）。熱伝導率は影響しない。</span></div>
+      <div class="point-row"><span class="point-icon">9️⃣</span><span>蒸発温度↑・凝縮温度↓→COP<span class="eg">大きくなる</span>（「小さくなる」は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">🔟</span><span>アンモニアのGWPは<span class="eg">非常に小さい</span>（「大きい」は誤り）。ODP＝0・GWP≒0。</span></div>
+      <div class="point-row"><span class="point-icon">➕</span><span>直入れ始動の始動電流は定格の<span class="eg">4〜8倍</span>（「1倍程度」は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">➕</span><span>D種接地工事の接地抵抗値は<span class="eg">100Ω以下</span>（「1,000Ω以下」は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">➕</span><span>RC造梁貫通孔の径は梁せいの<span class="eg">1/3以下</span>・中心間隔は孔径の<span class="eg">3倍以上</span>。</span></div>
+      <div class="point-row"><span class="point-icon">➕</span><span>ガルバニック腐食で腐食するのは<span class="eg">卑な金属</span>（「貴な金属」は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">➕</span><span>炭素鋼の腐食速度は<span class="eg">80℃</span>を境に高温側では減少（「60℃」「100℃」は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">➕</span><span>グラスウール：密度↑→熱伝導率<span class="eg">↓</span>（断熱性向上）（「熱伝導率↑」は誤り）。</span></div>
+      <div class="point-row"><span class="point-icon">➕</span><span>水道用硬質塩ビライニング鋼管（黒）の記号は<span class="eg">SGP-VA</span>（「SGP-VD」は排水用）。</span></div>
+    </div>
+  </div>
+</div>
+
+<span class="sfx">⚗️ 一般基礎 補習シリーズ 全3回 完全制覇！！</span>
+
+<div class="series-cta">
+  <div class="series-cta-title">🎉 一般基礎 補習シリーズ 完走！</div>
+  <div class="series-cta-text">
+    第1回（流体力学・レイノルズ数・ベルヌーイ）→ 第2回（熱力学・伝熱・冷凍サイクル）→ 第3回（電気・建築構造・腐食・保温材）を完走した。あとは演習問題と過去問で実力を確かめよう。
+  </div>
+  <div class="series-cta-btns">
+    <a href="/bunya/kiso/" class="btn-complete">📝 一般基礎 演習問題を解く</a>
+    <a href="hoshu2.html" class="btn-prev">← 第2回に戻る</a>
+    <a href="manga.html" class="btn-back">基礎マンガ</a>
+  </div>
+</div>
+
+<div class="cta-block">
+  <div class="cta-title">🏆 一般基礎 完全制覇！次の分野へ</div>
+  <p class="cta-sub">演習問題で最終確認をしてから、他の分野も攻略しよう。</p>
+  <a href="/bunya/kiso/" class="cta-btn-primary">📝 一般基礎 演習問題を解く</a>
+  <a href="/bunya/sogo/" class="cta-btn-secondary">🎯 総合確認問題</a>
+</div>
+
+</div>
+<script>
+const obs=new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:.1});
+document.querySelectorAll('.panel,.knowledge,.chapter-header,.cta-block,.graduation-panel').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

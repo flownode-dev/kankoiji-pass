@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【補習】一般基礎 第2回：熱力学・伝熱・冷凍サイクル | 管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士・一般基礎の補習マンガ第2回。比熱・エンタルピー・エントロピー・熱伝導・放射・冷凍サイクルのCOPを深掘り解説。計算問題の考え方も。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/kiso/hoshu2.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-E37L2YPT6X');</script>
+<style>
+:root{--bg:#0f1117;--surface:#1a1d27;--surface2:#222636;--border:#2e3348;--kiso:#94a3b8;--correct:#22c55e;--warn:#f59e0b;--text:#e8eaf0;--muted:#7a8099;--danger:#ef4444;--ink:#08090d;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-serif;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+.site-header{position:fixed;top:0;left:0;right:0;height:56px;background:rgba(15,17,23,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;}
+.logo-main{font-weight:900;font-size:1.1rem;background:linear-gradient(135deg,var(--kiso),#cbd5e1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.header-nav{display:flex;gap:1rem;align-items:center;font-size:.8rem;color:var(--muted);}
+.btn-sm-header{background:var(--kiso);color:#0f1117;padding:.35rem .9rem;border-radius:6px;font-size:.75rem;font-weight:700;}
+.series-nav{background:var(--surface);border-bottom:1px solid var(--border);padding:.8rem 1.5rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:56px;}
+.series-label{font-size:.72rem;color:var(--muted);font-weight:700;white-space:nowrap;}
+.series-btn{padding:.35rem .9rem;border-radius:99px;font-size:.75rem;font-weight:700;border:1px solid var(--border);color:var(--muted);background:none;cursor:pointer;white-space:nowrap;}
+.series-btn.active{background:var(--kiso);color:#0f1117;border-color:var(--kiso);}
+.series-btn.done{background:rgba(148,163,184,.12);color:var(--kiso);border-color:rgba(148,163,184,.3);}
+.series-btn:hover:not(.active){border-color:var(--kiso);color:var(--kiso);}
+.hero{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;position:relative;overflow:hidden;background:#080a0f;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(148,163,184,.08) 0%,transparent 65%);}
+.hero-series{display:inline-block;background:rgba(148,163,184,.15);border:1px solid rgba(148,163,184,.3);color:var(--kiso);font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.2em;padding:.25rem 1rem;border-radius:99px;margin-bottom:1rem;position:relative;}
+.hero-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,3rem);line-height:1.05;color:#fff;text-shadow:3px 3px 0 rgba(148,163,184,.2);margin-bottom:.8rem;position:relative;}
+.hero-sub{font-family:'Oswald',sans-serif;font-size:clamp(.85rem,2.5vw,1rem);letter-spacing:.12em;color:var(--muted);margin-bottom:1.5rem;position:relative;}
+.hero-topics{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;position:relative;}
+.hero-topic{background:var(--surface);border:1px solid rgba(148,163,184,.25);color:var(--kiso);font-size:.75rem;padding:.25rem .8rem;border-radius:99px;}
+.toc-section{max-width:860px;margin:0 auto;padding:1.5rem 1rem 1rem;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.5rem;}
+.toc-item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.5rem .8rem;font-size:.78rem;display:flex;align-items:center;gap:.5rem;cursor:pointer;transition:border-color .2s;}
+.toc-item:hover{border-color:var(--kiso);color:var(--kiso);}
+.toc-num{font-family:'Oswald',sans-serif;font-size:.7rem;color:var(--kiso);min-width:22px;}
+.manga-wrap{max-width:860px;margin:0 auto;padding:1rem 1rem 5rem;}
+.chapter-header{display:flex;align-items:center;gap:.8rem;margin:3rem 0 1.2rem;padding-bottom:.8rem;border-bottom:3px solid var(--kiso);opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s;}
+.chapter-header.visible{opacity:1;transform:translateY(0);}
+.ch-num{font-family:'Oswald',sans-serif;font-size:2.5rem;font-weight:700;color:var(--kiso);line-height:1;min-width:3rem;}
+.ch-label{font-size:.65rem;letter-spacing:.15em;color:var(--muted);font-family:'Oswald',sans-serif;}
+.ch-title{font-size:clamp(1.1rem,3vw,1.5rem);font-weight:900;line-height:1.2;}
+.ch-icon{font-size:2rem;margin-left:auto;}
+.ch-level{font-size:.68rem;padding:.2rem .6rem;border-radius:3px;margin-left:.5rem;font-weight:700;background:rgba(239,68,68,.15);color:var(--danger);border:1px solid rgba(239,68,68,.3);}
+.panel{background:var(--surface);border:2.5px solid #fff;border-radius:3px;margin-bottom:1.6rem;box-shadow:5px 5px 0 var(--ink);overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .45s,transform .45s;}
+.panel.visible{opacity:1;transform:translateY(0);}
+.scene-label{background:var(--ink);border-bottom:2px solid var(--border);padding:.25rem .8rem;font-family:'Oswald',sans-serif;font-size:.65rem;letter-spacing:.15em;color:var(--muted);}
+.scene{display:flex;min-height:140px;}
+.char-col{width:110px;min-width:110px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:.8rem .3rem .4rem;background:var(--surface2);border-right:2px solid #fff;position:relative;overflow:hidden;}
+.char-col::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 16px,rgba(255,255,255,.025) 16px,rgba(255,255,255,.025) 17px);}
+.char-col.angry .char-img{animation:rage .25s infinite alternate;}
+@keyframes rage{from{transform:rotate(-2deg) scale(1);}to{transform:rotate(2deg) scale(1.06);}}
+.char-col.angry::after{content:'💢';position:absolute;top:6px;right:6px;font-size:1.2rem;}
+.char-img{width:80px;height:auto;object-fit:contain;position:relative;z-index:1;display:block;margin:0 auto;}
+.char-name{font-size:.58rem;font-weight:900;color:var(--muted);text-align:center;position:relative;z-index:1;}
+.speech-col{flex:1;padding:.9rem 1.1rem;display:flex;flex-direction:column;gap:.7rem;justify-content:center;}
+.bubble{border:2px solid #fff;border-radius:4px;padding:.6rem .9rem;line-height:1.65;font-size:clamp(.8rem,2vw,.88rem);background:var(--surface2);position:relative;}
+.bubble .spk{display:block;font-size:.6rem;font-weight:900;letter-spacing:.1em;opacity:.65;margin-bottom:.25rem;}
+.bubble.shout{background:var(--danger);color:#fff;font-weight:900;font-size:clamp(.88rem,2.3vw,1rem);transform:rotate(-.4deg);box-shadow:3px 3px 0 rgba(0,0,0,.35);border-color:#fff;}
+.bubble.shout::before{content:'';position:absolute;left:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:var(--danger);}
+.bubble.shout .eb{color:#e2e8f0!important;font-weight:900;}
+.bubble.shout .eg{color:#a8ffb0!important;font-weight:900;}
+.bubble.reply{background:#0c0e14;border-color:var(--kiso);color:#e2e8f0;}
+.bubble.reply::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:var(--kiso);}
+.bubble.trainee{background:#0a1220;border-color:#38bdf8;border-style:dashed;color:#bae6fd;}
+.bubble.trainee::before{content:'';position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:#38bdf8;}
+.knowledge{background:var(--surface);border:2.5px solid var(--kiso);border-radius:4px;margin-bottom:1.6rem;box-shadow:5px 5px 0 rgba(148,163,184,.18);opacity:0;transform:translateY(24px);transition:opacity .45s,transform .45s;}
+.knowledge.visible{opacity:1;transform:translateY(0);}
+.knowledge-header{background:rgba(148,163,184,.08);border-bottom:2px solid var(--kiso);padding:.5rem 1rem;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:.15em;color:var(--kiso);}
+.knowledge-body{padding:1rem 1.2rem;}
+.k-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:.5rem;}
+.k-table th{background:var(--surface2);padding:.5rem .7rem;border:1.5px solid var(--border);color:var(--muted);font-weight:700;text-align:left;}
+.k-table td{padding:.5rem .7rem;border:1.5px solid var(--border);line-height:1.55;}
+.k-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.point-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem;}
+.point-row{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;line-height:1.6;}
+.point-icon{font-size:1rem;flex-shrink:0;margin-top:.1rem;}
+.formula-box{background:#0a0c12;border:1.5px solid var(--border);border-radius:6px;padding:.8rem 1.1rem;margin:.6rem 0;font-family:'Oswald',sans-serif;font-size:.85rem;color:#e2e8f0;letter-spacing:.05em;}
+.formula-box .fl{color:var(--kiso);font-weight:700;font-size:.72rem;margin-bottom:.3rem;display:block;letter-spacing:.12em;}
+.deep-box{background:rgba(239,68,68,.05);border:2px solid rgba(239,68,68,.3);border-radius:6px;padding:.9rem 1.1rem;margin-top:.8rem;}
+.deep-box-title{font-size:.72rem;color:var(--danger);font-weight:700;letter-spacing:.1em;margin-bottom:.5rem;font-family:'Oswald',sans-serif;}
+.deep-box p{font-size:.82rem;color:#fca5a5;line-height:1.7;}
+.trap{background:#180d0d;border:2px solid var(--danger);border-radius:4px;padding:.7rem 1rem;font-size:.8rem;color:#fca5a5;margin-top:.6rem;line-height:1.65;}
+.trap::before{content:'⚠ 試験の引っかけ  ';font-weight:900;color:var(--danger);}
+.er{color:var(--danger);font-weight:900;}
+.eb{color:var(--kiso);font-weight:900;}
+.eg{color:var(--correct);font-weight:900;}
+.ew{color:var(--warn);font-weight:900;}
+.sfx{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.6rem,5vw,2.8rem);color:var(--kiso);text-shadow:2px 2px 0 rgba(0,0,0,.5);text-align:center;padding:.3rem;transform:rotate(-1.5deg);display:block;line-height:1;margin:.5rem 0 1.5rem;}
+.series-cta{background:var(--surface);border:2px solid var(--border);border-radius:10px;padding:1.5rem;margin:2rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.series-cta-text strong{color:var(--text);display:block;font-size:1rem;margin-bottom:.3rem;}
+.series-cta-text{font-size:.88rem;color:var(--muted);}
+.series-cta-btns{display:flex;gap:.6rem;flex-wrap:wrap;}
+.btn-next{background:var(--kiso);color:#0f1117;padding:.6rem 1.4rem;border-radius:7px;font-size:.85rem;font-weight:700;}
+.btn-prev{background:rgba(148,163,184,.1);color:var(--kiso);border:1px solid rgba(148,163,184,.3);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;font-weight:700;}
+.btn-back{background:none;border:1px solid var(--border);color:var(--muted);padding:.6rem 1.2rem;border-radius:7px;font-size:.82rem;}
+.cta-block{background:linear-gradient(135deg,#080a0f,#0e1015);border:3px solid var(--kiso);border-radius:6px;padding:2rem;text-align:center;margin-top:3rem;opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s;}
+.cta-block.visible{opacity:1;transform:translateY(0);}
+.cta-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.4rem,4vw,2rem);color:#fff;text-shadow:2px 2px 0 var(--kiso);margin-bottom:.6rem;}
+.cta-sub{font-size:.88rem;color:var(--muted);margin-bottom:1.4rem;}
+.cta-btn-primary{display:inline-block;background:var(--kiso);color:#0f1117;font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:.12em;padding:.75rem 2.2rem;border-radius:7px;margin:.3rem;font-weight:700;}
+.cta-btn-secondary{display:inline-block;background:rgba(148,163,184,.12);color:var(--kiso);border:1px solid rgba(148,163,184,.35);font-size:.85rem;padding:.65rem 1.6rem;border-radius:7px;margin:.3rem;}
+@media(max-width:600px){.char-col{width:72px;min-width:72px;}.char-img{width:58px;}.scene{min-height:120px;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="/" class="logo-main">管工事PASS</a>
+  <nav class="header-nav">
+    <a href="/bunya/kiso/">演習問題</a>
+    <a href="/bunya/kiso/manga.html">基礎マンガ</a>
+    <a href="/bunya/kiso/" class="btn-sm-header">▶ 演習へ</a>
+  </nav>
+</header>
+
+<div class="series-nav">
+  <span class="series-label">⚗️ 一般基礎 補習シリーズ：</span>
+  <button class="series-btn done" onclick="location.href='hoshu1.html'">✅ 第1回 流体力学・レイノルズ数・ベルヌーイ</button>
+  <button class="series-btn active">第2回 熱力学・伝熱・冷凍サイクル</button>
+  <button class="series-btn" onclick="location.href='hoshu3.html'">第3回 電気・建築構造・腐食・保温材</button>
+</div>
+
+<section class="hero">
+  <div class="hero-series">⚗️ 一般基礎 補習マンガ — 第2回 / 全3回</div>
+  <h1 class="hero-title">熱力学・伝熱・<br>冷凍サイクル<br>深掘り解説</h1>
+  <p class="hero-sub">エンタルピー・エントロピー・黒体放射・COPを試験レベルで完全攻略</p>
+  <div class="hero-topics">
+    <span class="hero-topic">比熱と比熱比の定義</span>
+    <span class="hero-topic">エンタルピーとエントロピー</span>
+    <span class="hero-topic">熱伝導・対流・放射の違い</span>
+    <span class="hero-topic">黒体放射（ステファン・ボルツマン）</span>
+    <span class="hero-topic">冷凍サイクルのCOP計算</span>
+    <span class="hero-topic">温室効果のメカニズム</span>
+  </div>
+</section>
+
+<div class="toc-section">
+  <div class="toc-grid">
+    <div class="toc-item" onclick="document.getElementById('ch01').scrollIntoView({behavior:'smooth'})"><span class="toc-num">01</span>熱の基本量（比熱・熱量）</div>
+    <div class="toc-item" onclick="document.getElementById('ch02').scrollIntoView({behavior:'smooth'})"><span class="toc-num">02</span>エンタルピーとエントロピー</div>
+    <div class="toc-item" onclick="document.getElementById('ch03').scrollIntoView({behavior:'smooth'})"><span class="toc-num">03</span>熱伝導・対流・放射の3形態</div>
+    <div class="toc-item" onclick="document.getElementById('ch04').scrollIntoView({behavior:'smooth'})"><span class="toc-num">04</span>黒体放射とステファン・ボルツマン則</div>
+    <div class="toc-item" onclick="document.getElementById('ch05').scrollIntoView({behavior:'smooth'})"><span class="toc-num">05</span>熱通過率と熱貫流</div>
+    <div class="toc-item" onclick="document.getElementById('ch06').scrollIntoView({behavior:'smooth'})"><span class="toc-num">06</span>冷凍サイクルの基礎</div>
+    <div class="toc-item" onclick="document.getElementById('ch07').scrollIntoView({behavior:'smooth'})"><span class="toc-num">07</span>冷凍サイクルのCOP計算</div>
+    <div class="toc-item" onclick="document.getElementById('ch08').scrollIntoView({behavior:'smooth'})"><span class="toc-num">08</span>温室効果と冷媒・環境問題</div>
+  </div>
+</div>
+
+<div class="manga-wrap">
+
+<!-- CH01 熱の基本量 -->
+<div class="chapter-header" id="ch01">
+  <div class="ch-num">01</div>
+  <div><div class="ch-label">SECTION 01</div><div class="ch-title">熱の基本量（比熱・比熱比・熱量）<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🌡️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">HEAT BASICS</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>比熱比の定義を答えろ！気体では常にいくつより大きいか！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>比熱比＝定圧比熱÷定容比熱……気体では常に1より大きい……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！気体は定圧加熱では体積膨張分の仕事もするから<span class="eg">定圧比熱＞定容比熱</span>→比熱比＞1だぞ！「0より大きい」は正しいが「1より大きい」が正確！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🌡️ 熱の基本量まとめ</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>物理量</th><th>定義・計算式</th><th>特徴</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">比熱（cp）</span></td><td>物質1kgの温度を1K上げるのに必要な熱量 [kJ/(kg·K)]</td><td>水：4.186 kJ/(kg·K)（非常に大きい）</td></tr>
+        <tr><td><span class="eb">比熱比（κ）</span></td><td>κ＝cp/cv（定圧比熱÷定容比熱）</td><td>気体では常に<span class="eg">κ＞1</span>（定圧＞定容）</td></tr>
+        <tr><td><span class="eb">熱量（Q）</span></td><td>Q＝mcpΔT（質量×比熱×温度差）</td><td>m[kg]、cp[kJ/(kg·K)]、ΔT[K]</td></tr>
+        <tr><td><span class="eb">潜熱</span></td><td>相変化（液→気など）に必要な熱量。温度変化なし</td><td>水の蒸発潜熱：約2,500kJ/kg</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「比熱比とは定圧比熱を定容比熱で除した値で、気体では常に0より大きい」→ 正しいが不十分。より正確には<span class="eg">気体では常に1より大きい（κ＞1）</span>。液体・固体ではκ≒1。</div>
+  </div>
+</div>
+
+<!-- CH02 エンタルピーとエントロピー -->
+<div class="chapter-header" id="ch02">
+  <div class="ch-num">02</div>
+  <div><div class="ch-label">SECTION 02</div><div class="ch-title">エンタルピーとエントロピーの定義<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">📊</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">ENTHALPY & ENTROPY</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>エントロピーは不可逆変化が生じると増加するか減少するか！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>エントロピーは不可逆変化が生じると必ず増加する……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！「必ず減少する」は典型的な誤りだぞ！<span class="eg">エントロピー増大の法則</span>（熱力学第二法則）だ！！自然現象は無秩序な方向に進む！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📊 エンタルピーとエントロピーの比較</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>物理量</th><th>定義</th><th>試験のポイント</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">エンタルピー（H）</span></td><td>物質が持つエネルギーの状態量。<span class="eg">内部エネルギー＋外部への体積膨張仕事量</span>（H＝U＋pV）</td><td>H＝U＋pV（内部エネルギー＋圧力×体積）が定義</td></tr>
+        <tr><td><span class="eg">エントロピー（S）</span></td><td>熱力学的な無秩序さの度合いを表す状態量</td><td>不可逆変化→<span class="eg">必ず増加</span>（減少は誤り）<br>可逆変化→変化なし</td></tr>
+        <tr><td><span class="eb">カルノーサイクル</span></td><td>理論上最高効率の熱機関サイクル</td><td><span class="eg">等温膨張→断熱膨張→等温圧縮→断熱圧縮</span>の4過程</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「エントロピーは不可逆変化が生じると必ず減少する」→ 誤り。<span class="eg">不可逆変化ではエントロピーは必ず増加</span>する（熱力学第二法則：エントロピー増大の法則）。</div>
+  </div>
+</div>
+
+<!-- CH03 熱伝導・対流・放射 -->
+<div class="chapter-header" id="ch03">
+  <div class="ch-num">03</div>
+  <div><div class="ch-label">SECTION 03</div><div class="ch-title">熱伝導・対流熱伝達・熱放射の3形態<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🔥</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">HEAT TRANSFER</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>自然対流と強制対流の違いを答えろ！浮力で流動が起こるのはどちらだ！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>温度差による密度差から浮力が生じて流動するのが自然対流……ファン等で強制的に動かすのが強制対流……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！「密度差による浮力→自然対流」と「ファン等→強制対流」を混同させる問題が頻出だ！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🔥 熱移動の3形態まとめ</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>熱移動形態</th><th>メカニズム</th><th>特徴・フーリエの法則等</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">熱伝導</span></td><td>固体内部の温度勾配による熱移動</td><td><span class="eg">フーリエの法則</span>：Q＝λ×A×ΔT/δ（λ：熱伝導率、δ：厚さ）。熱量は温度勾配に比例。</td></tr>
+        <tr><td><span class="eb">自然対流（自由対流）</span></td><td>温度差→密度差→<span class="eg">浮力</span>による流動で熱移動</td><td>ファン等の外力不要。温度差だけで自然に起こる。</td></tr>
+        <tr><td><span class="eb">強制対流</span></td><td>ファン・ポンプ等で<span class="eg">強制的に流体を動かして</span>熱移動</td><td>熱伝達率は流体の流速・形状・寸法等で変わる。</td></tr>
+        <tr><td><span class="eg">熱放射（熱輻射）</span></td><td>電磁波として熱エネルギーが移動</td><td>媒体不要→<span class="eg">真空中でも伝達可能</span>。ステファン・ボルツマンの法則に従う。</td></tr>
+      </tbody>
+    </table>
+    <div class="trap">「流体内において、温度の不均一に基づく密度差で浮力が生じ流動が起こる場合の熱移動を強制対流熱伝達という」→ 誤り。それは<span class="eg">自然対流（自由対流）熱伝達</span>。</div>
+  </div>
+</div>
+
+<!-- CH04 黒体放射 -->
+<div class="chapter-header" id="ch04">
+  <div class="ch-num">04</div>
+  <div><div class="ch-label">SECTION 04</div><div class="ch-title">黒体放射とステファン・ボルツマンの法則<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">⭐</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">THERMAL RADIATION</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>黒体の熱放射エネルギーは表面の絶対温度の何乗に比例するか！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>絶対温度の4乗に比例する……ステファン・ボルツマンの法則……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！「2乗」「3乗」は誤りだぞ！<span class="eg">4乗</span>が正しい！温度が2倍になると放射エネルギーは<span class="eg">16倍</span>になる！！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">⭐ 黒体放射と熱放射の特徴</div>
+  <div class="knowledge-body">
+    <div class="formula-box">
+      <span class="fl">📐 ステファン・ボルツマンの法則</span>
+      E＝σT⁴　（σ：ステファン・ボルツマン定数、T：絶対温度 [K]）
+    </div>
+    <div class="point-list" style="margin-top:.6rem;">
+      <div class="point-row"><span class="point-icon">⭐</span><span>黒体の熱放射エネルギーは絶対温度の<span class="eg">4乗</span>に比例する（ステファン・ボルツマンの法則）</span></div>
+      <div class="point-row"><span class="point-icon">🌌</span><span>熱放射は電磁波で伝わるため<span class="eg">真空中でも伝達可能</span>（媒体不要）</span></div>
+      <div class="point-row"><span class="point-icon">🌡️</span><span>絶対温度T[K]＝摂氏温度t[℃]＋273.15。「273」で近似することが多い。</span></div>
+    </div>
+    <div class="trap">「黒体の熱放射のエネルギーは、その表面の絶対温度の2乗に比例する」→ 誤り。<span class="eg">絶対温度の4乗</span>に比例（ステファン・ボルツマンの法則）。</div>
+  </div>
+</div>
+
+<!-- CH05 熱通過率 -->
+<div class="chapter-header" id="ch05">
+  <div class="ch-num">05</div>
+  <div><div class="ch-label">SECTION 05</div><div class="ch-title">熱通過率・熱貫流と壁体の厚さの関係<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🧱</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🧱 熱通過率・熱伝達率・熱伝導率の関係</div>
+  <div class="knowledge-body">
+    <table class="k-table">
+      <thead><tr><th>物理量</th><th>内容</th><th>気流速度との関係</th></tr></thead>
+      <tbody>
+        <tr><td><span class="eb">熱伝導率（λ）</span></td><td>物質固有の値 [W/(m·K)]</td><td><span class="eg">気流速度の影響を受けない</span>（物質固有）</td></tr>
+        <tr><td><span class="eb">熱伝達率（α）</span></td><td>流体と固体表面間の熱移動しやすさ</td><td><span class="eg">気流速度・形状・寸法等で変わる</span></td></tr>
+        <tr><td><span class="eg">熱通過率（K）</span></td><td>壁体両側の流体間の熱の移動しやすさ</td><td>壁体構造が同じでも<span class="er">表面の気流速度で変わる</span></td></tr>
+      </tbody>
+    </table>
+    <div class="point-list" style="margin-top:.8rem;">
+      <div class="point-row"><span class="point-icon">🧱</span><span>熱通過による熱移動量は壁体の厚さに<span class="eg">反比例（1乗）</span>する。「2乗に反比例」は誤り。</span></div>
+    </div>
+    <div class="trap">「熱通過率は壁体の構造が同じであれば、その表面における気流の速度には影響されない」→ 誤り。熱通過率Kには熱伝達率が含まれ、<span class="eg">気流速度が変わると熱伝達率が変化</span>し熱通過率も変わる。</div>
+  </div>
+</div>
+
+<!-- CH06 冷凍サイクルの基礎 -->
+<div class="chapter-header" id="ch06">
+  <div class="ch-num">06</div>
+  <div><div class="ch-label">SECTION 06</div><div class="ch-title">冷凍サイクルの基礎と冷媒<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">❄️</div>
+</div>
+
+<div class="panel">
+  <div class="scene-label">REFRIGERATION CYCLE</div>
+  <div class="scene">
+    <div class="char-col angry">
+      <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="char-name">スパナ<br>軍曹</div>
+    </div>
+    <div class="speech-col">
+      <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>蒸発温度を高く・凝縮温度を低くすると成績係数（COP）はどうなるか！！</div>
+      <div class="bubble trainee"><span class="spk">😰 パイプ訓練生</span>蒸発温度↑・凝縮温度↓にすると温度差が小さくなって……COPは大きくなる……</div>
+      <div class="bubble reply"><span class="spk">🔧 スパナ軍曹</span>正解だ！「蒸発温度↑凝縮温度↓→COP<span class="er">小さくなる</span>」は誤りだぞ！<span class="eg">COP大きくなる</span>が正解！！この逆パターンが引っかけで出る！</div>
+    </div>
+  </div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">❄️ 冷凍サイクルの4工程</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">1️⃣</span><span><span class="eb">蒸発器</span>：液冷媒が蒸発→被冷却物から熱を奪う（冷却効果）。冷媒がガス化する。</span></div>
+      <div class="point-row"><span class="point-icon">2️⃣</span><span><span class="eb">圧縮機</span>：ガス冷媒を圧縮して高温高圧ガスにする。電力を投入する工程。</span></div>
+      <div class="point-row"><span class="point-icon">3️⃣</span><span><span class="eb">凝縮器</span>：高温高圧ガスを冷却水・外気で冷却し液化。外部へ熱を放出する。</span></div>
+      <div class="point-row"><span class="point-icon">4️⃣</span><span><span class="eb">膨張弁（膨張器）</span>：高圧液冷媒を膨張させて低温低圧の液+ガスに変換。</span></div>
+    </div>
+    <div class="point-list" style="margin-top:.6rem;">
+      <div class="point-row"><span class="point-icon">❄️</span><span>冷媒の種類：アンモニア（自然冷媒・ODP＝0・GWP≒0）・フロン類・水。アンモニアは<span class="er">毒性・可燃性あり</span>・<span class="eg">GWPは小さい</span>。</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CH07 COPの計算 -->
+<div class="chapter-header" id="ch07">
+  <div class="ch-num">07</div>
+  <div><div class="ch-label">SECTION 07</div><div class="ch-title">冷凍サイクルのCOP（成績係数）計算<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">📊</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">📊 COPの定義と影響因子</div>
+  <div class="knowledge-body">
+    <div class="formula-box">
+      <span class="fl">📐 冷房COPの計算式</span>
+      COP（冷房）＝冷凍能力 / 消費電力（圧縮仕事）
+    </div>
+    <div class="formula-box">
+      <span class="fl">📐 カルノーサイクルのCOP（理論最大値）</span>
+      COP＝T₂ / (T₁−T₂)　（T₁：凝縮温度[K]、T₂：蒸発温度[K]）
+    </div>
+    <div class="point-list" style="margin-top:.6rem;">
+      <div class="point-row"><span class="point-icon">📈</span><span>COP↑の条件：<span class="eg">蒸発温度↑</span>（冷却対象温度↑）または<span class="eg">凝縮温度↓</span>（放熱先温度↓）→温度差が小さくなるほどCOP大</span></div>
+      <div class="point-row"><span class="point-icon">📉</span><span>COP↓の条件：蒸発温度↓（冬季の外気熱源等）または凝縮温度↑（夏季の冷却水温高）</span></div>
+    </div>
+    <div class="trap">「単段圧縮冷凍サイクルでは、蒸発温度を高く、凝縮温度を低くするとCOPは小さくなる」→ 誤り。温度差が小さくなるため<span class="eg">COPは大きくなる</span>（効率が向上）。</div>
+  </div>
+</div>
+
+<!-- CH08 温室効果と冷媒 -->
+<div class="chapter-header" id="ch08">
+  <div class="ch-num">08</div>
+  <div><div class="ch-label">SECTION 08</div><div class="ch-title">温室効果・冷媒・環境問題<span class="ch-level">深掘り</span></div></div>
+  <div class="ch-icon">🌍</div>
+</div>
+
+<div class="knowledge">
+  <div class="knowledge-header">🌍 温室効果と冷媒の環境特性</div>
+  <div class="knowledge-body">
+    <div class="point-list">
+      <div class="point-row"><span class="point-icon">🌡️</span><span><span class="eb">温室効果のメカニズム</span>：太陽エネルギー（短波）→地表加熱→長波赤外線放射→大気中のH₂O・CO₂等が吸収→大気温度が保たれる。</span></div>
+      <div class="point-row"><span class="point-icon">🏭</span><span>温室効果ガス：CO₂・メタン（CH₄）・フロン類・N₂O等。地球温暖化対策の推進に関する法律（地球温暖化対策法）で定義。</span></div>
+      <div class="point-row"><span class="point-icon">❄️</span><span><span class="eb">ODP（オゾン層破壊係数）</span>：アンモニア・CO₂・HFCは<span class="eg">ODP＝0</span>。CFC・HCFCはODP＞0（オゾン層を破壊）。</span></div>
+      <div class="point-row"><span class="point-icon">🌡️</span><span><span class="eb">GWP（地球温暖化係数）</span>：アンモニア・CO₂は<span class="eg">GWP小</span>（CO₂比較で1）。フロン類は<span class="er">GWP大</span>（数百〜数万）。</span></div>
+    </div>
+    <div class="trap">「アンモニアは、オゾン層破壊係数がゼロの自然冷媒であるが、地球温暖化係数も大きい」→ 誤り。アンモニアのGWP（地球温暖化係数）は<span class="eg">ほぼゼロ（非常に小さい）</span>。毒性・可燃性はあるが環境負荷は低い。</div>
+  </div>
+</div>
+
+<span class="sfx">⚗️ 第2回 全8テーマ制覇！！</span>
+
+<div class="series-cta">
+  <div class="series-cta-text">
+    <strong>次は第3回：電気・建築構造・腐食・保温材</strong>
+    D種接地・RC造の梁貫通孔・ガルバニック腐食・グラスウールの特性を深掘り解説
+  </div>
+  <div class="series-cta-btns">
+    <a href="hoshu3.html" class="btn-next">第3回へ →</a>
+    <a href="hoshu1.html" class="btn-prev">← 第1回に戻る</a>
+    <a href="manga.html" class="btn-back">基礎マンガ</a>
+  </div>
+</div>
+
+<div class="cta-block">
+  <div class="cta-title">理解したら演習問題で確認しよう</div>
+  <p class="cta-sub">一般基礎の演習問題で知識を定着させろ。</p>
+  <a href="/bunya/kiso/" class="cta-btn-primary">📝 一般基礎 演習問題を解く</a>
+  <a href="/bunya/sogo/" class="cta-btn-secondary">🎯 総合確認問題</a>
+</div>
+
+</div>
+<script>
+const obs=new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:.1});
+document.querySelectorAll('.panel,.knowledge,.chapter-header,.cta-block').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
