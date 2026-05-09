@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>法規 演習問題 | 管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士【法規】演習問題。建築基準法・労働安全衛生法・消防法・水道法など頻出条文をオリジナル問題で徹底演習。無料・会員登録不要。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/hoki/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  /* ===== CSS Variables ===== */
+  :root {
+    --bg:        #0f1117;
+    --surface:   #1a1d27;
+    --surface2:  #222636;
+    --border:    #2e3348;
+    --accent:    #4f8ef7;
+    --accent2:   #7c5cfc;
+    --correct:   #22c55e;
+    --wrong:     #ef4444;
+    --bookmark:  #f59e0b;
+    --text:      #e8eaf0;
+    --muted:     #7a8099;
+    --mono:      'DM Mono', monospace;
+    --sans:      'Noto Sans JP', sans-serif;
+    --radius:    12px;
+    --transition: 0.2s cubic-bezier(.4,0,.2,1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  /* ===== Header ===== */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo {
+    font-weight: 900;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: .02em;
+  }
+  .header-nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .btn-ghost {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: .8rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ===== Progress Bar ===== */
+  .progress-bar-wrap {
+    position: sticky;
+    top: 56px;
+    z-index: 99;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 24px 10px;
+  }
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .78rem;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .progress-info .score-live {
+    font-family: var(--mono);
+    font-size: .9rem;
+    color: var(--text);
+  }
+  .progress-track {
+    height: 5px;
+    background: var(--border);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 99px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  /* ===== Filter Bar ===== */
+  .filter-bar {
+    padding: 16px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .filter-label { font-size: .78rem; color: var(--muted); margin-right: 4px; }
+  .filter-chip {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: .78rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .filter-chip:hover, .filter-chip.active {
+    background: rgba(79,142,247,.15);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .filter-chip.bookmark-filter.active {
+    background: rgba(245,158,11,.12);
+    border-color: var(--bookmark);
+    color: var(--bookmark);
+  }
+  .spacer { flex: 1; }
+  .btn-reset {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: .78rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-reset:hover { color: var(--wrong); }
+
+  /* ===== Quiz Container ===== */
+  .quiz-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 24px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ===== Quiz Card ===== */
+  .quiz-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color var(--transition);
+    position: relative;
+  }
+  .quiz-card:hover { border-color: #3a3f58; }
+  .quiz-card.answered-correct { border-color: var(--correct); }
+  .quiz-card.answered-wrong   { border-color: var(--wrong); }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .q-num {
+    font-family: var(--mono);
+    font-size: .72rem;
+    color: var(--muted);
+    letter-spacing: .05em;
+    flex-shrink: 0;
+  }
+  .q-tags {
+    display: flex;
+    gap: 6px;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-size: .7rem;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: rgba(79,142,247,.12);
+    color: var(--accent);
+    border: 1px solid rgba(79,142,247,.25);
+  }
+  .btn-bookmark {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    line-height: 1;
+    padding: 4px;
+    border-radius: 6px;
+    color: var(--muted);
+  }
+  .btn-bookmark:hover { color: var(--bookmark); transform: scale(1.15); }
+  .btn-bookmark.bookmarked { color: var(--bookmark); }
+
+  .card-body { padding: 20px 18px 16px; }
+
+  .question-text {
+    font-size: .98rem;
+    font-weight: 500;
+    line-height: 1.75;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+
+  /* ===== Choices ===== */
+  .choices { display: flex; flex-direction: column; gap: 8px; }
+  .choice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--bg);
+    font-size: .9rem;
+    text-align: left;
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+  }
+  .choice:hover:not(:disabled) {
+    border-color: var(--accent);
+    background: rgba(79,142,247,.07);
+  }
+  .choice:disabled { cursor: not-allowed; }
+  .choice-label {
+    font-family: var(--mono);
+    font-size: .78rem;
+    color: var(--muted);
+    min-width: 20px;
+    padding-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .choice.selected        { border-color: var(--accent); background: rgba(79,142,247,.1); }
+  .choice.correct         { border-color: var(--correct); background: rgba(34,197,94,.1); }
+  .choice.correct .choice-label { color: var(--correct); }
+  .choice.wrong           { border-color: var(--wrong); background: rgba(239,68,68,.1); }
+  .choice.wrong .choice-label   { color: var(--wrong); }
+  .choice.highlight       { border-color: var(--correct); background: rgba(34,197,94,.08); }
+  .choice.highlight .choice-label { color: var(--correct); }
+
+  /* ===== Result Badge ===== */
+  .result-badge {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    font-size: .82rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 99px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  .result-badge.show { display: inline-flex; }
+  .result-badge.correct-badge { background: rgba(34,197,94,.15); color: var(--correct); }
+  .result-badge.wrong-badge   { background: rgba(239,68,68,.15); color: var(--wrong); }
+
+  /* ===== Explanation ===== */
+  .explanation {
+    display: none;
+    margin-top: 14px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .explanation.show { display: block; animation: slideDown .25s ease; }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .explanation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: .05em;
+  }
+  .btn-toggle-exp {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: .78rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-toggle-exp:hover { color: var(--text); }
+  .explanation-body {
+    padding: 14px 16px;
+    font-size: .88rem;
+    line-height: 1.8;
+    color: #c5cae0;
+  }
+  .explanation-body p + p { margin-top: 8px; }
+  .correct-answer-note {
+    font-size: .8rem;
+    color: var(--correct);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  /* ===== Score Summary ===== */
+  .score-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: center;
+    display: none;
+  }
+  .score-summary.show { display: block; animation: fadeIn .4s ease; }
+  @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+  .score-title { font-size: .82rem; color: var(--muted); margin-bottom: 8px; letter-spacing: .08em; }
+  .score-num {
+    font-family: var(--mono);
+    font-size: 3.2rem;
+    font-weight: 500;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .score-detail { font-size: .85rem; color: var(--muted); margin-bottom: 20px; }
+  .score-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border: none;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: .88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-primary:hover { opacity: .85; transform: translateY(-1px); }
+  .btn-outline {
+    background: none;
+    border: 1.5px solid var(--border);
+    color: var(--text);
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: .88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ===== Scroll to top ===== */
+  .fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius: 50%;
+    color: var(--muted);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .fab.show { opacity: 1; pointer-events: auto; }
+  .fab:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 600px) {
+    .filter-bar { padding: 12px 16px; }
+    .quiz-container { padding: 16px 12px 80px; }
+    .card-header { padding: 12px 14px; }
+    .card-body { padding: 16px 14px 14px; }
+    .score-num { font-size: 2.4rem; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="管工事PASS">
+  <meta property="og:title" content="法規 演習問題 | 管工事PASS">
+  <meta property="og:description" content="建築基準法・建設業法・水道法・廃棄物処理法・フロン法など重要法規を演習問題と解説で徹底対策。">
+  <meta property="og:url" content="https://kankoiji-pass.com/bunya/hoki/index.html">
+  <meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ja_JP">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="法規 演習問題 | 管工事PASS">
+  <meta name="twitter:description" content="建築基準法・建設業法・水道法・廃棄物処理法・フロン法など重要法規を演習問題と解説で徹底対策。">
+  <meta name="twitter:image" content="https://kankoiji-pass.com/images/ogp.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header>
+  <div class="logo">管工事PASS</div>
+  <nav class="header-nav">
+    <button class="btn-ghost" onclick="location.href='../../index.html'">← トップ</button>
+    <button class="btn-ghost" id="btnShowBookmarks">⭐ ブックマーク</button>
+  </nav>
+</header>
+<!-- ===== SEO説明ブロック ===== -->
+<section style="background:#1a1d27;border-bottom:1px solid #2e3348;padding:20px 24px;">
+  <div style="max-width:860px;margin:0 auto;">
+    <h1 style="font-size:1.1rem;font-weight:900;color:#e8eaf0;margin-bottom:8px;">1級管工事施工管理技士【法規】演習問題（30問）</h1>
+    <p style="font-size:0.82rem;color:#9ca3af;line-height:1.8;margin-bottom:8px;">条文の正確な理解が合否を分ける分野。数値基準（○m以上・○人以上など）の引っかけ問題が多く、誤りの選択肢のパターンを把握することが得点アップの近道。全30問に解説付き。</p>
+    <p style="font-size:0.78rem;color:#7a8399;"><strong style="color:#9ca3af;">収録テーマ：</strong>建築基準法・建設業法・労働安全衛生法・水道法・廃棄物処理法・フロン法など</p>
+  </div>
+</section>
+
+<!-- ===== Progress Bar ===== -->
+<div class="progress-bar-wrap">
+  <div class="progress-info">
+    <span id="progressText">0 / 0 問解答済み</span>
+    <span class="score-live" id="scoreLive">正答率 — %</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+</div>
+
+<!-- ===== Filter Bar ===== -->
+<div class="filter-bar">
+  <span class="filter-label">フィルター：</span>
+  <button class="filter-chip active" data-filter="all">すべて（30問）</button>
+  <button class="filter-chip bookmark-filter" data-filter="bookmark">⭐ ブックマークのみ</button>
+  <span class="spacer"></span>
+  <button class="btn-reset" id="btnResetAll">リセット</button>
+</div>
+
+<!-- ===== Quiz ===== -->
+<main class="quiz-container" id="quizContainer">
+  <!-- JS で動的生成 -->
+  <div class="score-summary" id="scoreSummary">
+    <div class="score-title">演習完了！</div>
+    <div class="score-num" id="finalScore">—</div>
+    <div class="score-detail" id="finalDetail"></div>
+    <div class="score-actions">
+      <button class="btn-primary" id="btnRetryWrong">❌ 不正解のみ再挑戦</button>
+      <button class="btn-outline" id="btnRetryAll">🔄 全問やり直し</button>
+    </div>
+  </div>
+</main>
+
+<button class="fab" id="fabTop" title="上に戻る">↑</button>
+
+<script>
+/* =============================================
+   問題データ（data/ フォルダの JSON から読み込む）
+   ページごとに fetch のパスだけ変える：
+     令和6年度 → '/data/r06.json'
+     令和5年度 → '/data/r05.json'
+     空調分野別 → '/data/kucho.json'
+   ============================================= */
+let QUESTIONS_DATA = [];
+
+/* =============================================
+   State
+   ============================================= */
+let state = {
+  questions: [...QUESTIONS_DATA],
+  answers: {},      // { id: choiceIndex }
+  bookmarks: new Set(JSON.parse(localStorage.getItem('kk_bookmarks') || '[]')),
+  filterCategory: 'all',
+  showBookmarkOnly: false
+};
+
+function saveBookmarks() {
+  localStorage.setItem('kk_bookmarks', JSON.stringify([...state.bookmarks]));
+}
+
+/* =============================================
+   Filter
+   ============================================= */
+function getFilteredQuestions() {
+  return state.questions.filter(q => {
+    const catOk = state.filterCategory === 'all' || q.category === state.filterCategory;
+    const bmOk  = !state.showBookmarkOnly || state.bookmarks.has(q.id);
+    return catOk && bmOk;
+  });
+}
+
+/* =============================================
+   Render
+   ============================================= */
+function renderAll() {
+  const container = document.getElementById('quizContainer');
+  const summary   = document.getElementById('scoreSummary');
+  const fqs = getFilteredQuestions();
+
+  // カードをすべて削除（scoreSummaryは残す）
+  [...container.children].forEach(el => {
+    if (el.id !== 'scoreSummary') el.remove();
+  });
+
+  if (fqs.length === 0) {
+    const empty = document.createElement('div');
+    empty.style.cssText = 'text-align:center;padding:60px;color:var(--muted);font-size:.9rem;';
+    empty.textContent = '該当する問題がありません。';
+    container.insertBefore(empty, summary);
+    updateProgress(fqs);
+    return;
+  }
+
+  fqs.forEach(q => {
+    const card = buildCard(q);
+    container.insertBefore(card, summary);
+  });
+
+  updateProgress(fqs);
+  checkAllAnswered(fqs);
+}
+
+function buildCard(q) {
+  const answered = state.answers.hasOwnProperty(q.id);
+  const userAns  = state.answers[q.id];
+  const isCorrect = answered && (userAns === q.answer);
+  const isBm = state.bookmarks.has(q.id);
+
+  const card = document.createElement('div');
+  card.className = 'quiz-card' + (answered ? (isCorrect ? ' answered-correct' : ' answered-wrong') : '');
+  card.dataset.id = q.id;
+
+  card.innerHTML = `
+    <div class="card-header">
+      <span class="q-num">Q${q.id.replace('q','').padStart(3,'0')}</span>
+      <div class="q-tags">
+        <span class="tag">${q.category}</span>
+        <span class="tag" style="background:rgba(124,92,252,.12);color:var(--accent2);border-color:rgba(124,92,252,.25);">${q.year}年</span>
+      </div>
+      ${answered ? `<span class="result-badge show ${isCorrect?'correct-badge':'wrong-badge'}">${isCorrect?'✓ 正解':'✗ 不正解'}</span>` : ''}
+      <button class="btn-bookmark ${isBm?'bookmarked':''}" data-id="${q.id}" title="ブックマーク">⭐</button>
+    </div>
+    <div class="card-body">
+      <p class="question-text">${q.question}</p>
+      <div class="choices">
+        ${q.choices.map((c, i) => {
+          let cls = '';
+          if (answered) {
+            if (i === q.answer)               cls = 'correct';
+            else if (i === userAns && !isCorrect) cls = 'wrong';
+          }
+          return `<button class="choice ${cls}" data-qid="${q.id}" data-idx="${i}" ${answered?'disabled':''}>
+            <span class="choice-label">${['①','②','③','④'][i]}</span>
+            <span>${c}</span>
+          </button>`;
+        }).join('')}
+      </div>
+      <div class="explanation ${answered?'show':''}">
+        <div class="explanation-header">
+          <span>📖 解説</span>
+          <button class="btn-toggle-exp" data-target="exp-${q.id}">▲ 閉じる</button>
+        </div>
+        <div class="explanation-body" id="exp-${q.id}">
+          <p class="correct-answer-note">正解：${['①','②','③','④'][q.answer]}　${q.choices[q.answer]}</p>
+          <p>${q.explanation}</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  return card;
+}
+
+/* =============================================
+   Progress
+   ============================================= */
+function updateProgress(fqs) {
+  const total    = fqs.length;
+  const answered = fqs.filter(q => state.answers.hasOwnProperty(q.id)).length;
+  const correct  = fqs.filter(q => state.answers[q.id] === q.answer).length;
+  const pct      = total ? Math.round(answered / total * 100) : 0;
+  const rate     = answered ? Math.round(correct / answered * 100) : null;
+
+  document.getElementById('progressText').textContent = `${answered} / ${total} 問解答済み`;
+  document.getElementById('scoreLive').textContent    = rate !== null ? `正答率 ${rate}%` : '正答率 — %';
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+function checkAllAnswered(fqs) {
+  const allDone = fqs.length > 0 && fqs.every(q => state.answers.hasOwnProperty(q.id));
+  const summary = document.getElementById('scoreSummary');
+  if (allDone) {
+    const correct = fqs.filter(q => state.answers[q.id] === q.answer).length;
+    const rate = Math.round(correct / fqs.length * 100);
+    document.getElementById('finalScore').textContent = rate + '%';
+    document.getElementById('finalDetail').textContent = `${fqs.length}問中 ${correct}問正解`;
+    summary.classList.add('show');
+  } else {
+    summary.classList.remove('show');
+  }
+}
+
+/* =============================================
+   Event Delegation
+   ============================================= */
+document.getElementById('quizContainer').addEventListener('click', e => {
+  // 選択肢クリック
+  const choiceBtn = e.target.closest('.choice');
+  if (choiceBtn && !choiceBtn.disabled) {
+    const qid = choiceBtn.dataset.qid;
+    const idx  = parseInt(choiceBtn.dataset.idx);
+    state.answers[qid] = idx;
+
+    // カードを再描画
+    const card = document.querySelector(`.quiz-card[data-id="${qid}"]`);
+    const q    = state.questions.find(q => q.id === qid);
+    if (card && q) {
+      const newCard = buildCard(q);
+      card.replaceWith(newCard);
+    }
+    updateProgress(getFilteredQuestions());
+    checkAllAnswered(getFilteredQuestions());
+
+    // スクロールアニメーション：解説へ
+    setTimeout(() => {
+      document.getElementById(`exp-${qid}`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+
+  // ブックマークボタン
+  const bmBtn = e.target.closest('.btn-bookmark');
+  if (bmBtn) {
+    const id = bmBtn.dataset.id;
+    if (state.bookmarks.has(id)) {
+      state.bookmarks.delete(id);
+      bmBtn.classList.remove('bookmarked');
+    } else {
+      state.bookmarks.add(id);
+      bmBtn.classList.add('bookmarked');
+    }
+    saveBookmarks();
+  }
+
+  // 解説トグル
+  const toggleBtn = e.target.closest('.btn-toggle-exp');
+  if (toggleBtn) {
+    const targetId = toggleBtn.dataset.target;
+    const body = document.getElementById(targetId);
+    if (body) {
+      const isHidden = body.style.display === 'none';
+      body.style.display = isHidden ? '' : 'none';
+      toggleBtn.textContent = isHidden ? '▲ 閉じる' : '▼ 開く';
+    }
+  }
+});
+
+/* =============================================
+   Filter Bar
+   ============================================= */
+document.querySelector('.filter-bar').addEventListener('click', e => {
+  const chip = e.target.closest('.filter-chip');
+  if (!chip) return;
+
+  const filter = chip.dataset.filter;
+
+  if (filter === 'bookmark') {
+    state.showBookmarkOnly = !state.showBookmarkOnly;
+    chip.classList.toggle('active', state.showBookmarkOnly);
+  } else {
+    state.filterCategory   = filter;
+    state.showBookmarkOnly = false;
+    document.querySelectorAll('.filter-chip').forEach(c => {
+      c.classList.toggle('active', c.dataset.filter === filter);
+    });
+    document.querySelector('.bookmark-filter').classList.remove('active');
+  }
+
+  renderAll();
+});
+
+/* ブックマークボタン（ヘッダー） */
+document.getElementById('btnShowBookmarks').addEventListener('click', () => {
+  state.showBookmarkOnly = !state.showBookmarkOnly;
+  document.querySelector('.bookmark-filter').classList.toggle('active', state.showBookmarkOnly);
+  renderAll();
+});
+
+/* リセット */
+document.getElementById('btnResetAll').addEventListener('click', () => {
+  if (!confirm('すべての解答をリセットしますか？')) return;
+  state.answers = {};
+  renderAll();
+});
+
+/* 不正解のみ再挑戦 */
+document.getElementById('btnRetryWrong').addEventListener('click', () => {
+  const wrongIds = new Set(
+    getFilteredQuestions()
+      .filter(q => state.answers.hasOwnProperty(q.id) && state.answers[q.id] !== q.answer)
+      .map(q => q.id)
+  );
+  state.answers = {};
+  state.questions = QUESTIONS_DATA.filter(q => wrongIds.has(q.id));
+  state.filterCategory = 'all';
+  state.showBookmarkOnly = false;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  document.querySelector('[data-filter="all"]').classList.add('active');
+  renderAll();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* 全問やり直し */
+document.getElementById('btnRetryAll').addEventListener('click', () => {
+  state.answers   = {};
+  state.questions = [...QUESTIONS_DATA];
+  renderAll();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ===== FAB ===== */
+const fab = document.getElementById('fabTop');
+window.addEventListener('scroll', () => {
+  fab.classList.toggle('show', window.scrollY > 300);
+});
+fab.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ===== Init ===== */
+function init() {
+  QUESTIONS_DATA = [
+  {
+    "id": "hoki-001",
+    "year": 2024,
+    "category": "法規",
+    "question": "建築基準法における給排水設備の配管に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "飲料水の配管と排水管を直接連結することは禁止されている。",
+      "飲料水の配管設備は、建築基準法施行令の基準に従って設置する必要がある。",
+      "配管設備の規定は新築建物にのみ適用され、既存建物の大規模修繕には適用されない。",
+      "給水タンク・貯水槽の上部には、電気設備・機械設備の設置を避けなければならない。"
+    ],
+    "answer": 2,
+    "explanation": "建築基準法の配管設備に関する規定は、新築のみならず大規模修繕・大規模模様替え・用途変更にも適用されます。「新築にのみ適用され既存建物の大規模修繕には適用されない」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-002",
+    "year": 2024,
+    "category": "法規",
+    "question": "水道法における簡易専用水道に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "簡易専用水道とは、水道事業者から供給を受ける水のみを水源とし、有効容量10m³超の受水槽を使用する給水施設をいう。",
+      "簡易専用水道の設置者は、登録検査機関による定期検査を年1回受けなければならない。",
+      "簡易専用水道の受水槽の清掃は、年1回以上実施することが義務付けられている。",
+      "簡易専用水道に該当しない受水槽（有効容量10m³以下）には、法令上の管理義務は一切ない。"
+    ],
+    "answer": 3,
+    "explanation": "有効容量10m³以下の小規模受水槽設備（簡易専用水道に該当しないもの）については、水道法の規定は適用されませんが、各自治体の条例や指導要綱により管理基準が設けられている場合があります。「法令上の管理義務は一切ない」という記述は誤りで、自治体の条例等による規制がある場合があります。"
+  },
+  {
+    "id": "hoki-003",
+    "year": 2024,
+    "category": "法規",
+    "question": "フロン排出抑制法（フロン類の使用の合理化及び管理の適正化に関する法律）に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "第一種特定製品（業務用エアコン・冷凍冷蔵機器）の管理者は、フロン類の漏えい防止のために機器を適切に管理する義務がある。",
+      "一定規模以上のフロン類の漏えいが確認された場合、国への報告義務がある。",
+      "フロン類の充填・回収は、フロン類充填回収業者が行わなければならない。",
+      "フロン排出抑制法の規定は、家庭用エアコンにも業務用エアコンと同様に適用される。"
+    ],
+    "answer": 3,
+    "explanation": "フロン排出抑制法の管理者義務（定期点検・漏えい報告など）の対象は業務用冷凍空調機器（第一種特定製品）であり、家庭用エアコンには業務用と同様の規制は適用されません。「家庭用エアコンにも同様に適用される」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-004",
+    "year": 2024,
+    "category": "法規",
+    "question": "廃棄物の処理及び清掃に関する法律（廃棄物処理法）に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "建設工事で発生するコンクリートくず・金属くずなどは産業廃棄物として扱われる。",
+      "産業廃棄物の処理は、排出事業者自らが責任を持って処理するか、許可業者に委託しなければならない。",
+      "マニフェスト（産業廃棄物管理票）制度は、産業廃棄物の適正処理を確認するための制度である。",
+      "産業廃棄物は、一般廃棄物の処理施設（市区町村の施設）で処理することができる。"
+    ],
+    "answer": 3,
+    "explanation": "産業廃棄物は、一般廃棄物の処理施設（市区町村が管理する施設）では原則として処理することができません。産業廃棄物は産業廃棄物処理の許可を受けた業者・施設が処理しなければなりません。「一般廃棄物の処理施設で処理できる」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-005",
+    "year": 2024,
+    "category": "法規",
+    "question": "建設業法における主任技術者・監理技術者に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "建設業者は、請け負った工事現場に主任技術者または監理技術者を配置しなければならない。",
+      "監理技術者は、発注者から直接工事を請け負い、かつ下請負金額の合計が一定額以上となる元請業者が配置する必要がある。",
+      "主任技術者と監理技術者は同一の資格者が兼務することができ、条件なく複数現場を同時に担当できる。",
+      "監理技術者資格者証の交付を受けた者は、発注者の求めに応じて資格者証を提示しなければならない。"
+    ],
+    "answer": 2,
+    "explanation": "主任技術者・監理技術者は、原則として1つの工事現場に専任で配置する必要があり、条件なく複数現場を同時担当することはできません。一定の条件（工事の規模・兼任が認められる条件）を満たす場合のみ兼任が認められます。「条件なく複数現場を同時に担当できる」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-006",
+    "year": 2024,
+    "category": "法規",
+    "question": "建設業法における下請負に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "特定建設業者は、発注者から直接請け負った工事を一括して下請負に出すことができる。",
+      "元請負人は、下請負人に対して不当に低い請負代金を強制してはならない。",
+      "下請負人の選定にあたっては、建設業の許可を受けた業者を選定する必要がある。",
+      "一括下請負は、発注者の書面による承諾がある場合を除き、原則として禁止されている。"
+    ],
+    "answer": 0,
+    "explanation": "一括下請負は、建設業法により発注者の書面による承諾がある場合を除き原則禁止されています。特定建設業者であっても、発注者の承諾なしに一括して下請負に出すことは禁止されています。「特定建設業者は一括下請負に出すことができる」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-007",
+    "year": 2024,
+    "category": "法規",
+    "question": "消防法における防火対象物の定期点検に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "防火対象物点検資格者は、防火対象物の点検・報告を行うことができる。",
+      "特定防火対象物の管理者は、防火対象物点検を1年に1回実施し、消防署長に報告しなければならない。",
+      "防火対象物点検の結果が優良と認定された場合、3年間点検・報告を免除できる特例がある。",
+      "防火対象物点検は、自動火災報知設備・避難設備・消火器の設置状況のみを確認するものである。"
+    ],
+    "answer": 3,
+    "explanation": "防火対象物点検は、消防設備の設置状況だけでなく、防火管理体制・避難経路・防火戸の管理・火気管理・消防計画の作成・消防訓練の実施状況など、防火に関わる総合的な事項を点検するものです。「消防設備の設置状況のみを確認する」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-008",
+    "year": 2024,
+    "category": "法規",
+    "question": "労働安全衛生法における安全衛生教育に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "事業者は、労働者を雇い入れたときに安全衛生教育を実施しなければならない。",
+      "作業内容が変更になった場合も、新たな業務に必要な安全衛生教育を実施する必要がある。",
+      "安全衛生教育は、正規雇用の従業員にのみ実施すればよく、パートタイム労働者・派遣労働者は対象外である。",
+      "危険・有害業務に就かせる労働者には、特別教育を実施しなければならない。"
+    ],
+    "answer": 2,
+    "explanation": "安全衛生教育は、雇用形態（正規・パート・派遣など）を問わず、当該事業場で作業を行うすべての労働者に実施する義務があります。「パートタイム労働者・派遣労働者は対象外」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-009",
+    "year": 2024,
+    "category": "法規",
+    "question": "建築基準法における防火区画に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "防火区画は、建物内での火災の延焼を一定区域内に封じ込めるために設けられる区画である。",
+      "竪穴区画は、階段・エレベーター昇降路・ダクトスペースなどの竪穴部分を他の部分と区画するものである。",
+      "防火区画を貫通する配管は、貫通部分の隙間を不燃材料で埋め、防火措置を講じる必要がある。",
+      "防火区画を配管が貫通する場合、すべての配管に延焼防止のためのスプリンクラーを設置しなければならない。"
+    ],
+    "answer": 3,
+    "explanation": "防火区画を配管が貫通する場合の防火措置は、貫通部の充填（モルタル・ロックウールなど）・防火ダンパーの設置・耐熱被覆などにより行います。「すべての配管にスプリンクラーを設置しなければならない」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-010",
+    "year": 2024,
+    "category": "法規",
+    "question": "高圧ガス保安法に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "高圧ガスの製造・貯蔵・販売・輸入・消費・廃棄は、高圧ガス保安法により規制されている。",
+      "冷凍設備に使用するフロン冷媒も、高圧ガス保安法の規制対象となる場合がある。",
+      "高圧ガス容器は、充填する高圧ガスの種類に応じて定められた色で塗装されなければならない。",
+      "高圧ガス保安法の規制対象となる高圧ガスの使用は、どのような場合でも事前に都道府県知事の許可が必要である。"
+    ],
+    "answer": 3,
+    "explanation": "高圧ガス保安法において、高圧ガスの使用に必要な手続きは用途・量・種類によって異なり、すべての高圧ガス使用に事前の都道府県知事の許可が必要なわけではありません。届出で足りる場合や、規制が適用されない場合もあります。「どのような場合でも許可が必要」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-011",
+    "year": 2024,
+    "category": "法規",
+    "question": "労働基準法における時間外労働に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "使用者は、労働者に法定労働時間（1日8時間・週40時間）を超えて労働させる場合、36協定を締結・届出する必要がある。",
+      "時間外労働に対しては、通常の賃金の25%以上の割増賃金を支払わなければならない。",
+      "36協定を締結すれば、時間外労働に上限は設けられておらず、無制限に労働させることができる。",
+      "月60時間を超える時間外労働に対する割増賃金率は、50%以上とされている。"
+    ],
+    "answer": 2,
+    "explanation": "2019年4月の労働基準法改正により、時間外労働に上限規制が設けられました。原則として月45時間・年360時間が上限とされ、特別条項があっても年720時間・複数月平均80時間・単月100時間未満の上限があります。「36協定を締結すれば無制限に労働させることができる」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-012",
+    "year": 2024,
+    "category": "法規",
+    "question": "建設リサイクル法（建設工事に係る資材の再資源化等に関する法律）に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "建設リサイクル法は、特定建設資材（コンクリート・アスファルト・木材・金属）の分別解体と再資源化を義務付けている。",
+      "対象建設工事の元請業者は、分別解体・再資源化の計画を作成し発注者に説明する義務がある。",
+      "建設リサイクル法の対象となる工事規模は、解体工事・新築工事・修繕工事により異なる。",
+      "建設リサイクル法により、解体工事で発生したすべての廃棄物をゼロにすることが義務付けられている。"
+    ],
+    "answer": 3,
+    "explanation": "建設リサイクル法は、特定建設資材の分別解体と再資源化を義務付けるものであり、廃棄物をゼロにすることを義務付けるものではありません。再資源化が困難なものは縮減（焼却等）することも認められています。「すべての廃棄物をゼロにすることが義務付けられている」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-013",
+    "year": 2024,
+    "category": "法規",
+    "question": "騒音規制法・振動規制法に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "騒音規制法・振動規制法は、特定建設作業による騒音・振動について規制している。",
+      "特定建設作業を施工しようとする者は、作業開始の7日前までに市区町村長に届け出なければならない。",
+      "騒音・振動の規制基準は、地域の種別（住居地域・商業地域など）や時間帯（昼間・夜間）により異なる。",
+      "騒音規制法・振動規制法の規制対象となる特定建設作業は、すべての建設機械の使用を含む。"
+    ],
+    "answer": 3,
+    "explanation": "騒音規制法・振動規制法の「特定建設作業」は、くい打機・びょう打機・さく岩機・空気圧縮機など、特定の建設機械・工法を使用する作業に限定されています。「すべての建設機械の使用を含む」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-014",
+    "year": 2024,
+    "category": "法規",
+    "question": "建築基準法における建築確認に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "一定規模以上の建築物の新築・増築・改築を行う場合は、建築確認を受けなければならない。",
+      "建築確認申請は、建築主事または指定確認検査機関に提出する。",
+      "建築確認済証の交付を受けた後でなければ、建築工事に着手することができない。",
+      "建築確認を受けた建築物であれば、竣工後の完了検査を受ける必要はない。"
+    ],
+    "answer": 3,
+    "explanation": "建築確認を受けた建築物であっても、工事完了後には建築主事または指定確認検査機関による完了検査を受け、検査済証の交付を受けなければなりません。「完了検査を受ける必要はない」という記述は誤りです。検査済証のない建築物は建物の使用開始に制限が生じる場合があります。"
+  },
+  {
+    "id": "hoki-015",
+    "year": 2024,
+    "category": "法規",
+    "question": "消防法における危険物の貯蔵・取扱いに関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "消防法で定める危険物は、引火性・爆発性・自然発火性などを持つ物品である。",
+      "危険物の貯蔵・取扱いは、消防法に基づく危険物施設として許可を受けた施設で行わなければならない。",
+      "危険物取扱者の資格は、甲種・乙種・丙種に分類される。",
+      "危険物取扱者の資格があれば、どのような種類・量の危険物でも取り扱うことができる。"
+    ],
+    "answer": 3,
+    "explanation": "危険物取扱者の資格には甲種・乙種（第1〜6類）・丙種があり、それぞれ取り扱える危険物の種類が異なります。乙種は類別ごとの許可となるため、取得した類以外の危険物は取り扱えません。「どのような種類・量でも取り扱うことができる」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-016",
+    "year": 2024,
+    "category": "法規",
+    "question": "1級管工事施工管理技士の資格に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "1級管工事施工管理技士は、国土交通大臣が実施する国家試験に合格することで取得できる。",
+      "1級管工事施工管理技士の資格保有者は、建設業法に基づく管工事の監理技術者になることができる。",
+      "1級管工事施工管理技士の試験は、一次検定（学科）と二次検定（実地）で構成されている。",
+      "1級管工事施工管理技士の資格を取得すれば、電気工事・土木工事の監理技術者にも就任できる。"
+    ],
+    "answer": 3,
+    "explanation": "1級管工事施工管理技士の資格は、管工事の監理技術者となることができる資格であり、電気工事・土木工事など他の工事種別の監理技術者になることはできません。各工事種別に対応した施工管理技士の資格が別途必要です。「電気工事・土木工事の監理技術者にも就任できる」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-017",
+    "year": 2024,
+    "category": "法規",
+    "question": "大気汚染防止法に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "大気汚染防止法は、工場・事業場からのばい煙・揮発性有機化合物などの排出を規制している。",
+      "特定施設（ばい煙発生施設）を設置する場合は、都道府県知事への届出が必要である。",
+      "ばい煙の排出基準は、施設の種類・規模により異なる排出基準が設定されている。",
+      "大気汚染防止法は工場排煙のみを対象としており、建設工事現場からの粉じんは規制対象外である。"
+    ],
+    "answer": 3,
+    "explanation": "大気汚染防止法は工場からの排煙だけでなく、建設工事現場からの粉じん（特定粉じん＝石綿・一般粉じん）も規制対象となっています。「建設工事現場からの粉じんは規制対象外」という記述は誤りです。特に解体工事における石綿（アスベスト）の飛散防止は厳しく規制されています。"
+  },
+  {
+    "id": "hoki-018",
+    "year": 2024,
+    "category": "法規",
+    "question": "建設業法における施工体制台帳・施工体系図に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "特定建設業者が一定額以上の下請契約を締結する場合、施工体制台帳を作成しなければならない。",
+      "施工体制台帳は、工事現場ごとに作成し、工事完成後も一定期間保存しなければならない。",
+      "施工体系図は、施工体制台帳をもとに、下請負の階層関係を図で表したものである。",
+      "施工体制台帳は、元請業者のみが閲覧できるものであり、発注者・下請業者は閲覧できない。"
+    ],
+    "answer": 3,
+    "explanation": "施工体制台帳は、発注者が請求した場合には閲覧させなければならない義務があります。「元請業者のみが閲覧できる」という記述は誤りです。また、工事現場に施工体系図を掲示することも義務付けられており、関係者が確認できる状態にする必要があります。"
+  },
+  {
+    "id": "hoki-019",
+    "year": 2024,
+    "category": "法規",
+    "question": "労働安全衛生法における定期自主検査に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "ボイラー・圧力容器などの特定機械等は、定期的に自主検査を実施しなければならない。",
+      "定期自主検査の結果は記録し、一定期間保存しなければならない。",
+      "定期自主検査は、資格・専門知識を有する者が実施することが原則とされている。",
+      "定期自主検査で異常が発見された機械は、修理が完了するまで使用してはならないが、軽微な異常は使用を継続してよい。"
+    ],
+    "answer": 3,
+    "explanation": "定期自主検査で異常が発見された機械・設備は、異常の程度に関わらず、補修その他必要な措置を講じた後でなければ使用してはなりません。「軽微な異常は使用を継続してよい」という記述は誤りです。安全を確保するために、発見された異常はすべて対応することが原則です。"
+  },
+  {
+    "id": "hoki-020",
+    "year": 2024,
+    "category": "法規",
+    "question": "下水道法に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "公共下水道が整備された区域では、汚水を公共下水道に排除することが義務付けられる場合がある。",
+      "下水道に排除できる排水の水質基準は、下水道法により定められている。",
+      "特定事業場（一定の工場・事業場）は、基準を超える排水を下水道に流す前に除害施設で処理しなければならない。",
+      "下水道への排水は、どのような水質であっても追加処理なしに排除することができる。"
+    ],
+    "answer": 3,
+    "explanation": "下水道への排水には、下水道法に基づく水質基準があり、基準を超える有害物質・油分・高温排水などは前処理（除害施設による処理）を行った後でなければ排除できません。「どのような水質でも追加処理なしに排除できる」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-021",
+    "year": 2024,
+    "category": "法規",
+    "question": "特定化学物質障害予防規則に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "特定化学物質を製造・使用する作業場では、特定化学物質作業主任者を選任しなければならない。",
+      "特定化学物質による健康障害を防止するため、作業環境測定・健康診断の実施が義務付けられている。",
+      "特定化学物質を取り扱う作業者には、適切な保護具（防毒マスク・保護手袋など）の使用が義務付けられる。",
+      "特定化学物質を使用する作業では、有害性を把握していれば保護具を着用しなくてよい。"
+    ],
+    "answer": 3,
+    "explanation": "特定化学物質を取り扱う作業では、有害性を知っているかどうかにかかわらず、法令で定められた保護具の着用が義務付けられます。「有害性を把握していれば保護具を着用しなくてよい」という記述は誤りです。知識があっても保護具なしで作業することは法令違反となります。"
+  },
+  {
+    "id": "hoki-022",
+    "year": 2024,
+    "category": "法規",
+    "question": "省エネルギー法（エネルギーの使用の合理化等に関する法律）に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "一定規模以上のエネルギー使用量の工場・建物は、エネルギー管理指定工場・指定建物として指定される場合がある。",
+      "指定されたエネルギー管理工場の設置者は、エネルギー管理士を選任しなければならない。",
+      "定期報告書の提出・中長期計画の作成など、エネルギー使用量の管理・報告義務がある。",
+      "省エネルギー法は製造業のみを対象としており、建築物（ビル・商業施設など）の管理者には適用されない。"
+    ],
+    "answer": 3,
+    "explanation": "省エネルギー法は製造業の工場だけでなく、一定規模以上のエネルギーを使用する建築物（ビル・商業施設・病院など）の管理者にも適用されます。「建築物の管理者には適用されない」という記述は誤りです。建築物の省エネ基準・エネルギー消費性能の向上も省エネ法の重要な規制対象です。"
+  },
+  {
+    "id": "hoki-023",
+    "year": 2024,
+    "category": "法規",
+    "question": "石綿（アスベスト）障害予防規則に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "石綿が含まれる建材の解体・改修工事を行う場合は、石綿作業主任者を選任しなければならない。",
+      "石綿含有建材の解体工事を行う前に、石綿含有の有無を事前調査することが義務付けられている。",
+      "石綿を取り扱う作業では、防じんマスクではなく防毒マスクを使用しなければならない。",
+      "石綿含有建材の解体工事では、石綿の飛散防止措置を講じなければならない。"
+    ],
+    "answer": 2,
+    "explanation": "石綿（アスベスト）を取り扱う作業では、石綿用の防じんマスク（防護性能の高いもの）または電動ファン付き呼吸用保護具を使用しなければなりません。防毒マスクは有毒ガスを防ぐためのものであり、石綿対策には防じんマスクが適切です。「防毒マスクを使用しなければならない」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-024",
+    "year": 2024,
+    "category": "法規",
+    "question": "建設業法における建設業の許可に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "建設業の許可は、一般建設業と特定建設業に区分される。",
+      "特定建設業の許可は、発注者から直接工事を請け負い、一定額以上の下請契約を締結する業者に必要である。",
+      "建設業の許可は、業種ごとに取得する必要があり、管工事業の許可は管工事にのみ有効である。",
+      "建設業の許可を受けていない業者は、いかなる建設工事も請け負うことができない。"
+    ],
+    "answer": 3,
+    "explanation": "建設業法では、1件の請負金額が500万円未満（建築一式工事は1,500万円未満または延べ面積150m²未満の木造住宅）の工事については、建設業の許可を受けていない業者でも請け負うことができます（軽微な建設工事の例外）。「いかなる建設工事も請け負うことができない」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-025",
+    "year": 2024,
+    "category": "法規",
+    "question": "電気事業法における自家用電気工作物に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "自家用電気工作物を設置する者は、保安規程を作成し、経済産業大臣に届け出なければならない。",
+      "自家用電気工作物の工事・維持・運用の保安は、電気主任技術者が監督する。",
+      "自家用電気工作物の定期点検は、電気主任技術者が定める保安規程に基づいて実施する。",
+      "自家用電気工作物を設置する事業者は、電気主任技術者を自社で選任しなければならず、外部委託は認められない。"
+    ],
+    "answer": 3,
+    "explanation": "自家用電気工作物の電気主任技術者については、自社での選任のほか、一定の要件を満たす場合には保安管理業務を外部の法人・個人に委託することが認められています（保安管理業務外部委託制度）。「外部委託は認められない」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-026",
+    "year": 2024,
+    "category": "法規",
+    "question": "建築基準法における換気設備に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "居室には、換気のための窓その他の開口部を設けるか、政令で定める技術的基準に従った換気設備を設けなければならない。",
+      "シックハウス対策として、ホルムアルデヒドを発散する建材を使用した居室には機械換気設備の設置が義務付けられている。",
+      "換気設備の換気回数は、建物用途・居室の用途・在室者数などにより異なる基準が設定されている。",
+      "換気設備を設ければ、建物のすべての空間で二酸化炭素濃度を0ppm（完全清浄）に保つことが義務付けられている。"
+    ],
+    "answer": 3,
+    "explanation": "建築基準法において、二酸化炭素濃度を0ppmに保つことは義務付けられていません。建築物環境衛生管理基準では、空気中の二酸化炭素濃度を1,000ppm（0.1%）以下に維持することが基準とされています。「0ppm（完全清浄）が義務付けられている」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-027",
+    "year": 2024,
+    "category": "法規",
+    "question": "建築物における衛生的環境の確保に関する法律（ビル管法）に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "特定建築物（延べ面積3,000m²以上の百貨店・旅館・病院・事務所など）の所有者・管理者は、建築物環境衛生管理基準に従い維持管理しなければならない。",
+      "特定建築物の維持管理に関する業務は、建築物環境衛生管理技術者（ビル管理士）が監督・指導する。",
+      "空気環境の測定（温度・湿度・CO₂濃度など）は、2ヶ月に1回以上実施しなければならない。",
+      "特定建築物に該当する建物は、維持管理状況を都道府県知事に届け出れば、以後の維持管理義務は免除される。"
+    ],
+    "answer": 3,
+    "explanation": "ビル管法において、特定建築物の維持管理義務は継続的なものであり、一度届け出を行っても維持管理義務が免除されることはありません。建築物環境衛生管理基準に基づく維持管理は常に求められます。「届け出れば以後の維持管理義務は免除される」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-028",
+    "year": 2024,
+    "category": "法規",
+    "question": "労働安全衛生法における就業制限に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "クレーンの運転（つり上げ荷重5トン以上）は、クレーン運転士免許を有する者でなければ就業できない。",
+      "ボイラーの取扱いは、ボイラー技士の免許を有する者またはボイラー取扱技能講習修了者が行わなければならない（規模による）。",
+      "就業制限業務に就かせることができるのは、免許または技能講習修了の資格を有する者に限られる。",
+      "就業制限の対象となる業務でも、上司の指示があれば無資格者が作業を行うことができる。"
+    ],
+    "answer": 3,
+    "explanation": "就業制限業務は、法令で定める免許または技能講習の資格を有する者のみが従事できる業務であり、上司の指示があっても無資格者が就業することは法令違反となります。「上司の指示があれば無資格者が作業できる」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-029",
+    "year": 2024,
+    "category": "法規",
+    "question": "騒音障害防止のためのガイドラインに関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "強烈な騒音を発する場所での作業では、耳栓・イヤーマフ等の聴覚保護具の使用が求められる。",
+      "85dB以上の騒音にさらされる労働者には、定期的な健康診断（聴力検査）の実施が求められる。",
+      "騒音対策として、発生源の防音処置・遮音壁の設置・作業時間の短縮などが有効である。",
+      "騒音障害は、一時的な騒音曝露では発生せず、長年の累積曝露のみにより発症する。"
+    ],
+    "answer": 3,
+    "explanation": "騒音性難聴（騒音障害）は通常長期間の累積曝露により発症しますが、極めて大きな衝撃音（爆発音・銃声など）による急性音響外傷は一時的な曝露でも生じる場合があります。「一時的な騒音曝露では発生しない」という記述は誤りです。"
+  },
+  {
+    "id": "hoki-030",
+    "year": 2024,
+    "category": "法規",
+    "question": "建築士法に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "一級建築士は、すべての建築物の設計・工事監理を行うことができる。",
+      "二級建築士は、一定規模以下の建築物の設計・工事監理を行うことができる。",
+      "建築士が設計した建物でなければ、建築確認申請を行うことができない場合がある。",
+      "建築士免許を取得すれば、管工事の施工管理も行うことができるため、管工事施工管理技士の資格は不要となる。"
+    ],
+    "answer": 3,
+    "explanation": "建築士免許と管工事施工管理技士の資格は別個の資格です。建築士は建築物の設計・工事監理を行う資格であり、管工事の施工管理（建設業法に基づく主任技術者・監理技術者）には管工事施工管理技士等の資格が必要です。「建築士免許があれば管工事施工管理技士は不要」という記述は誤りです。"
+  }
+];
+  state.questions = [...QUESTIONS_DATA];
+  renderAll();
+}
+init();
+</script>
+</body>
+</html>
