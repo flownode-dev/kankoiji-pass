@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一般基礎 演習問題 | 管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士【一般基礎】演習問題。流体力学・熱力学・電気基礎など計算問題を含む頻出テーマをオリジナル問題で徹底演習。無料・会員登録不要。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/kiso/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  /* ===== CSS Variables ===== */
+  :root {
+    --bg:        #0f1117;
+    --surface:   #1a1d27;
+    --surface2:  #222636;
+    --border:    #2e3348;
+    --accent:    #4f8ef7;
+    --accent2:   #7c5cfc;
+    --correct:   #22c55e;
+    --wrong:     #ef4444;
+    --bookmark:  #f59e0b;
+    --text:      #e8eaf0;
+    --muted:     #7a8099;
+    --mono:      'DM Mono', monospace;
+    --sans:      'Noto Sans JP', sans-serif;
+    --radius:    12px;
+    --transition: 0.2s cubic-bezier(.4,0,.2,1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  /* ===== Header ===== */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo {
+    font-weight: 900;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: .02em;
+  }
+  .header-nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .btn-ghost {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: .8rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ===== Progress Bar ===== */
+  .progress-bar-wrap {
+    position: sticky;
+    top: 56px;
+    z-index: 99;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 24px 10px;
+  }
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .78rem;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .progress-info .score-live {
+    font-family: var(--mono);
+    font-size: .9rem;
+    color: var(--text);
+  }
+  .progress-track {
+    height: 5px;
+    background: var(--border);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 99px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  /* ===== Filter Bar ===== */
+  .filter-bar {
+    padding: 16px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .filter-label { font-size: .78rem; color: var(--muted); margin-right: 4px; }
+  .filter-chip {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: .78rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .filter-chip:hover, .filter-chip.active {
+    background: rgba(79,142,247,.15);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .filter-chip.bookmark-filter.active {
+    background: rgba(245,158,11,.12);
+    border-color: var(--bookmark);
+    color: var(--bookmark);
+  }
+  .spacer { flex: 1; }
+  .btn-reset {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: .78rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-reset:hover { color: var(--wrong); }
+
+  /* ===== Quiz Container ===== */
+  .quiz-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 24px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ===== Quiz Card ===== */
+  .quiz-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color var(--transition);
+    position: relative;
+  }
+  .quiz-card:hover { border-color: #3a3f58; }
+  .quiz-card.answered-correct { border-color: var(--correct); }
+  .quiz-card.answered-wrong   { border-color: var(--wrong); }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .q-num {
+    font-family: var(--mono);
+    font-size: .72rem;
+    color: var(--muted);
+    letter-spacing: .05em;
+    flex-shrink: 0;
+  }
+  .q-tags {
+    display: flex;
+    gap: 6px;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-size: .7rem;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: rgba(79,142,247,.12);
+    color: var(--accent);
+    border: 1px solid rgba(79,142,247,.25);
+  }
+  .btn-bookmark {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    line-height: 1;
+    padding: 4px;
+    border-radius: 6px;
+    color: var(--muted);
+  }
+  .btn-bookmark:hover { color: var(--bookmark); transform: scale(1.15); }
+  .btn-bookmark.bookmarked { color: var(--bookmark); }
+
+  .card-body { padding: 20px 18px 16px; }
+
+  .question-text {
+    font-size: .98rem;
+    font-weight: 500;
+    line-height: 1.75;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+
+  /* ===== Choices ===== */
+  .choices { display: flex; flex-direction: column; gap: 8px; }
+  .choice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--bg);
+    font-size: .9rem;
+    text-align: left;
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+  }
+  .choice:hover:not(:disabled) {
+    border-color: var(--accent);
+    background: rgba(79,142,247,.07);
+  }
+  .choice:disabled { cursor: not-allowed; }
+  .choice-label {
+    font-family: var(--mono);
+    font-size: .78rem;
+    color: var(--muted);
+    min-width: 20px;
+    padding-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .choice.selected        { border-color: var(--accent); background: rgba(79,142,247,.1); }
+  .choice.correct         { border-color: var(--correct); background: rgba(34,197,94,.1); }
+  .choice.correct .choice-label { color: var(--correct); }
+  .choice.wrong           { border-color: var(--wrong); background: rgba(239,68,68,.1); }
+  .choice.wrong .choice-label   { color: var(--wrong); }
+  .choice.highlight       { border-color: var(--correct); background: rgba(34,197,94,.08); }
+  .choice.highlight .choice-label { color: var(--correct); }
+
+  /* ===== Result Badge ===== */
+  .result-badge {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    font-size: .82rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 99px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  .result-badge.show { display: inline-flex; }
+  .result-badge.correct-badge { background: rgba(34,197,94,.15); color: var(--correct); }
+  .result-badge.wrong-badge   { background: rgba(239,68,68,.15); color: var(--wrong); }
+
+  /* ===== Explanation ===== */
+  .explanation {
+    display: none;
+    margin-top: 14px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .explanation.show { display: block; animation: slideDown .25s ease; }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .explanation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: .05em;
+  }
+  .btn-toggle-exp {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: .78rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-toggle-exp:hover { color: var(--text); }
+  .explanation-body {
+    padding: 14px 16px;
+    font-size: .88rem;
+    line-height: 1.8;
+    color: #c5cae0;
+  }
+  .explanation-body p + p { margin-top: 8px; }
+  .correct-answer-note {
+    font-size: .8rem;
+    color: var(--correct);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  /* ===== Score Summary ===== */
+  .score-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: center;
+    display: none;
+  }
+  .score-summary.show { display: block; animation: fadeIn .4s ease; }
+  @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+  .score-title { font-size: .82rem; color: var(--muted); margin-bottom: 8px; letter-spacing: .08em; }
+  .score-num {
+    font-family: var(--mono);
+    font-size: 3.2rem;
+    font-weight: 500;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .score-detail { font-size: .85rem; color: var(--muted); margin-bottom: 20px; }
+  .score-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border: none;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: .88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-primary:hover { opacity: .85; transform: translateY(-1px); }
+  .btn-outline {
+    background: none;
+    border: 1.5px solid var(--border);
+    color: var(--text);
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: .88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--sans);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ===== Scroll to top ===== */
+  .fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius: 50%;
+    color: var(--muted);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .fab.show { opacity: 1; pointer-events: auto; }
+  .fab:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 600px) {
+    .filter-bar { padding: 12px 16px; }
+    .quiz-container { padding: 16px 12px 80px; }
+    .card-header { padding: 12px 14px; }
+    .card-body { padding: 16px 14px 14px; }
+    .score-num { font-size: 2.4rem; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="管工事PASS">
+  <meta property="og:title" content="一般基礎 演習問題 | 管工事PASS">
+  <meta property="og:description" content="流体力学・熱力学・電気・材料・計装など一般基礎を演習問題と解説で徹底対策。">
+  <meta property="og:url" content="https://kankoiji-pass.com/bunya/kiso/index.html">
+  <meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ja_JP">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="一般基礎 演習問題 | 管工事PASS">
+  <meta name="twitter:description" content="流体力学・熱力学・電気・材料・計装など一般基礎を演習問題と解説で徹底対策。">
+  <meta name="twitter:image" content="https://kankoiji-pass.com/images/ogp.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header>
+  <div class="logo">管工事PASS</div>
+  <nav class="header-nav">
+    <button class="btn-ghost" onclick="location.href='../../index.html'">← トップ</button>
+    <button class="btn-ghost" id="btnShowBookmarks">⭐ ブックマーク</button>
+  </nav>
+</header>
+<!-- ===== SEO説明ブロック ===== -->
+<section style="background:#1a1d27;border-bottom:1px solid #2e3348;padding:20px 24px;">
+  <div style="max-width:860px;margin:0 auto;">
+    <h1 style="font-size:1.1rem;font-weight:900;color:#e8eaf0;margin-bottom:8px;">1級管工事施工管理技士【一般基礎】演習問題（30問）</h1>
+    <p style="font-size:0.82rem;color:#9ca3af;line-height:1.8;margin-bottom:8px;">受験生が最も苦手とする分野。ベルヌーイの定理・熱移動の3形態・オームの法則など基本公式の理解と計算練習が重要。公式の意味を理解すれば得点源にできる。全30問収録。</p>
+    <p style="font-size:0.78rem;color:#7a8399;"><strong style="color:#9ca3af;">収録テーマ：</strong>流体力学・熱力学・電気基礎・材料力学・環境工学など計算問題を含む基礎知識</p>
+  </div>
+</section>
+
+<!-- ===== Progress Bar ===== -->
+<div class="progress-bar-wrap">
+  <div class="progress-info">
+    <span id="progressText">0 / 0 問解答済み</span>
+    <span class="score-live" id="scoreLive">正答率 — %</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+</div>
+
+<!-- ===== Filter Bar ===== -->
+<div class="filter-bar">
+  <span class="filter-label">フィルター：</span>
+  <button class="filter-chip active" data-filter="all">すべて（30問）</button>
+  <button class="filter-chip bookmark-filter" data-filter="bookmark">⭐ ブックマークのみ</button>
+  <span class="spacer"></span>
+  <button class="btn-reset" id="btnResetAll">リセット</button>
+</div>
+
+<!-- ===== Quiz ===== -->
+<main class="quiz-container" id="quizContainer">
+  <!-- JS で動的生成 -->
+  <div class="score-summary" id="scoreSummary">
+    <div class="score-title">演習完了！</div>
+    <div class="score-num" id="finalScore">—</div>
+    <div class="score-detail" id="finalDetail"></div>
+    <div class="score-actions">
+      <button class="btn-primary" id="btnRetryWrong">❌ 不正解のみ再挑戦</button>
+      <button class="btn-outline" id="btnRetryAll">🔄 全問やり直し</button>
+    </div>
+  </div>
+</main>
+
+<button class="fab" id="fabTop" title="上に戻る">↑</button>
+
+<script>
+/* =============================================
+   問題データ（data/ フォルダの JSON から読み込む）
+   ページごとに fetch のパスだけ変える：
+     令和6年度 → '/data/r06.json'
+     令和5年度 → '/data/r05.json'
+     空調分野別 → '/data/kucho.json'
+   ============================================= */
+let QUESTIONS_DATA = [];
+
+/* =============================================
+   State
+   ============================================= */
+let state = {
+  questions: [...QUESTIONS_DATA],
+  answers: {},      // { id: choiceIndex }
+  bookmarks: new Set(JSON.parse(localStorage.getItem('kk_bookmarks') || '[]')),
+  filterCategory: 'all',
+  showBookmarkOnly: false
+};
+
+function saveBookmarks() {
+  localStorage.setItem('kk_bookmarks', JSON.stringify([...state.bookmarks]));
+}
+
+/* =============================================
+   Filter
+   ============================================= */
+function getFilteredQuestions() {
+  return state.questions.filter(q => {
+    const catOk = state.filterCategory === 'all' || q.category === state.filterCategory;
+    const bmOk  = !state.showBookmarkOnly || state.bookmarks.has(q.id);
+    return catOk && bmOk;
+  });
+}
+
+/* =============================================
+   Render
+   ============================================= */
+function renderAll() {
+  const container = document.getElementById('quizContainer');
+  const summary   = document.getElementById('scoreSummary');
+  const fqs = getFilteredQuestions();
+
+  // カードをすべて削除（scoreSummaryは残す）
+  [...container.children].forEach(el => {
+    if (el.id !== 'scoreSummary') el.remove();
+  });
+
+  if (fqs.length === 0) {
+    const empty = document.createElement('div');
+    empty.style.cssText = 'text-align:center;padding:60px;color:var(--muted);font-size:.9rem;';
+    empty.textContent = '該当する問題がありません。';
+    container.insertBefore(empty, summary);
+    updateProgress(fqs);
+    return;
+  }
+
+  fqs.forEach(q => {
+    const card = buildCard(q);
+    container.insertBefore(card, summary);
+  });
+
+  updateProgress(fqs);
+  checkAllAnswered(fqs);
+}
+
+function buildCard(q) {
+  const answered = state.answers.hasOwnProperty(q.id);
+  const userAns  = state.answers[q.id];
+  const isCorrect = answered && (userAns === q.answer);
+  const isBm = state.bookmarks.has(q.id);
+
+  const card = document.createElement('div');
+  card.className = 'quiz-card' + (answered ? (isCorrect ? ' answered-correct' : ' answered-wrong') : '');
+  card.dataset.id = q.id;
+
+  card.innerHTML = `
+    <div class="card-header">
+      <span class="q-num">Q${q.id.replace('q','').padStart(3,'0')}</span>
+      <div class="q-tags">
+        <span class="tag">${q.category}</span>
+        <span class="tag" style="background:rgba(124,92,252,.12);color:var(--accent2);border-color:rgba(124,92,252,.25);">${q.year}年</span>
+      </div>
+      ${answered ? `<span class="result-badge show ${isCorrect?'correct-badge':'wrong-badge'}">${isCorrect?'✓ 正解':'✗ 不正解'}</span>` : ''}
+      <button class="btn-bookmark ${isBm?'bookmarked':''}" data-id="${q.id}" title="ブックマーク">⭐</button>
+    </div>
+    <div class="card-body">
+      <p class="question-text">${q.question}</p>
+      <div class="choices">
+        ${q.choices.map((c, i) => {
+          let cls = '';
+          if (answered) {
+            if (i === q.answer)               cls = 'correct';
+            else if (i === userAns && !isCorrect) cls = 'wrong';
+          }
+          return `<button class="choice ${cls}" data-qid="${q.id}" data-idx="${i}" ${answered?'disabled':''}>
+            <span class="choice-label">${['①','②','③','④'][i]}</span>
+            <span>${c}</span>
+          </button>`;
+        }).join('')}
+      </div>
+      <div class="explanation ${answered?'show':''}">
+        <div class="explanation-header">
+          <span>📖 解説</span>
+          <button class="btn-toggle-exp" data-target="exp-${q.id}">▲ 閉じる</button>
+        </div>
+        <div class="explanation-body" id="exp-${q.id}">
+          <p class="correct-answer-note">正解：${['①','②','③','④'][q.answer]}　${q.choices[q.answer]}</p>
+          <p>${q.explanation}</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  return card;
+}
+
+/* =============================================
+   Progress
+   ============================================= */
+function updateProgress(fqs) {
+  const total    = fqs.length;
+  const answered = fqs.filter(q => state.answers.hasOwnProperty(q.id)).length;
+  const correct  = fqs.filter(q => state.answers[q.id] === q.answer).length;
+  const pct      = total ? Math.round(answered / total * 100) : 0;
+  const rate     = answered ? Math.round(correct / answered * 100) : null;
+
+  document.getElementById('progressText').textContent = `${answered} / ${total} 問解答済み`;
+  document.getElementById('scoreLive').textContent    = rate !== null ? `正答率 ${rate}%` : '正答率 — %';
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+function checkAllAnswered(fqs) {
+  const allDone = fqs.length > 0 && fqs.every(q => state.answers.hasOwnProperty(q.id));
+  const summary = document.getElementById('scoreSummary');
+  if (allDone) {
+    const correct = fqs.filter(q => state.answers[q.id] === q.answer).length;
+    const rate = Math.round(correct / fqs.length * 100);
+    document.getElementById('finalScore').textContent = rate + '%';
+    document.getElementById('finalDetail').textContent = `${fqs.length}問中 ${correct}問正解`;
+    summary.classList.add('show');
+  } else {
+    summary.classList.remove('show');
+  }
+}
+
+/* =============================================
+   Event Delegation
+   ============================================= */
+document.getElementById('quizContainer').addEventListener('click', e => {
+  // 選択肢クリック
+  const choiceBtn = e.target.closest('.choice');
+  if (choiceBtn && !choiceBtn.disabled) {
+    const qid = choiceBtn.dataset.qid;
+    const idx  = parseInt(choiceBtn.dataset.idx);
+    state.answers[qid] = idx;
+
+    // カードを再描画
+    const card = document.querySelector(`.quiz-card[data-id="${qid}"]`);
+    const q    = state.questions.find(q => q.id === qid);
+    if (card && q) {
+      const newCard = buildCard(q);
+      card.replaceWith(newCard);
+    }
+    updateProgress(getFilteredQuestions());
+    checkAllAnswered(getFilteredQuestions());
+
+    // スクロールアニメーション：解説へ
+    setTimeout(() => {
+      document.getElementById(`exp-${qid}`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+
+  // ブックマークボタン
+  const bmBtn = e.target.closest('.btn-bookmark');
+  if (bmBtn) {
+    const id = bmBtn.dataset.id;
+    if (state.bookmarks.has(id)) {
+      state.bookmarks.delete(id);
+      bmBtn.classList.remove('bookmarked');
+    } else {
+      state.bookmarks.add(id);
+      bmBtn.classList.add('bookmarked');
+    }
+    saveBookmarks();
+  }
+
+  // 解説トグル
+  const toggleBtn = e.target.closest('.btn-toggle-exp');
+  if (toggleBtn) {
+    const targetId = toggleBtn.dataset.target;
+    const body = document.getElementById(targetId);
+    if (body) {
+      const isHidden = body.style.display === 'none';
+      body.style.display = isHidden ? '' : 'none';
+      toggleBtn.textContent = isHidden ? '▲ 閉じる' : '▼ 開く';
+    }
+  }
+});
+
+/* =============================================
+   Filter Bar
+   ============================================= */
+document.querySelector('.filter-bar').addEventListener('click', e => {
+  const chip = e.target.closest('.filter-chip');
+  if (!chip) return;
+
+  const filter = chip.dataset.filter;
+
+  if (filter === 'bookmark') {
+    state.showBookmarkOnly = !state.showBookmarkOnly;
+    chip.classList.toggle('active', state.showBookmarkOnly);
+  } else {
+    state.filterCategory   = filter;
+    state.showBookmarkOnly = false;
+    document.querySelectorAll('.filter-chip').forEach(c => {
+      c.classList.toggle('active', c.dataset.filter === filter);
+    });
+    document.querySelector('.bookmark-filter').classList.remove('active');
+  }
+
+  renderAll();
+});
+
+/* ブックマークボタン（ヘッダー） */
+document.getElementById('btnShowBookmarks').addEventListener('click', () => {
+  state.showBookmarkOnly = !state.showBookmarkOnly;
+  document.querySelector('.bookmark-filter').classList.toggle('active', state.showBookmarkOnly);
+  renderAll();
+});
+
+/* リセット */
+document.getElementById('btnResetAll').addEventListener('click', () => {
+  if (!confirm('すべての解答をリセットしますか？')) return;
+  state.answers = {};
+  renderAll();
+});
+
+/* 不正解のみ再挑戦 */
+document.getElementById('btnRetryWrong').addEventListener('click', () => {
+  const wrongIds = new Set(
+    getFilteredQuestions()
+      .filter(q => state.answers.hasOwnProperty(q.id) && state.answers[q.id] !== q.answer)
+      .map(q => q.id)
+  );
+  state.answers = {};
+  state.questions = QUESTIONS_DATA.filter(q => wrongIds.has(q.id));
+  state.filterCategory = 'all';
+  state.showBookmarkOnly = false;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  document.querySelector('[data-filter="all"]').classList.add('active');
+  renderAll();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* 全問やり直し */
+document.getElementById('btnRetryAll').addEventListener('click', () => {
+  state.answers   = {};
+  state.questions = [...QUESTIONS_DATA];
+  renderAll();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ===== FAB ===== */
+const fab = document.getElementById('fabTop');
+window.addEventListener('scroll', () => {
+  fab.classList.toggle('show', window.scrollY > 300);
+});
+fab.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ===== Init ===== */
+function init() {
+  QUESTIONS_DATA = [
+  {
+    "id": "kiso-001",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "流体力学に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "ベルヌーイの定理は、流体のエネルギー保存則を表したものである。",
+      "連続の式は、流体の質量保存則を表し、断面積と流速の積は一定となる（非圧縮性流体）。",
+      "管内の流速が増加すると、ベルヌーイの定理より静圧が上昇する。",
+      "レイノルズ数が大きいほど乱流になりやすく、小さいほど層流になりやすい。"
+    ],
+    "answer": 2,
+    "explanation": "ベルヌーイの定理より、管内の流速が増加すると動圧が増加し、静圧は低下します（全圧一定のもとで動圧と静圧の合計が保存される）。「流速が増加すると静圧が上昇する」という記述は誤りです。流速と静圧は逆の関係にあります。"
+  },
+  {
+    "id": "kiso-002",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "ベルヌーイの定理に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "ベルヌーイの定理は、非圧縮性・非粘性の定常流れに適用できる。",
+      "ベルヌーイの定理において、流線上の全圧（動圧＋静圧＋位置水頭）は一定である。",
+      "管断面積が小さくなるほど流速が増加し、静圧が低下する（連続の式とベルヌーイの定理の組合せ）。",
+      "ベルヌーイの定理は、摩擦損失が大きい実際の流れにそのまま適用して正確な計算ができる。"
+    ],
+    "answer": 3,
+    "explanation": "ベルヌーイの定理は非粘性・非圧縮性の理想流体に適用されるものです。実際の流れには摩擦損失・局部損失があるため、そのままでは正確に適用できません。実際の設計では損失ヘッドを考慮した修正ベルヌーイ式を使用します。「摩擦損失が大きい実際の流れにそのまま適用できる」という記述は誤りです。"
+  },
+  {
+    "id": "kiso-003",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "管内の圧力損失に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "直管部の圧力損失は、管長・流速の2乗・流体密度に比例し、管径に反比例する（ダルシー・ワイスバッハ式）。",
+      "曲がり・弁・継手などによる局部損失は、流速水頭に損失係数を乗じて算出する。",
+      "管径が大きくなると流速が低下し、圧力損失は減少する（流量一定の場合）。",
+      "圧力損失を減らすには、管径を小さくして流速を上げることが最も効果的である。"
+    ],
+    "answer": 3,
+    "explanation": "圧力損失はダルシー・ワイスバッハ式より流速の2乗に比例します。管径を小さくすると流速が上がり圧力損失は増大します。「管径を小さくして流速を上げることが最も効果的」という記述は逆であり誤りです。圧力損失を減らすには管径を大きくするか、流量を減らすことが有効です。"
+  },
+  {
+    "id": "kiso-004",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "熱力学に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "熱力学第1法則は、エネルギー保存の法則を表したものである。",
+      "熱力学第2法則は、熱は高温から低温へ自然に移動し、逆方向には自然に移動しないことを示す。",
+      "比熱とは、物質1kgの温度を1K（1℃）上昇させるために必要な熱量である。",
+      "水の比熱は約1kJ/(kg·K)であり、金属より比熱が小さいため温まりにくい。"
+    ],
+    "answer": 3,
+    "explanation": "水の比熱は約4.18kJ/(kg·K)であり、金属（鉄：約0.45kJ/(kg·K)、銅：約0.39kJ/(kg·K)）より比熱が大きく、温まりにくく冷めにくい性質があります。「水の比熱は金属より小さい」という記述は誤りです。水の大きな比熱は冷却水・空調設備で重要な特性です。"
+  },
+  {
+    "id": "kiso-005",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "熱移動（伝熱）に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "熱伝導とは、物質内部の温度差により熱が高温部から低温部へ伝わる現象である。",
+      "熱対流とは、流体の流れにより熱が移動する現象である。",
+      "熱放射（輻射）とは、電磁波（赤外線など）により熱が伝わる現象で、真空中でも伝達される。",
+      "熱伝導率の高い材料ほど断熱性能が高く、保温材として適している。"
+    ],
+    "answer": 3,
+    "explanation": "熱伝導率が高い材料は熱を伝えやすく（熱が逃げやすく）断熱性能は低いです。断熱性能が高いのは熱伝導率が低い材料（グラスウール・ロックウール・発泡スチロールなど）です。「熱伝導率が高いほど断熱性能が高い」という記述は逆であり誤りです。"
+  },
+  {
+    "id": "kiso-006",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "電気の基礎に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "オームの法則は、電圧＝電流×抵抗（V=IR）で表される。",
+      "電力（W）は電圧（V）と電流（A）の積で表される（P=VI）。",
+      "直列接続した抵抗の合成抵抗は、各抵抗の和となる。",
+      "並列接続した抵抗の合成抵抗は、各抵抗の和となる。"
+    ],
+    "answer": 3,
+    "explanation": "並列接続した抵抗の合成抵抗は、各抵抗の逆数の和の逆数（1/R＝1/R₁＋1/R₂＋…）で求まります。「各抵抗の和となる」のは直列接続の場合です。並列接続では合成抵抗は個々の抵抗より小さくなります。"
+  },
+  {
+    "id": "kiso-007",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "三相交流に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "三相交流は、位相が120°ずつ異なる3つの交流電圧で構成される。",
+      "三相交流のY（スター）結線では、線間電圧は相電圧の√3倍となる。",
+      "三相交流のΔ（デルタ）結線では、線電流は相電流の√3倍となる。",
+      "三相交流では、単相交流に比べて電力の伝送効率が低い。"
+    ],
+    "answer": 3,
+    "explanation": "三相交流は単相交流に比べて同じ電線量で大きな電力を効率よく伝送でき、電力伝送効率が高いです。動力用（モーター）にも広く使用されています。「三相交流は単相交流より電力伝送効率が低い」という記述は誤りです。"
+  },
+  {
+    "id": "kiso-008",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "材料の腐食・防食に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "電食（電気化学的腐食）は、異種金属が接触して電解質溶液（水など）中に置かれた場合に発生する。",
+      "イオン化傾向の大きい金属ほど腐食しやすく、小さい金属ほど腐食しにくい。",
+      "ステンレス鋼は、表面に不動態皮膜（酸化クロム）を形成することで耐食性を発揮する。",
+      "亜鉛めっき（ドブ漬け）は、鋼材の表面に銅の薄膜を形成して腐食を防止する。"
+    ],
+    "answer": 3,
+    "explanation": "亜鉛めっき（溶融亜鉛めっき・ドブ漬け）は、鋼材の表面に亜鉛の薄膜を形成して腐食を防止するものです。「銅の薄膜を形成する」という記述は誤りです。亜鉛は鋼より先に犠牲的に腐食する（犠牲防食）ことで鋼材を保護します。"
+  },
+  {
+    "id": "kiso-009",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "配管材料に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "配管用炭素鋼鋼管（SGP）は、一般的な蒸気・水・ガス・空気の配管に使用される。",
+      "ステンレス鋼管は、耐食性・耐熱性に優れ、給水・給湯・薬品配管などに使用される。",
+      "銅管は、熱伝導率が高く、給湯配管・冷媒配管などに広く使用される。",
+      "硬質塩化ビニル管（VP管）は、高温流体（150℃以上）の配管に適している。"
+    ],
+    "answer": 3,
+    "explanation": "硬質塩化ビニル管（VP管）は一般に60〜80℃程度で変形・軟化が始まるため、高温流体（150℃以上）の配管には適していません。高温流体には鋼管・ステンレス管・耐熱塩化ビニル管（HTVP）などを使用します。「150℃以上の配管に適している」という記述は誤りです。"
+  },
+  {
+    "id": "kiso-010",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "金属材料の性質に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "展性とは、材料を薄く広げることができる性質であり、金・銀・銅などが優れている。",
+      "延性とは、材料を引き伸ばして細くすることができる性質である。",
+      "硬度とは、材料が表面から傷つけられることへの抵抗の大きさである。",
+      "ぜい性（脆性）材料は、弾性変形が大きく、破断前に大きく変形する。"
+    ],
+    "answer": 3,
+    "explanation": "ぜい性（脆性）材料は弾性変形が小さく、破断前にほとんど変形せず突然破断する性質があります。「弾性変形が大きく破断前に大きく変形する」のは延性材料の特徴です。ぜい性の逆の性質（変形しやすい）は延性（靭性）と呼ばれます。"
+  },
+  {
+    "id": "kiso-011",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "圧力の単位と換算に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "パスカル（Pa）は、圧力のSI単位で1Pa＝1N/m²である。",
+      "1MPa（メガパスカル）は1,000,000Pa（10⁶Pa）である。",
+      "標準大気圧は約101.3kPaであり、これをゲージ圧では0として扱う。",
+      "絶対圧力とゲージ圧力の関係は、絶対圧力＝ゲージ圧力－大気圧となる。"
+    ],
+    "answer": 3,
+    "explanation": "絶対圧力とゲージ圧力の関係は、絶対圧力＝ゲージ圧力＋大気圧（真空の場合：絶対圧力＝大気圧－真空圧）です。「絶対圧力＝ゲージ圧力－大気圧」という記述は逆であり誤りです。ゲージ圧力は大気圧を基準（0）とした相対的な圧力です。"
+  },
+  {
+    "id": "kiso-012",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "音と騒音に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "音圧レベル（dB）は、基準音圧に対する比を対数で表したものである。",
+      "騒音レベルが10dB増加すると、音のエネルギーは10倍になる。",
+      "騒音源が2つあり、それぞれ60dBの場合、合計の騒音レベルは120dBになる。",
+      "距離が2倍になると、点音源からの音圧レベルは約6dB低下する（自由音場）。"
+    ],
+    "answer": 2,
+    "explanation": "同じレベルの騒音源が2つある場合、合計の騒音レベルは3dB増加します（60dB＋60dB＝63dB）。デシベルは対数スケールであるため、単純に足し算（60＋60＝120）はできません。「120dBになる」という記述は誤りです。"
+  },
+  {
+    "id": "kiso-013",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "流体の性質に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "粘度（粘性係数）は、流体の流れにくさを表す指標である。",
+      "動粘度は、粘度を密度で割った値である。",
+      "水の粘度は温度が上昇すると増加し、温まるほど流れにくくなる。",
+      "レイノルズ数は、慣性力と粘性力の比を表す無次元数である。"
+    ],
+    "answer": 2,
+    "explanation": "水（液体）の粘度は温度が上昇すると低下し、温まるほど流れやすくなります。「温度上昇で粘度が増加する」という記述は誤りです。なお、気体の粘度は温度上昇により増加する（液体と逆）という違いも重要です。"
+  },
+  {
+    "id": "kiso-014",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "測定と計測に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "U字管マノメーターは、管内の差圧・圧力を液柱の高さ差で測定する計器である。",
+      "ブルドン管圧力計は、ブルドン管の弾性変形を利用して圧力を測定する。",
+      "オリフィス流量計は、管内に絞り（オリフィス板）を設けて前後の差圧から流量を算出する。",
+      "温度計の種類に関わらず、すべての温度計は直接接触なしに非接触で温度を測定できる。"
+    ],
+    "answer": 3,
+    "explanation": "温度計には接触式（熱電対・測温抵抗体・バイメタル式など）と非接触式（放射温度計・赤外線温度計など）があります。「すべての温度計が非接触で測定できる」という記述は誤りです。熱電対などの接触式温度計は測定対象と直接接触して温度を測定します。"
+  },
+  {
+    "id": "kiso-015",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "湿り空気に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "乾球温度は、通常の温度計で測定した温度である。",
+      "湿球温度は、湿ったガーゼで包んだ温度計で測定し、乾球温度より低い（相対湿度100%でない場合）。",
+      "相対湿度100%の状態では、乾球温度と湿球温度と露点温度はすべて等しくなる。",
+      "絶対湿度は、空気を加熱すると増加する。"
+    ],
+    "answer": 3,
+    "explanation": "絶対湿度（乾き空気1kgに含まれる水蒸気の質量）は、空気を加熱しても水分量は変わらないため変化しません。加熱によって変化するのは相対湿度（低下する）です。「加熱すると絶対湿度が増加する」という記述は誤りです。"
+  },
+  {
+    "id": "kiso-016",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "照明の基礎に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "照度（lx：ルクス）は、ある面が受ける光の量（単位面積あたりの光束）を表す。",
+      "光束（lm：ルーメン）は、光源から放射される光のエネルギー量を表す。",
+      "輝度（cd/m²）は、光源や反射面の明るさ（単位面積あたりの光度）を表す。",
+      "照度は光源から距離に比例して増加し、光源に近いほど照度が低くなる。"
+    ],
+    "answer": 3,
+    "explanation": "照度は光源からの距離の2乗に反比例して減少します（逆二乗の法則）。光源に近いほど照度は高くなります。「距離に比例して増加し、近いほど照度が低くなる」という記述は逆であり誤りです。"
+  },
+  {
+    "id": "kiso-017",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "ポンプの特性に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "ポンプの特性曲線は、流量と揚程の関係を示したグラフである。",
+      "システム抵抗曲線と特性曲線の交点が、ポンプの運転点となる。",
+      "ポンプを並列運転すると、流量が増加し揚程はほぼ変わらない。",
+      "ポンプを直列運転すると、流量が増加し揚程はほぼ変わらない。"
+    ],
+    "answer": 3,
+    "explanation": "ポンプを直列運転すると揚程が増加し、流量はほぼ変わりません。「直列運転で流量が増加する」という記述は誤りです。流量が増加するのは並列運転の特徴です。直列運転は高揚程が必要な場合（高層ビルへの給水など）に使用されます。"
+  },
+  {
+    "id": "kiso-018",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "機械図面に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "第三角法は、日本・アメリカで広く使用される投影法で、正面図を基準に平面図を上に、側面図を右または左に配置する。",
+      "第一角法は、ヨーロッパで広く使用される投影法である。",
+      "寸法線の矢印は、寸法の起点と終点を示し、両端に矢印または短い斜線を用いる。",
+      "JIS規格の機械図面では、第三角法と第一角法のどちらで描いても図面上に記載は不要である。"
+    ],
+    "answer": 3,
+    "explanation": "JIS規格の機械図面では、第三角法または第一角法を使用することが認められていますが、使用した投影法を図面の標題欄付近に投影法記号（JISで規定されたシンボルマーク）で明示することが必要です。「記載は不要」という記述は誤りです。"
+  },
+  {
+    "id": "kiso-019",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "溶接に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "アーク溶接は、電極と母材の間にアークを発生させ、その熱で母材を溶融して接合する方法である。",
+      "ガス溶接は、酸素とアセチレンを混合燃焼させた炎の熱で母材を溶融して接合する方法である。",
+      "tig溶接（タングステンイナートガス溶接）は、タングステン電極と不活性ガスシールドを使用する精密溶接法である。",
+      "溶接部の検査方法として、放射線透過試験（RT）・超音波探傷試験（UT）は内部欠陥の検出に用いられ、浸透探傷試験（PT）は主に内部欠陥の検出に適している。"
+    ],
+    "answer": 3,
+    "explanation": "浸透探傷試験（PT）は、表面に開口した欠陥（割れ・ピンホールなど）の検出に適した非破壊検査法です。内部欠陥の検出には放射線透過試験（RT）や超音波探傷試験（UT）が適しています。「浸透探傷試験は主に内部欠陥の検出に適している」という記述は誤りです。"
+  },
+  {
+    "id": "kiso-020",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "力学の基礎に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "力のつり合いは、力の合力がゼロになる状態である。",
+      "モーメントとは、力と回転中心からの距離（腕の長さ）の積である。",
+      "圧力は、面積に加わる力の大きさで表され、P＝F/A（Pa）で表される。",
+      "質量1kgの物体に1m/s²の加速度を与えるために必要な力は10Nである。"
+    ],
+    "answer": 3,
+    "explanation": "ニュートンの第2法則より、F＝ma（力＝質量×加速度）であるため、質量1kgの物体に1m/s²の加速度を与えるのに必要な力は1N（1kg×1m/s²）です。「10N」という記述は誤りです。地球上での重力加速度は約9.8m/s²ですが、設問では1m/s²と明記されています。"
+  },
+  {
+    "id": "kiso-021",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "空気調和の負荷計算に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "冷房負荷には、窓からの日射負荷・外壁からの伝熱負荷・人体発熱・照明発熱・外気負荷などが含まれる。",
+      "暖房負荷には、外壁・窓・床・天井からの貫流熱損失と換気による熱損失が含まれる。",
+      "建物の断熱性能（熱貫流率U値）が低いほど、冷暖房負荷が大きくなる。",
+      "日射遮蔽係数（SC）が小さいほど、窓からの日射熱の侵入量が少なく冷房負荷が小さくなる。"
+    ],
+    "answer": 2,
+    "explanation": "建物の断熱性能を表す熱貫流率（U値）は小さいほど断熱性能が高く、冷暖房負荷が小さくなります。「U値が低いほど冷暖房負荷が大きくなる」という記述は逆であり誤りです。U値（W/(m²·K)）が小さい＝熱が逃げにくい＝負荷が小さいという関係です。"
+  },
+  {
+    "id": "kiso-022",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "水質の基礎に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "pH（水素イオン指数）は、水溶液の酸性・アルカリ性の程度を示す指標で、pH7が中性である。",
+      "BOD（生物化学的酸素要求量）は、水中の有機物を微生物が分解する際に消費する酸素量で、値が高いほど水質が悪い。",
+      "COD（化学的酸素要求量）は、水中の有機物を化学的に酸化するために必要な酸素量である。",
+      "DO（溶存酸素量）が高いほど、水は汚染されており水生生物が生存しにくい。"
+    ],
+    "answer": 3,
+    "explanation": "DO（溶存酸素量）は水中に溶けている酸素の量であり、DO値が高いほど水質が良好で水生生物が生息しやすい環境です。「DO値が高いほど水が汚染されている」という記述は逆であり誤りです。有機物汚染が進むとDOが低下し、魚類などが生存できなくなります。"
+  },
+  {
+    "id": "kiso-023",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "継手・バルブに関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "ゲートバルブ（仕切弁）は、弁体を流路に対して垂直に挿入・抜出しして流量を制御する弁である。",
+      "グローブバルブ（玉形弁）は、弁体を流路に対して平行に動かす弁で、圧力損失が小さい。",
+      "バタフライバルブは、円板状の弁体を回転させて流量を調節する弁で、大口径配管に適している。",
+      "チェックバルブ（逆止弁）は、流体の逆流を防止するために使用される弁である。"
+    ],
+    "answer": 1,
+    "explanation": "グローブバルブ（玉形弁）は、弁体を流路に対して垂直に動かす弁であり、流路が曲がった構造のため圧力損失が大きいです。「弁体を流路に対して平行に動かし圧力損失が小さい」という記述は誤りです。圧力損失が小さいのはゲートバルブ（全開時）やバタフライバルブです。"
+  },
+  {
+    "id": "kiso-024",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "断熱材に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "グラスウールは、ガラス繊維を綿状にした断熱材で、耐火性に優れている。",
+      "ロックウール（岩綿）は、岩石・高炉スラグなどを高温で溶融し繊維状にした断熱材である。",
+      "発泡スチロール（ポリスチレンフォーム）は、軽量で断熱性に優れるが耐熱性は低い。",
+      "断熱材の熱伝導率は大きいほど断熱性能が高く、保温効果が大きい。"
+    ],
+    "answer": 3,
+    "explanation": "断熱材の熱伝導率は小さいほど熱が伝わりにくく断熱性能が高くなります。「熱伝導率が大きいほど断熱性能が高い」という記述は逆であり誤りです。グラスウール・ロックウールなどの断熱材は熱伝導率が非常に小さいため優れた断熱性能を発揮します。"
+  },
+  {
+    "id": "kiso-025",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "非破壊検査に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "放射線透過試験（RT）は、X線・γ線を照射して内部欠陥を検出する方法である。",
+      "超音波探傷試験（UT）は、超音波の反射を利用して内部欠陥を検出する方法である。",
+      "磁粉探傷試験（MT）は、磁性材料の表面・表層付近の欠陥を磁粉の集積で検出する方法である。",
+      "浸透探傷試験（PT）は、内部欠陥の検出に最も適した非破壊検査法である。"
+    ],
+    "answer": 3,
+    "explanation": "浸透探傷試験（PT）は、表面に開口した欠陥（表面割れ・ピンホールなど）の検出に適した方法です。内部欠陥の検出には放射線透過試験（RT）や超音波探傷試験（UT）が適しています。「PTは内部欠陥の検出に最も適している」という記述は誤りです。"
+  },
+  {
+    "id": "kiso-026",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "エネルギーの単位に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "ジュール（J）は、エネルギー・仕事・熱量のSI単位で、1J＝1N·mである。",
+      "ワット（W）は、仕事率（電力）のSI単位で、1W＝1J/sである。",
+      "キロワット時（kWh）は、電力量の単位で、1kWh＝3,600,000J（3.6MJ）である。",
+      "カロリー（cal）はSI単位であり、現在も国際的にジュールと同等に使用されている。"
+    ],
+    "answer": 3,
+    "explanation": "カロリー（cal）はSI単位ではなく非SI単位です。国際単位系（SI）ではエネルギーの単位はジュール（J）です。カロリーは現在も食品のエネルギー表示などで慣用的に使用されることがありますが、「SI単位でありジュールと同等に使用されている」という記述は誤りです。"
+  },
+  {
+    "id": "kiso-027",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "建築物の構造に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "ラーメン構造は、柱と梁を剛接合した骨組構造で、地震力・風圧力などの水平力に抵抗する。",
+      "ブレース構造は、筋かい（ブレース）を設けて水平力に抵抗する構造形式である。",
+      "壁式構造は、壁が主要な構造体となって荷重を支える構造形式で、中低層建物に多い。",
+      "免震構造は、建物の剛性を高めることで地震動のエネルギーを吸収する構造形式である。"
+    ],
+    "answer": 3,
+    "explanation": "免震構造は、建物の基礎部分に免震装置（積層ゴム・ダンパーなど）を設けて地盤と建物を切り離し、地震動が建物に伝わりにくくする構造形式です。「剛性を高めて地震エネルギーを吸収する」のは耐震構造の考え方であり、免震構造の説明として誤りです。"
+  },
+  {
+    "id": "kiso-028",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "空気の性質に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "乾き空気の比重は温度が高いほど小さくなり、温かい空気は上方に移動しやすい。",
+      "標準大気圧（1atm）は約101.3kPaである。",
+      "空気は圧縮性を持つ気体であり、圧縮すると体積が減少する。",
+      "空気の密度は温度が上昇すると増加するため、夏場の空気は冬場より密度が高い。"
+    ],
+    "answer": 3,
+    "explanation": "空気の密度は温度が上昇すると低下します（熱膨張により体積が増加し、同じ質量でも体積が大きくなるため密度が下がる）。「温度上昇で密度が増加し夏場の方が密度が高い」という記述は逆であり誤りです。冬場の低温の空気の方が密度が高くなります。"
+  },
+  {
+    "id": "kiso-029",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "計装・自動制御に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "PID制御は、比例（P）・積分（I）・微分（D）の3つの動作を組み合わせた自動制御方式である。",
+      "フィードバック制御は、制御量を検出してその結果を入力側に戻し、目標値との偏差を修正する方式である。",
+      "オンオフ制御は、設定値に対してON/OFFのみで制御する最もシンプルな制御方式で、ハンチングが起きやすい。",
+      "フィードフォワード制御は、制御量の変化を検出した後に操作量を変化させる事後対応型の制御方式である。"
+    ],
+    "answer": 3,
+    "explanation": "フィードフォワード制御は、外乱を事前に検出・予測して操作量を変化させる予防的・先行的な制御方式です。「制御量の変化を検出した後に操作量を変化させる事後対応型」はフィードバック制御の特徴です。フィードフォワードは「事後対応型」ではなく「先行型」であり、記述が誤りです。"
+  },
+  {
+    "id": "kiso-030",
+    "year": 2024,
+    "category": "一般基礎",
+    "question": "建築設備の図記号に関する記述として、最も不適当なものはどれか。",
+    "choices": [
+      "建築設備の図記号は、JIS規格（JIS A 0150など）により規定されており、図面の読み手が正確に理解できるよう標準化されている。",
+      "配管系統図では、機器・配管・弁・計装機器などを図記号で表し、系統全体の構成を示す。",
+      "フロー図（P&ID）は、配管・計装の詳細を示す図面で、弁の種類・計器の種類・制御信号の経路が記載される。",
+      "建築設備の図面において、独自の図記号を使用することは一切認められておらず、すべてJIS規格の図記号のみを使用しなければならない。"
+    ],
+    "answer": 3,
+    "explanation": "建築設備の図面では、JIS規格に規定された図記号を基本としますが、規格に規定されていない特殊な機器や設備については凡例を設けて独自の図記号を使用することが認められています。「すべてJIS規格の図記号のみを使用しなければならない」という記述は誤りです。"
+  }
+];
+  state.questions = [...QUESTIONS_DATA];
+  renderAll();
+}
+init();
+</script>
+</body>
+</html>
