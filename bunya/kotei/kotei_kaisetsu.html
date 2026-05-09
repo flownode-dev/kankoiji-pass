@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工程管理 重要ポイント解説 | 管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士【工程管理】重要ポイント解説。ネットワーク工程表の読み方・クリティカルパス・フロート・バーチャートの特徴など試験頻出テーマをわかりやすく解説。無料。">
+<link rel="canonical" href="https://kankoiji-pass.com/bunya/kotei/kaisetsu.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0f1117;--surface:#1a1d27;--surface2:#222636;--border:#2e3348;
+    --accent:#f59e0b;--accent2:#d97706;--correct:#22c55e;--warn:#ef4444;
+    --text:#e8eaf0;--muted:#7a8099;--mono:'DM Mono',monospace;
+    --sans:'Noto Sans JP',sans-serif;--serif:'Noto Serif JP',serif;
+    --radius:12px;--transition:0.2s cubic-bezier(.4,0,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;line-height:1.8;}
+  header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+  .logo{font-weight:900;font-size:1.1rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .btn-ghost{background:none;border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:8px;font-size:.8rem;cursor:pointer;transition:var(--transition);font-family:var(--sans);text-decoration:none;display:inline-flex;align-items:center;}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+  .hero{background:linear-gradient(135deg,#0f1117 0%,#1f1a0a 50%,#1a1500 100%);border-bottom:1px solid var(--border);padding:48px 24px 40px;text-align:center;}
+  .hero-badge{display:inline-block;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.3);color:var(--accent);font-size:.75rem;padding:4px 14px;border-radius:99px;margin-bottom:16px;letter-spacing:.08em;}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.3;margin-bottom:12px;background:linear-gradient(135deg,var(--text) 0%,#c8c0a0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .hero p{color:var(--muted);font-size:.9rem;max-width:560px;margin:0 auto 24px;}
+  .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:#fff;padding:11px 24px;border-radius:8px;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:var(--transition);font-family:var(--sans);}
+  .btn-primary:hover{opacity:.85;transform:translateY(-1px);}
+  .toc-wrap{max-width:860px;margin:32px auto 0;padding:0 24px;}
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;}
+  .toc-title{font-size:.78rem;color:var(--muted);letter-spacing:.1em;margin-bottom:12px;font-weight:700;}
+  .toc-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px;list-style:none;}
+  .toc-list a{color:var(--accent);text-decoration:none;font-size:.85rem;display:flex;align-items:center;gap:6px;padding:4px 6px;border-radius:6px;transition:var(--transition);}
+  .toc-list a:hover{background:rgba(245,158,11,.1);}
+  .toc-list a::before{content:'→';font-size:.75rem;color:var(--muted);}
+  .content{max-width:860px;margin:0 auto;padding:40px 24px 80px;display:flex;flex-direction:column;gap:40px;}
+  .section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+  .section-header{background:var(--surface2);border-bottom:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  .section-icon{font-size:1.5rem;line-height:1;flex-shrink:0;}
+  .section-num{font-family:var(--mono);font-size:.7rem;color:var(--muted);letter-spacing:.1em;}
+  .section-title{font-family:var(--serif);font-size:1.15rem;color:var(--text);}
+  .section-body{padding:24px;}
+  .lead{font-size:.95rem;color:#b0b8d0;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+  .key-points{display:flex;flex-direction:column;gap:12px;}
+  .key-point{background:var(--bg);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;font-size:.9rem;}
+  .key-point.warn{border-left-color:var(--warn);}
+  .key-point.correct{border-left-color:var(--correct);}
+  .key-point strong{color:var(--accent);display:block;margin-bottom:4px;font-size:.85rem;}
+  .key-point.warn strong{color:var(--warn);}
+  .key-point.correct strong{color:var(--correct);}
+  .key-point p{color:#c0c8e0;line-height:1.7;}
+  .compare-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:.85rem;}
+  .compare-table th{background:var(--surface2);padding:10px 14px;text-align:left;font-weight:700;color:var(--accent);border-bottom:1px solid var(--border);border-right:1px solid var(--border);}
+  .compare-table th:last-child{border-right:none;}
+  .compare-table td{padding:10px 14px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);color:#c0c8e0;vertical-align:top;line-height:1.6;}
+  .compare-table td:last-child{border-right:none;}
+  .compare-table tr:last-child td{border-bottom:none;}
+  .compare-table tr:hover td{background:rgba(245,158,11,.04);}
+  .tag-cell{font-weight:700;color:var(--text);white-space:nowrap;}
+  .memo-box{margin-top:20px;background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.2);border-radius:10px;padding:16px 18px;font-size:.85rem;color:#e0c870;line-height:1.75;}
+  .memo-box::before{content:'⚠️ 試験でよく問われるポイント';display:block;font-weight:700;margin-bottom:8px;font-size:.8rem;letter-spacing:.05em;}
+  .formula-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px 18px;margin-top:12px;font-family:var(--mono);font-size:.9rem;color:var(--correct);text-align:center;line-height:2;}
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:24px;text-align:center;font-size:.78rem;color:var(--muted);}
+  @media(max-width:600px){.hero{padding:32px 16px 28px;}.section-body{padding:16px;}.toc-list{grid-template-columns:1fr;}.content{padding:24px 12px 60px;}}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="管工事PASS">
+  <meta property="og:title" content="工程管理 重要ポイント解説 | 管工事PASS">
+  <meta property="og:description" content="バーチャート・ネットワーク工程表・クリティカルパス・フロートを演習問題と解説で徹底対策。">
+  <meta property="og:url" content="https://kankoiji-pass.com/bunya/kotei/kaisetsu.html">
+  <meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ja_JP">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="工程管理 重要ポイント解説 | 管工事PASS">
+  <meta name="twitter:description" content="バーチャート・ネットワーク工程表・クリティカルパス・フロートを演習問題と解説で徹底対策。">
+  <meta name="twitter:image" content="https://kankoiji-pass.com/images/ogp.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<header>
+  <div class="logo">管工事PASS</div>
+  <nav style="display:flex;gap:8px;">
+    <a class="btn-ghost" href="../../bunya/index.html">← 分野一覧</a>
+    <a class="btn-ghost" href="index.html">📝 演習問題へ</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">SECTION 04</div>
+  <h1>工程管理<br>重要ポイント解説</h1>
+  <p>1級管工事施工管理技士 一次検定対策。バーチャート・ネットワーク工程表・クリティカルパス・フロートなど頻出テーマを徹底解説。</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="index.html">📝 演習問題を解く（30問）</a>
+  </div>
+</div>
+
+<div class="toc-wrap">
+  <div class="toc">
+    <div class="toc-title">目次</div>
+    <ul class="toc-list">
+      <li><a href="#sec-chart">工程表の種類と比較</a></li>
+      <li><a href="#sec-network">ネットワーク工程表の用語</a></li>
+      <li><a href="#sec-critical">クリティカルパス</a></li>
+      <li><a href="#sec-float">フロート（余裕時間）</a></li>
+      <li><a href="#sec-est">最早・最遅時刻の計算</a></li>
+      <li><a href="#sec-scurve">出来高進捗曲線（Sカーブ）</a></li>
+      <li><a href="#sec-compress">工期短縮・クラッシング</a></li>
+      <li><a href="#sec-pdca">PDCA・工程管理の実務</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- 1. 工程表の種類 -->
+  <section class="section" id="sec-chart">
+    <div class="section-header">
+      <div class="section-icon">📅</div>
+      <div class="section-title-wrap">
+        <div class="section-num">01</div>
+        <div class="section-title">工程表の種類と比較</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">バーチャートとネットワーク工程表の長所・短所の違いが最頻出。ガントチャートとバーチャートの関係も押さえる。</p>
+      <table class="compare-table">
+        <thead><tr><th>種類</th><th>特徴・長所</th><th>短所・注意点</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="tag-cell">バーチャート<br>（ガントチャート）</td>
+            <td>作成・理解が容易。各作業の期間・開始・終了が一目でわかる</td>
+            <td>作業間の依存関係・相互関係を明確に表現できない。大規模工事に不向き</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">ネットワーク工程表<br>（PERT・CPM）</td>
+            <td>作業間の依存関係を明確に表現できる。クリティカルパスの把握・工期短縮検討に優れる</td>
+            <td>作成・理解に専門知識が必要。小規模工事には過剰な場合がある</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">タクト工程表</td>
+            <td>繰り返し作業（高層ビルの各階作業など）に最適</td>
+            <td>不規則・多様な工種の小規模工事には不向き</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="memo-box">
+        「バーチャートは作業間の相互関係を明確に表現できる」→ 誤り。相互関係の表現はネットワーク工程表が得意。<br>
+        「ガントチャートとバーチャートはまったく異なる」→ 誤り。実質的に同じ手法。
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. ネットワーク工程表の用語 -->
+  <section class="section" id="sec-network">
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <div class="section-title-wrap">
+        <div class="section-num">02</div>
+        <div class="section-title">ネットワーク工程表の用語</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">アクティビティ・ダミー・イベントの定義を正確に覚える。</p>
+      <table class="compare-table">
+        <thead><tr><th>用語</th><th>定義</th><th>ポイント</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="tag-cell">リアルアクティビティ</td>
+            <td>時間と資源を消費する実際の作業</td>
+            <td>矢線（→）で表す</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">ダミーアクティビティ</td>
+            <td>時間も資源も消費しない仮想の作業（所要時間＝0）</td>
+            <td>破線（→）で表す。依存関係を示すためだけに使用。「所要時間を持つ」は誤り</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">イベント（結合点）</td>
+            <td>作業の開始または終了を表す時点</td>
+            <td>丸（○）で表す</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">作業の依存関係</td>
+            <td>FS（終了→開始）・SS・FF・SFの4種類</td>
+            <td>「必ずFS（終了→開始）の1種類のみ」は誤り</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. クリティカルパス -->
+  <section class="section" id="sec-critical">
+    <div class="section-header">
+      <div class="section-icon">🎯</div>
+      <div class="section-title-wrap">
+        <div class="section-num">03</div>
+        <div class="section-title">クリティカルパス</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">クリティカルパスの定義と性質、工期短縮との関係が最頻出。複数存在しうる点も重要。</p>
+      <div class="key-points">
+        <div class="key-point correct">
+          <strong>クリティカルパスの定義</strong>
+          <p>ネットワーク工程表において、始点から終点までの<strong>最長経路</strong>。全体工期を決定する経路。</p>
+        </div>
+        <div class="key-point warn">
+          <strong>クリティカルパスは複数存在しうる</strong>
+          <p>同じ所要時間の経路が複数ある場合、複数のクリティカルパスが存在する。「必ず1本」は誤り。</p>
+        </div>
+        <div class="key-point">
+          <strong>工期短縮との関係</strong>
+          <p>クリティカルパス上の作業を短縮 → 全体工期が短縮される。<br>
+          クリティカルパス以外の作業を短縮 → 全体工期は変わらない（フロートが減るだけ）。</p>
+        </div>
+        <div class="key-point warn">
+          <strong>山崩し（資源平準化）との関係</strong>
+          <p>山崩しはフロートのある作業の日程を調整する。クリティカルパス上の作業はフロート＝0のため日程調整できない。「クリティカルパス上の作業を中心に行う」は誤り。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. フロート -->
+  <section class="section" id="sec-float">
+    <div class="section-header">
+      <div class="section-icon">⏱️</div>
+      <div class="section-title-wrap">
+        <div class="section-num">04</div>
+        <div class="section-title">フロート（余裕時間）</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">トータルフロートとフリーフロートの違い、フロート0とクリティカルパスの関係を正確に覚える。</p>
+      <table class="compare-table">
+        <thead><tr><th>種類</th><th>定義</th><th>ポイント</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="tag-cell">トータルフロート（TF）</td>
+            <td>全体工期を延ばさない範囲で作業が持つ余裕時間の最大値</td>
+            <td>TF＝0 → クリティカルパス上の作業</td>
+          </tr>
+          <tr>
+            <td class="tag-cell">フリーフロート（FF）</td>
+            <td>後続作業の最早開始時刻に影響を与えない範囲の余裕時間</td>
+            <td>FF ≦ TF（常にTF以下。「FFがTFより大きい」は誤り）</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="memo-box">
+        「フロートが0の作業は余裕時間がある作業」→ 誤り。フロート0はクリティカルパス上の作業で余裕なし。<br>
+        「ESTとLSTが等しい → フロート0 → クリティカルパス上」が正しい理解の流れ。
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 最早・最遅時刻 -->
+  <section class="section" id="sec-est">
+    <div class="section-header">
+      <div class="section-icon">🧮</div>
+      <div class="section-title-wrap">
+        <div class="section-num">05</div>
+        <div class="section-title">最早・最遅時刻の計算方法</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">フォワードパス（最早）は最大を採用、バックワードパス（最遅）は最小を採用。この違いが頻出。</p>
+      <table class="compare-table">
+        <thead><tr><th>計算</th><th>方向</th><th>採用する値</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="tag-cell">最早開始時刻（EST）<br>最早完了時刻（EFT）</td>
+            <td>始点→終点（フォワードパス）</td>
+            <td>前工程の最早完了時刻の<strong>最大値</strong></td>
+          </tr>
+          <tr>
+            <td class="tag-cell">最遅完了時刻（LFT）<br>最遅開始時刻（LST）</td>
+            <td>終点→始点（バックワードパス）</td>
+            <td>後続作業の最遅開始時刻の<strong>最小値</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="formula-box">
+        トータルフロート TF = LST - EST = LFT - EFT<br>
+        フリーフロート FF = 後続作業のEST - 当該作業のEFT
+      </div>
+      <div class="memo-box">
+        「最遅完了時刻は後続作業の最遅開始時刻の最大値で決まる」→ 誤り。<strong>最小値</strong>を採用する。
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Sカーブ -->
+  <section class="section" id="sec-scurve">
+    <div class="section-header">
+      <div class="section-icon">📈</div>
+      <div class="section-title-wrap">
+        <div class="section-num">06</div>
+        <div class="section-title">出来高進捗曲線（Sカーブ）</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">SカーブはS字形になる理由と、実績vs計画の読み取り方を整理する。</p>
+      <div class="key-points">
+        <div class="key-point correct">
+          <strong>Sカーブがなぜ「S字形」になるか</strong>
+          <p>工事の初期（準備期間）と終盤（仕上げ・検査）は作業量が少なく、中間期に作業量が集中するため、累積出来高グラフがS字形になる。</p>
+        </div>
+        <div class="key-point warn">
+          <strong>実績Sカーブと計画Sカーブの読み取り</strong>
+          <p>実績が計画を<strong>上回る</strong> → 工事が計画より<strong>進んでいる（前倒し）</strong><br>
+          実績が計画を<strong>下回る</strong> → 工事が計画より<strong>遅れている</strong><br>
+          「実績が計画を上回る＝遅延」は誤り。</p>
+        </div>
+        <div class="key-point">
+          <strong>Sカーブの傾きと作業量の関係</strong>
+          <p>傾きが急 → その時期の出来高増加が大きい（作業量が多い）<br>
+          傾きが緩やか → その時期の出来高増加が小さい（作業量が少ない）<br>
+          「傾きが急なほど作業量が少ない」は誤り。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 工期短縮・クラッシング -->
+  <section class="section" id="sec-compress">
+    <div class="section-header">
+      <div class="section-icon">⚡</div>
+      <div class="section-title-wrap">
+        <div class="section-num">07</div>
+        <div class="section-title">工期短縮・クラッシング</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">クラッシングはコストが増加する手法。コスト・スロープの小さい作業から短縮するのが基本。</p>
+      <div class="key-points">
+        <div class="key-point warn">
+          <strong>クラッシング（工期圧縮）</strong>
+          <p>追加コストをかけて作業の所要時間を短縮する手法。コストは<strong>増加</strong>する。「コストを削減しながら工期短縮できる」は誤り。</p>
+        </div>
+        <div class="key-point correct">
+          <strong>効率的なクラッシングの手順</strong>
+          <p>① クリティカルパス上の作業を対象にする<br>
+          ② コスト・スロープ（1単位時間短縮のコスト増加額）が<strong>小さい</strong>作業から短縮する<br>
+          ③ 新たなクリティカルパスが発生しないか確認する</p>
+        </div>
+        <div class="key-point">
+          <strong>並行作業（パラレル化）</strong>
+          <p>従来直列で行っていた作業を同時進行させることで工期を短縮できる。クラッシングと並ぶ工期短縮の代表的な手法。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. PDCAと工程管理の実務 -->
+  <section class="section" id="sec-pdca">
+    <div class="section-header">
+      <div class="section-icon">🔄</div>
+      <div class="section-title-wrap">
+        <div class="section-num">08</div>
+        <div class="section-title">PDCA・工程管理の実務</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="lead">PDCAサイクルの各フェーズと、工程管理の実務ルールを整理する。</p>
+      <table class="compare-table">
+        <thead><tr><th>フェーズ</th><th>内容</th><th>工程管理での具体例</th></tr></thead>
+        <tbody>
+          <tr><td class="tag-cell">Plan（計画）</td><td>目標・方法の計画</td><td>工程表の作成・施工計画書の作成</td></tr>
+          <tr><td class="tag-cell">Do（実施）</td><td>計画に基づく実施</td><td>工事の施工・工程の実行</td></tr>
+          <tr><td class="tag-cell">Check（確認）</td><td>計画と実績の比較</td><td>出来高・進捗の確認・工程会議</td></tr>
+          <tr><td class="tag-cell">Act（処置）</td><td>差異への対策・改善</td><td>遅延対策・工程表の修正・資源投入</td></tr>
+        </tbody>
+      </table>
+      <div class="key-points" style="margin-top:16px;">
+        <div class="key-point warn">
+          <strong>施工計画書・工程表は変更できる</strong>
+          <p>「一度作成すれば変更できない」は誤り。工事の進捗・設計変更・条件変化に応じて適宜改訂する。</p>
+        </div>
+        <div class="key-point warn">
+          <strong>品質検査・養生期間は省略不可</strong>
+          <p>工程遅延を回復するために品質検査・養生期間を省略することは不適切。品質と工程は両立させることが原則。</p>
+        </div>
+        <div class="key-point">
+          <strong>安全管理と工程管理の両立</strong>
+          <p>「安全より工程を優先すべき」は誤り。安全確保のための作業を省略することは禁止。災害発生による作業中断の方が大幅な工程遅延につながる。</p>
+        </div>
+        <div class="key-point correct">
+          <strong>工程会議は定期的に開催</strong>
+          <p>工事期間中に定期的（週次・月次）に開催して進捗を共有する。「工事完了後に1回だけ」は誤り。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="text-align:center;padding:20px 0;">
+    <p style="color:var(--muted);font-size:.9rem;margin-bottom:16px;">解説を読んだら、演習問題で確認しよう！</p>
+    <a class="btn-primary" href="index.html">📝 工程管理 演習問題を解く（30問）</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2024 管工事PASS — 1級管工事施工管理技士 合格対策サイト</p>
+  <p style="margin-top:6px;">
+    <a href="../../privacy/index.html" style="color:var(--muted);text-decoration:none;">プライバシーポリシー</a> ／
+    <a href="../../disclaimer/index.html" style="color:var(--muted);text-decoration:none;">免責事項</a>
+  </p>
+</footer>
+
+</body>
+</html>
