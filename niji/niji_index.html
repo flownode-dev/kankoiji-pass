@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>二次検定対策 | 管工事PASS</title>
+<link rel="canonical" href="https://kankoiji-pass.com/niji/index.html">
+<meta name="description" content="1級管工事施工管理技士 二次検定の完全対策ガイド。経験記述・施工管理・工程・法規の記述問題を徹底解説。合格する書き方・頻出テーマ・NG例まで。">
+<meta name="keywords" content="1級管工事施工管理技士,二次検定,経験記述,実地試験,施工管理,合格対策">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&family=DM+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0b0e17;
+  --surface: #131724;
+  --surface2: #1c2236;
+  --border: #252d45;
+  --accent: #f0b429;
+  --accent2: #e07b00;
+  --blue: #4f8ef7;
+  --purple: #7c5cfc;
+  --correct: #22c55e;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+  --text: #e8eaf0;
+  --muted: #6b7494;
+  --mono: 'DM Mono', monospace;
+  --sans: 'Noto Sans JP', sans-serif;
+  --serif: 'Noto Serif JP', serif;
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  min-height: 100vh;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  background: rgba(11,14,23,.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-weight: 900;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+.btn-ghost {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: .8rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: .2s;
+  font-family: var(--sans);
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Hero */
+.hero {
+  position: relative;
+  padding: 72px 24px 60px;
+  text-align: center;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(240,180,41,.1) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(79,142,247,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(240,180,41,.12);
+  border: 1px solid rgba(240,180,41,.35);
+  color: var(--accent);
+  font-size: .72rem;
+  padding: 4px 14px;
+  border-radius: 99px;
+  margin-bottom: 20px;
+  letter-spacing: .1em;
+  font-weight: 700;
+  font-family: var(--mono);
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-lead {
+  color: var(--muted);
+  font-size: .95rem;
+  max-width: 560px;
+  margin: 0 auto 36px;
+  line-height: 1.85;
+}
+.hero-stats {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  font-family: var(--mono);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hero-stat-label { font-size: .7rem; color: var(--muted); letter-spacing: .06em; }
+.scroll-hint {
+  font-size: .78rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(4px); }
+}
+
+/* Content */
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+/* Section header */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 56px 0 24px;
+}
+.section-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  background: rgba(240,180,41,.12);
+  border: 1px solid rgba(240,180,41,.2);
+}
+.section-title-wrap { flex: 1; }
+.section-num {
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--muted);
+  letter-spacing: .12em;
+  margin-bottom: 2px;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--text);
+}
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border), transparent);
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.card-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Theme Grid */
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+.theme-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: .2s;
+}
+.theme-card:hover { border-color: rgba(240,180,41,.4); transform: translateY(-2px); }
+.theme-card-header {
+  padding: 16px 18px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.theme-icon { font-size: 1.4rem; }
+.theme-name { font-weight: 700; font-size: .95rem; flex: 1; }
+.freq-badge {
+  font-family: var(--mono);
+  font-size: .65rem;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-weight: 700;
+}
+.freq-high { background: rgba(239,68,68,.15); color: var(--danger); border: 1px solid rgba(239,68,68,.2); }
+.freq-mid { background: rgba(245,158,11,.15); color: var(--warn); border: 1px solid rgba(245,158,11,.2); }
+.theme-card-body { padding: 14px 18px; }
+.theme-desc { font-size: .85rem; color: #b0b8d0; line-height: 1.7; margin-bottom: 10px; }
+.theme-points { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.theme-points li {
+  font-size: .8rem;
+  color: var(--muted);
+  padding-left: 12px;
+  position: relative;
+  line-height: 1.6;
+}
+.theme-points li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: .7rem;
+}
+
+/* Structure steps */
+.structure-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+.structure-steps::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  bottom: 40px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--border));
+}
+.s-step {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 20px 0;
+  position: relative;
+}
+.s-step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+  font-family: var(--mono);
+  font-size: .85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.s-step-body { flex: 1; padding-top: 6px; }
+.s-step-title { font-weight: 700; font-size: 1rem; margin-bottom: 6px; color: var(--text); }
+.s-step-desc { font-size: .88rem; color: #b0b8d0; line-height: 1.75; }
+
+/* Example boxes */
+.example-wrap { margin: 16px 0; }
+.example-label {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px 6px 0 0;
+  display: inline-block;
+}
+.label-bad { background: rgba(239,68,68,.15); color: var(--danger); }
+.label-good { background: rgba(34,197,94,.15); color: var(--correct); }
+.example-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 0 8px 8px 8px;
+  padding: 14px 16px;
+  font-size: .87rem;
+  color: #b0b8d0;
+  line-height: 1.85;
+}
+.example-box.bad { border-color: rgba(239,68,68,.25); }
+.example-box.good { border-color: rgba(34,197,94,.25); }
+
+/* Info boxes */
+.info-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin: 20px 0;
+  font-size: .9rem;
+  color: #c8d0e8;
+  line-height: 1.8;
+}
+.info-box.danger { border-left-color: var(--danger); }
+.info-box.correct { border-left-color: var(--correct); }
+.info-box-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: .82rem;
+  color: var(--accent);
+  letter-spacing: .04em;
+}
+.info-box.danger .info-box-title { color: var(--danger); }
+.info-box.correct .info-box-title { color: var(--correct); }
+
+/* Check list */
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: .88rem;
+  color: #b0b8d0;
+  line-height: 1.7;
+}
+.check-list li::before {
+  content: '□';
+  font-size: 1rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  font-family: var(--mono);
+  margin-top: 1px;
+}
+
+/* Schedule table */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .87rem;
+}
+.schedule-table th {
+  background: var(--surface2);
+  padding: 10px 14px;
+  text-align: left;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  font-weight: 700;
+}
+.schedule-table th:last-child { border-right: none; }
+.schedule-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  color: #c8d0e8;
+  vertical-align: top;
+  line-height: 1.6;
+}
+.schedule-table td:last-child { border-right: none; }
+.schedule-table tr:last-child td { border-bottom: none; }
+.schedule-table tr:hover td { background: rgba(240,180,41,.03); }
+
+/* CTA */
+.cta-box {
+  background: linear-gradient(135deg, rgba(240,180,41,.1), rgba(224,123,0,.08));
+  border: 1px solid rgba(240,180,41,.2);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  margin-top: 48px;
+}
+.cta-box h2 { font-family: var(--serif); font-size: 1.2rem; margin-bottom: 8px; }
+.cta-box p { color: var(--muted); font-size: .88rem; margin-bottom: 20px; }
+.cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  border: none;
+  color: #fff;
+  padding: 11px 24px;
+  border-radius: 8px;
+  font-size: .9rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: .2s;
+}
+.btn-primary:hover { opacity: .85; }
+.btn-outline {
+  background: none;
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: .9rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: .2s;
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 24px;
+  text-align: center;
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 52px 16px 44px; }
+  .content { padding: 0 12px 60px; }
+  .hero-stats { gap: 20px; }
+  .theme-grid { grid-template-columns: 1fr; }
+  .structure-steps::before { left: 18px; }
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="管工事PASS">
+  <meta property="og:title" content="二次検定 完全対策 | 管工事PASS">
+  <meta property="og:description" content="経験記述・施工管理・工程・法規の記述問題を徹底解説。合格する書き方・頻出テーマ・NG例まで。">
+  <meta property="og:url" content="https://kankoiji-pass.com/niji/index.html">
+  <meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ja_JP">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="二次検定 完全対策 | 管工事PASS">
+  <meta name="twitter:description" content="経験記述・施工管理・工程・法規の記述問題を徹底解説。合格する書き方・頻出テーマ・NG例まで。">
+  <meta name="twitter:image" content="https://kankoiji-pass.com/images/ogp.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<header>
+  <a class="logo" href="../index.html">管工事PASS</a>
+  <nav style="display:flex;gap:8px;">
+    <a class="btn-ghost" href="../bunya/index.html">一次検定</a>
+    <a class="btn-ghost" href="../index.html">← トップ</a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-badge">✍️ SECONDARY EXAM</div>
+  <h1>1級管工事<br><em>二次検定</em> 完全対策</h1>
+  <p class="hero-lead">
+    二次検定の最大の山場は<strong>経験記述</strong>です。<br>
+    頻出テーマ・合格する構成・NG例・スケジュールまで、<br>合格に必要なすべてをこのページにまとめました。
+  </p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num">3</span>
+      <div class="hero-stat-label">頻出テーマ</div>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">45〜60<span style="font-size:1rem;">%</span></span>
+      <div class="hero-stat-label">二次検定合格率（目安）</div>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">10月</span>
+      <div class="hero-stat-label">試験実施月（目安）</div>
+    </div>
+  </div>
+  <div class="scroll-hint">↓ 下にスクロールして対策を確認</div>
+</div>
+
+<div class="content">
+
+  <!-- ① 二次検定の概要 -->
+  <div class="section-header">
+    <div class="section-icon-wrap">📋</div>
+    <div class="section-title-wrap">
+      <div class="section-num">SECTION 01</div>
+      <div class="section-title">二次検定の概要</div>
+    </div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="card">
+    <table class="schedule-table">
+      <thead>
+        <tr><th>項目</th><th>内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>試験形式</strong></td><td>記述式（マークシートなし）</td></tr>
+        <tr><td><strong>試験時間</strong></td><td>2時間30分（目安）</td></tr>
+        <tr><td><strong>出題内容</strong></td><td>施工経験記述・施工管理・工程管理・法規・機器・配管施工</td></tr>
+        <tr><td><strong>受験資格</strong></td><td>一次検定合格者（同年度または過去の合格者）</td></tr>
+        <tr><td><strong>合格基準</strong></td><td>得点の60%以上（経験記述が一定水準を下回ると不合格の可能性あり）</td></tr>
+        <tr><td><strong>試験時期</strong></td><td>例年10月頃（一次検定は6月頃）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box">
+    <div class="info-box-title">💡 一次検定との大きな違い</div>
+    二次検定は<strong>記述式</strong>です。知識の有無だけでなく、「自分の経験を論理的・具体的に文章化できるか」が問われます。一次検定合格後すぐに経験記述の準備を始めることが重要です。
+  </div>
+
+  <!-- ② 頻出テーマ -->
+  <div class="section-header">
+    <div class="section-icon-wrap">🎯</div>
+    <div class="section-title-wrap">
+      <div class="section-num">SECTION 02</div>
+      <div class="section-title">経験記述の頻出テーマ</div>
+    </div>
+    <div class="section-line"></div>
+  </div>
+
+  <p style="color:#b0b8d0;font-size:.9rem;margin-bottom:20px;line-height:1.8;">過去の出題傾向から、以下の3テーマがローテーションで出題されます。<strong>3テーマすべてを準備</strong>しておくことが合格の絶対条件です。</p>
+
+  <div class="theme-grid">
+    <div class="theme-card">
+      <div class="theme-card-header">
+        <div class="theme-icon">✅</div>
+        <div class="theme-name">品質管理</div>
+        <span class="freq-badge freq-high">最頻出</span>
+      </div>
+      <div class="theme-card-body">
+        <p class="theme-desc">施工品質を確保するために実施した具体的な対策・検査内容を記述する。</p>
+        <ul class="theme-points">
+          <li>隠蔽前の中間検査（配管勾配の実測・水圧試験など）</li>
+          <li>溶接・接続部の検査方法と基準値</li>
+          <li>材料の受入検査・品質確認の手順</li>
+          <li>「なぜその対策が必要だったか」の課題設定が重要</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="theme-card">
+      <div class="theme-card-header">
+        <div class="theme-icon">📅</div>
+        <div class="theme-name">工程管理</div>
+        <span class="freq-badge freq-high">最頻出</span>
+      </div>
+      <div class="theme-card-body">
+        <p class="theme-desc">工期遅延を防ぐために実施した対策・他工種との調整内容を記述する。</p>
+        <ul class="theme-points">
+          <li>他工種との工程調整・取り合い協議の内容</li>
+          <li>機器搬入タイミングの計画と実施</li>
+          <li>遅延リスクの特定と具体的な回避策</li>
+          <li>週次工程会議での進捗管理方法</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="theme-card">
+      <div class="theme-card-header">
+        <div class="theme-icon">⛑️</div>
+        <div class="theme-name">安全管理</div>
+        <span class="freq-badge freq-high">最頻出</span>
+      </div>
+      <div class="theme-card-body">
+        <p class="theme-desc">労働災害防止のために実施した具体的な安全対策を記述する。</p>
+        <ul class="theme-points">
+          <li>高所作業・墜落防止のための具体的措置</li>
+          <li>酸素欠乏危険場所での作業前確認事項</li>
+          <li>クレーン・玉掛け作業の安全手順</li>
+          <li>新規入場者教育の実施内容</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ 合格する記述の構成 -->
+  <div class="section-header">
+    <div class="section-icon-wrap">🏗️</div>
+    <div class="section-title-wrap">
+      <div class="section-num">SECTION 03</div>
+      <div class="section-title">合格する経験記述の構成</div>
+    </div>
+    <div class="section-line"></div>
+  </div>
+
+  <p style="color:#b0b8d0;font-size:.9rem;margin-bottom:20px;line-height:1.8;">経験記述は<strong>「工事概要」＋「記述本文（3段構成）」</strong>で組み立てます。この構成を崩さないことが合格の基本です。</p>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-title">📝 工事概要の書き方</div>
+    <table class="schedule-table">
+      <thead><tr><th>項目</th><th>記載内容・ポイント</th></tr></thead>
+      <tbody>
+        <tr><td><strong>工事名</strong></td><td>発注者名・建物名・工事種別を含む正式名称。例：○○株式会社 第2工場 空調・衛生設備工事</td></tr>
+        <tr><td><strong>工事場所</strong></td><td>都道府県・市区町村レベル（番地まで不要）</td></tr>
+        <tr><td><strong>工期</strong></td><td>着工〜竣工の期間。例：令和4年4月〜令和5年2月（10ヶ月間）</td></tr>
+        <tr><td><strong>工事内容</strong></td><td>設備の種類・規模・数量。例：空調設備（パッケージエアコン20台）、給排水衛生設備一式</td></tr>
+        <tr><td><strong>あなたの立場</strong></td><td>「現場代理人」または「主任技術者（施工管理担当）」と明記</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">✍️ 記述本文の3段構成</div>
+    <div class="structure-steps">
+      <div class="s-step">
+        <div class="s-step-num">①</div>
+        <div class="s-step-body">
+          <div class="s-step-title">課題・問題点の特定</div>
+          <div class="s-step-desc">
+            「どんな状況で、どんな問題・リスクが存在したか」を具体的に書く。<br>
+            工事の特性・現場条件・季節・他工種の状況など、この工事固有の背景を示す。<br>
+            <strong>数値・固有名詞を使って具体性を出すことが鍵。</strong>
+          </div>
+        </div>
+      </div>
+      <div class="s-step">
+        <div class="s-step-num">②</div>
+        <div class="s-step-body">
+          <div class="s-step-title">実施した具体的対策</div>
+          <div class="s-step-desc">
+            「何を、どのように実施したか」を箇条書き的に具体的に書く。<br>
+            一般論ではなく、この工事で実際に行った固有の対策が重要。<br>
+            <strong>①②③などの番号を使って複数の対策を整理すると読みやすい。</strong>
+          </div>
+        </div>
+      </div>
+      <div class="s-step">
+        <div class="s-step-num">③</div>
+        <div class="s-step-body">
+          <div class="s-step-title">結果・効果</div>
+          <div class="s-step-desc">
+            実施した対策によってどのような成果が得られたかを書く。<br>
+            <strong>数値で示せるなら必ず数値化する。</strong>（例：不具合0件・工程遅延なし・竣工検査合格など）
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ④ 良い例・NG例 -->
+  <div class="section-header">
+    <div class="section-icon-wrap">⚠️</div>
+    <div class="section-title-wrap">
+      <div class="section-num">SECTION 04</div>
+      <div class="section-title">良い例・NG例の比較</div>
+    </div>
+    <div class="section-line"></div>
+  </div>
+
+  <h3 style="font-size:.95rem;color:var(--text);margin-bottom:12px;font-weight:700;">【品質管理】課題の書き方</h3>
+  <div class="example-wrap">
+    <div class="example-label label-bad">❌ NG例（抽象的すぎる）</div>
+    <div class="example-box bad">配管の品質確保に課題があったため、適切な対策を実施した。</div>
+  </div>
+  <div class="example-wrap">
+    <div class="example-label label-good">✅ 良い例（具体的）</div>
+    <div class="example-box good">地下ピット内の排水配管は、スラブ打設後に完全に隠蔽されるため、施工不良の発見が困難な状況であった。また、当該エリアは電気・空調・衛生の3工種が輻輳しており、配管勾配（1/100以上）の確保と接続部の水密性確保が重要な品質課題となった。</div>
+  </div>
+
+  <h3 style="font-size:.95rem;color:var(--text);margin:24px 0 12px;font-weight:700;">【安全管理】対策の書き方</h3>
+  <div class="example-wrap">
+    <div class="example-label label-bad">❌ NG例（一般論のみ）</div>
+    <div class="example-box bad">高所作業が多かったため、安全帯を着用させて安全に注意して作業を行った。</div>
+  </div>
+  <div class="example-wrap">
+    <div class="example-label label-good">✅ 良い例（固有の対策）</div>
+    <div class="example-box good">①高さ3mの配管架台上での作業に際し、親綱を水平に張りフルハーネス型安全帯を使用させた。②作業前のKY活動で「高所からの墜落」をリスクとして特定し、全作業員で共有した。③作業床の端部には高さ900mmの手すりと幅木を設置し、工具・材料の落下防止措置を講じた。</div>
+  </div>
+
+  <div class="info-box danger" style="margin-top:20px;">
+    <div class="info-box-title">🚫 絶対にやってはいけないNG</div>
+    <ul style="padding-left:16px;display:flex;flex-direction:column;gap:6px;margin-top:6px;">
+      <li style="color:#c8d0e8;font-size:.88rem;">実際に経験していない工事や立場を記述する（虚偽記述は一発失格）</li>
+      <li style="color:#c8d0e8;font-size:.88rem;">設問の字数に対して著しく少ない記述（目安の80%以上は必ず書く）</li>
+      <li style="color:#c8d0e8;font-size:.88rem;">工事概要と記述本文で矛盾が生じている</li>
+      <li style="color:#c8d0e8;font-size:.88rem;">「〜に注意した」「〜を心がけた」だけで終わる抽象的な記述</li>
+      <li style="color:#c8d0e8;font-size:.88rem;">テーマと無関係な内容を記述する（品質テーマなのに安全の話をするなど）</li>
+    </ul>
+  </div>
+
+  <!-- ⑤ 経験記述以外の問題 -->
+  <div class="section-header">
+    <div class="section-icon-wrap">📚</div>
+    <div class="section-title-wrap">
+      <div class="section-num">SECTION 05</div>
+      <div class="section-title">経験記述以外の問題対策</div>
+    </div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="card">
+    <table class="schedule-table">
+      <thead><tr><th>問題種別</th><th>対策のポイント</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>施工管理<br>（記述式）</strong></td>
+          <td>空調・給排水・消火設備の施工上の留意事項を問う問題。一次検定の知識をベースに、「なぜそうするか」の理由まで記述できるよう深く理解する。</td>
+        </tr>
+        <tr>
+          <td><strong>工程管理<br>（ネットワーク）</strong></td>
+          <td>ネットワーク工程表からクリティカルパスを求める計算問題。一次検定で習得した計算手順を記述形式でも使えるよう練習する。</td>
+        </tr>
+        <tr>
+          <td><strong>法規<br>（記述式）</strong></td>
+          <td>建設業法・労働安全衛生法・建築基準法などの法令の条文内容を問う。条文の数値・義務の主体（事業者・管理者など）を正確に記述できるようにする。</td>
+        </tr>
+        <tr>
+          <td><strong>機器・配管施工<br>（記述式）</strong></td>
+          <td>機器据付・配管施工・保温工事・試運転調整などの施工上の注意点を記述する。現場経験と一次検定知識を組み合わせて具体的に記述する。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ⑥ 学習スケジュール -->
+  <div class="section-header">
+    <div class="section-icon-wrap">🗓️</div>
+    <div class="section-title-wrap">
+      <div class="section-num">SECTION 06</div>
+      <div class="section-title">二次検定の学習スケジュール</div>
+    </div>
+    <div class="section-line"></div>
+  </div>
+
+  <p style="color:#b0b8d0;font-size:.9rem;margin-bottom:16px;line-height:1.8;">一次検定合格発表（8月頃）から二次検定（10月頃）まで約2ヶ月。この期間を最大限に活用します。</p>
+
+  <div class="card">
+    <table class="schedule-table">
+      <thead><tr><th>時期</th><th>やること</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>一次検定直後〜<br>合格発表前</strong></td>
+          <td>合否にかかわらず経験記述の準備を開始。記述に使う工事を1〜2件選定し、工事概要を整理する。</td>
+        </tr>
+        <tr>
+          <td><strong>合格発表後〜<br>試験8週前</strong></td>
+          <td>品質・工程・安全の3テーマで経験記述の下書きを作成。上司・先輩に添削を依頼する。</td>
+        </tr>
+        <tr>
+          <td><strong>試験8〜4週前</strong></td>
+          <td>経験記述を何度も書き直して精度を上げる。経験記述以外の問題（施工管理・法規など）の対策を並行して進める。</td>
+        </tr>
+        <tr>
+          <td><strong>試験4〜2週前</strong></td>
+          <td>完成した経験記述を暗記できるレベルまで書き込む。時間を計って試験本番形式で練習する。</td>
+        </tr>
+        <tr>
+          <td><strong>試験直前2週間</strong></td>
+          <td>経験記述の最終確認と暗記。法規・施工管理の重要事項を短時間で確認する。体調管理を優先。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ⑦ 準備チェックリスト -->
+  <div class="section-header">
+    <div class="section-icon-wrap">✅</div>
+    <div class="section-title-wrap">
+      <div class="section-num">SECTION 07</div>
+      <div class="section-title">二次検定 準備チェックリスト</div>
+    </div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">試験当日までに確認すること</div>
+    <ul class="check-list">
+      <li>記述に使う工事を選定し、工事概要を整理した</li>
+      <li>品質管理のテーマで経験記述を作成し、添削を受けた</li>
+      <li>工程管理のテーマで経験記述を作成し、添削を受けた</li>
+      <li>安全管理のテーマで経験記述を作成し、添削を受けた</li>
+      <li>経験記述の工事概要と記述本文に矛盾がないか確認した</li>
+      <li>各テーマの記述を時間内（1問あたり30〜40分）に書けるか練習した</li>
+      <li>ネットワーク工程表のクリティカルパス計算を記述式で練習した</li>
+      <li>建設業法・労働安全衛生法の重要条文を確認した</li>
+      <li>施工管理（空調・給排水・消火）の留意事項を整理した</li>
+      <li>試験当日の持ち物・会場・時間を確認した</li>
+    </ul>
+  </div>
+
+  <div class="info-box correct">
+    <div class="info-box-title">✅ 最後のアドバイス</div>
+    二次検定は「準備した量と質」が合否を直接決める試験です。本番で初めて考えながら書くのではなく、<strong>事前に複数パターンを書き込んで手が自然に動く状態</strong>にしておくことが最大の合格戦略です。
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h2>まずは一次検定を突破しよう</h2>
+    <p>二次検定対策の前提は一次検定合格。全8分野・222問の演習問題で確実に合格力をつけよう。</p>
+    <div class="cta-buttons">
+      <a class="btn-primary" href="../bunya/index.html">一次検定 演習問題を解く →</a>
+      <a class="btn-outline" href="../roadmap/index.html">合格ロードマップを見る</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2024 管工事PASS — 1級管工事施工管理技士 合格対策サイト</p>
+  <p style="margin-top:6px;">
+    <a href="../privacy/index.html" style="color:var(--muted);text-decoration:none;">プライバシーポリシー</a> ／
+    <a href="../disclaimer/index.html" style="color:var(--muted);text-decoration:none;">免責事項</a>
+  </p>
+</footer>
+
+</body>
+</html>
