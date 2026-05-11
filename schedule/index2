@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1級管工事施工管理技士 合格対策サイト | 管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士の合格を目指す無料対策サイト。スパナ軍曹と一緒に空調・給排水・消防・法規など全8分野を完全攻略。マンガ解説・演習問題・過去問で一発合格を狙え。">
+<meta name="keywords" content="1級管工事施工管理技士,合格対策,過去問,演習問題,マンガ解説,独学,スケジュール">
+<link rel="canonical" href="https://kankoiji-pass.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="管工事PASS">
+<meta property="og:title" content="1級管工事施工管理技士 合格対策サイト | 管工事PASS">
+<meta property="og:description" content="1級管工事施工管理技士の合格を目指す無料対策サイト。全8分野のマンガ解説・演習問題・過去問で一発合格を狙え。">
+<meta property="og:url" content="https://kankoiji-pass.com/">
+<meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "管工事PASS",
+  "url": "https://kankoiji-pass.com/",
+  "description": "1級管工事施工管理技士の合格を目指す無料対策サイト",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://kankoiji-pass.com/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<style>
+:root {
+  --bg:      #0f1117;
+  --surface: #1a1d27;
+  --surface2:#222636;
+  --border:  #2e3348;
+  --accent:  #4f8ef7;
+  --accent2: #7c5cfc;
+  --correct: #22c55e;
+  --warn:    #f59e0b;
+  --text:    #e8eaf0;
+  --muted:   #7a8099;
+  --danger:  #ef4444;
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{ background:var(--bg); color:var(--text); font-family:'Noto Sans JP',sans-serif; line-height:1.85; overflow-x:hidden; }
+a{ color:inherit; text-decoration:none; }
+
+/* HEADER */
+.site-header{ position:fixed; top:0; left:0; right:0; height:56px; background:rgba(15,17,23,0.95); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:0 1.5rem; z-index:1000; }
+.logo{ font-weight:900; font-size:1.1rem; background:linear-gradient(135deg,var(--accent),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.header-nav{ display:flex; gap:8px; }
+.btn-ghost{ background:none; border:1px solid var(--border); color:var(--muted); padding:6px 14px; border-radius:8px; font-size:.8rem; cursor:pointer; font-family:'Noto Sans JP',sans-serif; transition:.2s; }
+.btn-ghost:hover{ border-color:var(--accent); color:var(--accent); }
+
+/* 締切バナー */
+.deadline-banner{ background:linear-gradient(135deg,#7f1d1d,#991b1b); border-bottom:1px solid #dc2626; padding:.6rem 1.5rem; text-align:center; font-size:.82rem; font-weight:700; color:#fca5a5; margin-top:56px; }
+.deadline-banner span{ color:#fff; }
+
+/* HERO */
+.hero{ padding:3rem 1.5rem 4rem; background:linear-gradient(170deg,#08090e 0%,#0c1a3a 55%,#08090e 100%); position:relative; overflow:hidden; }
+.hero::before{ content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 70% at 65% 50%, rgba(79,142,247,0.12) 0%, transparent 60%); pointer-events:none; }
+.hero-inner{ max-width:960px; margin:0 auto; display:grid; grid-template-columns:1fr 260px; gap:3rem; align-items:center; position:relative; }
+.hero-badge{ display:inline-flex; align-items:center; gap:.5rem; background:rgba(79,142,247,.15); border:1px solid rgba(79,142,247,.3); color:var(--accent); font-size:.75rem; font-weight:700; padding:.3rem 1rem; border-radius:99px; margin-bottom:1.2rem; }
+.hero-title{ font-family:'Black Han Sans',sans-serif; font-size:clamp(2rem,5vw,3.4rem); line-height:1.0; color:#fff; margin-bottom:1.2rem; }
+.hero-title .accent{ color:var(--accent); }
+.hero-title .small{ font-size:clamp(1.1rem,2.5vw,1.6rem); display:block; margin-bottom:.3rem; color:#b0b8d0; }
+.hero-lead{ font-size:.92rem; color:#b0b8d0; margin-bottom:2rem; line-height:2; }
+.hero-buttons{ display:flex; gap:.8rem; flex-wrap:wrap; }
+.btn-primary{ background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; padding:.8rem 2rem; border-radius:8px; font-size:.95rem; font-weight:700; display:inline-block; transition:.2s; }
+.btn-primary:hover{ opacity:.85; transform:translateY(-1px); }
+.btn-outline{ background:none; border:2px solid var(--accent); color:var(--accent); padding:.75rem 1.6rem; border-radius:8px; font-size:.9rem; font-weight:700; display:inline-block; transition:.2s; }
+.btn-outline:hover{ background:rgba(79,142,247,.1); }
+.hero-char{ display:flex; flex-direction:column; align-items:center; gap:1rem; }
+.hero-char img{ width:220px; filter:drop-shadow(0 8px 32px rgba(79,142,247,0.35)); animation:float 3s ease-in-out infinite; }
+@keyframes float{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
+.hero-char-bubble{ background:var(--danger); color:#fff; font-weight:900; font-size:.82rem; padding:.7rem 1.1rem; border-radius:8px; position:relative; text-align:center; line-height:1.6; }
+.hero-char-bubble::after{ content:''; position:absolute; bottom:-9px; left:50%; transform:translateX(-50%); border:6px solid transparent; border-top-color:var(--danger); }
+
+/* 数値バー */
+.stats-bar{ background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:1.5rem; }
+.stats-inner{ max-width:960px; margin:0 auto; display:flex; justify-content:center; gap:3rem; flex-wrap:wrap; }
+.stat-item{ text-align:center; }
+.stat-num{ font-family:'Oswald',sans-serif; font-size:2rem; font-weight:700; color:var(--accent); line-height:1; }
+.stat-label{ font-size:.72rem; color:var(--muted); margin-top:.3rem; }
+
+/* SECTION共通 */
+.section{ max-width:960px; margin:0 auto; padding:4rem 1.5rem; }
+.section-header{ text-align:center; margin-bottom:2.5rem; }
+.section-badge{ display:inline-block; background:rgba(79,142,247,.12); border:1px solid rgba(79,142,247,.25); color:var(--accent); font-size:.7rem; font-weight:700; letter-spacing:.15em; padding:.25rem .9rem; border-radius:99px; margin-bottom:.8rem; font-family:'Oswald',sans-serif; }
+.section-title{ font-family:'Black Han Sans',sans-serif; font-size:clamp(1.4rem,3.5vw,2.2rem); color:#fff; line-height:1.2; }
+.section-sub{ font-size:.88rem; color:var(--muted); margin-top:.6rem; }
+
+/* キャラコメント */
+.char-comment{ display:flex; gap:1rem; align-items:flex-end; margin:1.8rem 0; }
+.char-comment.reverse{ flex-direction:row-reverse; }
+.char-comment img{ width:70px; flex-shrink:0; }
+.comment-bubble{ background:var(--surface); border:2px solid var(--border); border-radius:12px; padding:.8rem 1.1rem; font-size:.88rem; line-height:1.7; position:relative; flex:1; }
+.char-comment .comment-bubble::before{ content:''; position:absolute; bottom:16px; left:-11px; border:6px solid transparent; border-right-color:var(--border); }
+.char-comment.reverse .comment-bubble::before{ left:auto; right:-11px; border-right-color:transparent; border-left-color:var(--border); }
+.comment-bubble.shout{ background:var(--danger); border-color:var(--danger); color:#fff; font-weight:700; }
+.char-comment .comment-bubble.shout::before{ border-right-color:var(--danger); }
+.char-comment.reverse .comment-bubble.shout::before{ border-left-color:var(--danger); }
+.char-name-tag{ font-size:.62rem; color:var(--muted); text-align:center; margin-top:.3rem; font-weight:700; }
+
+/* 分野カードグリッド */
+.bunya-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1rem; margin:1.5rem 0; }
+.bunya-card{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.3rem 1.2rem; display:flex; flex-direction:column; gap:.6rem; transition:all .2s; cursor:pointer; }
+.bunya-card:hover{ border-color:var(--accent); transform:translateY(-3px); box-shadow:0 8px 24px rgba(79,142,247,.15); }
+.bunya-card-icon{ font-size:1.8rem; }
+.bunya-card-name{ font-weight:900; font-size:.95rem; color:#fff; }
+.bunya-card-desc{ font-size:.75rem; color:var(--muted); line-height:1.6; }
+.bunya-card-tags{ display:flex; gap:.4rem; flex-wrap:wrap; }
+.bunya-tag{ font-size:.65rem; padding:.1rem .5rem; border-radius:3px; background:var(--surface2); border:1px solid var(--border); color:var(--muted); }
+.bunya-tag.hot{ background:rgba(239,68,68,.1); border-color:rgba(239,68,68,.3); color:var(--danger); }
+
+/* 特徴カード */
+.feature-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1.2rem; margin:1.5rem 0; }
+.feature-card{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.5rem; }
+.feature-icon{ font-size:2rem; margin-bottom:.8rem; }
+.feature-title{ font-weight:900; font-size:1rem; color:#fff; margin-bottom:.5rem; }
+.feature-desc{ font-size:.82rem; color:var(--muted); line-height:1.75; }
+
+/* 試験概要表 */
+.info-table{ width:100%; border-collapse:collapse; font-size:.88rem; margin:1.2rem 0; }
+.info-table th{ background:var(--surface2); padding:.7rem 1rem; text-align:left; color:var(--accent); border-bottom:1px solid var(--border); border-right:1px solid var(--border); font-weight:700; width:35%; }
+.info-table th:last-child{ border-right:none; }
+.info-table td{ padding:.7rem 1rem; border-bottom:1px solid var(--border); color:#c8d0e8; line-height:1.7; }
+.info-table tr:last-child td,.info-table tr:last-child th{ border-bottom:none; }
+
+/* ロードマップ */
+.roadmap{ display:flex; flex-direction:column; gap:0; margin:1.5rem 0; }
+.rm-step{ display:flex; gap:1.2rem; position:relative; }
+.rm-step::before{ content:''; position:absolute; left:20px; top:44px; bottom:0; width:2px; background:var(--border); }
+.rm-step:last-child::before{ display:none; }
+.rm-left{ display:flex; flex-direction:column; align-items:center; min-width:44px; }
+.rm-dot{ width:40px; height:40px; border-radius:50%; background:var(--surface2); border:2px solid var(--border); display:flex; align-items:center; justify-content:center; font-weight:900; font-size:.85rem; color:var(--accent); flex-shrink:0; z-index:1; }
+.rm-dot.active{ background:var(--accent); border-color:var(--accent); color:#fff; }
+.rm-right{ flex:1; padding:.4rem 0 1.8rem; }
+.rm-title{ font-weight:900; font-size:.95rem; color:#fff; margin-bottom:.3rem; }
+.rm-desc{ font-size:.82rem; color:var(--muted); line-height:1.7; }
+
+/* CTA */
+.cta-section{ background:linear-gradient(135deg,rgba(79,142,247,.08),rgba(124,92,252,.08)); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:4rem 1.5rem; }
+.cta-inner{ max-width:700px; margin:0 auto; text-align:center; }
+.cta-char{ display:flex; align-items:flex-end; justify-content:center; gap:1.5rem; margin-bottom:2rem; }
+.cta-char img{ width:90px; }
+.cta-bubble{ background:var(--surface); border:2px solid var(--accent); border-radius:12px; padding:1rem 1.4rem; font-weight:700; font-size:.9rem; line-height:1.6; text-align:left; position:relative; }
+.cta-bubble::before{ content:''; position:absolute; left:-11px; top:50%; transform:translateY(-50%); border:6px solid transparent; border-right-color:var(--accent); }
+.cta-title{ font-family:'Black Han Sans',sans-serif; font-size:clamp(1.5rem,4vw,2.2rem); color:#fff; margin-bottom:.6rem; }
+.cta-sub{ color:var(--muted); font-size:.9rem; margin-bottom:2rem; }
+.cta-buttons{ display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap; }
+
+/* コラムリンク */
+.column-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; margin:1.5rem 0; }
+.column-card{ background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:1.2rem; display:flex; flex-direction:column; gap:.5rem; transition:all .2s; cursor:pointer; }
+.column-card:hover{ border-color:var(--accent); }
+.column-card-label{ font-size:.68rem; color:var(--accent); font-weight:700; font-family:'Oswald',sans-serif; letter-spacing:.1em; }
+.column-card-title{ font-weight:900; font-size:.9rem; color:#fff; line-height:1.4; }
+.column-card-desc{ font-size:.78rem; color:var(--muted); line-height:1.65; }
+
+.er{ color:var(--danger); font-weight:900; }
+.eb{ color:var(--accent); font-weight:900; }
+.eg{ color:var(--correct); font-weight:900; }
+.ew{ color:var(--warn); font-weight:900; }
+
+footer{ background:var(--surface); border-top:1px solid var(--border); padding:2rem 1.5rem; }
+.footer-inner{ max-width:960px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:1rem; }
+.footer-nav{ display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; font-size:.8rem; color:var(--muted); }
+.footer-nav a:hover{ color:var(--accent); }
+.footer-copy{ font-size:.75rem; color:var(--muted); }
+
+@media(max-width:768px){
+  .hero-inner{ grid-template-columns:1fr; }
+  .hero-char{ display:none; }
+  .stats-inner{ gap:1.5rem; }
+  .section{ padding:3rem 1rem; }
+  .deadline-banner{ font-size:.75rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">管工事PASS</a>
+  <nav class="header-nav">
+    <button class="btn-ghost" onclick="location.href='/taisaku/'">対策ガイド</button>
+    <button class="btn-ghost" onclick="location.href='/bunya/'">演習問題</button>
+  </nav>
+</header>
+
+<!-- 締切バナー -->
+<div class="deadline-banner">
+  🚨 令和8年度 受験申込み締め切り：<span>2026年5月21日（水）</span> まであとわずか！今すぐ書類を準備しろ！！
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">🔧 2026年度（令和8年度）対応版</div>
+      <h1 class="hero-title">
+        <span class="small">1級管工事施工管理技士</span>
+        <span class="accent">一発合格</span><br>対策サイト
+      </h1>
+      <p class="hero-lead">
+        マンガ解説・演習問題・過去問を完全無料で提供。<br>
+        スパナ軍曹と一緒に<strong>全8分野を完全攻略</strong>して<br>
+        令和8年度の試験を突破しろ！！
+      </p>
+      <div class="hero-buttons">
+        <a href="/bunya/" class="btn-primary">▶ 演習問題を解く（無料）</a>
+        <a href="/intro/" class="btn-outline">試験概要を確認する</a>
+      </div>
+    </div>
+    <div class="hero-char">
+      <img src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+      <div class="hero-char-bubble">合格するまで<br>補習確定だぞ！！💢</div>
+    </div>
+  </div>
+</section>
+
+<!-- 数値バー -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">8</div>
+      <div class="stat-label">対応分野数</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">222+</div>
+      <div class="stat-label">演習問題数</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">過去問年度数<br>（R5〜R7）</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" style="color:var(--correct);">無料</div>
+      <div class="stat-label">会員登録不要<br>完全無料</div>
+    </div>
+  </div>
+</div>
+
+<!-- 分野別演習 -->
+<div class="section" id="bunya">
+  <div class="section-header">
+    <div class="section-badge">STUDY BY FIELD</div>
+    <div class="section-title">分野別 演習問題</div>
+    <div class="section-sub">出題傾向に合わせた8分野の解説・問題で弱点を潰せ</div>
+  </div>
+
+  <div class="char-comment">
+    <img src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+    <div>
+      <div class="comment-bubble shout">まず自分の弱点分野を特定しろ！全部均等にやる時間はないぞ！！</div>
+      <div class="char-name-tag">🔧 スパナ軍曹</div>
+    </div>
+  </div>
+
+  <div class="bunya-grid">
+    <a href="/bunya/kucho/" class="bunya-card">
+      <div class="bunya-card-icon">❄️</div>
+      <div class="bunya-card-name">空調設備</div>
+      <div class="bunya-card-desc">冷凍・熱負荷・ダクト・AHU・冷媒など空調の核心を攻略</div>
+      <div class="bunya-card-tags"><span class="bunya-tag hot">頻出</span><span class="bunya-tag">マンガあり</span></div>
+    </a>
+    <a href="/bunya/kyuhaisu/" class="bunya-card">
+      <div class="bunya-card-icon">💧</div>
+      <div class="bunya-card-name">給排水衛生</div>
+      <div class="bunya-card-desc">給水方式・排水勾配・衛生器具・トラップを完全マスター</div>
+      <div class="bunya-card-tags"><span class="bunya-tag hot">頻出</span><span class="bunya-tag">マンガあり</span></div>
+    </a>
+    <a href="/bunya/shobo/" class="bunya-card">
+      <div class="bunya-card-icon">🔥</div>
+      <div class="bunya-card-name">消防設備</div>
+      <div class="bunya-card-desc">スプリンクラー・消火栓・放水圧力・設置基準を攻略</div>
+      <div class="bunya-card-tags"><span class="bunya-tag hot">頻出</span><span class="bunya-tag">マンガあり</span></div>
+    </a>
+    <a href="/bunya/kotei/" class="bunya-card">
+      <div class="bunya-card-icon">📊</div>
+      <div class="bunya-card-name">工程管理</div>
+      <div class="bunya-card-desc">バーチャート・ネットワーク工程表・クリティカルパスを攻略</div>
+      <div class="bunya-card-tags"><span class="bunya-tag">マンガあり</span></div>
+    </a>
+    <a href="/bunya/anzen/" class="bunya-card">
+      <div class="bunya-card-icon">⛑️</div>
+      <div class="bunya-card-name">品質・安全管理</div>
+      <div class="bunya-card-desc">品質管理・労働安全衛生法・特定元方事業者の義務</div>
+      <div class="bunya-card-tags"><span class="bunya-tag">マンガあり</span></div>
+    </a>
+    <a href="/bunya/hoki/" class="bunya-card">
+      <div class="bunya-card-icon">⚖️</div>
+      <div class="bunya-card-name">法規</div>
+      <div class="bunya-card-desc">建設業法・労働基準法・消防法・建築基準法の頻出条文</div>
+      <div class="bunya-card-tags"><span class="bunya-tag hot">頻出</span><span class="bunya-tag">マンガあり</span></div>
+    </a>
+    <a href="/bunya/kiso/" class="bunya-card">
+      <div class="bunya-card-icon">🔬</div>
+      <div class="bunya-card-name">一般基礎</div>
+      <div class="bunya-card-desc">流体力学・熱力学・レイノルズ数・ベルヌーイなど基礎理論</div>
+      <div class="bunya-card-tags"><span class="bunya-tag">マンガあり</span></div>
+    </a>
+    <a href="/bunya/sogo/" class="bunya-card">
+      <div class="bunya-card-icon">🎯</div>
+      <div class="bunya-card-name">総合確認問題</div>
+      <div class="bunya-card-desc">全分野横断の総仕上げ問題。本番前の実力チェックに</div>
+      <div class="bunya-card-tags"><span class="bunya-tag hot">直前対策</span></div>
+    </a>
+  </div>
+</div>
+
+<!-- サイトの特徴 -->
+<div style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-badge">FEATURES</div>
+      <div class="section-title">管工事PASSが選ばれる理由</div>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📖</div>
+        <div class="feature-title">マンガで直感的に理解</div>
+        <div class="feature-desc">スパナ軍曹とパイプ訓練生が登場するマンガ形式で、難解な技術内容をわかりやすく解説。読み物として楽しみながら知識が身につく。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✏️</div>
+        <div class="feature-title">本番形式の演習問題</div>
+        <div class="feature-desc">各分野30問以上の演習問題を収録。実際の試験に近い形式で解くことで、本番での得点力を着実に高められる。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📅</div>
+        <div class="feature-title">月別勉強スケジュール</div>
+        <div class="feature-desc">令和8年度の試験日程（9月一次・12月二次）に対応した月別の学習計画を提供。「今何をすべきか」が一目でわかる。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🆓</div>
+        <div class="feature-title">完全無料・登録不要</div>
+        <div class="feature-desc">会員登録・メールアドレス不要で全コンテンツを無料で利用可能。今すぐ学習をスタートできる。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 試験概要 -->
+<div class="section" id="intro">
+  <div class="section-header">
+    <div class="section-badge">EXAM INFO</div>
+    <div class="section-title">令和8年度 試験概要</div>
+    <div class="section-sub">まず試験の全体像を把握しろ！</div>
+  </div>
+
+  <table class="info-table">
+    <tr><th>試験区分</th><td>第一次検定（マークシート）／第二次検定（記述式）</td></tr>
+    <tr><th>申込み締め切り</th><td><span class="er">2026年5月21日（水）</span>　※絶対に忘れるな！</td></tr>
+    <tr><th>一次検定</th><td><span class="eb">2026年9月6日（日）</span></td></t
