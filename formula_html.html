@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>試験に出る公式まとめ｜管工事PASS</title>
+<meta name="description" content="1級管工事施工管理技士の計算問題で必要な公式を全分野まとめて解説。スパナ軍曹とパイプ訓練生がマンガ形式でわかりやすく説明します。">
+<link rel="canonical" href="https://kankoiji-pass.com/formula/">
+<meta property="og:title" content="試験に出る公式まとめ｜管工事PASS">
+<meta property="og:description" content="1級管工事施工管理技士の計算問題で必要な公式を全分野マンガ形式で解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kankoiji-pass.com/formula/">
+<meta property="og:image" content="https://kankoiji-pass.com/images/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E37L2YPT6X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E37L2YPT6X');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6187309092162285" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Black+Han+Sans&family=Oswald:wght@700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0f1117;
+  --surface: #1a1d27;
+  --surface2: #222636;
+  --border: #2e3348;
+  --accent: #4f8ef7;
+  --accent2: #7c5cfc;
+  --correct: #22c55e;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+  --text: #e8eaf0;
+  --muted: #7a8099;
+  --ink: #0a0c12;
+  --mono: 'DM Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Noto Sans JP', sans-serif; overflow-x: hidden; line-height: 1.75; }
+a { color: inherit; text-decoration: none; }
+
+/* HEADER */
+.site-header { position: fixed; top: 0; left: 0; right: 0; height: 56px; background: rgba(15,17,23,.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; z-index: 1000; }
+.logo { font-weight: 900; font-size: 1.1rem; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.btn-ghost { background: none; border: 1px solid var(--border); color: var(--muted); padding: 6px 14px; border-radius: 8px; font-size: .8rem; cursor: pointer; font-family: 'Noto Sans JP', sans-serif; transition: .2s; }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* HERO */
+.hero { padding: calc(56px + 3rem) 1.5rem 3rem; background: linear-gradient(170deg, #08090e 0%, #0c1a3a 60%, #08090e 100%); position: relative; overflow: hidden; text-align: center; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 30%, rgba(79,142,247,.12) 0%, transparent 60%); }
+.hero-badge { display: inline-block; background: var(--accent); color: #fff; font-family: 'Oswald', sans-serif; font-size: .72rem; letter-spacing: .2em; padding: .25rem 1rem; clip-path: polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%); margin-bottom: 1.2rem; }
+.hero-title { font-family: 'Black Han Sans', sans-serif; font-size: clamp(2rem, 6vw, 3.5rem); color: #fff; margin-bottom: 1rem; line-height: 1.1; position: relative; }
+.hero-title span { color: var(--accent); }
+.hero-lead { font-size: .92rem; color: #b0b8d0; max-width: 600px; margin: 0 auto; }
+
+/* TOC */
+.toc { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
+.toc-inner { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+.toc-title { font-weight: 900; font-size: .95rem; color: var(--accent); margin-bottom: 1rem; }
+.toc-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .5rem; list-style: none; }
+.toc-list a { display: block; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: .5rem .8rem; font-size: .82rem; color: var(--muted); transition: .2s; }
+.toc-list a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* SECTION */
+.section { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+.section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 3px solid var(--accent); }
+.section-icon { font-size: 2rem; }
+.section-title { font-family: 'Black Han Sans', sans-serif; font-size: clamp(1.3rem, 3vw, 1.8rem); color: #fff; }
+.section-badge { font-size: .7rem; color: var(--accent); font-family: 'Oswald', sans-serif; letter-spacing: .15em; }
+
+/* MANGA PANEL */
+.manga-panel { background: var(--surface); border: 2px solid #fff; border-radius: 4px; margin-bottom: 2rem; box-shadow: 5px 5px 0 var(--ink); overflow: hidden; opacity: 0; transform: translateY(20px); transition: .5s; }
+.manga-panel.visible { opacity: 1; transform: translateY(0); }
+.panel-scene { display: flex; min-height: 140px; }
+.char-col { width: 100px; min-width: 100px; background: var(--surface2); border-right: 2px solid #fff; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: .8rem .4rem .5rem; position: relative; }
+.char-col.right { border-right: none; border-left: 2px solid #fff; }
+.char-col.active::after { content: '💢'; position: absolute; top: 6px; right: 6px; font-size: 1.2rem; }
+.char-img { width: 65px; height: auto; }
+.char-name { font-size: .6rem; color: var(--muted); text-align: center; margin-top: .3rem; font-weight: 700; }
+.speech-area { flex: 1; padding: 1rem 1.2rem; display: flex; flex-direction: column; gap: .7rem; justify-content: center; }
+.bubble { border-radius: 4px; padding: .6rem .9rem; font-size: clamp(.8rem, 2vw, .9rem); line-height: 1.65; border: 2px solid #fff; background: var(--surface2); position: relative; }
+.bubble.shout { background: var(--accent); color: #fff; font-weight: 900; border-color: #fff; }
+.bubble.shout::before { content: ''; position: absolute; left: -10px; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-right-color: var(--accent); }
+.bubble.reply { background: #1e2a1e; border-color: var(--correct); color: #c8f0cc; }
+.bubble.reply::before { content: ''; position: absolute; right: -10px; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-left-color: var(--correct); }
+.bubble.info { background: #12192e; border-color: var(--accent); color: #ccdeff; }
+.bubble .spk { font-size: .62rem; font-weight: 900; opacity: .7; display: block; margin-bottom: .2rem; letter-spacing: .1em; }
+
+/* FORMULA BOX */
+.formula-box { background: var(--ink); border: 2px solid var(--accent); border-radius: 8px; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem; opacity: 0; transform: translateY(20px); transition: .5s; }
+.formula-box.visible { opacity: 1; transform: translateY(0); }
+.formula-name { font-family: 'Oswald', sans-serif; font-size: .8rem; letter-spacing: .15em; color: var(--accent); margin-bottom: .8rem; }
+.formula-main { font-family: var(--mono); font-size: clamp(1rem, 3vw, 1.4rem); color: #fff; background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: .8rem 1.2rem; margin-bottom: .8rem; text-align: center; letter-spacing: .05em; }
+.formula-vars { display: flex; flex-direction: column; gap: .4rem; margin-bottom: .8rem; }
+.formula-var { display: flex; gap: .8rem; align-items: flex-start; font-size: .82rem; }
+.var-key { font-family: var(--mono); color: var(--warn); min-width: 80px; font-weight: 700; }
+.var-desc { color: #b0b8d0; line-height: 1.5; }
+.formula-point { background: rgba(79,142,247,.08); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; padding: .6rem 1rem; font-size: .82rem; color: #ccdeff; line-height: 1.7; }
+.formula-example { background: rgba(34,197,94,.08); border: 1px solid rgba(34,197,94,.25); border-radius: 6px; padding: .8rem 1rem; font-size: .82rem; color: #c8f0cc; line-height: 1.75; margin-top: .8rem; }
+.formula-example-title { font-weight: 900; color: var(--correct); margin-bottom: .4rem; font-size: .78rem; letter-spacing: .1em; }
+.formula-warn { background: rgba(239,68,68,.08); border: 1px solid rgba(239,68,68,.25); border-radius: 6px; padding: .7rem 1rem; font-size: .82rem; color: #fca5a5; line-height: 1.7; margin-top: .8rem; }
+
+/* CHAPTER DIVIDER */
+.chapter { text-align: center; margin: 2.5rem 0 1.5rem; position: relative; }
+.chapter::before, .chapter::after { content: ''; position: absolute; top: 50%; width: 30%; height: 1px; background: var(--border); }
+.chapter::before { left: 0; }
+.chapter::after { right: 0; }
+.chapter span { font-family: 'Oswald', sans-serif; font-size: .72rem; letter-spacing: .25em; color: var(--muted); background: var(--bg); padding: 0 1rem; }
+
+/* CTA */
+.cta-section { background: linear-gradient(135deg, rgba(79,142,247,.08), rgba(124,92,252,.08)); border-top: 1px solid var(--border); padding: 3rem 1.5rem; text-align: center; }
+.cta-title { font-family: 'Black Han Sans', sans-serif; font-size: clamp(1.4rem, 4vw, 2rem); color: #fff; margin-bottom: .6rem; }
+.cta-sub { color: var(--muted); font-size: .9rem; margin-bottom: 1.8rem; }
+.btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; padding: .75rem 2rem; border-radius: 8px; font-size: .95rem; font-weight: 700; display: inline-block; margin: .4rem; }
+
+footer { background: var(--surface); border-top: 1px solid var(--border); padding: 1.5rem; text-align: center; font-size: .78rem; color: var(--muted); }
+
+.em-r { color: var(--danger); font-weight: 900; }
+.em-b { color: var(--accent); font-weight: 900; }
+.em-g { color: var(--correct); font-weight: 900; }
+.em-w { color: var(--warn); font-weight: 900; }
+
+@media(max-width: 600px) {
+  .char-col { width: 70px; min-width: 70px; }
+  .char-img { width: 50px; }
+  .section { padding: 2rem 1rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">管工事PASS</a>
+  <nav style="display:flex;gap:8px;">
+    <button class="btn-ghost" onclick="location.href='/bunya/'">演習問題</button>
+    <button class="btn-ghost" onclick="location.href='/'">← トップ</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-badge">📐 FORMULA GUIDE — 全分野対応</div>
+  <h1 class="hero-title">試験に出る<span>公式</span>を<br>全部叩き込め！！</h1>
+  <p class="hero-lead">計算問題で確実に得点するために必要な公式をスパナ軍曹が全分野解説。マンガ形式でわかりやすく覚えられるぞ！</p>
+</section>
+
+<!-- 目次 -->
+<div class="toc">
+  <div class="toc-inner">
+    <div class="toc-title">📋 目次 — 公式一覧</div>
+    <ul class="toc-list">
+      <li><a href="#fluid">💧 流体力学の公式</a></li>
+      <li><a href="#heat">🌡️ 熱力学の公式</a></li>
+      <li><a href="#aircon">❄️ 空調設備の公式</a></li>
+      <li><a href="#water">🚰 給排水設備の公式</a></li>
+      <li><a href="#fire">🔥 消防設備の公式</a></li>
+      <li><a href="#process">📊 工程管理の公式</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== 流体力学 ===== -->
+<div class="section" id="fluid">
+  <div class="section-header">
+    <div class="section-icon">💧</div>
+    <div>
+      <div class="section-badge">SECTION 01</div>
+      <div class="section-title">流体力学の公式</div>
+    </div>
+  </div>
+
+  <div class="manga-panel">
+    <div class="panel-scene">
+      <div class="char-col active">
+        <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+        <div class="char-name">スパナ軍曹</div>
+      </div>
+      <div class="speech-area">
+        <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>流体力学の公式は計算問題の基本中の基本だ！3つ完璧に覚えろ！！</div>
+        <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>レイノルズ数とベルヌーイが特に難しくて……</div>
+        <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>意味を理解すれば難しくない！順番に叩き込んでやる！！</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chapter"><span>公式 01 — レイノルズ数</span></div>
+  <div class="formula-box">
+    <div class="formula-name">🔢 レイノルズ数（Re）</div>
+    <div class="formula-main">Re = V × D ÷ ν</div>
+    <div class="formula-vars">
+      <div class="formula-var"><span class="var-key">Re</span><span class="var-desc">レイノルズ数（無次元数・単位なし）</span></div>
+      <div class="formula-var"><span class="var-key">V</span><span class="var-desc">流速（m/s）</span></div>
+      <div class="formula-var"><span class="var-key">D</span><span class="var-desc">管内径（m）</span></div>
+      <div class="formula-var"><span class="var-key">ν</span><span class="var-desc">動粘度（m²/s）</span></div>
+    </div>
+    <div class="formula-point">
+      ✅ Re &lt; 2,300 → <span class="em-g">層流</span><br>
+      ✅ Re &gt; 4,000 → <span class="em-r">乱流</span><br>
+      ✅ 2,300〜4,000 → <span class="em-w">遷移域</span>
+    </div>
+    <div class="formula-example">
+      <div class="formula-example-title">📝 計算例</div>
+      流速2m/s、管径0.1m、動粘度1×10⁻⁶m²/sの場合<br>
+      Re = 2 × 0.1 ÷ (1×10⁻⁶) = <strong>200,000 → 乱流</strong>
+    </div>
+    <div class="formula-warn">
+      ⚠️ よくある間違い：「Re &gt; 2,300で乱流」→ ✗ 2,300〜4,000は遷移域！4,000以上が乱流だ！！
+    </div>
+  </div>
+
+  <div class="chapter"><span>公式 02 — 連続の式</span></div>
+  <div class="formula-box">
+    <div class="formula-name">🔢 連続の式（質量保存の法則）</div>
+    <div class="formula-main">Q = A × V = 一定</div>
+    <div class="formula-vars">
+      <div class="formula-var"><span class="var-key">Q</span><span class="var-desc">流量（m³/s）</span></div>
+      <div class="formula-var"><span class="var-key">A</span><span class="var-desc">断面積（m²）</span></div>
+      <div class="formula-var"><span class="var-key">V</span><span class="var-desc">流速（m/s）</span></div>
+    </div>
+    <div class="formula-point">
+      管が<span class="em-r">細くなる</span> → 断面積↓ → <span class="em-r">流速↑</span><br>
+      管が<span class="em-g">太くなる</span> → 断面積↑ → <span class="em-g">流速↓</span>
+    </div>
+    <div class="formula-example">
+      <div class="formula-example-title">📝 計算例</div>
+      断面積0.1m²で流速2m/s → Q = 0.1 × 2 = 0.2m³/s<br>
+      断面積が0.05m²に変わったときの流速 → V = 0.2 ÷ 0.05 = <strong>4m/s</strong>
+    </div>
+  </div>
+
+  <div class="chapter"><span>公式 03 — ベルヌーイの定理</span></div>
+  <div class="formula-box">
+    <div class="formula-name">🔢 ベルヌーイの定理（損失あり）</div>
+    <div class="formula-main">P₁ + ½ρV₁² = P₂ + ½ρV₂² + ΔP損失</div>
+    <div class="formula-vars">
+      <div class="formula-var"><span class="var-key">P</span><span class="var-desc">静圧（Pa）</span></div>
+      <div class="formula-var"><span class="var-key">½ρV²</span><span class="var-desc">動圧（Pa）　ρ=密度(kg/m³)　V=流速(m/s)</span></div>
+      <div class="formula-var"><span class="var-key">ΔP損失</span><span class="var-desc">圧力損失（Pa）</span></div>
+    </div>
+    <div class="formula-point">
+      流速↑ → 動圧↑ → <span class="em-r">静圧↓</span>（ベルヌーイの核心！）<br>
+      動圧 = ½ × ρ × V²　を確実に計算できるようにしろ！
+    </div>
+    <div class="formula-example">
+      <div class="formula-example-title">📝 計算例（過去問頻出パターン）</div>
+      空気密度1.2kg/m³、点Aの流速5m/s、点Bの流速10m/s<br>
+      点Bの静圧5Pa、AB間の圧力損失5Paのとき点Aの静圧は？<br>
+      動圧A = ½×1.2×25 = 15Pa　動圧B = ½×1.2×100 = 60Pa<br>
+      PA + 15 = 5 + 60 + 5　→　PA = <strong>55Pa</strong>
+    </div>
+  </div>
+
+  <div class="chapter"><span>公式 04 — ダルシー・ワイスバッハの式</span></div>
+  <div class="formula-box">
+    <div class="formula-name">🔢 ダルシー・ワイスバッハの式（管摩擦損失）</div>
+    <div class="formula-main">ΔP = λ × (L/D) × (ρV²/2)</div>
+    <div class="formula-vars">
+      <div class="formula-var"><span class="var-key">λ</span><span class="var-desc">管摩擦係数（無次元）</span></div>
+      <div class="formula-var"><span class="var-key">L</span><span class="var-desc">管長（m）→ 圧力損失に<span class="em-r">比例</span></span></div>
+      <div class="formula-var"><span class="var-key">D</span><span class="var-desc">管内径（m）→ 圧力損失に<span class="em-g">反比例</span></span></div>
+      <div class="formula-var"><span class="var-key">ρV²/2</span><span class="var-desc">動圧（Pa）</span></div>
+    </div>
+    <div class="formula-point">
+      圧力損失は<span class="em-r">管長に比例</span>・<span class="em-g">管内径に反比例</span><br>
+      流体摩擦の原因は流体の<span class="em-w">粘性</span>（慣性ではない！）
+    </div>
+    <div class="formula-warn">
+      ⚠️ 「圧力損失は管内径に比例」→ ✗ 反比例だ！「摩擦の原因は慣性」→ ✗ 粘性だ！！
+    </div>
+  </div>
+</div>
+
+<!-- ===== 熱力学 ===== -->
+<div class="section" id="heat" style="border-top:1px solid var(--border);">
+  <div class="section-header">
+    <div class="section-icon">🌡️</div>
+    <div>
+      <div class="section-badge">SECTION 02</div>
+      <div class="section-title">熱力学の公式</div>
+    </div>
+  </div>
+
+  <div class="manga-panel">
+    <div class="panel-scene">
+      <div class="char-col active">
+        <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+        <div class="char-name">スパナ軍曹</div>
+      </div>
+      <div class="speech-area">
+        <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>熱力学は状態方程式とCOPが超頻出だ！数値を正確に出せるようにしろ！！</div>
+        <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>理想気体の計算が苦手で……温度の単位が混乱します</div>
+        <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>絶対温度を使え！℃に273を足せばいいだけだ！！</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chapter"><span>公式 05 — 理想気体の状態方程式</span></div>
+  <div class="formula-box">
+    <div class="formula-name">🔢 理想気体の状態方程式</div>
+    <div class="formula-main">PV/T = 一定　→　P₁V₁/T₁ = P₂V₂/T₂</div>
+    <div class="formula-vars">
+      <div class="formula-var"><span class="var-key">P</span><span class="var-desc">圧力（Pa）</span></div>
+      <div class="formula-var"><span class="var-key">V</span><span class="var-desc">体積（L または m³）</span></div>
+      <div class="formula-var"><span class="var-key">T</span><span class="var-desc">絶対温度（K）　※ K = ℃ + 273</span></div>
+    </div>
+    <div class="formula-point">
+      変化後の体積を求める：<br>
+      V₂ = V₁ × (P₁/P₂) × (T₂/T₁)
+    </div>
+    <div class="formula-example">
+      <div class="formula-example-title">📝 計算例（過去問 No.5）</div>
+      P₁=6×10⁵Pa、V₁=60L、T₁=300K → P₂=3×10⁵Pa、T₂=360Kのとき<br>
+      V₂ = 60 × (6/3) × (360/300) = 60 × 2 × 1.2 = <strong>144L</strong>
+    </div>
+    <div class="formula-warn">
+      ⚠️ 温度は必ず<span class="em-r">絶対温度（K）</span>で計算しろ！℃のまま計算すると全部間違いになるぞ！！
+    </div>
+  </div>
+
+  <div class="chapter"><span>公式 06 — 冷凍機のCOP</span></div>
+  <div class="formula-box">
+    <div class="formula-name">🔢 成績係数（COP）</div>
+    <div class="formula-main">COP = 冷凍能力（kW） ÷ 消費電力（kW）</div>
+    <div class="formula-vars">
+      <div class="formula-var"><span class="var-key">COP</span><span class="var-desc">成績係数（無次元数）　値が大きいほど効率が良い</span></div>
+      <div class="formula-var"><span class="var-key">冷凍能力</span><span class="var-desc">冷却できる熱量（kW）</span></div>
+      <div class="formula-var"><span class="var-key">消費電力</span><span class="var-desc">圧縮機の消費電力（kW）</span></div>
+    </div>
+    <div class="formula-point">
+      圧縮式冷凍機のCOP：<span class="em-g">3〜7程度</span><br>
+      吸収式冷凍機のCOP：<span class="em-w">0.7〜1.3程度</span>（圧縮式より低い）
+    </div>
+    <div class="formula-warn">
+      ⚠️ 「COPが高い＝効率が悪い」→ ✗ 高いほど効率が良い！「COPの単位はkW」→ ✗ 無次元数だ！！
+    </div>
+  </div>
+
+  <div class="chapter"><span>公式 07 — 熱通過・熱伝導</span></div>
+  <div class="formula-box">
+    <div class="formula-name">🔢 熱伝導・熱通過</div>
+    <div class="formula-main">Q = λ × A × ΔT ÷ L</div>
+    <div class="formula-vars">
+      <div class="formula-var"><span class="var-key">Q</span><span class="var-desc">熱流量（W）</span></div>
+      <div class="formula-var"><span class="var-key">λ</span><span class="var-desc">熱伝導率（W/m·K）　値が大きいほど熱を伝えやすい</span></div>
+      <div class="formula-var"><span class="var-key">A</span><span class="var-desc">伝熱面積（m²）</span></div>
+      <div class="formula-var"><span class="var-key">ΔT</span><span class="var-desc">温度差（K または ℃）</span></div>
+      <div class="formula-var"><span class="var-key">L</span><span class="var-desc">壁の厚さ（m）→ 熱流量に<span class="em-r">反比例</span></span></div>
+    </div>
+    <div class="formula-point">
+      熱移動量は壁の厚さに<span class="em-r">反比例</span>（2乗反比例ではない！）<br>
+      黒体の熱放射エネルギー ∝ <span class="em-w">絶対温度の4乗</span>（ステファン・ボルツマンの法則）
+    </div>
+    <div class="formula-warn">
+      ⚠️ 「熱通過量は壁の厚さの2乗に反比例」→ ✗ 2乗ではなく1乗に反比例だ！！
+    </div>
+  </div>
+</div>
+
+<!-- ===== 空調設備 ===== -->
+<div class="section" id="aircon" style="border-top:1px solid var(--border);">
+  <div class="section-header">
+    <div class="section-icon">❄️</div>
+    <div>
+      <div class="section-badge">SECTION 03</div>
+      <div class="section-title">空調設備の公式</div>
+    </div>
+  </div>
+
+  <div class="manga-panel">
+    <div class="panel-scene">
+      <div class="char-col active">
+        <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+        <div class="char-name">スパナ軍曹</div>
+      </div>
+      <div class="speech-area">
+        <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>空調は熱負荷計算と湿り空気の理解が命だ！！</div>
+        <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>湿り空気線図が苦手です……エンタルピーって何ですか？</div>
+        <div class="bubble info"><span class="spk">🔧 スパナ軍曹</span>空気が持つ熱エネルギーの合計だ。顕熱と潜熱の両方を含む。図の読み方を覚えろ！</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chapter"><span>公式 08 — 顕熱・潜熱</span></div>
+  <div class="formula-box">
+    <div class="formula-name">🔢 顕熱量・潜熱量</div>
+    <div class="formula-main">顕熱：Q = C × m × ΔT　　潜熱：Q = r × m</div>
+    <div class="formula-vars">
+      <div class="formula-var"><span class="var-key">Q</span><span class="var-desc">熱量（kJ または W）</span></div>
+      <div class="formula-var"><span class="var-key">C</span><span class="var-desc">比熱（kJ/kg·K）　空気≒1.0、水≒4.2</span></div>
+      <div class="formula-var"><span class="var-key">m</span><span class="var-desc">質量（kg）</span></div>
+      <div class="formula-var"><span class="var-key">ΔT</span><span class="var-desc">温度変化（K または ℃）</span></div>
+      <div class="formula-var"><span class="var-key">r</span><span class="var-desc">潜熱（kJ/kg）　水の蒸発潜熱≒2,500kJ/kg</span></div>
+    </div>
+    <div class="formula-point">
+      <span class="em-b">顕熱</span>：温度変化を伴う熱（乾球温度が変化）<br>
+      <span class="em-w">潜熱</span>：温度変化を伴わない熱（状態変化・水蒸気量が変化）
+    </div>
+  </div>
+
+  <div class="chapter"><span>公式 09 — 換気量</span></div>
+  <div class="formula-box">
+    <div class="formula-name">🔢 必要換気量（CO₂濃度基準）</div>
+    <div class="formula-main">Q = k ÷ (C₁ - C₀)</div>
+    <div class="formula-vars">
+      <div class="formula-var"><span class="var-key">Q</span><span class="var-desc">必要換気量（m³/h）</span></div>
+      <div class="formula-var"><span class="var-key">k</span><span class="var-desc">CO₂発生量（m³/h）</span></div>
+      <div class="formula-var"><span class="var-key">C₁</span><span class="var-desc">室内CO₂許容濃度（0.1% = 1,000ppm）</span></div>
+      <div class="formula-var"><span class="var-key">C₀</span><span class="var-desc">外気CO₂濃度（0.04% = 400ppm）</span></div>
+    </div>
+    <div class="formula-point">
+      室内CO₂許容濃度の基準：<span class="em-r">1,000ppm（0.1%）以下</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 給排水設備 ===== -->
+<div class="section" id="water" style="border-top:1px solid var(--border);">
+  <div class="section-header">
+    <div class="section-icon">🚰</div>
+    <div>
+      <div class="section-badge">SECTION 04</div>
+      <div class="section-title">給排水設備の公式・数値</div>
+    </div>
+  </div>
+
+  <div class="manga-panel">
+    <div class="panel-scene">
+      <div class="char-col active">
+        <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+        <div class="char-name">スパナ軍曹</div>
+      </div>
+      <div class="speech-area">
+        <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>給排水は計算より数値の暗記が重要だ！基準値を全部覚えろ！！</div>
+        <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>残留塩素の数値が0.1なのか0.2なのかわからなくなります……</div>
+        <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>0.1だ！語呂合わせで「水道（すいどう）の塩素は0.1」と覚えろ！！</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chapter"><span>公式 10 — 排水管の最小勾配</span></div>
+  <div class="formula-box">
+    <div class="formula-name">🔢 排水管の最小勾配（SHASE基準）</div>
+    <div class="formula-main">管径が大きいほど勾配は緩くなる</div>
+    <div class="formula-vars">
+      <div class="formula-var"><span class="var-key">75mm以下</span><span class="var-desc">1/50以上</span></div>
+      <div class="formula-var"><span class="var-key">100mm</span><span class="var-desc">1/100以上</span></div>
+      <div class="formula-var"><span class="var-key">125mm</span><span class="var-desc">1/150以上</span></div>
+      <div class="formula-var"><span class="var-key">150mm以上</span><span class="var-desc">1/200以上</span></div>
+    </div>
+    <div class="formula-point">
+      覚え方：管径の数字に合わせて分母も増える！<br>
+      75→50、100→100、125→150、150→200
+    </div>
+    <div class="formula-warn">
+      ⚠️ 「管径100mmは1/50以上」→ ✗ 1/100以上だ！管径と勾配をセットで覚えろ！！
+    </div>
+  </div>
+
+  <div class="chapter"><span>数値 11 — 給水設備の重要数値</span></div>
+  <div class="formula-box">
+    <div class="formula-name">🔢 給水設備の重要数値まとめ</div>
+    <div class="formula-main">残留塩素 ≥ 0.1mg/L（給水栓）</div>
+    <div class="formula-vars">
+      <div class="formula-var"><span class="var-key">残留塩素</span><span class="var-desc">給水栓で0.1mg/L以上（結合塩素は0.4mg/L以上）</span></div>
+      <div class="formula-var"><span class="var-key">簡易専用水道</span><span class="var-desc">受水槽有効容量10m³超が対象</span></div>
+      <div class="formula-var"><span class="var-key">清掃義務</span><span class="var-desc">年1回以上</span></div>
+      <div class="formula-var"><span class="var-key">受水槽容量</span><span class="var-desc">1日最大使用水量の1/2程度</span></div>
+    </div>
+    <div class="formula-warn">
+      ⚠️ 「簡易専用水道は20m³超」→ ✗ 10m³超だ！「残留塩素は0.2mg/L以上」→ ✗ 0.1mg/L以上！！
+    </div>
+  </div>
+</div>
+
+<!-- ===== 消防設備 ===== -->
+<div class="section" id="fire" style="border-top:1px solid var(--border);">
+  <div class="section-header">
+    <div class="section-icon">🔥</div>
+    <div>
+      <div class="section-badge">SECTION 05</div>
+      <div class="section-title">消防設備の重要数値</div>
+    </div>
+  </div>
+
+  <div class="manga-panel">
+    <div class="panel-scene">
+      <div class="char-col active">
+        <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+        <div class="char-name">スパナ軍曹</div>
+      </div>
+      <div class="speech-area">
+        <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>消防設備の数値は混同しやすいから表で整理して覚えろ！！</div>
+        <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>1号消火栓と2号消火栓の違いが……</div>
+        <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>放水圧力と放水量と操作人数の3つをセットで覚えるんだ！！</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chapter"><span>数値 12 — 消火設備の放水基準</span></div>
+  <div class="formula-box">
+    <div class="formula-name">🔢 消火設備の放水圧力・放水量</div>
+    <div class="formula-main">スプリンクラー：0.1MPa以上・80L/min以上</div>
+    <div class="formula-vars">
+      <div class="formula-var"><span class="var-key">スプリンクラー</span><span class="var-desc">放水圧力0.1MPa以上・放水量80L/min以上</span></div>
+      <div class="formula-var"><span class="var-key">屋内消火栓1号</span><span class="var-desc">放水圧力0.17MPa以上・130L/min以上・2人操作</span></div>
+      <div class="formula-var"><span class="var-key">易操作性1号</span><span class="var-desc">放水圧力0.17MPa以上・130L/min以上・1人操作</span></div>
+      <div class="formula-var"><span class="var-key">屋内消火栓2号</span><span class="var-desc">放水圧力0.25MPa以上・60L/min以上・1人操作</span></div>
+    </div>
+    <div class="formula-point">
+      1号と2号の違いを整理：<br>
+      1号：<span class="em-r">圧力低・流量多・2人</span>　2号：<span class="em-w">圧力高・流量少・1人</span>
+    </div>
+    <div class="formula-warn">
+      ⚠️ 「スプリンクラーの放水圧力は0.17MPa」→ ✗ 0.1MPa以上だ！1号消火栓と混同するな！！
+    </div>
+  </div>
+</div>
+
+<!-- ===== 工程管理 ===== -->
+<div class="section" id="process" style="border-top:1px solid var(--border);">
+  <div class="section-header">
+    <div class="section-icon">📊</div>
+    <div>
+      <div class="section-badge">SECTION 06</div>
+      <div class="section-title">工程管理の公式</div>
+    </div>
+  </div>
+
+  <div class="manga-panel">
+    <div class="panel-scene">
+      <div class="char-col active">
+        <img class="char-img" src="/images/spanner-sergeant.png" alt="スパナ軍曹">
+        <div class="char-name">スパナ軍曹</div>
+      </div>
+      <div class="speech-area">
+        <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>工程管理はフロートの計算が毎年出る！公式を体に叩き込め！！</div>
+        <div class="bubble reply"><span class="spk">😰 パイプ訓練生</span>TFとFFの違いがどうしてもわからなくて……</div>
+        <div class="bubble shout"><span class="spk">🔧 スパナ軍曹</span>TFは自分だけの余裕、FFは後ろにも迷惑かけない余裕だ！！</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chapter"><span>公式 13 — トータルフロート・フリーフロート</span></div>
+  <div class="formula-box">
+    <div class="formula-name">🔢 フロートの計算</div>
+    <div class="formula-main">TF = 最遅開始時刻 − 最早開始時刻</div>
+    <div class="formula-vars">
+      <div class="formula-var"><span class="var-key">TF</span><span class="var-desc">トータルフロート：工期全体を遅らせずに使える最大余裕時間</span></div>
+      <div class="formula-var"><span class="var-key">FF</span><span class="var-desc">フリーフロート：後続作業に影響を与えずに使える余裕時間　FF ≦ TF</span></div>
+      <div class="formula-var"><span class="var-key">CP</span><span class="var-desc">クリティカルパス：TF=0の作業をつないだ経路</span></div>
+    </div>
+    <div class="formula-point">
+      最早開始時刻の計算：<span class="em-b">左から足し算・複数経路は最大値</span><br>
+      最遅完了時刻の計算：<span class="em-r">右から引き算・複数経路は最小値</span>
+    </div>
+    <div class="formula-warn">
+      ⚠️ 「FF &gt; TFになることがある」→ ✗ FF ≦ TFが絶対！<br>
+      「クリティカルパスは必ず1本」→ ✗ 複数本あり得る！！
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div style="max-width:700px;margin:0 auto;">
+    <div style="font-size:3rem;margin-bottom:1rem;">🔧</div>
+    <div class="cta-title">公式を覚えたら演習問題で確かめろ！！</div>
+    <p class="cta-sub">全8分野・222問の演習問題で実際に計算して定着させよう。</p>
+    <a href="/bunya/" class="btn-primary">▶ 分野別演習問題を解く</a>
+    <a href="/kako/r07/" class="btn-primary" style="background:linear-gradient(135deg,var(--correct),#16a34a);">📝 過去問で実力確認</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2024 管工事PASS — 1級管工事施工管理技士 合格対策サイト</p>
+  <p style="margin-top:8px;">
+    <a href="/privacy/" style="color:var(--muted);">プライバシーポリシー</a> ／
+    <a href="/disclaimer/" style="color:var(--muted);">免責事項</a>
+  </p>
+</footer>
+
+<script>
+const els = document.querySelectorAll('.manga-panel, .formula-box');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+els.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
